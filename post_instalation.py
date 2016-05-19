@@ -12,21 +12,23 @@ def main():
 	try:
 		print '''
 
- |\033[1;36mGNU/Linux Script Post Instalación de GNU/Linux\033[1;m | V1.0 \033[1;m
+ |\033[1;36mGNU/Linux Script Post Instalación de GNU/Linux\033[1;m | V0.1 \033[1;m
 
 
  \033[1;32m+ -- -- +=[ Autor: SniferL4bs | Web: www.sniferl4bs.com\033[1;m
  \033[1;32m+ -- -- +=[ Autor: NeoRanger  | Web: www.neositelinux.com.ar\033[1;m
+ \033[1;32m+ -- -- +=[ Script basado en Katoolin | Autor: LionSec  | Web: www.lionsec.net\033[1;m
 
 		'''
 		def inicio1():
 			while True:
 				print '''
+ |\033[1;36mMenú Principal\033[1;m|
 1) Actualización del sistema
 2) Instalación de aplicaciones
 3) Listado de aplicaciones instaladas
 4) Desinstalación de aplicaciones
-5) Instalacion de DE y WMs 
+5) Instalación de DE y WMs 
 6) Personalización
 7) Ayuda
 
@@ -36,14 +38,16 @@ def main():
 			
 				while opcion0 == "1":
 					print '''
+|\033[1;36mActualización del sistema\033[1;m|
 1) Refresco de Mirrors y Keys (Solo para Manjaro)
 2) Actualizar Repositorios pacman
 3) Actualizar Repositorios AUR
 4) Actualizar el Sistema completo
-5) View the contents of sources.list file
+5) Limpieza de caché
+6) Ver el contenido del archivo mirrorlist
 
 					'''
-					repo = raw_input("\033[1;32mWhat do you want to do ?> \033[1;m")
+					repo = raw_input("\033[1;32mQue quiere hacer?> \033[1;m")
 					if repo == "1":
 					    print ("Instalando llaves...")
 					    cmd1 = os.system("sudo pacman -S archlinux-keyring manjaro-keyring")
