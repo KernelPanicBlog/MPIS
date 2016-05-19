@@ -124,7 +124,7 @@ def main():
 4) Instalar OpenShot
 5) Instalar Audacious
 6) Instalar SMTube
-7) Instalar moc
+7) Instalar moc (Reproductor de música por terminal)
 8) Instalar Handbrake
 9) Instalar SoundJuicer
 10) Instalar Clipgrab
@@ -209,7 +209,41 @@ def main():
 							inicio1()
 						else:
 							print ("\033[1;31mLo siento, comando inválido!\033[1;m")
-				
+					
+					while opcion1 == "4":
+						print '''
+|\033[1;36mInternet\033[1;m|
+1) Instalar Firefox
+2) Instalar Google Chrome
+3) Instalar Vivaldi
+4) Instalar Telegram Desktop
+5) Instalar Filezilla
+6) Instalar Chromium
+7) Instalar qBittorrent
+8) Instalar UGet
+
+						'''
+						apps3 = raw_input("\033[1;32mQue quiere hacer?> \033[1;m")
+						if apps3 == "1":
+							cmd34 = os.system("sudo pacman -S firefox")
+						elif apps3 == "2":
+							cmd35 = os.system("sudo pacman -S google-chorme")
+						elif apps3 == "3":
+							print ("Esta aplicación se encuentra en los repositorios comunitarios. Se instalará bajo su propio riesgo")
+							cmd36 = os.system("yaourt -S vivaldi")
+						elif apps3 == "4":
+							print ("Esta aplicación se encuentra en los repositorios comunitarios. Se instalará bajo su propio riesgo")
+							cmd36 = os.system("yaourt -S telegram-desktop")
+						elif apps3 == "5":
+							cmd37 = os.system("sudo pacman -S filezilla")
+						elif apps3 == "6":
+							cmd38 = os.system("sudo pacman -S chromium")
+						elif apps3 == "7":
+							cmd39 = os.system("sudo pacman -S qbittorrent")
+						elif apps3 == "8":
+							cmd40 = os.system("sudo pacman -S uget")
+						
+						
 				if opcion0 == "7":
 				    print '''
 |\033[1;36mAyuda\033[1;m|
