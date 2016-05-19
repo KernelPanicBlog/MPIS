@@ -17,7 +17,6 @@ def main():
 
  \033[1;32m+ -- -- +=[ Autor: SniferL4bs | Web: www.sniferl4bs.com\033[1;m
  \033[1;32m+ -- -- +=[ Autor: NeoRanger  | Web: www.neositelinux.com.ar\033[1;m
- \033[1;32m+ -- -- +=[ Script basado en Katoolin | Autor: LionSec  | Web: www.lionsec.net\033[1;m
 
 		'''
 		def inicio1():
@@ -34,7 +33,7 @@ def main():
 
 			'''
 
-				opcion0 = raw_input("\033[1;36LPIS > \033[1;m")
+				opcion0 = raw_input("\033[1;36mLPIS > \033[1;m")
 			
 				while opcion0 == "1":
 					print '''
@@ -43,7 +42,7 @@ def main():
 2) Actualizar Repositorios pacman
 3) Actualizar Repositorios AUR
 4) Actualizar el Sistema completo
-5) Limpieza de caché
+5) Limpieza de caché y paquetes huérfanos
 6) Ver el contenido del archivo mirrorlist
 
 					'''
@@ -65,13 +64,20 @@ def main():
 					    cmd7 = os.system("sudo rm -f /var/lib/pacman/db.lck && sudo pacman-mirrors -g && sudo pacman -Syyuu  && sudo pacman -Suu")
 					elif repo == "back":
 						inicio1()
+					elif repo == "5":
+					    print ("Limpiando caché...")
+					    cmd8 = os.system("sudo pacman -Sc && sudo pacman -Scc")
+					    print ("Caché limpiado")
+					    print ("Limpiando paquetes huérfanos...")
+					    cmd9 = os.system("sudo pacman -Rsn && yaourt -Rsn ")
+					    print ("Paquetes huérfanos eliminados")
+					elif repo == "6":
+						file = open('/etc/pacman.d/mirrorlist', 'r')
+						print file.read()					
 					elif repo == "gohome":
 						inicio1()
-					elif repo == "5":
-						file = open('/etc/pacman.d/mirrorlist', 'r')
-						print file.read()
 					else:
-						print ("\033[1;31mSorry, that was an invalid command!\033[1;m") 					
+						print ("\033[1;31mLo siento, comando inválido!\033[1;m") 					
 						
 		inicio1()
 	except KeyboardInterrupt:
