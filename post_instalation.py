@@ -132,6 +132,7 @@ def main():
 12) Instalar KODI
 13) Instalar SoundConverter (GTK)
 14) Instalar SoundKonverter (QT)
+15) Instalar Youtube-dl
 
 						'''
 						multimedia = raw_input("\033[1;32mQue quiere hacer?> \033[1;m")
@@ -163,6 +164,8 @@ def main():
 							cmd26 = os.system("sudo pacman -S soundconverter")							
 						elif multimedia == "14":
 							cmd26 = os.system("sudo pacman -S soundkonverter")
+						elif multimedia == "15":
+							cmd26 = os.system("sudo pacman -S youtube-dl")
 						elif multimedia == "back":
 							main_menu()
 						elif multimedia == "gohome":
