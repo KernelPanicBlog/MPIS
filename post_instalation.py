@@ -266,9 +266,9 @@ def main():
 							cmd43 = os.system("sudo pacman snes9x-gtk")
 						elif games == "4":
 							cmd44 = os.system("sudo pacman -S pcsxr")
-						elif development == "back":
+						elif games == "back":
 							main_menu()
-						elif development == "gohome":
+						elif games == "gohome":
 							main_menu()
 						else:
 							print ("\033[1;31mLo siento, comando inválido!\033[1;m")
@@ -301,9 +301,9 @@ def main():
 							cmd48 = os.system("sudo pacman -S plasma5")
 						elif de_menu == "5":
 							cmd49 = os.system("sudo pacman kde4")
-						elif development == "back":
+						elif de_menu == "back":
 							main_menu()
-						elif development == "gohome":
+						elif de_menu == "gohome":
 							main_menu()
 						else:
 							print ("\033[1;31mLo siento, comando inválido!\033[1;m")
@@ -322,9 +322,9 @@ def main():
 							cmd51 = os.system("sudo pacman -S openbox")
 						elif wm_menu == "3":
 							cmd52 = os.system("sudo pacman -S fluxbox")
-						elif development == "back":
+						elif wm_menu == "back":
 							main_menu()
-						elif development == "gohome":
+						elif wm_menu == "gohome":
 							main_menu()
 						else:
 							print ("\033[1;31mLo siento, comando inválido!\033[1;m")
