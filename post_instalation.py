@@ -242,6 +242,36 @@ def main():
 							cmd39 = os.system("sudo pacman -S qbittorrent")
 						elif internet == "8":
 							cmd40 = os.system("sudo pacman -S uget")
+						elif development == "back":
+							main_menu()
+						elif development == "gohome":
+							main_menu()
+						else:
+							print ("\033[1;31mLo siento, comando inválido!\033[1;m")
+					
+					while application_menu == "5":
+						print '''
+|\033[1;36mJuegos\033[1;m|
+1) Instalar Steam
+2) Instalar VisualBoyAdvance (Gameboy Advance)
+3) Instalar Snes9x (Super Nintendo)
+4) Instalar Pcsxr (Play Station)
+						'''
+						games = raw_input("\033[1;32mQue quiere hacer?> \033[1;m")
+						if games == "1":
+							cmd41 = os.system("sudo pacman -S steam")
+						elif games == "2":
+							cmd42 = os.system("sudo pacman -S vbam-gtk")
+						elif games == "3":
+							cmd43 = os.system("sudo pacman snes9x-gtk")
+						elif games == "4":
+							cmd44 = os.system("sudo pacman -S pcsxr")
+						elif development == "back":
+							main_menu()
+						elif development == "gohome":
+							main_menu()
+						else:
+							print ("\033[1;31mLo siento, comando inválido!\033[1;m")
 						
 						
 				if update_menu == "7":
