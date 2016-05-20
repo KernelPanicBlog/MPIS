@@ -272,7 +272,62 @@ def main():
 							main_menu()
 						else:
 							print ("\033[1;31mLo siento, comando inválido!\033[1;m")
-						
+							
+				while update_menu == "5":
+					print '''
+|\033[1;36mInstalación de DEs y WMs\033[1;m|
+1) DEs (Desktop Environments)
+2) WMs (Window Managers)
+					'''
+					
+					dewm_menu = raw_input("\033[1;36mLPIS > \033[1;m")
+					while dewm_menu == "1":
+						print '''
+|\033[1;36mDesktop Environmets\033[1;m|
+1) Instalar XFCE
+2) Instalar Gnome-Shell
+3) Instalar LXDE
+4) Instalar Plasma 5
+5) Instalar KDE
+						'''
+						de_menu = raw_input("\033[1;32mQue quiere hacer?> \033[1;m")
+						if de_menu == "1":
+							cmd45 = os.system("sudo pacman -S xfce4")
+						elif de_menu == "2":
+							cmd46 = os.system("sudo pacman -S gnome-shell")
+						elif de_menu == "3":
+							cmd47 = os.system("sudo pacman -S lxde")
+						elif de_menu == "4":
+							cmd48 = os.system("sudo pacman -S plasma5")
+						elif de_menu == "5":
+							cmd49 = os.system("sudo pacman kde4")
+						elif development == "back":
+							main_menu()
+						elif development == "gohome":
+							main_menu()
+						else:
+							print ("\033[1;31mLo siento, comando inválido!\033[1;m")
+							
+					while dewm_menu == "2":
+						print '''
+|\033[1;36mWindow Managers\033[1;m|
+1) Instalar i3-wm
+2) Instalar Openbox
+3) Instalar Fluxbox
+						'''
+						wm_menu = raw_input("\033[1;32mQue quiere hacer?> \033[1;m")
+						if wm_menu == "1":
+							cmd50 = os.system("sudo pacman -S i3-wm")
+						elif wm_menu == "2":
+							cmd51 = os.system("sudo pacman -S openbox")
+						elif wm_menu == "3":
+							cmd52 = os.system("sudo pacman -S fluxbox")
+						elif development == "back":
+							main_menu()
+						elif development == "gohome":
+							main_menu()
+						else:
+							print ("\033[1;31mLo siento, comando inválido!\033[1;m")
 						
 				if update_menu == "7":
 				    print '''
