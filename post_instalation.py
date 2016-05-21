@@ -139,7 +139,8 @@ def main():
 						if multimedia == "1":
 							cmd14 = os.system("sudo pacman -S vlc")
 						elif multimedia == "2":
-							cmd15 = os.system("sudo pacman -S vokoscreen")
+							print ("Esta aplicación se encuentra en los repositorios comunitarios. Se instalará bajo su propio riesgo")
+							cmd15 = os.system("yaourt -S vokoscreen")
 						elif multimedia == "3":
 							cmd16 = os.system("sudo pacman -S audacity")
 						elif multimedia == "4":
