@@ -10,7 +10,7 @@ import sys, traceback
 
 def main():
 	try:
-		print '''
+		print ('''
 
  |\033[1;36mScript Post Instalación de Manjaro GNU/Linux\033[1;m | V0.1 \033[1;m
 
@@ -18,10 +18,10 @@ def main():
  \033[1;32m+ -- -- +=[ Autor: SniferL4bs | Web: www.sniferl4bs.com\033[1;m
  \033[1;32m+ -- -- +=[ Autor: NeoRanger  | Web: www.neositelinux.com.ar\033[1;m
 
-		'''
+		''')
 		def main_menu():
 			while True:
-				print '''
+				print ('''
  |\033[1;36mMenú Principal\033[1;m|
 1) Actualización del sistema
 2) Instalación de aplicaciones
@@ -31,12 +31,12 @@ def main():
 6) Personalización
 7) Ayuda
 
-			'''
+			''')
 
 				update_menu = raw_input("\033[1;36mLPIS > \033[1;m")
 			
 				while update_menu == "1":
-					print '''
+					print ('''
 |\033[1;36mActualización del sistema\033[1;m|
 1) Refresco de Mirrors y Keys (Solo para Manjaro)
 2) Actualizar Repositorios pacman
@@ -45,7 +45,7 @@ def main():
 5) Limpieza de caché y paquetes huérfanos
 6) Ver el contenido del archivo mirrorlist
 
-					'''
+					''')
 					update = raw_input("\033[1;32mQue quiere hacer?> \033[1;m")
 					if update == "1":
 					    print ("Instalando llaves...")
@@ -80,7 +80,7 @@ def main():
 						print ("\033[1;31mLo siento, comando inválido!\033[1;m") 					
 				
 				while update_menu == "2":
-					print '''
+					print ('''
 |\033[1;36mInstalación de Aplicaciones\033[1;m|
 1) Ofimática
 2) Multimedia
@@ -88,17 +88,17 @@ def main():
 4) Internet
 5) Juegos
 6) Herramientas de Seguridad (En Beta)
-					'''
+					''')
 					application_menu = raw_input("\033[1;36mLPIS > \033[1;m")
 					
 					while application_menu == "1":
-						print '''
+						print ('''
 |\033[1;36mOfimática\033[1;m|
 1) Instalar LibreOffice
 2) Instalar OpenOffice
 3) Instalar WPS
 4) Instalar Calligra
-						'''
+						''')
 						ofimatic = raw_input("\033[1;32mQue quiere hacer?> \033[1;m")
 						if ofimatic == "1":
 							cmd10 = os.system("sudo pacman -S libreoffice-still")
@@ -116,7 +116,7 @@ def main():
 							print ("\033[1;31mLo siento, comando inválido!\033[1;m")
 							
 					while application_menu == "2":
-						print '''
+						print ('''
 |\033[1;36mMultimedia\033[1;m|
 1) Instalar VLC
 2) Instalar Vokoscreen
@@ -134,7 +134,7 @@ def main():
 14) Instalar SoundKonverter (QT)
 15) Instalar Youtube-dl
 
-						'''
+						''')
 						multimedia = raw_input("\033[1;32mQue quiere hacer?> \033[1;m")
 						if multimedia == "1":
 							cmd14 = os.system("sudo pacman -S vlc")
@@ -174,7 +174,7 @@ def main():
 							print ("\033[1;31mLo siento, comando inválido!\033[1;m")
 					
 					while application_menu == "3":
-						print '''
+						print ('''
 |\033[1;36mDesarrollo\033[1;m|
 1) Instalar Geany
 2) Instalar Sublime Text 2
@@ -185,7 +185,7 @@ def main():
 7) Instalar QtCreator
 8) Instalar NinjaIDE
 
-						'''
+						''')
 						development = raw_input("\033[1;32mQue quiere hacer?> \033[1;m")
 						if development == "1":
 							cmd27 = os.system("sudo pacman -S geany")
@@ -214,7 +214,7 @@ def main():
 							print ("\033[1;31mLo siento, comando inválido!\033[1;m")
 					
 					while application_menu == "4":
-						print '''
+						print ('''
 |\033[1;36mInternet\033[1;m|
 1) Instalar Firefox
 2) Instalar Google Chrome
@@ -225,7 +225,7 @@ def main():
 7) Instalar qBittorrent
 8) Instalar UGet
 
-						'''
+						''')
 						internet = raw_input("\033[1;32mQue quiere hacer?> \033[1;m")
 						if internet == "1":
 							cmd34 = os.system("sudo pacman -S firefox")
@@ -253,13 +253,13 @@ def main():
 							print ("\033[1;31mLo siento, comando inválido!\033[1;m")
 					
 					while application_menu == "5":
-						print '''
+						print ('''
 |\033[1;36mJuegos\033[1;m|
 1) Instalar Steam
 2) Instalar VisualBoyAdvance (Gameboy Advance)
 3) Instalar Snes9x (Super Nintendo)
 4) Instalar Pcsxr (Play Station)
-						'''
+						''')
 						games = raw_input("\033[1;32mQue quiere hacer?> \033[1;m")
 						if games == "1":
 							cmd41 = os.system("sudo pacman -S steam")
@@ -277,22 +277,22 @@ def main():
 							print ("\033[1;31mLo siento, comando inválido!\033[1;m")
 							
 				while update_menu == "5":
-					print '''
+					print ('''
 |\033[1;36mInstalación de DEs y WMs\033[1;m|
 1) DEs (Desktop Environments)
 2) WMs (Window Managers)
-					'''
+					''')
 					
 					dewm_menu = raw_input("\033[1;36mLPIS > \033[1;m")
 					while dewm_menu == "1":
-						print '''
+						print ('''
 |\033[1;36mDesktop Environmets\033[1;m|
 1) Instalar XFCE
 2) Instalar Gnome-Shell
 3) Instalar LXDE
 4) Instalar Plasma 5
 5) Instalar KDE
-						'''
+						''')
 						de_menu = raw_input("\033[1;32mQue quiere hacer?> \033[1;m")
 						if de_menu == "1":
 							cmd45 = os.system("sudo pacman -S xfce4")
@@ -312,12 +312,12 @@ def main():
 							print ("\033[1;31mLo siento, comando inválido!\033[1;m")
 							
 					while dewm_menu == "2":
-						print '''
+						print ('''
 |\033[1;36mWindow Managers\033[1;m|
 1) Instalar i3-wm
 2) Instalar Openbox
 3) Instalar Fluxbox
-						'''
+						''')
 						wm_menu = raw_input("\033[1;32mQue quiere hacer?> \033[1;m")
 						if wm_menu == "1":
 							cmd50 = os.system("sudo pacman -S i3-wm")
@@ -333,13 +333,13 @@ def main():
 							print ("\033[1;31mLo siento, comando inválido!\033[1;m")
 						
 				if update_menu == "7":
-				    print '''
+				    print ('''
 |\033[1;36mAyuda\033[1;m|
 Una vez elegida la opción deseada tiene la posibilidad de escribir 3 comandos:
 back -> comando para volver a la opción anterior
 gohome -> comando para volver al menú principal del script
 Ctrl+C -> combinación de teclas para terminar la ejecución del script
-'''
+''')
 						
 		main_menu()
 	except KeyboardInterrupt:
