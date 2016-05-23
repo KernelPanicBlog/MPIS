@@ -24,9 +24,7 @@ def main():
 5) Instalación de DE y WMs 
 6) Personalización
 7) Ayuda
-8) Salir
-
-			''')
+8) Salir''')
 
 				update_menu = raw_input("\033[1;36mLPIS > \033[1;m")
 			
