@@ -238,7 +238,8 @@ def main():
 						if internet == "1":
 							cmd34 = os.system("sudo pacman -S firefox")
 						elif internet == "2":
-							cmd35 = os.system("sudo pacman -S google-chorme")
+							print ("Esta aplicacion se encuentra en los repositorios comunitarios. Se instalara bajo su propio riesgo")
+							cmd35 = os.system("yaourt -S google-chrome")
 						elif internet == "3":
 							print ("Esta aplicación se encuentra en los repositorios comunitarios. Se instalará bajo su propio riesgo")
 							cmd36 = os.system("yaourt -S vivaldi")
