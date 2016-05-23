@@ -24,6 +24,7 @@ def main():
 5) Instalación de DE y WMs 
 6) Personalización
 7) Ayuda
+8) Salir
 
 			''')
 
@@ -345,6 +346,13 @@ back -> comando para volver a la opción anterior
 gohome -> comando para volver al menú principal del script
 Ctrl+C -> combinación de teclas para terminar la ejecución del script
 ''')
+				if update_menu == "8":
+					print ('''
+Gracias por elegirnos, esperemos que te haya sido de utilidad.
+El equipo de KernelPanicBlog.
+Visitanos en http://kernelpanicblog.wordpress.com
+					''')
+					cmdexit = sys.exit(0)
 		clear()
 		main_menu()
 	except KeyboardInterrupt:
