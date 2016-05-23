@@ -8,7 +8,7 @@ El Script se encuentra en fase de Testing no nos hacemos responsables por el uso
 
 Tienes alguna sugerencia no dudes en hacerla, nos puedes encontrar en:
 
-Comunidad en Telegram:  @[ManjaroEs](https://telegram.me/manjarolinuxes)
+Grupo comunitario en Telegram:  @[ManjaroEs](https://telegram.me/manjarolinuxes)
 
 Twitter: @[KernelPanicBlog](https://twitter.com/KernelPanicBlog)
 

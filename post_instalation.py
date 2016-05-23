@@ -72,6 +72,8 @@ def main():
 						main_menu()					
 					elif update == "gohome":
 						main_menu()
+					elif update == "exit":
+						cmdexit = sys.exit(0)
 					else:
 						print ("\033[1;31mLo siento, comando inválido!\033[1;m") 					
 				
@@ -110,6 +112,8 @@ def main():
 							main_menu()
 						elif ofimatic == "gohome":
 							main_menu()
+						elif ofimatic == "exit":
+							cmdexit = sys.exit(0)
 						else:
 							print ("\033[1;31mLo siento, comando inválido!\033[1;m")
 							
@@ -170,6 +174,8 @@ def main():
 							main_menu()
 						elif multimedia == "gohome":
 							main_menu()
+						elif multimedia == "exit":
+							cmdexit = sys.exit(0)
 						else:
 							print ("\033[1;31mLo siento, comando inválido!\033[1;m")
 					
@@ -211,6 +217,8 @@ def main():
 							main_menu()
 						elif development == "gohome":
 							main_menu()
+						elif development == "exit":
+							cmdexit = sys.exit(0)
 						else:
 							print ("\033[1;31mLo siento, comando inválido!\033[1;m")
 					
@@ -247,10 +255,12 @@ def main():
 							cmd39 = os.system("sudo pacman -S qbittorrent")
 						elif internet == "8":
 							cmd40 = os.system("sudo pacman -S uget")
-						elif development == "back":
+						elif internet == "back":
 							main_menu()
-						elif development == "gohome":
+						elif internet == "gohome":
 							main_menu()
+						elif internet == "exit":
+							cmdexit = sys.exit(0)
 						else:
 							print ("\033[1;31mLo siento, comando inválido!\033[1;m")
 					
@@ -276,6 +286,8 @@ def main():
 							main_menu()
 						elif games == "gohome":
 							main_menu()
+						elif game == "exit":
+							cmdexit = sys.exit(0)
 						else:
 							print ("\033[1;31mLo siento, comando inválido!\033[1;m")
 							
@@ -313,6 +325,8 @@ def main():
 							main_menu()
 						elif de_menu == "gohome":
 							main_menu()
+						elif de_menu == "exit":
+							cmdexit = sys.exit(0)
 						else:
 							print ("\033[1;31mLo siento, comando inválido!\033[1;m")
 							
@@ -335,15 +349,18 @@ def main():
 							main_menu()
 						elif wm_menu == "gohome":
 							main_menu()
+						elif wm_menu == "exit":
+							cmdexit = sys.exit(0)
 						else:
 							print ("\033[1;31mLo siento, comando inválido!\033[1;m")
 						
 				if update_menu == "7":
 				    print ('''
 |\033[1;36mAyuda\033[1;m|
-Una vez elegida la opción deseada tiene la posibilidad de escribir 3 comandos:
+Una vez elegida la opción deseada tiene la posibilidad de escribir 3 comandos y un atajo:
 back -> comando para volver a la opción anterior
 gohome -> comando para volver al menú principal del script
+exit -> salida del programa
 Ctrl+C -> combinación de teclas para terminar la ejecución del script
 ''')
 				if update_menu == "8":
