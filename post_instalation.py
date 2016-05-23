@@ -10,15 +10,9 @@ import sys, traceback
 
 def main():
 	try:
-		print ('''
-
- |\033[1;36mScript Post Instalación de Manjaro GNU/Linux\033[1;m | V0.1 \033[1;m
-
-
- \033[1;32m+ -- -- +=[ Autor: SniferL4bs | Web: www.sniferl4bs.com\033[1;m
- \033[1;32m+ -- -- +=[ Autor: NeoRanger  | Web: www.neositelinux.com.ar\033[1;m
-
-		''')
+		clear()
+		banner()
+		raw_input('Presione Enter para continuar!')
 		def main_menu():
 			while True:
 				print ('''
@@ -36,6 +30,7 @@ def main():
 				update_menu = raw_input("\033[1;36mLPIS > \033[1;m")
 			
 				while update_menu == "1":
+					clear()
 					print ('''
 |\033[1;36mActualización del sistema\033[1;m|
 1) Refresco de Mirrors y Keys (Solo para Manjaro)
@@ -80,6 +75,7 @@ def main():
 						print ("\033[1;31mLo siento, comando inválido!\033[1;m") 					
 				
 				while update_menu == "2":
+					clear()
 					print ('''
 |\033[1;36mInstalación de Aplicaciones\033[1;m|
 1) Ofimática
@@ -92,6 +88,7 @@ def main():
 					application_menu = raw_input("\033[1;36mLPIS > \033[1;m")
 					
 					while application_menu == "1":
+						clear()
 						print ('''
 |\033[1;36mOfimática\033[1;m|
 1) Instalar LibreOffice
@@ -116,6 +113,7 @@ def main():
 							print ("\033[1;31mLo siento, comando inválido!\033[1;m")
 							
 					while application_menu == "2":
+						clear()
 						print ('''
 |\033[1;36mMultimedia\033[1;m|
 1) Instalar VLC
@@ -175,6 +173,7 @@ def main():
 							print ("\033[1;31mLo siento, comando inválido!\033[1;m")
 					
 					while application_menu == "3":
+						clear()
 						print ('''
 |\033[1;36mDesarrollo\033[1;m|
 1) Instalar Geany
@@ -215,6 +214,7 @@ def main():
 							print ("\033[1;31mLo siento, comando inválido!\033[1;m")
 					
 					while application_menu == "4":
+						clear()
 						print ('''
 |\033[1;36mInternet\033[1;m|
 1) Instalar Firefox
@@ -254,6 +254,7 @@ def main():
 							print ("\033[1;31mLo siento, comando inválido!\033[1;m")
 					
 					while application_menu == "5":
+						clear()
 						print ('''
 |\033[1;36mJuegos\033[1;m|
 1) Instalar Steam
@@ -278,6 +279,7 @@ def main():
 							print ("\033[1;31mLo siento, comando inválido!\033[1;m")
 							
 				while update_menu == "5":
+					clear()
 					print ('''
 |\033[1;36mInstalación de DEs y WMs\033[1;m|
 1) DEs (Desktop Environments)
@@ -286,6 +288,7 @@ def main():
 					
 					dewm_menu = raw_input("\033[1;36mLPIS > \033[1;m")
 					while dewm_menu == "1":
+						clear()
 						print ('''
 |\033[1;36mDesktop Environmets\033[1;m|
 1) Instalar XFCE
@@ -313,6 +316,7 @@ def main():
 							print ("\033[1;31mLo siento, comando inválido!\033[1;m")
 							
 					while dewm_menu == "2":
+						clear()
 						print ('''
 |\033[1;36mWindow Managers\033[1;m|
 1) Instalar i3-wm
@@ -341,13 +345,48 @@ back -> comando para volver a la opción anterior
 gohome -> comando para volver al menú principal del script
 Ctrl+C -> combinación de teclas para terminar la ejecución del script
 ''')
-						
+		clear()
 		main_menu()
 	except KeyboardInterrupt:
 		print "Solicitud de Salida aceptada. Adiós!"
 	except Exception:
 		traceback.print_exc(file=sys.stdout)
 	sys.exit(0)
+
+#Limpieza de pantalla
+def clear():
+
+  os.system("clear")
+
+def banner():
+
+    print """
+888    d8P                                     888 
+888   d8P                                      888 
+888  d8P                                       888 
+888d88K      .d88b.  888d888 88888b.   .d88b.  888 
+8888888b    d8P  Y8b 888P"   888 "88b d8P  Y8b 888 
+888  Y88b   88888888 888     888  888 88888888 888 
+888   Y88b  Y8b.     888     888  888 Y8b.     888 
+888    Y88b  "Y8888  888     888  888  "Y8888  888 
+                                                   
+                                                   
+                                                   
+8888888b.                    d8b              888888b.   888                   
+888   Y88b                   Y8P              888  "88b  888                   
+888    888                                    888  .88P  888                   
+888   d88P  8888b.  88888b.  888  .d8888b     8888888K.  888  .d88b.   .d88b.  
+8888888P"      "88b 888 "88b 888 d88P"        888  "Y88b 888 d88""88b d88P"88b 
+888        .d888888 888  888 888 888          888    888 888 888  888 888  888 
+888        888  888 888  888 888 Y88b.        888   d88P 888 Y88..88P Y88b 888 
+888        "Y888888 888  888 888  "Y8888P     8888888P"  888  "Y88P"   "Y88888 
+                                                                           888 
+ \033[1;36mScript Post Instalación de Manjaro GNU/Linux\033[1;m  \033[1;m                       Y8b d88P 
+ \033[1;32m  Autores: SniferL4bs | NeoRanger              \033[1;m                      "Y88P"  
+ """
+
+
+
 
 if __name__ == "__main__":
     main()
