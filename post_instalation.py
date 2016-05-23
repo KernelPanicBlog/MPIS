@@ -388,13 +388,10 @@ def banner():
 888        .d888888 888  888 888 888          888    888 888 888  888 888  888 
 888        888  888 888  888 888 Y88b.        888   d88P 888 Y88..88P Y88b 888 
 888        "Y888888 888  888 888  "Y8888P     8888888P"  888  "Y88P"   "Y88888 
-                                                                           888 
+                      Version 0.1a                                         888 
  \033[1;36mScript Post Instalación de Manjaro GNU/Linux\033[1;m  \033[1;m                       Y8b d88P 
  \033[1;32m  Autores: SniferL4bs | NeoRanger              \033[1;m                      "Y88P"  
  """
-
-
-
 
 if __name__ == "__main__":
     main()
