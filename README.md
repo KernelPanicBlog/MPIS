@@ -6,7 +6,9 @@ Permitira configurar un sistema base, con las aplicaciones necesarias para un tr
 
 El Script se encuentra en fase de Testing no nos hacemos responsables por el uso que vayas a dar, esperamos tus comentarios e identificacion de fallas. 
 
-Si encuentran algun bug o alguna mejora porfavor te pedimos algo de tu tiempo en que realizes el registro del ISSUE nos ayudarias a identificarlo y solucionar con una mayor prontitud o en su defecto por los canales que contamos. 
+Si encuentran algun bug o alguna mejora porfavor te pedimos algo de tu tiempo en que realizes el registro del [ISSUE](https://github.com/KernelPanicBlog/Script-Post-instalacion/issues/) nos ayudarias a identificarlo y solucionar con una mayor prontitud o en su defecto por los canales que contamos. 
+
+Registra el ISSUE: https://github.com/KernelPanicBlog/Script-Post-instalacion/issues/ 
 
 
 Tienes alguna sugerencia no dudes en hacerla, nos puedes encontrar en:
