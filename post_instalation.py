@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 #!/usr/bin/env python2
-=======
-#!/usr/bin/python2
->>>>>>> a5ec6987e71e9cacf2d15b77acd29e99bd2fc91f
 # -*- coding: UTF-8 -*-
 #
 #Script post-instalación que permitirá al usuario poder elegir diferentes
