@@ -50,12 +50,16 @@ def main():
 					    print ("Actualizando Mirrors...")
 					    cmd4 = os.system("sudo pacman-mirrors -g")
 					    print ("Mirrors Actualizados")
+					    raw_input('Tarea terminada. Presione Enter para continuar!')
 					elif update == "2":
 						cmd5 = os.system("sudo pacman -Syy")
+						raw_input('Tarea terminada. Presione Enter para continuar!')
 					elif update == "3":
-						cmd6 = os.system("sudo yaourt -Syy")
+						cmd6 = os.system("yaourt -Syy")
+						raw_input('Tarea terminada. Presione Enter para continuar!')
 					elif update == "4":
 					    cmd7 = os.system("sudo rm -f /var/lib/pacman/db.lck && sudo pacman-mirrors -g && sudo pacman -Syyuu  && sudo pacman -Suu")
+					    raw_input('Tarea terminada. Presione Enter para continuar!')
 					elif update == "5":
 					    print ("Limpiando caché...")
 					    cmd8 = os.system("sudo pacman -Sc && sudo pacman -Scc")
@@ -63,6 +67,7 @@ def main():
 					    print ("Limpiando paquetes huérfanos...")
 					    cmd9 = os.system("sudo pacman -Rsn && yaourt -Rsn ")
 					    print ("Paquetes huérfanos eliminados")
+					    raw_input('Tarea terminada. Presione Enter para continuar!')
 					elif update == "6":
 						file = open('/etc/pacman.d/mirrorlist', 'r')
 						print file.read()					
@@ -100,12 +105,16 @@ def main():
 						ofimatic = raw_input("\033[1;32mQue quiere hacer?> \033[1;m")
 						if ofimatic == "1":
 							cmd10 = os.system("sudo pacman -S libreoffice-still")
+							raw_input('Tarea terminada. Presione Enter para continuar!')
 						elif ofimatic == "2":
 							cmd11 = os.system("sudo pacman -S openoffice")
+							raw_input('Tarea terminada. Presione Enter para continuar!')
 						elif ofimatic == "3":
 							cmd12 = os.system("sudo pacman -S wps-office")
+							raw_input('Tarea terminada. Presione Enter para continuar!')
 						elif ofimatic == "4":
 							cmd13 = os.system("sudo pacman -S calligra")
+							raw_input('Tarea terminada. Presione Enter para continuar!')
 						elif ofimatic == "back":
 							main_menu()
 						elif ofimatic == "gohome":
@@ -139,35 +148,50 @@ def main():
 						multimedia = raw_input("\033[1;32mQue quiere hacer?> \033[1;m")
 						if multimedia == "1":
 							cmd14 = os.system("sudo pacman -S vlc")
+							raw_input('Tarea terminada. Presione Enter para continuar!')
 						elif multimedia == "2":
 							print ("Esta aplicación se encuentra en los repositorios comunitarios. Se instalará bajo su propio riesgo")
 							cmd15 = os.system("yaourt -S vokoscreen")
+							raw_input('Tarea terminada. Presione Enter para continuar!')
 						elif multimedia == "3":
 							cmd16 = os.system("sudo pacman -S audacity")
+							raw_input('Tarea terminada. Presione Enter para continuar!')
 						elif multimedia == "4":
 							cmd17 = os.system("sudo pacman -S openshot")
+							raw_input('Tarea terminada. Presione Enter para continuar!')
 						elif multimedia == "5":
 							cmd18 = os.system("sudo pacman -S audacious")
+							raw_input('Tarea terminada. Presione Enter para continuar!')
 						elif multimedia == "6":
 							cmd19 = os.system("sudo pacman -S smtube")
+							raw_input('Tarea terminada. Presione Enter para continuar!')
 						elif multimedia == "7":
 							cmd20 = os.system("sudo pacman -S moc")
+							raw_input('Tarea terminada. Presione Enter para continuar!')
 						elif multimedia == "8":
 							cmd21 = os.system("sudo pacman -S handbrake")
+							raw_input('Tarea terminada. Presione Enter para continuar!')
 						elif multimedia == "9":
 							cmd22 = os.system("sudo pacman -S sound-juicer")
+							raw_input('Tarea terminada. Presione Enter para continuar!')
 						elif multimedia == "10":
 							cmd23 = os.system("sudo pacman -S clipgrab")
+							raw_input('Tarea terminada. Presione Enter para continuar!')
 						elif multimedia == "11":
 							cmd24 = os.system("sudo pacman -S mumble")
+							raw_input('Tarea terminada. Presione Enter para continuar!')
 						elif multimedia == "12":
 							cmd25 = os.system("sudo pacman -S kodi")
+							raw_input('Tarea terminada. Presione Enter para continuar!')
 						elif multimedia == "13":
-							cmd26 = os.system("sudo pacman -S soundconverter")							
+							cmd26 = os.system("sudo pacman -S soundconverter")
+							raw_input('Tarea terminada. Presione Enter para continuar!')				
 						elif multimedia == "14":
 							cmd26 = os.system("sudo pacman -S soundkonverter")
+							raw_input('Tarea terminada. Presione Enter para continuar!')
 						elif multimedia == "15":
 							cmd26 = os.system("sudo pacman -S youtube-dl")
+							raw_input('Tarea terminada. Presione Enter para continuar!')
 						elif multimedia == "back":
 							main_menu()
 						elif multimedia == "gohome":
@@ -197,20 +221,27 @@ def main():
 						elif development == "2":
 							print ("Esta aplicación se encuentra en los repositorios comunitarios. Se instalará bajo su propio riesgo")
 							cmd28 = os.system("yaourt -S sublime-text")
+							raw_input('Tarea terminada. Presione Enter para continuar!')
 						elif development == "3":
 							print ("Esta aplicación se encuentra en los repositorios comunitarios. Se instalará bajo su propio riesgo")
 							cmd28 = os.system("yaourt -S sublime-text-dev")
+							raw_input('Tarea terminada. Presione Enter para continuar!')
 						elif development == "4":
 							cmd29 = os.system("sudo pacman -S gedit")
+							raw_input('Tarea terminada. Presione Enter para continuar!')
 						elif development == "5":
 							cmd30 = os.system("sudo pacman -S eclipse")
+							raw_input('Tarea terminada. Presione Enter para continuar!')
 						elif development == "6":
 							print ("Esta aplicación se encuentra en los repositorios comunitarios. Se instalará bajo su propio riesgo")
 							cmd31 = os.system("yaourt -S android-studio")
+							raw_input('Tarea terminada. Presione Enter para continuar!')
 						elif development == "7":
 							cmd32 = os.system("sudo pacman -S qtcreator")
+							raw_input('Tarea terminada. Presione Enter para continuar!')
 						elif development == "8":
 							cmd33 = os.system("sudo pacman -S ninja-ide")
+							raw_input('Tarea terminada. Presione Enter para continuar!')
 						elif development == "back":
 							main_menu()
 						elif development == "gohome":
@@ -237,23 +268,31 @@ def main():
 						internet = raw_input("\033[1;32mQue quiere hacer?> \033[1;m")
 						if internet == "1":
 							cmd34 = os.system("sudo pacman -S firefox")
+							raw_input('Tarea terminada. Presione Enter para continuar!')
 						elif internet == "2":
 							print ("Esta aplicacion se encuentra en los repositorios comunitarios. Se instalara bajo su propio riesgo")
 							cmd35 = os.system("yaourt -S google-chrome")
+							raw_input('Tarea terminada. Presione Enter para continuar!')
 						elif internet == "3":
 							print ("Esta aplicación se encuentra en los repositorios comunitarios. Se instalará bajo su propio riesgo")
 							cmd36 = os.system("yaourt -S vivaldi")
+							raw_input('Tarea terminada. Presione Enter para continuar!')
 						elif internet == "4":
 							print ("Esta aplicación se encuentra en los repositorios comunitarios. Se instalará bajo su propio riesgo")
 							cmd36 = os.system("yaourt -S telegram-desktop")
+							raw_input('Tarea terminada. Presione Enter para continuar!')
 						elif internet == "5":
 							cmd37 = os.system("sudo pacman -S filezilla")
+							raw_input('Tarea terminada. Presione Enter para continuar!')
 						elif internet == "6":
 							cmd38 = os.system("sudo pacman -S chromium")
+							raw_input('Tarea terminada. Presione Enter para continuar!')
 						elif internet == "7":
 							cmd39 = os.system("sudo pacman -S qbittorrent")
+							raw_input('Tarea terminada. Presione Enter para continuar!')
 						elif internet == "8":
 							cmd40 = os.system("sudo pacman -S uget")
+							raw_input('Tarea terminada. Presione Enter para continuar!')
 						elif internet == "back":
 							main_menu()
 						elif internet == "gohome":
@@ -275,12 +314,16 @@ def main():
 						games = raw_input("\033[1;32mQue quiere hacer?> \033[1;m")
 						if games == "1":
 							cmd41 = os.system("sudo pacman -S steam")
+							raw_input('Tarea terminada. Presione Enter para continuar!')
 						elif games == "2":
 							cmd42 = os.system("sudo pacman -S vbam-gtk")
+							raw_input('Tarea terminada. Presione Enter para continuar!')
 						elif games == "3":
 							cmd43 = os.system("sudo pacman snes9x-gtk")
+							raw_input('Tarea terminada. Presione Enter para continuar!')
 						elif games == "4":
 							cmd44 = os.system("sudo pacman -S pcsxr")
+							raw_input('Tarea terminada. Presione Enter para continuar!')
 						elif games == "back":
 							main_menu()
 						elif games == "gohome":
@@ -312,14 +355,19 @@ def main():
 						de_menu = raw_input("\033[1;32mQue quiere hacer?> \033[1;m")
 						if de_menu == "1":
 							cmd45 = os.system("sudo pacman -S xfce4")
+							raw_input('Tarea terminada. Presione Enter para continuar!')
 						elif de_menu == "2":
 							cmd46 = os.system("sudo pacman -S gnome-shell")
+							raw_input('Tarea terminada. Presione Enter para continuar!')
 						elif de_menu == "3":
 							cmd47 = os.system("sudo pacman -S lxde")
+							raw_input('Tarea terminada. Presione Enter para continuar!')
 						elif de_menu == "4":
 							cmd48 = os.system("sudo pacman -S plasma5")
+							raw_input('Tarea terminada. Presione Enter para continuar!')
 						elif de_menu == "5":
 							cmd49 = os.system("sudo pacman kde4")
+							raw_input('Tarea terminada. Presione Enter para continuar!')
 						elif de_menu == "back":
 							main_menu()
 						elif de_menu == "gohome":
@@ -340,10 +388,13 @@ def main():
 						wm_menu = raw_input("\033[1;32mQue quiere hacer?> \033[1;m")
 						if wm_menu == "1":
 							cmd50 = os.system("sudo pacman -S i3-wm")
+							raw_input('Tarea terminada. Presione Enter para continuar!')
 						elif wm_menu == "2":
 							cmd51 = os.system("sudo pacman -S openbox")
+							raw_input('Tarea terminada. Presione Enter para continuar!')
 						elif wm_menu == "3":
 							cmd52 = os.system("sudo pacman -S fluxbox")
+							raw_input('Tarea terminada. Presione Enter para continuar!')
 						elif wm_menu == "back":
 							main_menu()
 						elif wm_menu == "gohome":
