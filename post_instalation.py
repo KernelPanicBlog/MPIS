@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python2
 # -*- coding: UTF-8 -*-
 #
 #Script post-instalación que permitirá al usuario poder elegir diferentes
@@ -6,7 +6,6 @@
 
 import os
 import sys, traceback
-
 
 def main():
 	try:
@@ -26,10 +25,10 @@ def main():
 7) Ayuda
 8) Salir''')
 
-				update_menu = raw_input("\033[1;36mLPIS > \033[1;m")
-			
+				update_menu = raw_input("\033[1;36mMPIS > \033[1;m")
+				clear()
 				while update_menu == "1":
-					clear()
+					
 					print ('''
 |\033[1;36mActualización del sistema\033[1;m|
 1) Refresco de Mirrors y Keys (Solo para Manjaro)
@@ -91,7 +90,7 @@ def main():
 5) Juegos
 6) Herramientas de Seguridad (En Beta)
 					''')
-					application_menu = raw_input("\033[1;36mLPIS > \033[1;m")
+					application_menu = raw_input("\033[1;36mMPIS > \033[1;m")
 					
 					while application_menu == "1":
 						clear()
@@ -342,7 +341,7 @@ def main():
 2) WMs (Window Managers)
 					''')
 					
-					dewm_menu = raw_input("\033[1;36mLPIS > \033[1;m")
+					dewm_menu = raw_input("\033[1;36mMPIS > \033[1;m")
 					while dewm_menu == "1":
 						clear()
 						print ('''
@@ -459,7 +458,8 @@ def banner():
                       Version 0.1a                                         888 
  \033[1;36mScript Post Instalación de Manjaro GNU/Linux\033[1;m  \033[1;m                       Y8b d88P 
  \033[1;32m  Autores: SniferL4bs | NeoRanger              \033[1;m                      "Y88P"  
- """
+ 
+ Aplicacion en Fase de Testeo, bugs reportar"""
 
 if __name__ == "__main__":
     main()
