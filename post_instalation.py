@@ -289,7 +289,7 @@ def main():
 							cmdexit = sys.exit(0)
 						else:
 							print ("\033[1;31mLo siento, comando inválido!\033[1;m")
-							
+
 				while update_menu == "5":
 					clear()
 					print ('''
@@ -372,7 +372,7 @@ Visitanos en http://kernelpanicblog.wordpress.com
 		clear()
 		main_menu()
 	except KeyboardInterrupt:
-		print "Solicitud de Salida aceptada. Adiós!"
+		print "Ha oprimido la combinacion de teclas Ctrl+C. Solicitud de Salida aceptada. Adiós!"
 	except Exception:
 		traceback.print_exc(file=sys.stdout)
 	sys.exit(0)
