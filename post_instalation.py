@@ -110,7 +110,8 @@ def main():
 							cmd11 = os.system("sudo pacman -S openoffice")
 							raw_input('Tarea terminada. Presione Enter para continuar!')
 						elif ofimatic == "3":
-							cmd12 = os.system("sudo pacman -S wps-office")
+							print ("Esta aplicación se encuentra en los repositorios comunitarios. Se instalará bajo su propio riesgo")
+							cmd12 = os.system("yaourt -S wps-office")
 							raw_input('Tarea terminada. Presione Enter para continuar!')
 						elif ofimatic == "4":
 							cmd13 = os.system("sudo pacman -S calligra")
