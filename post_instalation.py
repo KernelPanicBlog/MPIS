@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python2
 # -*- coding: UTF-8 -*-
 #
 #Script post-instalación que permitirá al usuario poder elegir diferentes
@@ -279,8 +279,19 @@ def main():
 							cmd36 = os.system("yaourt -S vivaldi")
 							raw_input('Tarea terminada. Presione Enter para continuar!')
 						elif internet == "4":
-							print ("Esta aplicación se encuentra en los repositorios comunitarios. Se instalará bajo su propio riesgo")
-							cmd36 = os.system("yaourt -S telegram-desktop")
+							print ("Esta aplicación no se encuentra en los repositorios oficiales sino que se instalara desde la web oficial")
+							print ("De que arquitectura desea instalar Telegram Desktop?:")
+							optele = raw_input("1) 32 Bits 2) 64 Bits")
+							if optele == "1":
+								optele32_1 = os.system("wget -c https://tdesktop.com/linux32")
+								optele32_2 = os.system("tar xvf linux32")
+								optele32_3 = os.system("sudo mv Telegram /opt/telegram")
+								optele32_4 = os.system("./opt/telegram/Telegram")
+							if optele == "2":
+								optele32_1 = os.system("wget -c https://tdesktop.com/linux")
+								optele32_2 = os.system("tar xvf linux")
+								optele32_3 = os.system("sudo mv Telegram /opt/telegram")
+								optele32_4 = os.system("./opt/telegram/Telegram")
 							raw_input('Tarea terminada. Presione Enter para continuar!')
 						elif internet == "5":
 							cmd37 = os.system("sudo pacman -S filezilla")
