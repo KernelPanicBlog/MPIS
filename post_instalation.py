@@ -11,30 +11,30 @@ def main():
 	try:
 		clear()
 		banner()
-		raw_input('Presione Enter para continuar!')
+		raw_input('Press ENTER to continue...!')
 		def main_menu():
 			while True:
 				print ('''
  |\033[1;36mMenú Principal\033[1;m|
-1) Actualización del sistema
-2) Instalación de aplicaciones
-3) Listado de aplicaciones instaladas
-4) Desinstalación de aplicaciones
-5) Instalación de DE y WMs 
-6) Personalización
-7) Ayuda
-8) Salir''')
+1) Update System
+2) Install applications
+3) List applications installed
+4) Uninstall applications
+5) Install DE & WMs 
+6) Personalization
+7) Help
+8) Exit''')
 
 				update_menu = raw_input("\033[1;36mMPIS > \033[1;m")
 				clear()
 				while update_menu == "1":
 					
 					print ('''
-|\033[1;36mActualización del sistema\033[1;m|
-1) Refresco de Mirrors y Keys (Solo para Manjaro)
-2) Actualizar Repositorios pacman
-3) Actualizar Repositorios AUR
-4) Actualizar el Sistema completo
+|\033[1;36mUpdate System\033[1;m|
+1) Refresh Mirrors and Keys
+2) pacman repositories update
+3) AUR repositories update
+4) Update all system
 5) Limpieza de caché y paquetes huérfanos
 6) Ver el contenido del archivo mirrorlist
 
@@ -85,10 +85,10 @@ def main():
 |\033[1;36mInstalación de Aplicaciones\033[1;m|
 1) Ofimática
 2) Multimedia
-3) Desarrollo
+3) Development
 4) Internet
-5) Juegos
-6) Herramientas de Seguridad (En Beta)
+5) Games
+6) Hacking Tools (En Beta)
 					''')
 					application_menu = raw_input("\033[1;36mMPIS > \033[1;m")
 					
@@ -96,10 +96,10 @@ def main():
 						clear()
 						print ('''
 |\033[1;36mOfimática\033[1;m|
-1) Instalar LibreOffice
-2) Instalar OpenOffice
-3) Instalar WPS
-4) Instalar Calligra
+1) Install LibreOffice
+2) Install OpenOffice
+3) Install WPS
+4) Install Calligra
 						''')
 						ofimatic = raw_input("\033[1;32mQue quiere hacer?> \033[1;m")
 						if ofimatic == "1":
@@ -128,14 +128,14 @@ def main():
 						clear()
 						print ('''
 |\033[1;36mMultimedia\033[1;m|
-1) Instalar VLC
-2) Instalar Vokoscreen
-3) Instalar Audacity
-4) Instalar OpenShot
-5) Instalar Audacious
-6) Instalar SMTube
-7) Instalar moc (Reproductor de música por terminal)
-8) Instalar Handbrake
+1) Install VLC
+2) Install Vokoscreen
+3) Install Audacity
+4) Install OpenShot
+5) Install Audacious
+6) Install SMTube
+7) Install moc (Reproductor de música por terminal)
+8) Install Handbrake
 9) Instalar SoundJuicer
 10) Instalar Clipgrab
 11) Instalar Mumble
