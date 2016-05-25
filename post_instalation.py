@@ -291,7 +291,7 @@ def main():
 								optele32_2 = os.system("tar xvf linux")
 								optele32_3 = os.system("sudo mv Telegram /opt/telegram")
 								optele32_4 = os.system("./opt/telegram/Telegram")
-							raw_input('Tarea terminada. Presione Enter para continuar!')
+							raw_input('Tarea terminada. Debe cerrar Telegram para continuar. Presione Enter para continuar!')
 						elif internet == "5":
 							cmd37 = os.system("sudo pacman -S filezilla")
 							raw_input('Tarea terminada. Presione Enter para continuar!')
