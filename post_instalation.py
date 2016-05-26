@@ -281,17 +281,19 @@ def main():
 						elif internet == "4":
 							print ("This application is on the AUR repository (community). It will be install at your own risk.")
 							print ("What is your architecture?:")
-							optele = raw_input("1) 32 Bits 2) 64 Bits")
+							optele = raw_input("1) 32 Bits 2) 64 Bits > ")
 							if optele == "1":
 								optele32_1 = os.system("wget -c https://tdesktop.com/linux32")
 								optele32_2 = os.system("tar xvf linux32")
 								optele32_3 = os.system("sudo mv Telegram /opt/telegram")
 								optele32_4 = os.system("./opt/telegram/Telegram")
-							if optele == "2":
+							elif optele == "2":
 								optele32_1 = os.system("wget -c https://tdesktop.com/linux")
 								optele32_2 = os.system("tar xvf linux")
 								optele32_3 = os.system("sudo mv Telegram /opt/telegram")
 								optele32_4 = os.system("./opt/telegram/Telegram")
+							else:
+								print ("\033[1;31mSorry, invalid command!\033[1;m")
 							raw_input('Task Finished. You have tu close Telegram to continue. Press Enter to continue')
 						elif internet == "5":
 							cmd37 = os.system("sudo pacman -S filezilla")
@@ -435,7 +437,7 @@ Our web: http://kernelpanicblog.wordpress.com
 		clear()
 		main_menu()
 	except KeyboardInterrupt:
-		print "You had press the Ctrl+C keys combination. Accepted exit request. Bye!"
+		print "\nYou had press the Ctrl+C keys combination. Accepted exit request. Bye!"
 	except Exception:
 		traceback.print_exc(file=sys.stdout)
 	sys.exit(0)
