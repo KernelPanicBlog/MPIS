@@ -110,7 +110,7 @@ def main():
 							cmd11 = os.system("sudo pacman -S openoffice")
 							raw_input('Task Finished. Press Enter to continue')
 						elif ofimatic == "3":
-							print ("This application is on the AUR repository (community). It is installed at your own risk.")
+							print ("This application is on the AUR repository (community). It will be install at your own risk.")
 							cmd12 = os.system("yaourt -S wps-office")
 							raw_input('Task Finished. Press Enter to continue')
 						elif ofimatic == "4":
@@ -151,7 +151,7 @@ def main():
 							cmd14 = os.system("sudo pacman -S vlc")
 							raw_input('Task Finished. Press Enter to continue')
 						elif multimedia == "2":
-							print ("This application is on the AUR repository (community). It is installed at your own risk.")
+							print ("This application is on the AUR repository (community). It will be install at your own risk.")
 							cmd15 = os.system("yaourt -S vokoscreen")
 							raw_input('Task Finished. Press Enter to continue')
 						elif multimedia == "3":
@@ -220,11 +220,11 @@ def main():
 						if development == "1":
 							cmd27 = os.system("sudo pacman -S geany")
 						elif development == "2":
-							print ("This application is on the AUR repository (community). It is installed at your own risk.")
+							print ("This application is on the AUR repository (community). It will be install at your own risk.")
 							cmd28 = os.system("yaourt -S sublime-text")
 							raw_input('Task Finished. Press Enter to continue')
 						elif development == "3":
-							print ("This application is on the AUR repository (community). It is installed at your own risk.")
+							print ("This application is on the AUR repository (community). It will be install at your own risk.")
 							cmd28 = os.system("yaourt -S sublime-text-dev")
 							raw_input('Task Finished. Press Enter to continue')
 						elif development == "4":
@@ -234,7 +234,7 @@ def main():
 							cmd30 = os.system("sudo pacman -S eclipse")
 							raw_input('Task Finished. Press Enter to continue')
 						elif development == "6":
-							print ("This application is on the AUR repository (community). It is installed at your own risk.")
+							print ("This application is on the AUR repository (community). It will be install at your own risk.")
 							cmd31 = os.system("yaourt -S android-studio")
 							raw_input('Task Finished. Press Enter to continue')
 						elif development == "7":
@@ -271,15 +271,15 @@ def main():
 							cmd34 = os.system("sudo pacman -S firefox")
 							raw_input('Task Finished. Press Enter to continue')
 						elif internet == "2":
-							print ("This application is on the AUR repository (community). It is installed at your own risk.")
+							print ("This application is on the AUR repository (community). It will be install at your own risk.")
 							cmd35 = os.system("yaourt -S google-chrome")
 							raw_input('Task Finished. Press Enter to continue')
 						elif internet == "3":
-							print ("This application is on the AUR repository (community). It is installed at your own risk.")
+							print ("This application is on the AUR repository (community). It will be install at your own risk.")
 							cmd36 = os.system("yaourt -S vivaldi")
 							raw_input('Task Finished. Press Enter to continue')
 						elif internet == "4":
-							print ("This application is on the AUR repository (community). It is installed at your own risk.")
+							print ("This application is on the AUR repository (community). It will be install at your own risk.")
 							print ("What is your architecture?:")
 							optele = raw_input("1) 32 Bits 2) 64 Bits")
 							if optele == "1":
