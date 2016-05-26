@@ -36,7 +36,7 @@ def main():
 					print ('''
 |\033[1;36mUpdate System\033[1;m|
 1) Refresh Mirrors and Keys
-2) pacman repositories update
+2) Pacman repositories update
 3) AUR repositories update
 4) Update all system
 5) Clear cache and orphan packages
@@ -57,8 +57,11 @@ def main():
 					    print ("Mirrors Updated")
 					    raw_input('Task Finished. Press Enter to continue')
 					elif update == "2":
-						os.system("sudo pacman -Syy")
-						raw_input('Task Finished. Press Enter to continue')
+						#os.system("sudo pacman -Syy")
+						if os.system("sudo pacman -Syy") == 0:
+							raw_input('Task Finished. Press Enter to continue')
+						else:
+							raw_input('Task Finished with errors. Press Enter to continue')
 					elif update == "3":
 						os.system("yaourt -Syy")
 						raw_input('Task Finished. Press Enter to continue')
