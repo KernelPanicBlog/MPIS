@@ -473,7 +473,7 @@ def banner():
  \033[1;36mManjaro GNU/Linux Script Post Instalation\033[1;m  \033[1;m                         Y8b d88P 
  \033[1;32m  Author: SniferL4bs | www.sniferl4bs.com \033[1;m                         "Y88P"  
  \033[1;32m  Author: SniferL4bs | www.neositelinux.com.ar \033[1;m
- \033[1;32m  Colaborative Blog: | http://kernelpanic.wordpress.com \033[1;m
+ \033[1;32m  Colaborative Blog: | http://kernelpanicblog.wordpress.com \033[1;m
  
  Application in Testing Fase, please report your bugs!"""
 
