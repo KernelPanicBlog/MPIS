@@ -1,8 +1,8 @@
 #!/usr/bin/env python2
 # -*- coding: UTF-8 -*-
 #
-#Script post-instalación que permitirá al usuario poder elegir diferentes
-#aplicaciones a instalar y configurar algunas herramientas.
+#Manjaro script post-instalation that allow to the users to choose different options
+#such as install an application or config some tools and environments.
 
 import os
 import sys, traceback
@@ -40,7 +40,7 @@ def main():
 6) See the content of mirrorlist file
 
 					''')
-					update = raw_input("\033[1;32mQue quiere hacer?> \033[1;m")
+					update = raw_input("\033[1;32mWhat you want to do?> \033[1;m")
 					if update == "1":
 					    print ("Installing keys...")
 					    cmd1 = os.system("sudo pacman -S archlinux-keyring manjaro-keyring")
@@ -217,7 +217,7 @@ def main():
 
 						''')
 						development = raw_input("\033[1;32mWhat you want to do??> \033[1;m")
-						if devejlopment == "1":
+						if development == "1":
 							cmd27 = os.system("sudo pacman -S geany")
 						elif development == "2":
 							print ("This application is on the AUR repository (community). It is installed at your own risk.")
@@ -340,7 +340,7 @@ def main():
 							main_menu()
 						elif games == "gohome":
 							main_menu()
-						elif game == "exit":
+						elif games == "exit":
 							cmdexit = sys.exit(0)
 						else:
 							print ("\033[1;31mSorry, invalid command!\033[1;m")
@@ -440,7 +440,7 @@ Our web: http://kernelpanicblog.wordpress.com
 		traceback.print_exc(file=sys.stdout)
 	sys.exit(0)
 
-#Limpieza de pantalla
+#Cleaning screen
 def clear():
 
   os.system("clear")
