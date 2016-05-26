@@ -58,8 +58,15 @@ def main():
 						cmd6 = os.system("yaourt -Syy")
 						raw_input('Task Finished. Press Enter to continue')
 					elif update == "4":
-					    cmd7 = os.system("sudo rm -f /var/lib/pacman/db.lck && sudo pacman-mirrors -g && sudo pacman -Syyuu  && sudo pacman -Suu")
-					    raw_input('Task Finished. Press Enter to continue')
+						print ("You want refresh mirrors in the full system update?")
+						opupdate = raw_input("1) Yes 2) No > ")
+						if opupdate == "1":
+							cmd7 = os.system("sudo rm -f /var/lib/pacman/db.lck && sudo pacman-mirrors -g && sudo pacman -Syyuu  && sudo pacman -Suu")
+						elif opupdate == "2":
+							cmd7 = os.system("sudo rm -f /var/lib/pacman/db.lck && sudo pacman -Syyuu  && sudo pacman -Suu")
+						else:
+							print ("\033[1;31mSorry, invalid command!\033[1;m")
+						raw_input('Task Finished. Press Enter to continue')
 					elif update == "5":
 					    print ("Cleaning caché...")
 					    cmd8 = os.system("sudo pacman -Sc && sudo pacman -Scc")
