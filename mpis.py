@@ -38,6 +38,8 @@ def main():
 4) Update all system
 5) Clear cache and orphan packages
 6) See the content of mirrorlist file
+7) Back
+8) Go Home
 
 					''')
 					update = raw_input("\033[1;32mWhat you want to do?> \033[1;m")
@@ -78,9 +80,11 @@ def main():
 					elif update == "6":
 						file = open('/etc/pacman.d/mirrorlist', 'r')
 						print file.read()					
-					elif update == "back":
+					elif update == "back" or update == "7":
+						clear()
 						main_menu()					
-					elif update == "gohome":
+					elif update == "gohome" or update == "8":
+						clear()
 						main_menu()
 					elif update == "exit":
 						cmdexit = sys.exit(0)
@@ -96,7 +100,9 @@ def main():
 3) Development
 4) Internet
 5) Games
-6) Hacking Tools (En Beta)
+6) Hacking Tools (Beta)
+7) Back
+8) Go Home
 					''')
 					application_menu = raw_input("\033[1;36mMPIS > \033[1;m")
 					
@@ -108,6 +114,8 @@ def main():
 2) Install OpenOffice
 3) Install WPS
 4) Install Calligra
+5) Back
+6) Go Home
 						''')
 						ofimatic = raw_input("\033[1;32mWhat you want to do?> \033[1;m")
 						if ofimatic == "1":
@@ -123,9 +131,11 @@ def main():
 						elif ofimatic == "4":
 							cmd13 = os.system("sudo pacman -S calligra")
 							raw_input('Task Finished. Press Enter to continue')
-						elif ofimatic == "back":
+						elif ofimatic == "back" or ofimatic == "5":
+							clear()
 							main_menu()
-						elif ofimatic == "gohome":
+						elif ofimatic == "gohome" or ofimatic == "6":
+							clear()
 							main_menu()
 						elif ofimatic == "exit":
 							cmdexit = sys.exit(0)
@@ -151,6 +161,10 @@ def main():
 13) Install SoundConverter (GTK)
 14) Install SoundKonverter (QT)
 15) Install Youtube-dl
+16) Install mpv
+17) Install simplescreenrecorder
+18) Back
+19) Go Home
 
 						''')
 						multimedia = raw_input("\033[1;32mWhat you want to do?> \033[1;m")
@@ -200,9 +214,18 @@ def main():
 						elif multimedia == "15":
 							cmd26 = os.system("sudo pacman -S youtube-dl")
 							raw_input('Task Finished. Press Enter to continue')
-						elif multimedia == "back":
+						elif multimedia == "16":
+							cmd26_a = os.system("sudo pacman -S mpv")
+							raw_input('Task Finished. Press Enter to continue')
+						elif multimedia == "17":
+							print ("This application is on the AUR repository (community). It will be install at your own risk.")
+							cmd26_b = os.system("yaourt -S simplescreenrecorder")
+							raw_input('Task Finished. Press Enter to continue')
+						elif multimedia == "back" or multimedia == "18":
+							clear()
 							main_menu()
-						elif multimedia == "gohome":
+						elif multimedia == "gohome" or multimedia == "19":
+							clear()
 							main_menu()
 						elif multimedia == "exit":
 							cmdexit = sys.exit(0)
@@ -221,6 +244,8 @@ def main():
 6) Install Android Studio
 7) Install QtCreator
 8) Install NinjaIDE
+9) Back
+10) Go Home
 
 						''')
 						development = raw_input("\033[1;32mWhat you want to do??> \033[1;m")
@@ -250,9 +275,11 @@ def main():
 						elif development == "8":
 							cmd33 = os.system("sudo pacman -S ninja-ide")
 							raw_input('Task Finished. Press Enter to continue')
-						elif development == "back":
+						elif development == "back" or development == "9":
+							clear()
 							main_menu()
-						elif development == "gohome":
+						elif development == "gohome" or development == "10":
+							clear()
 							main_menu()
 						elif development == "exit":
 							cmdexit = sys.exit(0)
@@ -271,6 +298,8 @@ def main():
 6) Install Chromium
 7) Install qBittorrent
 8) Install UGet
+9) Back
+10) Go Home
 
 						''')
 						internet = raw_input("\033[1;32mWhat you want to do?> \033[1;m")
@@ -314,9 +343,11 @@ def main():
 						elif internet == "8":
 							cmd40 = os.system("sudo pacman -S uget")
 							raw_input('Task Finished. Press Enter to continue')
-						elif internet == "back":
+						elif internet == "back" or internet == "9":
+							clear()
 							main_menu()
-						elif internet == "gohome":
+						elif internet == "gohome" or internet == "10":
+							clear()
 							main_menu()
 						elif internet == "exit":
 							cmdexit = sys.exit(0)
@@ -331,6 +362,8 @@ def main():
 2) Install VisualBoyAdvance (Gameboy Advance)
 3) Install Snes9x (Super Nintendo)
 4) Install Pcsxr (Play Station)
+5) Back
+6) Go Home
 						''')
 						games = raw_input("\033[1;32mWhat you want to do?> \033[1;m")
 						if games == "1":
@@ -345,14 +378,23 @@ def main():
 						elif games == "4":
 							cmd44 = os.system("sudo pacman -S pcsxr")
 							raw_input('Task Finished. Press Enter to continue')
-						elif games == "back":
+						elif games == "back" or games == "5":
+							clear()
 							main_menu()
-						elif games == "gohome":
+						elif games == "gohome" or games == "6":
+							clear()
 							main_menu()
 						elif games == "exit":
 							cmdexit = sys.exit(0)
 						else:
 							print ("\033[1;31mSorry, invalid command!\033[1;m")
+					
+					if application_menu == "back" or application_menu == "7":
+						clear()
+						main_menu()
+					if application_menu == "gohome" or application_menu == "8":
+						clear()
+						main_menu()
 
 				while update_menu == "5":
 					clear()
@@ -360,6 +402,8 @@ def main():
 |\033[1;36mDEs & WMs Instalations\033[1;m|
 1) DEs (Desktop Environments)
 2) WMs (Window Managers)
+3) Back
+4) Go Home
 					''')
 					
 					dewm_menu = raw_input("\033[1;36mMPIS > \033[1;m")
@@ -372,6 +416,8 @@ def main():
 3) Install LXDE
 4) Install Plasma 5
 5) Install KDE
+6) Back
+7) Go Home
 						''')
 						de_menu = raw_input("\033[1;32mWhat you want to do?> \033[1;m")
 						if de_menu == "1":
@@ -389,9 +435,11 @@ def main():
 						elif de_menu == "5":
 							cmd49 = os.system("sudo pacman kde4")
 							raw_input('Task Finished. Press Enter to continue')
-						elif de_menu == "back":
+						elif de_menu == "back" or de_menu == "6":
+							clear()
 							main_menu()
-						elif de_menu == "gohome":
+						elif de_menu == "gohome" or de_menu == "7":
+							clear()
 							main_menu()
 						elif de_menu == "exit":
 							cmdexit = sys.exit(0)
@@ -405,6 +453,8 @@ def main():
 1) Install i3-wm
 2) Install Openbox
 3) Install Fluxbox
+4) Back
+5) Go Home
 						''')
 						wm_menu = raw_input("\033[1;32mWhat you want to do?> \033[1;m")
 						if wm_menu == "1":
@@ -416,14 +466,23 @@ def main():
 						elif wm_menu == "3":
 							cmd52 = os.system("sudo pacman -S fluxbox")
 							raw_input('Task Finished. Press Enter to continue')
-						elif wm_menu == "back":
+						elif wm_menu == "back" or wm_menu == "4":
+							clear()
 							main_menu()
-						elif wm_menu == "gohome":
+						elif wm_menu == "gohome" or wm_menu == "5":
+							clear()
 							main_menu()
 						elif wm_menu == "exit":
 							cmdexit = sys.exit(0)
 						else:
 							print ("\033[1;31mSorry, invalid command!\033[1;m")
+					
+					if dewm_menu == "back" or dewm_menu == "3":
+						clear()
+						main_menu()
+					if dewm_menu == "gohome" or dewm_menu == "4":
+						clear()
+						main_menu()
 						
 				if update_menu == "7":
 				    print ('''
