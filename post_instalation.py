@@ -419,7 +419,7 @@ def main():
 				if update_menu == "7":
 				    print ('''
 |\033[1;36mHelp\033[1;m|
-After selecting the desired option has the ability to write 3 commands and a shortcut:
+You can write 3 commands and do a shortcut:
 back -> command for return to the previous option
 gohome -> command for return to the main menu script
 exit -> program exit
@@ -468,7 +468,7 @@ def banner():
 888        888  888 888  888 888 Y88b.        888   d88P 888 Y88..88P Y88b 888 
 888        "Y888888 888  888 888  "Y8888P     8888888P"  888  "Y88P"   "Y88888 
                       Version 0.1a                                         888 
- \033[1;36mScript Post Instalation Manjaro GNU/Linux\033[1;m  \033[1;m                         Y8b d88P 
+ \033[1;36mManjaro GNU/Linux Script Post Instalation\033[1;m  \033[1;m                         Y8b d88P 
  \033[1;32m  Author: SniferL4bs | www.sniferl4bs.com \033[1;m                         "Y88P"  
  \033[1;32m  Author: SniferL4bs | www.neositelinux.com.ar \033[1;m
  \033[1;32m  Colaborative Blog: | http://kernelpanic.wordpress.com \033[1;m
