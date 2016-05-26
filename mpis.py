@@ -11,7 +11,10 @@ def main():
 	try:
 		clear()
 		banner()
-		raw_input('Press ENTER to continue...!')
+		raw_input('Press any key to continue...!')
+		clear()
+		help()
+		raw_input('Press any key to continue...!')
 		def main_menu():
 			while True:
 				print ('''
@@ -485,20 +488,11 @@ def main():
 						main_menu()
 						
 				if update_menu == "7":
-				    print ('''
-|\033[1;36mHelp\033[1;m|
-You can write 3 commands and do a shortcut:
-back -> command for return to the previous option
-gohome -> command for return to the main menu script
-exit -> program exit
-Ctrl+C -> shortcut to finish the script execution
-''')
+				    help()
+				    raw_input('Press ENTER to continue...!')
+				    clear()
 				if update_menu == "8":
-					print ('''
-Thanks for choosing us, we hope you have been helpful.
-The KernelPanicBlog Team.
-Our web: http://kernelpanicblog.wordpress.com
-					''')
+					end_message()
 					sys.exit(0)
 		clear()
 		main_menu()
@@ -510,7 +504,6 @@ Our web: http://kernelpanicblog.wordpress.com
 
 #Cleaning screen
 def clear():
-
   os.system("clear")
 
 def banner():
@@ -542,6 +535,22 @@ def banner():
  \033[1;32m  Colaborative Blog: | http://kernelpanicblog.wordpress.com \033[1;m
  
  Application in Testing Fase, please report your bugs!"""
+
+def end_message():
+	print ('''\033[1;36m
+		Thanks for choosing us, we hope you have been helpful.
+		The KernelPanicBlog Team. 
+		Our web: http://kernelpanicblog.wordpress.com\033[1;m ''')
+
+def help():
+	print ('''				|\033[1;36mHelp\033[1;m|
+			You can write 3 commands and do a shortcut:
+			back -> command for return to the previous option
+			gohome -> command for return to the main menu script
+			exit -> program exit
+			Ctrl+C -> shortcut to finish the script execution
+			''')
+
 
 if __name__ == "__main__":
     main()
