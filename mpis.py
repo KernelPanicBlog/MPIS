@@ -45,36 +45,36 @@ def main():
 					update = raw_input("\033[1;32mWhat you want to do?> \033[1;m")
 					if update == "1":
 					    print ("Installing keys...")
-					    cmd1 = os.system("sudo pacman -S archlinux-keyring manjaro-keyring")
-					    cmd2 = os.system("sudo pacman-keys --init")
-					    cmd3 = os.system("sudo pacman-keys --populate archlinux manjaro")
+					    os.system("sudo pacman -S archlinux-keyring manjaro-keyring")
+					    os.system("sudo pacman-keys --init")
+					    os.system("sudo pacman-keys --populate archlinux manjaro")
 					    print ("Keys instaled")
 					    print ("Updating Mirrors...")
-					    cmd4 = os.system("sudo pacman-mirrors -g")
+					    os.system("sudo pacman-mirrors -g")
 					    print ("Mirrors Updated")
 					    raw_input('Task Finished. Press Enter to continue')
 					elif update == "2":
-						cmd = os.system("sudo pacman -Syy")
+						os.system("sudo pacman -Syy")
 						raw_input('Task Finished. Press Enter to continue')
 					elif update == "3":
-						cmd = os.system("yaourt -Syy")
+						os.system("yaourt -Syy")
 						raw_input('Task Finished. Press Enter to continue')
 					elif update == "4":
 						print ("Do you want refresh mirrors in the full system update?")
 						opupdate = raw_input("1) Yes 2) No > ")
 						if opupdate == "1":
-							cmd = os.system("sudo rm -f /var/lib/pacman/db.lck && sudo pacman-mirrors -g && sudo pacman -Syyuu  && sudo pacman -Suu")
+							os.system("sudo rm -f /var/lib/pacman/db.lck && sudo pacman-mirrors -g && sudo pacman -Syyuu  && sudo pacman -Suu")
 						elif opupdate == "2":
-							cmd = os.system("sudo rm -f /var/lib/pacman/db.lck && sudo pacman -Syyuu  && sudo pacman -Suu")
+							os.system("sudo rm -f /var/lib/pacman/db.lck && sudo pacman -Syyuu  && sudo pacman -Suu")
 						else:
 							print ("\033[1;31mSorry, invalid command!\033[1;m")
 						raw_input('Task Finished. Press Enter to continue')
 					elif update == "5":
 					    print ("Cleaning caché...")
-					    cmd = os.system("sudo pacman -Sc && sudo pacman -Scc")
+					    os.system("sudo pacman -Sc && sudo pacman -Scc")
 					    print ("Cache cleared")
 					    print ("Cleaning orphan packages...")
-					    cmd = os.system("sudo pacman -Rsn && yaourt -Rsn ")
+					    os.system("sudo pacman -Rsn && yaourt -Rsn ")
 					    print ("Orphan packages cleared")
 					    raw_input('Task Finished. Press Enter to continue')
 					elif update == "6":
@@ -87,7 +87,7 @@ def main():
 						clear()
 						main_menu()
 					elif update == "exit":
-						cmdexit = sys.exit(0)
+						sys.exit(0)
 					else:
 						print ("\033[1;31mSorry, invalid command!\033[1;m") 					
 				
@@ -119,17 +119,17 @@ def main():
 						''')
 						ofimatic = raw_input("\033[1;32mWhat you want to do?> \033[1;m")
 						if ofimatic == "1":
-							cmd = os.system("sudo pacman -S libreoffice-still")
+							os.system("sudo pacman -S libreoffice-still")
 							raw_input('Task Finished. Press Enter to continue')
 						elif ofimatic == "2":
-							cmd = os.system("sudo pacman -S openoffice")
+							os.system("sudo pacman -S openoffice")
 							raw_input('Task Finished. Press Enter to continue')
 						elif ofimatic == "3":
 							print ("This application is on the AUR repository (community). It will be install at your own risk.")
-							cmd = os.system("yaourt -S wps-office")
+							os.system("yaourt -S wps-office")
 							raw_input('Task Finished. Press Enter to continue')
 						elif ofimatic == "4":
-							cmd = os.system("sudo pacman -S calligra")
+							os.system("sudo pacman -S calligra")
 							raw_input('Task Finished. Press Enter to continue')
 						elif ofimatic == "back" or ofimatic == "5":
 							clear()
@@ -138,7 +138,7 @@ def main():
 							clear()
 							main_menu()
 						elif ofimatic == "exit":
-							cmdexit = sys.exit(0)
+							sys.exit(0)
 						else:
 							print ("\033[1;31mSorry, invalid command!\033[1;m")
 							
@@ -169,57 +169,57 @@ def main():
 						''')
 						multimedia = raw_input("\033[1;32mWhat you want to do?> \033[1;m")
 						if multimedia == "1":
-							cmd = os.system("sudo pacman -S vlc")
+							os.system("sudo pacman -S vlc")
 							raw_input('Task Finished. Press Enter to continue')
 						elif multimedia == "2":
 							print ("This application is on the AUR repository (community). It will be install at your own risk.")
-							cmd = os.system("yaourt -S vokoscreen")
+							os.system("yaourt -S vokoscreen")
 							raw_input('Task Finished. Press Enter to continue')
 						elif multimedia == "3":
-							cmd = os.system("sudo pacman -S audacity")
+							os.system("sudo pacman -S audacity")
 							raw_input('Task Finished. Press Enter to continue')
 						elif multimedia == "4":
-							cmd = os.system("sudo pacman -S openshot")
+							os.system("sudo pacman -S openshot")
 							raw_input('Task Finished. Press Enter to continue')
 						elif multimedia == "5":
-							cmd = os.system("sudo pacman -S audacious")
+							os.system("sudo pacman -S audacious")
 							raw_input('Task Finished. Press Enter to continue')
 						elif multimedia == "6":
-							cmd = os.system("sudo pacman -S smtube")
+							os.system("sudo pacman -S smtube")
 							raw_input('Task Finished. Press Enter to continue')
 						elif multimedia == "7":
-							cmd = os.system("sudo pacman -S moc")
+							os.system("sudo pacman -S moc")
 							raw_input('Task Finished. Press Enter to continue')
 						elif multimedia == "8":
-							cmd = os.system("sudo pacman -S handbrake")
+							os.system("sudo pacman -S handbrake")
 							raw_input('Task Finished. Press Enter to continue')
 						elif multimedia == "9":
-							cmd = os.system("sudo pacman -S sound-juicer")
+							os.system("sudo pacman -S sound-juicer")
 							raw_input('Task Finished. Press Enter to continue')
 						elif multimedia == "10":
-							cmd = os.system("sudo pacman -S clipgrab")
+							os.system("sudo pacman -S clipgrab")
 							raw_input('Task Finished. Press Enter to continue')
 						elif multimedia == "11":
-							cmd = os.system("sudo pacman -S mumble")
+							os.system("sudo pacman -S mumble")
 							raw_input('Task Finished. Press Enter to continue')
 						elif multimedia == "12":
-							cmd = os.system("sudo pacman -S kodi")
+							os.system("sudo pacman -S kodi")
 							raw_input('Task Finished. Press Enter to continue')
 						elif multimedia == "13":
-							cmd = os.system("sudo pacman -S soundconverter")
+							os.system("sudo pacman -S soundconverter")
 							raw_input('Task Finished. Press Enter to continue')				
 						elif multimedia == "14":
-							cmd = os.system("sudo pacman -S soundkonverter")
+							os.system("sudo pacman -S soundkonverter")
 							raw_input('Task Finished. Press Enter to continue')
 						elif multimedia == "15":
-							cmd = os.system("sudo pacman -S youtube-dl")
+							os.system("sudo pacman -S youtube-dl")
 							raw_input('Task Finished. Press Enter to continue')
 						elif multimedia == "16":
-							cmd = os.system("sudo pacman -S mpv")
+							os.system("sudo pacman -S mpv")
 							raw_input('Task Finished. Press Enter to continue')
 						elif multimedia == "17":
 							print ("This application is on the AUR repository (community). It will be install at your own risk.")
-							cmd = os.system("yaourt -S simplescreenrecorder")
+							os.system("yaourt -S simplescreenrecorder")
 							raw_input('Task Finished. Press Enter to continue')
 						elif multimedia == "back" or multimedia == "18":
 							clear()
@@ -228,7 +228,7 @@ def main():
 							clear()
 							main_menu()
 						elif multimedia == "exit":
-							cmdexit = sys.exit(0)
+							sys.exit(0)
 						else:
 							print ("\033[1;31mSorry, invalid command!\033[1;m")
 					
@@ -250,30 +250,30 @@ def main():
 						''')
 						development = raw_input("\033[1;32mWhat you want to do??> \033[1;m")
 						if development == "1":
-							cmd = os.system("sudo pacman -S geany")
+							os.system("sudo pacman -S geany")
 						elif development == "2":
 							print ("This application is on the AUR repository (community). It will be install at your own risk.")
-							cmd = os.system("yaourt -S sublime-text")
+							os.system("yaourt -S sublime-text")
 							raw_input('Task Finished. Press Enter to continue')
 						elif development == "3":
 							print ("This application is on the AUR repository (community). It will be install at your own risk.")
-							cmd = os.system("yaourt -S sublime-text-dev")
+							os.system("yaourt -S sublime-text-dev")
 							raw_input('Task Finished. Press Enter to continue')
 						elif development == "4":
-							cmd = os.system("sudo pacman -S gedit")
+							os.system("sudo pacman -S gedit")
 							raw_input('Task Finished. Press Enter to continue')
 						elif development == "5":
-							cmd = os.system("sudo pacman -S eclipse")
+							os.system("sudo pacman -S eclipse")
 							raw_input('Task Finished. Press Enter to continue')
 						elif development == "6":
 							print ("This application is on the AUR repository (community). It will be install at your own risk.")
-							cmd = os.system("yaourt -S android-studio")
+							os.system("yaourt -S android-studio")
 							raw_input('Task Finished. Press Enter to continue')
 						elif development == "7":
-							cmd = os.system("sudo pacman -S qtcreator")
+							os.system("sudo pacman -S qtcreator")
 							raw_input('Task Finished. Press Enter to continue')
 						elif development == "8":
-							cmd = os.system("sudo pacman -S ninja-ide")
+							os.system("sudo pacman -S ninja-ide")
 							raw_input('Task Finished. Press Enter to continue')
 						elif development == "back" or development == "9":
 							clear()
@@ -282,7 +282,7 @@ def main():
 							clear()
 							main_menu()
 						elif development == "exit":
-							cmdexit = sys.exit(0)
+							sys.exit(0)
 						else:
 							print ("\033[1;31mSorry, invalid command!\033[1;m")
 					
@@ -304,44 +304,44 @@ def main():
 						''')
 						internet = raw_input("\033[1;32mWhat you want to do?> \033[1;m")
 						if internet == "1":
-							cmd = os.system("sudo pacman -S firefox")
+							os.system("sudo pacman -S firefox")
 							raw_input('Task Finished. Press Enter to continue')
 						elif internet == "2":
 							print ("This application is on the AUR repository (community). It will be install at your own risk.")
-							cmd = os.system("yaourt -S google-chrome")
+							os.system("yaourt -S google-chrome")
 							raw_input('Task Finished. Press Enter to continue')
 						elif internet == "3":
 							print ("This application is on the AUR repository (community). It will be install at your own risk.")
-							cmd = os.system("yaourt -S vivaldi")
+							os.system("yaourt -S vivaldi")
 							raw_input('Task Finished. Press Enter to continue')
 						elif internet == "4":
 							print ("This application is on the AUR repository (community). It will be install at your own risk.")
 							print ("What is your architecture?:")
 							optele = raw_input("1) 32 Bits 2) 64 Bits > ")
 							if optele == "1":
-								optele32_1 = os.system("wget -c https://tdesktop.com/linux32")
-								optele32_2 = os.system("tar xvf linux32")
-								optele32_3 = os.system("sudo mv Telegram /opt/telegram")
-								optele32_4 = os.system("./opt/telegram/Telegram")
+								os.system("wget -c https://tdesktop.com/linux32")
+								os.system("tar xvf linux32")
+								os.system("sudo mv Telegram /opt/telegram")
+								os.system("./opt/telegram/Telegram")
 							elif optele == "2":
-								optele32_1 = os.system("wget -c https://tdesktop.com/linux")
-								optele32_2 = os.system("tar xvf linux")
-								optele32_3 = os.system("sudo mv Telegram /opt/telegram")
-								optele32_4 = os.system("./opt/telegram/Telegram")
+								os.system("wget -c https://tdesktop.com/linux")
+								os.system("tar xvf linux")
+								os.system("sudo mv Telegram /opt/telegram")
+								os.system("./opt/telegram/Telegram")
 							else:
 								print ("\033[1;31mSorry, invalid command!\033[1;m")
 							raw_input('Task Finished. You have tu close Telegram to continue. Press Enter to continue')
 						elif internet == "5":
-							cmd = os.system("sudo pacman -S filezilla")
+							os.system("sudo pacman -S filezilla")
 							raw_input('Task Finished. Press Enter to continue')
 						elif internet == "6":
-							cmd = os.system("sudo pacman -S chromium")
+							os.system("sudo pacman -S chromium")
 							raw_input('Task Finished. Press Enter to continue')
 						elif internet == "7":
-							cmd = os.system("sudo pacman -S qbittorrent")
+							os.system("sudo pacman -S qbittorrent")
 							raw_input('Task Finished. Press Enter to continue')
 						elif internet == "8":
-							cmd = os.system("sudo pacman -S uget")
+							os.system("sudo pacman -S uget")
 							raw_input('Task Finished. Press Enter to continue')
 						elif internet == "back" or internet == "9":
 							clear()
@@ -350,7 +350,7 @@ def main():
 							clear()
 							main_menu()
 						elif internet == "exit":
-							cmdexit = sys.exit(0)
+							sys.exit(0)
 						else:
 							print ("\033[1;31mSorry, invalid command!\033[1;m")
 					
@@ -367,16 +367,16 @@ def main():
 						''')
 						games = raw_input("\033[1;32mWhat you want to do?> \033[1;m")
 						if games == "1":
-							cmd = os.system("sudo pacman -S steam")
+							os.system("sudo pacman -S steam")
 							raw_input('Task Finished. Press Enter to continue')
 						elif games == "2":
-							cmd = os.system("sudo pacman -S vbam-gtk")
+							os.system("sudo pacman -S vbam-gtk")
 							raw_input('Task Finished. Press Enter to continue')
 						elif games == "3":
-							cmd = os.system("sudo pacman snes9x-gtk")
+							os.system("sudo pacman snes9x-gtk")
 							raw_input('Task Finished. Press Enter to continue')
 						elif games == "4":
-							cmd = os.system("sudo pacman -S pcsxr")
+							os.system("sudo pacman -S pcsxr")
 							raw_input('Task Finished. Press Enter to continue')
 						elif games == "back" or games == "5":
 							clear()
@@ -385,7 +385,7 @@ def main():
 							clear()
 							main_menu()
 						elif games == "exit":
-							cmdexit = sys.exit(0)
+							sys.exit(0)
 						else:
 							print ("\033[1;31mSorry, invalid command!\033[1;m")
 					
@@ -421,19 +421,19 @@ def main():
 						''')
 						de_menu = raw_input("\033[1;32mWhat you want to do?> \033[1;m")
 						if de_menu == "1":
-							cmd = os.system("sudo pacman -S xfce4")
+							os.system("sudo pacman -S xfce4")
 							raw_input('Task Finished. Press Enter to continue')
 						elif de_menu == "2":
-							cmd = os.system("sudo pacman -S gnome-shell")
+							os.system("sudo pacman -S gnome-shell")
 							raw_input('Task Finished. Press Enter to continue')
 						elif de_menu == "3":
-							cmd = os.system("sudo pacman -S lxde")
+							os.system("sudo pacman -S lxde")
 							raw_input('Task Finished. Press Enter to continue')
 						elif de_menu == "4":
-							cmd = os.system("sudo pacman -S plasma5")
+							os.system("sudo pacman -S plasma5")
 							raw_input('Task Finished. Press Enter to continue')
 						elif de_menu == "5":
-							cmd = os.system("sudo pacman kde4")
+							os.system("sudo pacman kde4")
 							raw_input('Task Finished. Press Enter to continue')
 						elif de_menu == "back" or de_menu == "6":
 							clear()
@@ -442,7 +442,7 @@ def main():
 							clear()
 							main_menu()
 						elif de_menu == "exit":
-							cmdexit = sys.exit(0)
+							sys.exit(0)
 						else:
 							print ("\033[1;31mSorry, invalid command!\033[1;m")
 							
@@ -458,13 +458,13 @@ def main():
 						''')
 						wm_menu = raw_input("\033[1;32mWhat you want to do?> \033[1;m")
 						if wm_menu == "1":
-							cmd = os.system("sudo pacman -S i3-wm")
+							os.system("sudo pacman -S i3-wm")
 							raw_input('Task Finished. Press Enter to continue')
 						elif wm_menu == "2":
-							cmd = os.system("sudo pacman -S openbox")
+							os.system("sudo pacman -S openbox")
 							raw_input('Task Finished. Press Enter to continue')
 						elif wm_menu == "3":
-							cmd = os.system("sudo pacman -S fluxbox")
+							os.system("sudo pacman -S fluxbox")
 							raw_input('Task Finished. Press Enter to continue')
 						elif wm_menu == "back" or wm_menu == "4":
 							clear()
@@ -473,7 +473,7 @@ def main():
 							clear()
 							main_menu()
 						elif wm_menu == "exit":
-							cmdexit = sys.exit(0)
+							sys.exit(0)
 						else:
 							print ("\033[1;31mSorry, invalid command!\033[1;m")
 					
@@ -499,7 +499,7 @@ Thanks for choosing us, we hope you have been helpful.
 The KernelPanicBlog Team.
 Our web: http://kernelpanicblog.wordpress.com
 					''')
-					cmdexit = sys.exit(0)
+					sys.exit(0)
 		clear()
 		main_menu()
 	except KeyboardInterrupt:
