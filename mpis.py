@@ -58,7 +58,7 @@ def main():
 						cmd6 = os.system("yaourt -Syy")
 						raw_input('Task Finished. Press Enter to continue')
 					elif update == "4":
-						print ("You want refresh mirrors in the full system update?")
+						print ("Do you want refresh mirrors in the full system update?")
 						opupdate = raw_input("1) Yes 2) No > ")
 						if opupdate == "1":
 							cmd7 = os.system("sudo rm -f /var/lib/pacman/db.lck && sudo pacman-mirrors -g && sudo pacman -Syyuu  && sudo pacman -Suu")
