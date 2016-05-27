@@ -64,7 +64,7 @@ def main():
 						if os.system("yaourt -Syy") == 0:
 							raw_input('Task Finished. Press Enter to continue')
 						else:
-						raw_input('Task Finished with errors. Press Enter to continue')
+							raw_input('Task Finished with errors. Press Enter to continue')
 					elif update == "4":
 						print ("Do you want refresh mirrors in the full system update?")
 						opupdate = raw_input("1) Yes 2) No > ")
@@ -83,8 +83,8 @@ def main():
 					    	os.system("sudo pacman -Rsn && yaourt -Rsn ")
 					    	print ("Orphan packages cleared")
 					    	raw_input('Task Finished. Press Enter to continue')
-						else:
-						raw_input('Task Finished with errors. Press Enter to continue')
+					    else:
+					    	raw_input('Task Finished with errors. Press Enter to continue')
 
 					elif update == "6":
 						file = open('/etc/pacman.d/mirrorlist', 'r')
@@ -299,8 +299,11 @@ def main():
 						''')
 						development = raw_input("\033[1;32mWhat you want to do??> \033[1;m")
 						if development == "1":
-							os.system("sudo pacman -S geany")
-							elif development == "2":
+							if os.system("sudo pacman -S geany") == 0:
+								raw_input('Task Finished. Press Enter to continue')
+							else:
+								raw_input('Task Finished with errors. Press Enter to continue')
+						elif development == "2":
 							print ("This application is on the AUR repository (community). It will be install at your own risk.")
 							if os.system("yaourt -S sublime-text") == 0:
 								raw_input('Task Finished. Press Enter to continue')
