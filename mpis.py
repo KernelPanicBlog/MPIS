@@ -400,17 +400,25 @@ def main():
 								print ("\033[1;31mSorry, invalid command!\033[1;m")
 							raw_input('Task Finished. You have tu close Telegram to continue. Press Enter to continue')
 						elif internet == "5":
-							os.system("sudo pacman -S filezilla")
-							raw_input('Task Finished. Press Enter to continue')
+							if os.system("sudo pacman -S filezilla") == 0:
+								raw_input('Task Finished. Press Enter to continue')
+							else:
+								raw_input('Task Finished with errors. Press Enter to continue')
 						elif internet == "6":
-							os.system("sudo pacman -S chromium")
-							raw_input('Task Finished. Press Enter to continue')
+							if os.system("sudo pacman -S chromium") == 0:
+								raw_input('Task Finished. Press Enter to continue')
+							else:
+								raw_input('Task Finished with errors. Press Enter to continue')
 						elif internet == "7":
-							os.system("sudo pacman -S qbittorrent")
-							raw_input('Task Finished. Press Enter to continue')
+							if os.system("sudo pacman -S qbittorrent") == 0:
+								raw_input('Task Finished. Press Enter to continue')
+							else:
+								raw_input('Task Finished with errors. Press Enter to continue')
 						elif internet == "8":
-							os.system("sudo pacman -S uget")
-							raw_input('Task Finished. Press Enter to continue')
+							if os.system("sudo pacman -S uget") == 0:
+								raw_input('Task Finished. Press Enter to continue')
+							else:
+								raw_input('Task Finished with errors. Press Enter to continue')
 						elif internet == "back" or internet == "9":
 							clear()
 							main_menu()
@@ -435,22 +443,22 @@ def main():
 						''')
 						games = raw_input("\033[1;32mWhat you want to do?> \033[1;m")
 						if games == "1":
-							if os.system("sudo pacman -S steam") ==0:
+							if os.system("sudo pacman -S steam") == 0:
 								raw_input('Task Finished. Press Enter to continue')
 							else:
 								raw_input('Task Finished with errors. Press Enter to continue')
 						elif games == "2":
-							if os.system("sudo pacman -S vbam-gtk") ==0:
+							if os.system("sudo pacman -S vbam-gtk") == 0:
 								raw_input('Task Finished. Press Enter to continue')
 							else:
 								raw_input('Task Finished with errors. Press Enter to continue')
 						elif games == "3":
-							if os.system("sudo pacman snes9x-gtk") ==0:
+							if os.system("sudo pacman snes9x-gtk") == 0:
 								raw_input('Task Finished. Press Enter to continue')
 							else:
 								raw_input('Task Finished with errors. Press Enter to continue')
 						elif games == "4":
-							if os.system("sudo pacman -S pcsxr") ==0:
+							if os.system("sudo pacman -S pcsxr") == 0:
 								raw_input('Task Finished. Press Enter to continue')
 							else:
 								raw_input('Task Finished with errors. Press Enter to continue')
