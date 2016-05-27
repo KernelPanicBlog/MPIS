@@ -43,7 +43,6 @@ def main():
 6) See the content of mirrorlist file
 7) Back
 8) Go Home
-
 					''')
 					update = raw_input("\033[1;32mWhat you want to do?> \033[1;m")
 					if update == "1":
@@ -57,14 +56,15 @@ def main():
 					    print ("Mirrors Updated")
 					    raw_input('Task Finished. Press Enter to continue')
 					elif update == "2":
-						#os.system("sudo pacman -Syy")
 						if os.system("sudo pacman -Syy") == 0:
 							raw_input('Task Finished. Press Enter to continue')
 						else:
 							raw_input('Task Finished with errors. Press Enter to continue')
 					elif update == "3":
-						os.system("yaourt -Syy")
-						raw_input('Task Finished. Press Enter to continue')
+						if os.system("yaourt -Syy") == 0:
+							raw_input('Task Finished. Press Enter to continue')
+						else:
+						raw_input('Task Finished with errors. Press Enter to continue')
 					elif update == "4":
 						print ("Do you want refresh mirrors in the full system update?")
 						opupdate = raw_input("1) Yes 2) No > ")
@@ -77,12 +77,15 @@ def main():
 						raw_input('Task Finished. Press Enter to continue')
 					elif update == "5":
 					    print ("Cleaning caché...")
-					    os.system("sudo pacman -Sc && sudo pacman -Scc")
-					    print ("Cache cleared")
-					    print ("Cleaning orphan packages...")
-					    os.system("sudo pacman -Rsn && yaourt -Rsn ")
-					    print ("Orphan packages cleared")
-					    raw_input('Task Finished. Press Enter to continue')
+					    if os.system("sudo pacman -Sc && sudo pacman -Scc") == 0:
+					    	print ("Cache cleared")
+					    	print ("Cleaning orphan packages...")
+					    	os.system("sudo pacman -Rsn && yaourt -Rsn ")
+					    	print ("Orphan packages cleared")
+					    	raw_input('Task Finished. Press Enter to continue')
+						else:
+						raw_input('Task Finished with errors. Press Enter to continue')
+
 					elif update == "6":
 						file = open('/etc/pacman.d/mirrorlist', 'r')
 						print file.read()					
@@ -125,18 +128,26 @@ def main():
 						''')
 						ofimatic = raw_input("\033[1;32mWhat you want to do?> \033[1;m")
 						if ofimatic == "1":
-							os.system("sudo pacman -S libreoffice-still")
-							raw_input('Task Finished. Press Enter to continue')
+							if os.system("sudo pacman -S libreoffice-still") == 0:
+								raw_input('Task Finished. Press Enter to continue')
+							else:
+								raw_input('Task Finished with errors. Press Enter to continue')
 						elif ofimatic == "2":
-							os.system("sudo pacman -S openoffice")
-							raw_input('Task Finished. Press Enter to continue')
+							if os.system("sudo pacman -S openoffice") == 0:
+								raw_input('Task Finished. Press Enter to continue')
+							else:
+								raw_input('Task Finished with errors. Press Enter to continue')
 						elif ofimatic == "3":
 							print ("This application is on the AUR repository (community). It will be install at your own risk.")
-							os.system("yaourt -S wps-office")
-							raw_input('Task Finished. Press Enter to continue')
+							if os.system("yaourt -S wps-office") == 0:
+								raw_input('Task Finished. Press Enter to continue')
+							else:
+								raw_input('Task Finished with errors. Press Enter to continue')
 						elif ofimatic == "4":
-							os.system("sudo pacman -S calligra")
-							raw_input('Task Finished. Press Enter to continue')
+							if os.system("sudo pacman -S calligra") == 0:
+								raw_input('Task Finished. Press Enter to continue')
+							else:
+								raw_input('Task Finished with errors. Press Enter to continue')
 						elif ofimatic == "back" or ofimatic == "5":
 							clear()
 							main_menu()
@@ -171,62 +182,95 @@ def main():
 17) Install simplescreenrecorder
 18) Back
 19) Go Home
-
 						''')
 						multimedia = raw_input("\033[1;32mWhat you want to do?> \033[1;m")
 						if multimedia == "1":
-							os.system("sudo pacman -S vlc")
-							raw_input('Task Finished. Press Enter to continue')
+							if os.system("sudo pacman -S vlc") == 0:
+								raw_input('Task Finished. Press Enter to continue')
+							else:
+								raw_input('Task Finished with errors. Press Enter to continue')
 						elif multimedia == "2":
 							print ("This application is on the AUR repository (community). It will be install at your own risk.")
-							os.system("yaourt -S vokoscreen")
-							raw_input('Task Finished. Press Enter to continue')
+							if os.system("yaourt -S vokoscreen") == 0:
+								raw_input('Task Finished. Press Enter to continue')
+							else:
+								raw_input('Task Finished with errors. Press Enter to continue')
 						elif multimedia == "3":
-							os.system("sudo pacman -S audacity")
-							raw_input('Task Finished. Press Enter to continue')
+							if os.system("sudo pacman -S audacity") == 0:
+								raw_input('Task Finished. Press Enter to continue')
+							else:
+								raw_input('Task Finished with errors. Press Enter to continue')
 						elif multimedia == "4":
-							os.system("sudo pacman -S openshot")
-							raw_input('Task Finished. Press Enter to continue')
+							if os.system("sudo pacman -S openshot") == 0:
+								raw_input('Task Finished. Press Enter to continue')
+							else:
+								raw_input('Task Finished with errors. Press Enter to continue')
 						elif multimedia == "5":
-							os.system("sudo pacman -S audacious")
-							raw_input('Task Finished. Press Enter to continue')
+							if os.system("sudo pacman -S audacious") == 0:
+								raw_input('Task Finished. Press Enter to continue')
+							else:
+								raw_input('Task Finished with errors. Press Enter to continue')
 						elif multimedia == "6":
-							os.system("sudo pacman -S smtube")
-							raw_input('Task Finished. Press Enter to continue')
+							if os.system("sudo pacman -S smtube") == 0:
+								raw_input('Task Finished. Press Enter to continue')
+							else:
+								raw_input('Task Finished with errors. Press Enter to continue')
 						elif multimedia == "7":
-							os.system("sudo pacman -S moc")
-							raw_input('Task Finished. Press Enter to continue')
+							if os.system("sudo pacman -S moc") == 0:
+								raw_input('Task Finished. Press Enter to continue')
+							else:
+								raw_input('Task Finished with errors. Press Enter to continue')
 						elif multimedia == "8":
-							os.system("sudo pacman -S handbrake")
-							raw_input('Task Finished. Press Enter to continue')
+							if os.system("sudo pacman -S handbrake") == 0:
+								raw_input('Task Finished. Press Enter to continue')
+							else:
+								raw_input('Task Finished with errors. Press Enter to continue')
 						elif multimedia == "9":
-							os.system("sudo pacman -S sound-juicer")
-							raw_input('Task Finished. Press Enter to continue')
+							if os.system("sudo pacman -S sound-juicer") == 0:
+								raw_input('Task Finished. Press Enter to continue')
+							else:
+								raw_input('Task Finished with errors. Press Enter to continue')
 						elif multimedia == "10":
-							os.system("sudo pacman -S clipgrab")
-							raw_input('Task Finished. Press Enter to continue')
+							if os.system("sudo pacman -S clipgrab") == 0:
+								raw_input('Task Finished. Press Enter to continue')
+							else:
+								raw_input('Task Finished with errors. Press Enter to continue')
 						elif multimedia == "11":
-							os.system("sudo pacman -S mumble")
-							raw_input('Task Finished. Press Enter to continue')
+							if os.system("sudo pacman -S mumble") == 0:
+								raw_input('Task Finished. Press Enter to continue')
+							else:
+								raw_input('Task Finished with errors. Press Enter to continue')
 						elif multimedia == "12":
-							os.system("sudo pacman -S kodi")
-							raw_input('Task Finished. Press Enter to continue')
+							if os.system("sudo pacman -S kodi") == 0:
+								raw_input('Task Finished. Press Enter to continue')
+							else:
+								raw_input('Task Finished with errors. Press Enter to continue')
 						elif multimedia == "13":
-							os.system("sudo pacman -S soundconverter")
-							raw_input('Task Finished. Press Enter to continue')				
+							if os.system("sudo pacman -S soundconverter") == 0:
+								raw_input('Task Finished. Press Enter to continue')				
+							else:
+								raw_input('Task Finished with errors. Press Enter to continue')				
 						elif multimedia == "14":
-							os.system("sudo pacman -S soundkonverter")
-							raw_input('Task Finished. Press Enter to continue')
+							if os.system("sudo pacman -S soundkonverter") == 0:
+								raw_input('Task Finished. Press Enter to continue')
+							else:
+								raw_input('Task Finished with errors. Press Enter to continue')
 						elif multimedia == "15":
-							os.system("sudo pacman -S youtube-dl")
-							raw_input('Task Finished. Press Enter to continue')
+							if os.system("sudo pacman -S youtube-dl") == 0:
+								raw_input('Task Finished. Press Enter to continue')
+							else:
+								raw_input('Task Finished with errors. Press Enter to continue')
 						elif multimedia == "16":
-							os.system("sudo pacman -S mpv")
-							raw_input('Task Finished. Press Enter to continue')
+							if os.system("sudo pacman -S mpv") == 0:
+								raw_input('Task Finished. Press Enter to continue')
+							else:
+								raw_input('Task Finished with errors. Press Enter to continue')
 						elif multimedia == "17":
 							print ("This application is on the AUR repository (community). It will be install at your own risk.")
-							os.system("yaourt -S simplescreenrecorder")
-							raw_input('Task Finished. Press Enter to continue')
+							if os.system("yaourt -S simplescreenrecorder") == 0:
+								raw_input('Task Finished. Press Enter to continue')
+							else:
+								raw_input('Task Finished with errors. Press Enter to continue')
 						elif multimedia == "back" or multimedia == "18":
 							clear()
 							main_menu()
@@ -252,35 +296,48 @@ def main():
 8) Install NinjaIDE
 9) Back
 10) Go Home
-
 						''')
 						development = raw_input("\033[1;32mWhat you want to do??> \033[1;m")
 						if development == "1":
 							os.system("sudo pacman -S geany")
-						elif development == "2":
+							elif development == "2":
 							print ("This application is on the AUR repository (community). It will be install at your own risk.")
-							os.system("yaourt -S sublime-text")
-							raw_input('Task Finished. Press Enter to continue')
+							if os.system("yaourt -S sublime-text") == 0:
+								raw_input('Task Finished. Press Enter to continue')
+							else:
+								raw_input('Task Finished with errors. Press Enter to continue')
 						elif development == "3":
 							print ("This application is on the AUR repository (community). It will be install at your own risk.")
-							os.system("yaourt -S sublime-text-dev")
-							raw_input('Task Finished. Press Enter to continue')
+							if os.system("yaourt -S sublime-text-dev") == 0:
+								raw_input('Task Finished. Press Enter to continue')
+							else:
+								raw_input('Task Finished with errors. Press Enter to continue')
 						elif development == "4":
-							os.system("sudo pacman -S gedit")
-							raw_input('Task Finished. Press Enter to continue')
+							if os.system("sudo pacman -S gedit") == 0:
+								raw_input('Task Finished. Press Enter to continue')
+							else:
+								raw_input('Task Finished with errors. Press Enter to continue')
 						elif development == "5":
-							os.system("sudo pacman -S eclipse")
-							raw_input('Task Finished. Press Enter to continue')
+							if os.system("sudo pacman -S eclipse") == 0:
+								raw_input('Task Finished. Press Enter to continue')
+							else:
+									raw_input('Task Finished with errors. Press Enter to continue')
 						elif development == "6":
 							print ("This application is on the AUR repository (community). It will be install at your own risk.")
-							os.system("yaourt -S android-studio")
-							raw_input('Task Finished. Press Enter to continue')
+							if os.system("yaourt -S android-studio") == 0:
+								raw_input('Task Finished. Press Enter to continue')
+							else:
+									raw_input('Task Finished with errors. Press Enter to continue')
 						elif development == "7":
-							os.system("sudo pacman -S qtcreator")
-							raw_input('Task Finished. Press Enter to continue')
+							if os.system("sudo pacman -S qtcreator") == 0:
+								raw_input('Task Finished. Press Enter to continue')
+							else:
+									raw_input('Task Finished with errors. Press Enter to continue')
 						elif development == "8":
-							os.system("sudo pacman -S ninja-ide")
-							raw_input('Task Finished. Press Enter to continue')
+							if os.system("sudo pacman -S ninja-ide") == 0:
+								raw_input('Task Finished. Press Enter to continue')
+							else:
+									raw_input('Task Finished with errors. Press Enter to continue')
 						elif development == "back" or development == "9":
 							clear()
 							main_menu()
@@ -306,20 +363,25 @@ def main():
 8) Install UGet
 9) Back
 10) Go Home
-
 						''')
 						internet = raw_input("\033[1;32mWhat you want to do?> \033[1;m")
 						if internet == "1":
-							os.system("sudo pacman -S firefox")
-							raw_input('Task Finished. Press Enter to continue')
+							if os.system("sudo pacman -S firefox") == 0:
+								raw_input('Task Finished. Press Enter to continue')
+							else:
+								raw_input('Task Finished with errors. Press Enter to continue')
 						elif internet == "2":
 							print ("This application is on the AUR repository (community). It will be install at your own risk.")
-							os.system("yaourt -S google-chrome")
-							raw_input('Task Finished. Press Enter to continue')
+							if os.system("yaourt -S google-chrome") == 0:
+								raw_input('Task Finished. Press Enter to continue')
+							else:
+								raw_input('Task Finished with errors. Press Enter to continue')
 						elif internet == "3":
 							print ("This application is on the AUR repository (community). It will be install at your own risk.")
-							os.system("yaourt -S vivaldi")
-							raw_input('Task Finished. Press Enter to continue')
+							if os.system("yaourt -S vivaldi") == 0:
+								raw_input('Task Finished. Press Enter to continue')
+							else:
+								raw_input('Task Finished with errors. Press Enter to continue')
 						elif internet == "4":
 							print ("This application is on the AUR repository (community). It will be install at your own risk.")
 							print ("What is your architecture?:")
@@ -373,17 +435,25 @@ def main():
 						''')
 						games = raw_input("\033[1;32mWhat you want to do?> \033[1;m")
 						if games == "1":
-							os.system("sudo pacman -S steam")
-							raw_input('Task Finished. Press Enter to continue')
+							if os.system("sudo pacman -S steam") ==0:
+								raw_input('Task Finished. Press Enter to continue')
+							else:
+								raw_input('Task Finished with errors. Press Enter to continue')
 						elif games == "2":
-							os.system("sudo pacman -S vbam-gtk")
-							raw_input('Task Finished. Press Enter to continue')
+							if os.system("sudo pacman -S vbam-gtk") ==0:
+								raw_input('Task Finished. Press Enter to continue')
+							else:
+								raw_input('Task Finished with errors. Press Enter to continue')
 						elif games == "3":
-							os.system("sudo pacman snes9x-gtk")
-							raw_input('Task Finished. Press Enter to continue')
+							if os.system("sudo pacman snes9x-gtk") ==0:
+								raw_input('Task Finished. Press Enter to continue')
+							else:
+								raw_input('Task Finished with errors. Press Enter to continue')
 						elif games == "4":
-							os.system("sudo pacman -S pcsxr")
-							raw_input('Task Finished. Press Enter to continue')
+							if os.system("sudo pacman -S pcsxr") ==0:
+								raw_input('Task Finished. Press Enter to continue')
+							else:
+								raw_input('Task Finished with errors. Press Enter to continue')
 						elif games == "back" or games == "5":
 							clear()
 							main_menu()
@@ -427,20 +497,30 @@ def main():
 						''')
 						de_menu = raw_input("\033[1;32mWhat you want to do?> \033[1;m")
 						if de_menu == "1":
-							os.system("sudo pacman -S xfce4")
-							raw_input('Task Finished. Press Enter to continue')
+							if os.system("sudo pacman -S xfce4") == 0:
+								raw_input('Task Finished. Press Enter to continue')
+							else:
+								raw_input('Task Finished with errors. Press Enter to continue')
 						elif de_menu == "2":
-							os.system("sudo pacman -S gnome-shell")
-							raw_input('Task Finished. Press Enter to continue')
+							if os.system("sudo pacman -S gnome-shell") == 0:
+								raw_input('Task Finished. Press Enter to continue')
+							else:
+								raw_input('Task Finished with errors. Press Enter to continue')
 						elif de_menu == "3":
-							os.system("sudo pacman -S lxde")
-							raw_input('Task Finished. Press Enter to continue')
+							if os.system("sudo pacman -S lxde") == 0:
+								raw_input('Task Finished. Press Enter to continue')
+							else:
+								raw_input('Task Finished with errors. Press Enter to continue')
 						elif de_menu == "4":
-							os.system("sudo pacman -S plasma5")
-							raw_input('Task Finished. Press Enter to continue')
+							if os.system("sudo pacman -S plasma5") == 0:
+								raw_input('Task Finished. Press Enter to continue')
+							else:
+								raw_input('Task Finished with errors. Press Enter to continue')
 						elif de_menu == "5":
-							os.system("sudo pacman kde4")
-							raw_input('Task Finished. Press Enter to continue')
+							if os.system("sudo pacman kde4") == 0:
+								raw_input('Task Finished. Press Enter to continue')
+							else:
+								raw_input('Task Finished with errors. Press Enter to continue')
 						elif de_menu == "back" or de_menu == "6":
 							clear()
 							main_menu()
@@ -464,14 +544,20 @@ def main():
 						''')
 						wm_menu = raw_input("\033[1;32mWhat you want to do?> \033[1;m")
 						if wm_menu == "1":
-							os.system("sudo pacman -S i3-wm")
-							raw_input('Task Finished. Press Enter to continue')
+							if os.system("sudo pacman -S i3-wm") == 0:
+								raw_input('Task Finished. Press Enter to continue')
+							else:
+								raw_input('Task Finished with errors. Press Enter to continue')
 						elif wm_menu == "2":
-							os.system("sudo pacman -S openbox")
-							raw_input('Task Finished. Press Enter to continue')
+							if os.system("sudo pacman -S openbox") == 0:
+								raw_input('Task Finished. Press Enter to continue')
+							else:
+								raw_input('Task Finished with errors. Press Enter to continue')
 						elif wm_menu == "3":
-							os.system("sudo pacman -S fluxbox")
-							raw_input('Task Finished. Press Enter to continue')
+							if os.system("sudo pacman -S fluxbox") == 0:
+								raw_input('Task Finished. Press Enter to continue')
+							else:
+								raw_input('Task Finished with errors. Press Enter to continue')
 						elif wm_menu == "back" or wm_menu == "4":
 							clear()
 							main_menu()
