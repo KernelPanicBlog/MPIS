@@ -32,7 +32,7 @@ If you find a bug o and error please report it as an [ISSUE](https://github.com/
 
 You can contact us thru:
 
-Telegram Manjaro Group (in spanish):  @[ManjaroEs](https://telegram.me/manjarolinuxes)
+Telegram Manjaro Group (in spanish):  @[ManjaroLinuxEs](https://telegram.me/manjarolinuxes)
 
 Twitter: @[KernelPanicBlog](https://twitter.com/KernelPanicBlog)
 
