@@ -13,7 +13,7 @@ Registra el ISSUE: https://github.com/KernelPanicBlog/Script-Post-instalacion/is
 
 Tienes alguna sugerencia no dudes en hacerla, nos puedes encontrar en:
 
-Grupo comunitario en Telegram:  @[ManjaroEs](https://telegram.me/manjarolinuxes)
+Grupo comunitario en Telegram:  @[ManjaroLinuxEs](https://telegram.me/manjarolinuxes)
 
 Twitter: @[KernelPanicBlog](https://twitter.com/KernelPanicBlog)
 
