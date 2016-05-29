@@ -1,4 +1,4 @@
-# Script Post instalacion para Manjaro Linux
+# Script Post instalacion para Manjaro Linux (MPIS)
 
 Permitira configurar un sistema base, con las aplicaciones necesarias para un trabajo del dia a dia, pensada para desarrolladores, gamers, musicos y mas...
 
@@ -21,3 +21,21 @@ Facebook: @[KernelPanicBlog](https://www.facebook.com/pages/Kernel-Panic-Blog/)
 
 Sitio web:[kernelpanicblog.wordpress.com](https://kernelpanicblog.wordpress.com/)
 
+# Manjaro Linux Script Post Instalation (MPIS)
+
+This script allows to configure the system, install some applications for a regular work day thinked in developers, gamers, musicians and more...
+
+# ATENTTION
+This script is in Testing Fase and we don't responsable for the use.
+
+If you find a bug o and error please report it as an [ISSUE](https://github.com/KernelPanicBlog/Script-Post-instalacion/issues/).
+
+You can contact us thru:
+
+Telegram Manjaro Group (in spanish):  @[ManjaroEs](https://telegram.me/manjarolinuxes)
+
+Twitter: @[KernelPanicBlog](https://twitter.com/KernelPanicBlog)
+
+Facebook: @[KernelPanicBlog](https://www.facebook.com/pages/Kernel-Panic-Blog/)
+
+Web Site:[kernelpanicblog.wordpress.com](https://kernelpanicblog.wordpress.com/)

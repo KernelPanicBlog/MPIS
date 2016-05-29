@@ -180,8 +180,10 @@ def main():
 15) Install Youtube-dl
 16) Install mpv
 17) Install simplescreenrecorder
-18) Back
-19) Go Home
+18) Install OBS Studio
+19) Install Totem
+20) Back
+21) Go Home
 						''')
 						multimedia = raw_input("\033[1;32mWhat you want to do?> \033[1;m")
 						if multimedia == "1":
@@ -271,10 +273,20 @@ def main():
 								raw_input('Task Finished. Press Enter to continue')
 							else:
 								raw_input('Task Finished with errors. Press Enter to continue')
-						elif multimedia == "back" or multimedia == "18":
+						elif multimedia == "18":
+							if os.system("sudo pacman -S obs-studio"):
+								raw_input('Task Finished. Press Enter to continue')
+							else:
+								raw_input('Task Finished with errors. Press Enter to continue')
+						elif multimedia == "19":
+							if os.system("sudo pacman -S totem"):
+								raw_input('Task Finished. Press Enter to continue')
+							else:
+								raw_input('Task Finished with errors. Press Enter to continue')
+						elif multimedia == "back" or multimedia == "20":
 							clear()
 							main_menu()
-						elif multimedia == "gohome" or multimedia == "19":
+						elif multimedia == "gohome" or multimedia == "21":
 							clear()
 							main_menu()
 						elif multimedia == "exit":
