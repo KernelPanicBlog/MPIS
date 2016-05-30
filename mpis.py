@@ -407,11 +407,13 @@ def main():
 								os.system("wget -c https://tdesktop.com/linux32")
 								os.system("tar xvf linux32")
 								os.system("sudo mv Telegram /opt/telegram")
+								os.system("rm -r linux32")
 								os.system("./opt/telegram/Telegram")
 							elif optele == "2":
 								os.system("wget -c https://tdesktop.com/linux")
 								os.system("tar xvf linux")
 								os.system("sudo mv Telegram /opt/telegram")
+								os.system("rm -r linux")
 								os.system("./opt/telegram/Telegram")
 							else:
 								print ("\033[1;31mSorry, invalid command!\033[1;m")
@@ -600,7 +602,7 @@ def main():
 							else:
 								raw_input('Task Finished with errors. Press Enter to continue')
 						elif de_menu == "5":
-							if os.system("sudo pacman -S kde4") == 0:
+							if os.system("sudo pacman -S  kde4") == 0:
 								raw_input('Task Finished. Press Enter to continue')
 							else:
 								raw_input('Task Finished with errors. Press Enter to continue')
