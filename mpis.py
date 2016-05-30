@@ -533,7 +533,7 @@ def main():
 							else:
 								raw_input('Task Finished with errors. Press Enter to continue')
 						elif systools == "6":
-							if os.system("sudo pacman pamac") == 0:
+							if os.system("sudo pacman -S pamac") == 0:
 								raw_input('Task Finished. Press Enter to continue')
 							else:
 								raw_input('Task Finished with errors. Press Enter to continue')
@@ -600,7 +600,7 @@ def main():
 							else:
 								raw_input('Task Finished with errors. Press Enter to continue')
 						elif de_menu == "5":
-							if os.system("sudo pacman kde4") == 0:
+							if os.system("sudo pacman -S kde4") == 0:
 								raw_input('Task Finished. Press Enter to continue')
 							else:
 								raw_input('Task Finished with errors. Press Enter to continue')
