@@ -398,7 +398,7 @@ def main():
 							else:
 								raw_input('Task Finished with errors. Press Enter to continue')
 						elif internet == "4":
-							print ("This application is on the AUR repository (community). It will be install at your own risk.")
+							print ("This application will be installed from the Official Web Site.")
 							print ("What is your architecture?:")
 							optele = raw_input("1) 32 Bits 2) 64 Bits > ")
 							if optele == "1":
