@@ -28,7 +28,7 @@ This script allows to configure the system, install some applications for a regu
 # ATENTTION
 This script is in Testing Fase and we don't responsable for the use.
 
-If you find a bug o and error please report it as an [ISSUE](https://github.com/KernelPanicBlog/Script-Post-instalacion/issues/).
+If you find a bug or an error please report it as an [ISSUE](https://github.com/KernelPanicBlog/Script-Post-instalacion/issues/).
 
 You can contact us thru:
 
