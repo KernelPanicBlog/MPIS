@@ -47,13 +47,13 @@ def main():
 					update = raw_input("\033[1;32mWhat you want to do?> \033[1;m")
 					if update == "1":
 					    print ("Installing keys...")
-					    os.system("sudo pacman -S archlinux-keyring manjaro-keyring")
-					    os.system("sudo pacman-keys --init")
-					    os.system("sudo pacman-keys --populate archlinux manjaro")
-					    print ("Keys instaled")
+					    if os.system("sudo pacman -S archlinux-keyring manjaro-keyring") == 0:
+					    	if os.system("sudo pacman-keys --init") == 0:
+					    		if os.system("sudo pacman-keys --populate archlinux manjaro") == 0:
+					    			print ("Keys instaled")
 					    print ("Updating Mirrors...")
-					    os.system("sudo pacman-mirrors -g")
-					    print ("Mirrors Updated")
+					    if os.system("sudo pacman-mirrors -g") == 0:
+					    	print ("Mirrors Updated")
 					    raw_input('Task Finished. Press Enter to continue')
 					elif update == "2":
 						if os.system("sudo pacman -Syy") == 0:
@@ -79,13 +79,15 @@ def main():
 					    print ("Cleaning caché...")
 					    if os.system("sudo pacman -Sc && sudo pacman -Scc") == 0:
 					    	print ("Cache cleared")
-					    	print ("Cleaning orphan packages...")
-					    	os.system("sudo pacman -Rsn && yaourt -Rsn ")
+					    	raw_input('Task Finished. Press Enter to continue')
+					    else:
+					    	raw_input('Task Finished with errors. Press Enter to continue')
+					    print ("Cleaning orphan packages...")
+					    if os.system("sudo pacman -Rsn && yaourt -Rsn ") == 0:
 					    	print ("Orphan packages cleared")
 					    	raw_input('Task Finished. Press Enter to continue')
 					    else:
 					    	raw_input('Task Finished with errors. Press Enter to continue')
-
 					elif update == "6":
 						file = open('/etc/pacman.d/mirrorlist', 'r')
 						print file.read()					
@@ -336,23 +338,23 @@ def main():
 							if os.system("sudo pacman -S eclipse") == 0:
 								raw_input('Task Finished. Press Enter to continue')
 							else:
-									raw_input('Task Finished with errors. Press Enter to continue')
+								raw_input('Task Finished with errors. Press Enter to continue')
 						elif development == "6":
 							print ("This application is on the AUR repository (community). It will be install at your own risk.")
 							if os.system("yaourt -S android-studio") == 0:
 								raw_input('Task Finished. Press Enter to continue')
 							else:
-									raw_input('Task Finished with errors. Press Enter to continue')
+								raw_input('Task Finished with errors. Press Enter to continue')
 						elif development == "7":
 							if os.system("sudo pacman -S qtcreator") == 0:
 								raw_input('Task Finished. Press Enter to continue')
 							else:
-									raw_input('Task Finished with errors. Press Enter to continue')
+								raw_input('Task Finished with errors. Press Enter to continue')
 						elif development == "8":
 							if os.system("sudo pacman -S ninja-ide") == 0:
 								raw_input('Task Finished. Press Enter to continue')
 							else:
-									raw_input('Task Finished with errors. Press Enter to continue')
+								raw_input('Task Finished with errors. Press Enter to continue')
 						elif development == "back" or development == "9":
 							clear()
 							main_menu()
@@ -513,9 +515,9 @@ def main():
 								raw_input('Task Finished with errors. Press Enter to continue')
 						elif systools == "3":
 							if os.system("sudo pacman -S manjaro-settings-manager") == 0:
-								os.system("sudo pacman -S manjaro-settings-manager-kcm")
-								os.system("sudo pacman -S manjaro-settings-manager-knotifier")
-								raw_input('Task Finished. Press Enter to continue')
+								if os.system("sudo pacman -S manjaro-settings-manager-kcm") == 0:
+									if os.system("sudo pacman -S manjaro-settings-manager-knotifier") == 0:
+										raw_input('Task Finished. Press Enter to continue')
 							else:
 								raw_input('Task Finished with errors. Press Enter to continue')
 						elif systools == "4":
@@ -526,8 +528,8 @@ def main():
 								raw_input('Task Finished with errors. Press Enter to continue')
 						elif systools == "5":
 							if os.system("sudo pacman -S octopi") == 0:
-								os.system("sudo pacman -S octopi-notifier")
-								raw_input('Task Finished. Press Enter to continue')
+								if os.system("sudo pacman -S octopi-notifier") == 0:
+									raw_input('Task Finished. Press Enter to continue')
 							else:
 								raw_input('Task Finished with errors. Press Enter to continue')
 						elif systools == "6":
