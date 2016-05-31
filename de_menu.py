@@ -41,10 +41,10 @@ def de():
             raw_input('Task Finished with errors. Press Enter to continue')
     elif de_menu == "back" or de_menu == "6":
         mpis.clear()
-        main_menu()
+        mpis.main_menu()
     elif de_menu == "gohome" or de_menu == "7":
         mpis.clear()
-        main_menu()
+        mpis.main_menu()
     elif de_menu == "exit":
         sys.exit(0)
     else:

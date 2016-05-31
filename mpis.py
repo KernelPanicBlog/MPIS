@@ -32,7 +32,7 @@ def main():
 2) Install applications
 3) List applications installed (not functional yet)
 4) Uninstall applications (not functional yet)
-5) Install DEs & WMs 
+5) Install DEs & WMs
 6) Personalitation (not functional yet)
 7) Help
 8) Exit
@@ -82,7 +82,6 @@ def main():
 					if application_menu == "gohome" or application_menu == "8":
 						clear()
 						main_menu()
-
 				while main_menu1 == "5":
 					clear()
 					print ('''
@@ -105,7 +104,6 @@ def main():
     				if dewm_menu == "gohome" or dewm_menu == "4":
     					clear()
     					main_menu()
-
 					# Option Back and Go Home from Main Menu
 				if main_menu1 == "7":
 				    help()
