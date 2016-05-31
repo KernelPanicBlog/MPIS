@@ -24,58 +24,58 @@ def games():
 			raw_input('Task Finished. Press Enter to continue')
 		else:
 			raw_input('Task Finished with errors. Press Enter to continue')
-		elif games == "2":
-			if os.system("sudo pacman -S vbam-gtk") == 0:
-				raw_input('Task Finished. Press Enter to continue')
-			else:
-				raw_input('Task Finished with errors. Press Enter to continue')
-		elif games == "3":
-			if os.system("sudo pacman -S snes9x-gtk") == 0:
-				raw_input('Task Finished. Press Enter to continue')
-			else:
-				raw_input('Task Finished with errors. Press Enter to continue')
-		elif games == "4":
-			if os.system("sudo pacman -S pcsxr") == 0:
-				raw_input('Task Finished. Press Enter to continue')
-			else:
-				raw_input('Task Finished with errors. Press Enter to continue')
-		elif games == "5":
-			if os.system("sudo pacman -S pcsxr2") == 0:
-				raw_input('Task Finished. Press Enter to continue')
-			else:
-				raw_input('Task Finished with errors. Press Enter to continue')
-		elif games == "6":
-			if os.system("sudo pacman -S ppsspp") == 0:
-				raw_input('Task Finished. Press Enter to continue')
-			else:
-				raw_input('Task Finished with errors. Press Enter to continue')
-		elif games == "7":
-			if os.system("sudo pacman -S desmume") == 0:
-				raw_input('Task Finished. Press Enter to continue')
-			else:
-				raw_input('Task Finished with errors. Press Enter to continue')
-		elif games == "8":
-			if os.system("sudo pacman -S stella") == 0:
-				raw_input('Task Finished. Press Enter to continue')
-			else:
-				raw_input('Task Finished with errors. Press Enter to continue')
-		elif games == "9":
-			if os.system("sudo pacman -S fceux") == 0:
-				raw_input('Task Finished. Press Enter to continue')
-			else:
-				raw_input('Task Finished with errors. Press Enter to continue')
-		elif games == "10":
-			if os.system("sudo pacman -S yabause") == 0:
-				raw_input('Task Finished. Press Enter to continue')
-			else:
-				raw_input('Task Finished with errors. Press Enter to continue')
-		elif games == "back" or games == "11":
-			clear()
-			main_menu()
-		elif games == "gohome" or games == "12":
-			clear()
-			main_menu()
-		elif games == "exit":
-			sys.exit(0)
+	elif games == "2":
+		if os.system("sudo pacman -S vbam-gtk") == 0:
+			raw_input('Task Finished. Press Enter to continue')
 		else:
-			print ("\033[1;31mSorry, invalid command!\033[1;m")
+			raw_input('Task Finished with errors. Press Enter to continue')
+	elif games == "3":
+		if os.system("sudo pacman -S snes9x-gtk") == 0:
+			raw_input('Task Finished. Press Enter to continue')
+		else:
+			raw_input('Task Finished with errors. Press Enter to continue')
+	elif games == "4":
+		if os.system("sudo pacman -S pcsxr") == 0:
+			raw_input('Task Finished. Press Enter to continue')
+		else:
+			raw_input('Task Finished with errors. Press Enter to continue')
+	elif games == "5":
+		if os.system("sudo pacman -S pcsxr2") == 0:
+			raw_input('Task Finished. Press Enter to continue')
+		else:
+			raw_input('Task Finished with errors. Press Enter to continue')
+	elif games == "6":
+		if os.system("sudo pacman -S ppsspp") == 0:
+			raw_input('Task Finished. Press Enter to continue')
+		else:
+			raw_input('Task Finished with errors. Press Enter to continue')
+	elif games == "7":
+		if os.system("sudo pacman -S desmume") == 0:
+			raw_input('Task Finished. Press Enter to continue')
+		else:
+			raw_input('Task Finished with errors. Press Enter to continue')
+	elif games == "8":
+		if os.system("sudo pacman -S stella") == 0:
+			raw_input('Task Finished. Press Enter to continue')
+		else:
+			raw_input('Task Finished with errors. Press Enter to continue')
+	elif games == "9":
+		if os.system("sudo pacman -S fceux") == 0:
+			raw_input('Task Finished. Press Enter to continue')
+		else:
+			raw_input('Task Finished with errors. Press Enter to continue')
+	elif games == "10":
+		if os.system("sudo pacman -S yabause") == 0:
+			raw_input('Task Finished. Press Enter to continue')
+		else:
+			raw_input('Task Finished with errors. Press Enter to continue')
+	elif games == "back" or games == "11":
+		mpis.clear()
+		main_menu()
+	elif games == "gohome" or games == "12":
+		mpis.clear()
+		main_menu()
+	elif games == "exit":
+		sys.exit(0)
+	else:
+		print ("\033[1;31mSorry, invalid command!\033[1;m")

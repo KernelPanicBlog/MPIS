@@ -74,10 +74,10 @@ def internet():
 		else:
 			raw_input('Task Finished with errors. Press Enter to continue')
 	elif internet == "back" or internet == "9":
-		clear()
+		mpis.clear()
 		main_menu()
 	elif internet == "gohome" or internet == "10":
-		clear()
+		mpis.clear()
 		main_menu()
 	elif internet == "exit":
 		sys.exit(0)

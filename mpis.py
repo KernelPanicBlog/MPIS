@@ -14,7 +14,7 @@ import internet_menu
 import games_menu
 import wm_menu
 import de_menu
-import systools
+import systools_menu
 
 def main():
 	try:

@@ -50,12 +50,12 @@ def systools():
 		else:
 			raw_input('Task Finished with errors. Press Enter to continue')
 	elif systools == "back" or systools == "7":
-		clear()
+		mpis.clear()
 		main_menu()
 	elif systools == "gohome" or systools == "8":
-		clear()
+		mpis.clear()
 		main_menu()
-	elif games == "exit":
+	elif systools == "exit":
 		sys.exit(0)
 	else:
 		print ("\033[1;31mSorry, invalid command!\033[1;m")

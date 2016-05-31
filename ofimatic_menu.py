@@ -35,10 +35,10 @@ def ofimatic():
 		else:
 			raw_input('Task Finished with errors. Press Enter to continue')
 	elif ofimatic == "back" or ofimatic == "5":
-		clear()
+		mpis.clear()
 		main_menu()
 	elif ofimatic == "gohome" or ofimatic == "6":
-		clear()
+		mpis.clear()
 		main_menu()
 	elif ofimatic == "exit":
 		sys.exit(0)

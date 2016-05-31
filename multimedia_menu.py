@@ -33,105 +33,105 @@ def multimedia():
 			raw_input('Task Finished. Press Enter to continue')
 		else:
 			raw_input('Task Finished with errors. Press Enter to continue')
-		elif multimedia == "2":
-			print ("This application is on the AUR repository (community). It will be install at your own risk.")
-			if os.system("yaourt -S vokoscreen") == 0:
-				raw_input('Task Finished. Press Enter to continue')
-			else:
-				raw_input('Task Finished with errors. Press Enter to continue')
-		elif multimedia == "3":
-			if os.system("sudo pacman -S audacity") == 0:
-				raw_input('Task Finished. Press Enter to continue')
-			else:
-				raw_input('Task Finished with errors. Press Enter to continue')
-		elif multimedia == "4":
-			if os.system("sudo pacman -S openshot") == 0:
-				raw_input('Task Finished. Press Enter to continue')
-			else:
-				raw_input('Task Finished with errors. Press Enter to continue')
-		elif multimedia == "5":
-			if os.system("sudo pacman -S audacious") == 0:
-				raw_input('Task Finished. Press Enter to continue')
-			else:
-				raw_input('Task Finished with errors. Press Enter to continue')
-		elif multimedia == "6":
-			if os.system("sudo pacman -S smtube") == 0:
-				raw_input('Task Finished. Press Enter to continue')
-			else:
-				raw_input('Task Finished with errors. Press Enter to continue')
-		elif multimedia == "7":
-			if os.system("sudo pacman -S moc") == 0:
-				raw_input('Task Finished. Press Enter to continue')
-			else:
-				raw_input('Task Finished with errors. Press Enter to continue')
-		elif multimedia == "8":
-			if os.system("sudo pacman -S handbrake") == 0:
-				raw_input('Task Finished. Press Enter to continue')
-			else:
-				raw_input('Task Finished with errors. Press Enter to continue')
-		elif multimedia == "9":
-			if os.system("sudo pacman -S sound-juicer") == 0:
-				raw_input('Task Finished. Press Enter to continue')
-			else:
-				raw_input('Task Finished with errors. Press Enter to continue')
-			elif multimedia == "10":
-				if os.system("sudo pacman -S clipgrab") == 0:
-					raw_input('Task Finished. Press Enter to continue')
-				else:
-					raw_input('Task Finished with errors. Press Enter to continue')
-			elif multimedia == "11":
-				if os.system("sudo pacman -S mumble") == 0:
-					raw_input('Task Finished. Press Enter to continue')
-				else:
-					raw_input('Task Finished with errors. Press Enter to continue')
-			elif multimedia == "12":
-				if os.system("sudo pacman -S kodi") == 0:
-					raw_input('Task Finished. Press Enter to continue')
-				else:
-					raw_input('Task Finished with errors. Press Enter to continue')
-			elif multimedia == "13":
-				if os.system("sudo pacman -S soundconverter") == 0:
-					raw_input('Task Finished. Press Enter to continue')				
-				else:
-					raw_input('Task Finished with errors. Press Enter to continue')				
-			elif multimedia == "14":
-				if os.system("sudo pacman -S soundkonverter") == 0:
-					raw_input('Task Finished. Press Enter to continue')
-				else:
-					raw_input('Task Finished with errors. Press Enter to continue')
-			elif multimedia == "15":
-				if os.system("sudo pacman -S youtube-dl") == 0:
-					raw_input('Task Finished. Press Enter to continue')
-				else:
-					raw_input('Task Finished with errors. Press Enter to continue')
-			elif multimedia == "16":
-				if os.system("sudo pacman -S mpv") == 0:
-					raw_input('Task Finished. Press Enter to continue')
-				else:
-					raw_input('Task Finished with errors. Press Enter to continue')
-			elif multimedia == "17":
-				print ("This application is on the AUR repository (community). It will be install at your own risk.")
-				if os.system("yaourt -S simplescreenrecorder") == 0:
-					raw_input('Task Finished. Press Enter to continue')
-				else:
-					raw_input('Task Finished with errors. Press Enter to continue')
-			elif multimedia == "18":
-				if os.system("sudo pacman -S obs-studio"):
-					raw_input('Task Finished. Press Enter to continue')
-				else:
-					raw_input('Task Finished with errors. Press Enter to continue')
-			elif multimedia == "19":
-				if os.system("sudo pacman -S totem"):
-					raw_input('Task Finished. Press Enter to continue')
-				else:
-					raw_input('Task Finished with errors. Press Enter to continue')
-			elif multimedia == "back" or multimedia == "20":
-				clear()
-				main_menu()
-			elif multimedia == "gohome" or multimedia == "21":
-				clear()
-				main_menu()
-			elif multimedia == "exit":
-				sys.exit(0)
-			else:
-				print ("\033[1;31mSorry, invalid command!\033[1;m")
+	elif multimedia == "2":
+		print ("This application is on the AUR repository (community). It will be install at your own risk.")
+		if os.system("yaourt -S vokoscreen") == 0:
+			raw_input('Task Finished. Press Enter to continue')
+		else:
+			raw_input('Task Finished with errors. Press Enter to continue')
+	elif multimedia == "3":
+		if os.system("sudo pacman -S audacity") == 0:
+			raw_input('Task Finished. Press Enter to continue')
+		else:
+			raw_input('Task Finished with errors. Press Enter to continue')
+	elif multimedia == "4":
+		if os.system("sudo pacman -S openshot") == 0:
+			raw_input('Task Finished. Press Enter to continue')
+		else:
+			raw_input('Task Finished with errors. Press Enter to continue')
+	elif multimedia == "5":
+		if os.system("sudo pacman -S audacious") == 0:
+			raw_input('Task Finished. Press Enter to continue')
+		else:
+			raw_input('Task Finished with errors. Press Enter to continue')
+	elif multimedia == "6":
+		if os.system("sudo pacman -S smtube") == 0:
+			raw_input('Task Finished. Press Enter to continue')
+		else:
+			raw_input('Task Finished with errors. Press Enter to continue')
+	elif multimedia == "7":
+		if os.system("sudo pacman -S moc") == 0:
+			raw_input('Task Finished. Press Enter to continue')
+		else:
+			raw_input('Task Finished with errors. Press Enter to continue')
+	elif multimedia == "8":
+		if os.system("sudo pacman -S handbrake") == 0:
+			raw_input('Task Finished. Press Enter to continue')
+		else:
+			raw_input('Task Finished with errors. Press Enter to continue')
+	elif multimedia == "9":
+		if os.system("sudo pacman -S sound-juicer") == 0:
+			raw_input('Task Finished. Press Enter to continue')
+		else:
+			raw_input('Task Finished with errors. Press Enter to continue')
+	elif multimedia == "10":
+		if os.system("sudo pacman -S clipgrab") == 0:
+			raw_input('Task Finished. Press Enter to continue')
+		else:
+			raw_input('Task Finished with errors. Press Enter to continue')
+	elif multimedia == "11":
+		if os.system("sudo pacman -S mumble") == 0:
+			raw_input('Task Finished. Press Enter to continue')
+		else:
+			raw_input('Task Finished with errors. Press Enter to continue')
+	elif multimedia == "12":
+		if os.system("sudo pacman -S kodi") == 0:
+			raw_input('Task Finished. Press Enter to continue')
+		else:
+			raw_input('Task Finished with errors. Press Enter to continue')
+	elif multimedia == "13":
+		if os.system("sudo pacman -S soundconverter") == 0:
+			raw_input('Task Finished. Press Enter to continue')				
+		else:
+			raw_input('Task Finished with errors. Press Enter to continue')				
+	elif multimedia == "14":
+		if os.system("sudo pacman -S soundkonverter") == 0:
+			raw_input('Task Finished. Press Enter to continue')
+		else:
+			raw_input('Task Finished with errors. Press Enter to continue')
+	elif multimedia == "15":
+		if os.system("sudo pacman -S youtube-dl") == 0:
+			raw_input('Task Finished. Press Enter to continue')
+		else:
+			raw_input('Task Finished with errors. Press Enter to continue')
+	elif multimedia == "16":
+		if os.system("sudo pacman -S mpv") == 0:
+			raw_input('Task Finished. Press Enter to continue')
+		else:
+			raw_input('Task Finished with errors. Press Enter to continue')
+	elif multimedia == "17":
+		print ("This application is on the AUR repository (community). It will be install at your own risk.")
+		if os.system("yaourt -S simplescreenrecorder") == 0:
+			raw_input('Task Finished. Press Enter to continue')
+		else:
+			raw_input('Task Finished with errors. Press Enter to continue')
+	elif multimedia == "18":
+		if os.system("sudo pacman -S obs-studio"):
+			raw_input('Task Finished. Press Enter to continue')
+		else:
+			raw_input('Task Finished with errors. Press Enter to continue')
+	elif multimedia == "19":
+		if os.system("sudo pacman -S totem"):
+			raw_input('Task Finished. Press Enter to continue')
+		else:
+			raw_input('Task Finished with errors. Press Enter to continue')
+	elif multimedia == "back" or multimedia == "20":
+		mpis.clear()
+		main_menu()
+	elif multimedia == "gohome" or multimedia == "21":
+		mpis.clear()
+		main_menu()
+	elif multimedia == "exit":
+		sys.exit(0)
+	else:
+		print ("\033[1;31mSorry, invalid command!\033[1;m")

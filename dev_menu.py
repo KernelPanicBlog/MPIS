@@ -37,7 +37,7 @@ def development():
 	elif development == "4":
 		if os.system("sudo pacman -S gedit") == 0:
 			raw_input('Task Finished. Press Enter to continue')
-			else:
+		else:
 				raw_input('Task Finished with errors. Press Enter to continue')
 	elif development == "5":
 		if os.system("sudo pacman -S eclipse") == 0:
@@ -50,23 +50,23 @@ def development():
 			raw_input('Task Finished. Press Enter to continue')
 		else:
 			raw_input('Task Finished with errors. Press Enter to continue')
-		elif development == "7":
+	elif development == "7":
 			if os.system("sudo pacman -S qtcreator") == 0:
 				raw_input('Task Finished. Press Enter to continue')
 			else:
 				raw_input('Task Finished with errors. Press Enter to continue')
-		elif development == "8":
-			if os.system("sudo pacman -S ninja-ide") == 0:
-				raw_input('Task Finished. Press Enter to continue')
-			else:
-				raw_input('Task Finished with errors. Press Enter to continue')
-		elif development == "back" or development == "9":
-			clear()
-			main_menu()
-		elif development == "gohome" or development == "10":
-			clear()
-			main_menu()
-		elif development == "exit":
-			sys.exit(0)
+	elif development == "8":
+		if os.system("sudo pacman -S ninja-ide") == 0:
+			raw_input('Task Finished. Press Enter to continue')
 		else:
-			print ("\033[1;31mSorry, invalid command!\033[1;m")
+			raw_input('Task Finished with errors. Press Enter to continue')
+	elif development == "back" or development == "9":
+		mpis.clear()
+		main_menu()
+	elif development == "gohome" or development == "10":
+		mpis.clear()
+		main_menu()
+	elif development == "exit":
+		sys.exit(0)
+	else:
+		print ("\033[1;31mSorry, invalid command!\033[1;m")
