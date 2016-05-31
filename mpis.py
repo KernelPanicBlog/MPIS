@@ -6,7 +6,6 @@
 
 import os
 import sys, traceback
-import main_menu
 
 def main():
 	try:
@@ -531,12 +530,12 @@ def main():
 						clear()
 						print ('''
 |\033[1;36mSystem Tools\033[1;m|
-1) Terminator
-2) Manjaro Settings Manager (GTK)
-3) Manjaro Settings Manager (Plasma5)
-4) VirtualBox
-5) Octopi (Pacman GUI)
-6) Pamac (Pacman GUI)
+1) Install Terminator
+2) Install Manjaro Settings Manager (GTK)
+3) Install Manjaro Settings Manager (Plasma5)
+4) Install VirtualBox
+5) Install Octopi (Pacman GUI)
+6) Install Pamac (Pacman GUI)
 7) Back
 8) Go Home
 						''')
@@ -581,7 +580,7 @@ def main():
 						elif systools == "gohome" or systools == "8":
 							clear()
 							main_menu()
-						elif games == "exit":
+						elif systools == "exit":
 							sys.exit(0)
 						else:
 							print ("\033[1;31mSorry, invalid command!\033[1;m")
