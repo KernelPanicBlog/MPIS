@@ -6,6 +6,7 @@
 
 import os
 import sys, traceback
+import main_menu
 
 def main():
 	try:
@@ -28,11 +29,9 @@ def main():
 7) Help
 8) Exit
 ''')
-
 				main_menu1 = raw_input("\033[1;36mMPIS > \033[1;m")
 				clear()
 				while main_menu1 == "1":
-					
 					print ('''
 |\033[1;36mUpdate System\033[1;m|
 1) Refresh Mirrors and Keys
