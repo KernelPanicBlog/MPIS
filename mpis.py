@@ -29,9 +29,9 @@ def main():
 8) Exit
 ''')
 
-				update_menu = raw_input("\033[1;36mMPIS > \033[1;m")
+				main_menu1 = raw_input("\033[1;36mMPIS > \033[1;m")
 				clear()
-				while update_menu == "1":
+				while main_menu1 == "1":
 					
 					print ('''
 |\033[1;36mUpdate System\033[1;m|
@@ -102,7 +102,7 @@ def main():
 					else:
 						print ("\033[1;31mSorry, invalid command!\033[1;m") 					
 				
-				while update_menu == "2":
+				while main_menu1 == "2":
 					clear()
 					print ('''
 |\033[1;36mInstall Applications\033[1;m|
@@ -556,8 +556,73 @@ def main():
 					if application_menu == "gohome" or application_menu == "8":
 						clear()
 						main_menu()
+				
+				while main_menu1 == "4":
+					clear()
+					print ('''
+|\033[1;36mUninstall Applications\033[1;m|
+1) Uninstall LibreOffice                               11) Uninstall moc (Music Player form Terminal)
+2) Uninstall OpenOffice                                12) Uninstall Handbrake
+3) Uninstall WPS                                       13) Uninstall SoundJuicer
+4) Uninstall Calligra                                  14) Uninstall Clipgrab
+5) Uninstall VLC                                       15) Uninstall Mumble
+6) Uninstall Vokoscreen                                16) Uninstall KODI
+7) Uninstall Audacity                                  17) Uninstall SoundConverter (GTK)
+8) Uninstall OpenShot                                  18) Uninstall SoundKonverter (QT)
+9) Uninstall Audacious                                 19) Uninstall Youtube-dl
+10) Uninstall SMTube                                   20) Uninstall mpv
+21) Uninstall simplescreenrecorder                     31) Uninstall NinjaIDE
+22) Uninstall OBS Studio                               32) Uninstall Firefox
+23) Uninstall Totem                                    33) Uninstall Google Chrome
+24) Uninstall Geany                                    34) Uninstall Vivaldi
+25) Uninstall Sublime Text 2                           35) Uninstall Telegram Desktop
+26) Uninstall Sublime Text 3                           36) Uninstall Filezilla
+27) Uninstall Gedit                                    37) Uninstall Chromium
+28) Uninstall Eclipse                                  38) Uninstall qBittorrent
+29) Uninstall Android Studio                           39) Uninstall UGet
+30) Uninstall QtCreator                                40) Uninstall Steam
+41) Uninstall VisualBoyAdvance (Gameboy Advance)       51) Uninstall Gnome-Shell
+42) Uninstall Snes9x (Super Nintendo)                  52) Uninstall LXDE
+43) Uninstall Pcsxr (Play Station)                     53) Uninstall Plasma 5
+44) Uninstall Terminator                               54) Uninstall KDE
+45) Uninstall Manjaro Settings Manager (GTK)           55) Uninstall i3-wm
+46) Uninstall Manjaro Settings Manager (Plasma5)       56) Uninstall Openbox
+47) Uninstall VirtualBox                               57) Uninstall Fluxbox
+48) Uninstall Octopi (Pacman GUI)
+49) Uninstall Pamac (Pacman GUI)
+50) Uninstall XFCE
+########################################################
+#Falta terminar de armar los comandos de desinstalacion#
+########################################################
+					''')
+					removeapp = raw_input("\033[1;32mWhat you want to do?> \033[1;m")
+					if removeapp == "1":
+						if os.system("sudo pacman -Rsnd libreoffice-still") == 0:
+							raw_input('Task Finished. Press Enter to continue')
+						else:
+							raw_input('Task Finished with errors. Press Enter to continue')
+					if removeapp == "2":
+						if os.system("sudo pacman -Rsnd openoffice") == 0:
+							raw_input('Task Finished. Press Enter to continue')
+						else:
+							raw_input('Task Finished with errors. Press Enter to continue')
+					if removeapp == "3":
+						if os.system("yaourt -Rsnd wps-office") == 0:
+							raw_input('Task Finished. Press Enter to continue')
+						else:
+							raw_input('Task Finished with errors. Press Enter to continue')
+					if removeapp == "4":
+						if os.system("sudo pacman -Rsnd Calligra") == 0:
+							raw_input('Task Finished. Press Enter to continue')
+						else:
+							raw_input('Task Finished with errors. Press Enter to continue')
+					if removeapp == "5":
+						if os.system("sudo pacman -Rsnd vlc") == 0:
+							raw_input('Task Finished. Press Enter to continue')
+						else:
+							raw_input('Task Finished with errors. Press Enter to continue')
 
-				while update_menu == "5":
+				while main_menu1 == "5":
 					clear()
 					print ('''
 |\033[1;36mDEs & WMs Instalations\033[1;m|
@@ -661,11 +726,11 @@ def main():
 						clear()
 						main_menu()
 						
-				if update_menu == "7":
+				if main_menu1 == "7":
 				    help()
 				    raw_input('Press ENTER to continue...!')
 				    clear()
-				if update_menu == "8":
+				if main_menu1 == "8":
 					end_message()
 					sys.exit(0)
 		clear()
