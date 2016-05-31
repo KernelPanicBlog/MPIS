@@ -21,10 +21,10 @@ def main():
  |\033[1;36mMenú Principal\033[1;m|
 1) Update System
 2) Install applications
-3) List applications installed
-4) Uninstall applications
+3) List applications installed (not functional yet)
+4) Uninstall applications (not functional yet)
 5) Install DEs & WMs 
-6) Personalitation
+6) Personalitation (not functional yet)
 7) Help
 8) Exit
 ''')
