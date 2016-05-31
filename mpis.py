@@ -6,7 +6,8 @@
 
 import os
 import sys, traceback
-import main_menu
+import wm_menu
+import de_menu
 
 def main():
 	try:
@@ -605,97 +606,16 @@ def main():
 					dewm_menu = raw_input("\033[1;36mMPIS > \033[1;m")
 					while dewm_menu == "1":
 						clear()
-						print ('''
-|\033[1;36mDesktop Environments\033[1;m|
-1) Install XFCE
-2) Install Gnome-Shell
-3) Install LXDE
-4) Install Plasma 5
-5) Install KDE
-6) Back
-7) Go Home
-						''')
-						de_menu = raw_input("\033[1;32mWhat you want to do?> \033[1;m")
-						if de_menu == "1":
-							if os.system("sudo pacman -S xfce4") == 0:
-								raw_input('Task Finished. Press Enter to continue')
-							else:
-								raw_input('Task Finished with errors. Press Enter to continue')
-						elif de_menu == "2":
-							if os.system("sudo pacman -S gnome-shell") == 0:
-								raw_input('Task Finished. Press Enter to continue')
-							else:
-								raw_input('Task Finished with errors. Press Enter to continue')
-						elif de_menu == "3":
-							if os.system("sudo pacman -S lxde") == 0:
-								raw_input('Task Finished. Press Enter to continue')
-							else:
-								raw_input('Task Finished with errors. Press Enter to continue')
-						elif de_menu == "4":
-							if os.system("sudo pacman -S plasma5") == 0:
-								raw_input('Task Finished. Press Enter to continue')
-							else:
-								raw_input('Task Finished with errors. Press Enter to continue')
-						elif de_menu == "5":
-							if os.system("sudo pacman -S  kde4") == 0:
-								raw_input('Task Finished. Press Enter to continue')
-							else:
-								raw_input('Task Finished with errors. Press Enter to continue')
-						elif de_menu == "back" or de_menu == "6":
-							clear()
-							main_menu()
-						elif de_menu == "gohome" or de_menu == "7":
-							clear()
-							main_menu()
-						elif de_menu == "exit":
-							sys.exit(0)
-						else:
-							print ("\033[1;31mSorry, invalid command!\033[1;m")
-							
+						de_menu.de()
 					while dewm_menu == "2":
 						clear()
-						print ('''
-|\033[1;36mWindow Managers\033[1;m|
-1) Install i3-wm
-2) Install Openbox
-3) Install Fluxbox
-4) Back
-5) Go Home
-						''')
-						wm_menu = raw_input("\033[1;32mWhat you want to do?> \033[1;m")
-						if wm_menu == "1":
-							if os.system("sudo pacman -S i3-wm") == 0:
-								raw_input('Task Finished. Press Enter to continue')
-							else:
-								raw_input('Task Finished with errors. Press Enter to continue')
-						elif wm_menu == "2":
-							if os.system("sudo pacman -S openbox") == 0:
-								raw_input('Task Finished. Press Enter to continue')
-							else:
-								raw_input('Task Finished with errors. Press Enter to continue')
-						elif wm_menu == "3":
-							if os.system("sudo pacman -S fluxbox") == 0:
-								raw_input('Task Finished. Press Enter to continue')
-							else:
-								raw_input('Task Finished with errors. Press Enter to continue')
-						elif wm_menu == "back" or wm_menu == "4":
-							clear()
-							main_menu()
-						elif wm_menu == "gohome" or wm_menu == "5":
-							clear()
-							main_menu()
-						elif wm_menu == "exit":
-							sys.exit(0)
-						else:
-							print ("\033[1;31mSorry, invalid command!\033[1;m")
-					
-					if dewm_menu == "back" or dewm_menu == "3":
-						clear()
-						main_menu()
-					if dewm_menu == "gohome" or dewm_menu == "4":
-						clear()
-						main_menu()
-						
+						wm_menu.wm()
+    				if dewm_menu == "back" or dewm_menu == "3":
+    					clear()
+    					main_menu()
+    				if dewm_menu == "gohome" or dewm_menu == "4":
+    					clear()
+    					main_menu()
 				if main_menu1 == "7":
 				    help()
 				    raw_input('Press ENTER to continue...!')
