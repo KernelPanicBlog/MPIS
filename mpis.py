@@ -585,7 +585,8 @@ def main():
 							sys.exit(0)
 						else:
 							print ("\033[1;31mSorry, invalid command!\033[1;m")
-					
+							
+					#Opciones back y Go Home del menu de aplicaciones
 					if application_menu == "back" or application_menu == "7":
 						clear()
 						main_menu()
@@ -616,6 +617,8 @@ def main():
     				if dewm_menu == "gohome" or dewm_menu == "4":
     					clear()
     					main_menu()
+    					
+    			#Opciones Back y Go Home del Menu Principal
 				if main_menu1 == "7":
 				    help()
 				    raw_input('Press ENTER to continue...!')

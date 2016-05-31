@@ -28,10 +28,10 @@ def wm():
     		raw_input('Task Finished with errors. Press Enter to continue')
     elif wm_menu == "back" or wm_menu == "4":
     	mpis.clear()
-#    	mpis.main_menu()
+    	mpis.main_menu()
     elif wm_menu == "gohome" or wm_menu == "5":
     	mpis.clear()
-#    	mpis.main_menu()
+    	mpis.main_menu()
     elif wm_menu == "exit":
     	sys.exit(0)
     else:
