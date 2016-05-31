@@ -41,8 +41,7 @@ def main():
 				clear()
 				while main_menu1 == "1":
 					clear()
-					update_system()
-				
+					update_system_menu.update_system()
 				while main_menu1 == "2":
 					clear()
 					print ('''
@@ -60,16 +59,16 @@ def main():
 					
 					while application_menu == "1":
 						clear()
-						ofimatic_menu()
+						ofimatic_menu.ofimatic()
 					while application_menu == "2":
 						clear()
-						multimedia_menu()
+						multimedia_menu.multimedia()
 					while application_menu == "3":
 						clear()
-						dev_menu()
+						dev_menu.development()
 					while application_menu == "4":
 						clear()
-						internet_menu()
+						internet_menu.internet()
 					while application_menu == "5":
 						clear()
 						games_menu()
@@ -93,7 +92,6 @@ def main():
 3) Back
 4) Go Home
 					''')
-					
 					dewm_menu = raw_input("\033[1;36mMPIS > \033[1;m")
 					while dewm_menu == "1":
 						clear()
