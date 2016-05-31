@@ -530,6 +530,7 @@ def main():
 					while application_menu == "6":
 						clear()
 						print ('''
+|\033[1;36mSystem Tools\033[1;m|
 1) Terminator
 2) Manjaro Settings Manager (GTK)
 3) Manjaro Settings Manager (Plasma5)
@@ -584,7 +585,8 @@ def main():
 							sys.exit(0)
 						else:
 							print ("\033[1;31mSorry, invalid command!\033[1;m")
-					
+							
+					# Option Back and Go Home from Applications Menu
 					if application_menu == "back" or application_menu == "7":
 						clear()
 						main_menu()
@@ -688,7 +690,8 @@ def main():
 							sys.exit(0)
 						else:
 							print ("\033[1;31mSorry, invalid command!\033[1;m")
-					
+							
+					# Option Back and Go Home from Main Menu
 					if dewm_menu == "back" or dewm_menu == "3":
 						clear()
 						main_menu()
