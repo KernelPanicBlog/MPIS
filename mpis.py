@@ -71,10 +71,10 @@ def main():
 						internet_menu.internet()
 					while application_menu == "5":
 						clear()
-						games_menu()
+						games_menu.games()
 					while application_menu == "6":
 						clear()
-						systools()
+						systools_menu.systools()
 					# Option Back and Go Home from Applications Menu
 					if application_menu == "back" or application_menu == "7":
 						clear()
