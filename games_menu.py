@@ -9,14 +9,15 @@ def games():
 2) Install VisualBoyAdvance (Gameboy Advance)
 3) Install Snes9x (Super Nintendo)
 4) Install Pcsxr (Play Station)
-5) Install Pcsxr2 (Play Station 2)
+5) Install Pcsx2 (Play Station 2)
 6) Install PPSSPP (PSP)
 7) Install DeSmuME (Nintendo DS)
 8) Install Stella (Atari)
 9) Install Fceux
-10) Install Yabause
-11) Back
-12) Go Home
+10) Install Yabause(GTK)
+11) Install Yabause(QT)
+12) Back
+13) Go Home
 			''')
 	games = raw_input("\033[1;32mWhat you want to do?> \033[1;m")
 	if games == "1":
@@ -40,7 +41,7 @@ def games():
 		else:
 			raw_input('Task Finished with errors. Press Enter to continue')
 	elif games == "5":
-		if os.system("sudo pacman -S pcsxr2") == 0:
+		if os.system("sudo pacman -S pcsx2") == 0:
 			raw_input('Task Finished. Press Enter to continue')
 		else:
 			raw_input('Task Finished with errors. Press Enter to continue')
@@ -65,15 +66,20 @@ def games():
 		else:
 			raw_input('Task Finished with errors. Press Enter to continue')
 	elif games == "10":
-		if os.system("sudo pacman -S yabause") == 0:
+		if os.system("sudo pacman -S yabause-gtk") == 0:
 			raw_input('Task Finished. Press Enter to continue')
 		else:
 			raw_input('Task Finished with errors. Press Enter to continue')
-	elif games == "back" or games == "11":
-		mpis.clear()
+	elif games == "11":
+		if os.system("sudo pacman -S yabause-qt") == 0:
+			raw_input('Task Finished. Press Enter to continue')
+		else:
+			raw_input('Task Finished with errors. Press Enter to continue')
+	elif games == "back" or games == "12":
+		clear()
 		main_menu()
-	elif games == "gohome" or games == "12":
-		mpis.clear()
+	elif games == "gohome" or games == "13":
+		clear()
 		main_menu()
 	elif games == "exit":
 		sys.exit(0)
