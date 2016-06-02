@@ -404,13 +404,13 @@ def main():
 							if optele == "1":
 								os.system("wget -c https://tdesktop.com/linux32")
 								os.system("tar xvf linux32")
-								os.system("sudo mv -r /Telegram /opt/telegram")
+								os.system("sudo mv Telegram /opt/telegram")
 								os.system("rm -r linux32")
 								os.system("./opt/telegram/Telegram")
 							elif optele == "2":
 								os.system("wget -c https://tdesktop.com/linux")
 								os.system("tar xvf linux")
-								os.system("sudo mv -r /Telegram /opt/telegram")
+								os.system("sudo mv Telegram /opt/telegram")
 								os.system("rm -r linux")
 								os.system("./opt/telegram/Telegram")
 							else:
