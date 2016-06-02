@@ -406,13 +406,15 @@ def main():
 								os.system("tar xvf linux32")
 								os.system("sudo mv Telegram /opt/telegram")
 								os.system("rm -r linux32")
-								os.system("./opt/telegram/Telegram")
+								os.system("cd /opt/telegram")
+								os.system("./Telegram")
 							elif optele == "2":
 								os.system("wget -c https://tdesktop.com/linux")
 								os.system("tar xvf linux")
 								os.system("sudo mv Telegram /opt/telegram")
 								os.system("rm -r linux")
-								os.system("./opt/telegram/Telegram")
+								os.system("cd /opt/telegram")
+								os.system("./Telegram")
 							else:
 								print ("\033[1;31mSorry, invalid command!\033[1;m")
 							raw_input('Task Finished. You have tu close Telegram to continue. Press Enter to continue')
