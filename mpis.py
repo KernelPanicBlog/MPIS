@@ -410,7 +410,7 @@ def main():
 							elif optele == "2":
 								os.system("wget -c https://tdesktop.com/linux")
 								os.system("tar xvf linux")
-								os.system("sudo mv Telegram /opt/telegram")
+								os.system("sudo mv -r /Telegram /opt/telegram")
 								os.system("rm -r linux")
 								os.system("./opt/telegram/Telegram")
 							else:
