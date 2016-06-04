@@ -2,6 +2,8 @@
 
 Permitira configurar un sistema base, con las aplicaciones necesarias para un trabajo del dia a dia, pensada para desarrolladores, gamers, musicos y mas...
 
+Necesitas hacerlo funcionar con Python 2.x. 
+
 # ATENCION
 
 El Script se encuentra en fase de Testing no nos hacemos responsables por el uso que vayas a dar, esperamos tus comentarios e identificacion de fallas. 
@@ -24,6 +26,8 @@ Sitio web:[kernelpanicblog.wordpress.com](https://kernelpanicblog.wordpress.com/
 # Manjaro Linux Script Post Instalation (MPIS)
 
 This script allows to configure the system, install some applications for a regular work day thinked in developers, gamers, musicians and more...
+
+Only function with Python 2.x. 
 
 # ATENTTION
 This script is in Testing Fase and we don't responsable for the use.
