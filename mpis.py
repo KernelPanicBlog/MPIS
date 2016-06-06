@@ -417,6 +417,7 @@ def main():
                 DEs_WMs_input = raw_input("\033[1;36mMPIS > \033[1;m")
                 # menu Desktop Environments :completo: testiar
                 while DEs_WMs_input == "1":
+                    mpisw.clear()
                     print ('|\033[1;36mDesktop Environments\033[1;m|')
                     for i in mpisw.menu_DEs:
                         print ('\033[1;36m' + i[1] + '.- ' + i[0] + '\033[1;m')
@@ -434,6 +435,7 @@ def main():
                         sys.exit(0)
                 # menu Window Managers :completo: testiar
                 while DEs_WMs_input == "2":
+                    mpisw.clear()
                     print ('|\033[1;36mWindow Managers\033[1;m|')
                     for i in mpisw.menu_WMs:
                         print ('\033[1;36m' + i[1] + '.- ' + i[0] + '\033[1;m')
@@ -442,10 +444,10 @@ def main():
                     if a < 4:
                         mpisw.execute_command(mpisw.apps_WMs[a - 1][1])
                     # back menu
-                    elif WMs_input == "5":
+                    elif WMs_input == "4":
                         DEs_WMs_input = 0
                     # exit menu
-                    elif WMs_input == "6":
+                    elif WMs_input == "5":
                         mpisw.clear()
                         mpisw.end_message()
                         sys.exit(0)
