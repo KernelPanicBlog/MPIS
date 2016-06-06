@@ -156,7 +156,7 @@ class Mpis():
     888        888  888 888  888 888 Y88b.        888   d88P 888 Y88..88P Y88b 888
     888        "Y888888 888  888 888  "Y8888P     8888888P"  888  "Y88P"   "Y88888
                           Version 0.1a                                         888
-     \033[1;36mManjaro GNU/Linux Post Instalation Script\033[1;m  \033[1;m                         Y8b d88P
+     \033[1;36mManjaro GNU/Linux Post Installation Script\033[1;m \033[1;m                         Y8b d88P
      \033[1;32m  Author: SniferL4bs | www.sniferl4bs.com \033[1;m                         "Y88P"
      \033[1;32m  Author: NeoRanger  | www.neositelinux.com.ar \033[1;m
      \033[1;32m  Author: Harrinsoft |                         \033[1;m
@@ -185,7 +185,7 @@ def main():
             mpisw.help()
             raw_input("Press any key to continue ....")
             mpisw.clear()
-            print ('|\033[1;36mMenú Principal\033[1;m|')
+            print ('|\033[1;36m--Main Menu-- \033[1;m|')
             for i in mpisw.main_menu:
                 print ('\033[1;36m' + i[1] + '.- ' + i[0] + '\033[1;m')
             main_input = raw_input(mpisw.msgMpis)
@@ -230,7 +230,7 @@ def main():
                     else:
                         print ("\033[1;31mSorry, invalid command!\033[1;m")
                 elif update_input == "5":
-                    print ("Cleaning caché...")
+                    print ("Cleaning cache...")
                     mpisw.execute_command("sudo pacman -Sc && "
                                           "sudo pacman -Scc", "Cache cleared")
 
@@ -411,7 +411,7 @@ def main():
             # menu Install DEs & WMs :completo: testiar
             while main_input == "5":
                 mpisw.clear()
-                print ('|\033[1;36mDEs & WMs Instalations\033[1;m|')
+                print ('|\033[1;36mDEs & WMs Installations\033[1;m|')
                 for i in mpisw.menu_DEs_WMs:
                     print ('\033[1;36m' + i[1] + '.- ' + i[0] + '\033[1;m')
                 DEs_WMs_input = raw_input("\033[1;36mMPIS > \033[1;m")
