@@ -156,9 +156,10 @@ class Mpis():
     888        888  888 888  888 888 Y88b.        888   d88P 888 Y88..88P Y88b 888
     888        "Y888888 888  888 888  "Y8888P     8888888P"  888  "Y88P"   "Y88888
                           Version 0.1a                                         888
-     \033[1;36mManjaro GNU/Linux Script Post Instalation\033[1;m  \033[1;m                         Y8b d88P
+     \033[1;36mManjaro GNU/Linux Post Instalation Script\033[1;m  \033[1;m                         Y8b d88P
      \033[1;32m  Author: SniferL4bs | www.sniferl4bs.com \033[1;m                         "Y88P"
      \033[1;32m  Author: NeoRanger  | www.neositelinux.com.ar \033[1;m
+     \033[1;32m  Author: Harrinsoft |                         \033[1;m
      \033[1;32m  Colaborative Blog: | http://kernelpanicblog.wordpress.com \033[1;m
 
      Application in Testing Fase, please report your bugs!"""
@@ -202,7 +203,7 @@ def main():
                         if os.system("sudo pacman-keys --init") == 0:
                             if os.system("sudo pacman-keys --populate "
                                          "archlinux manjaro") == 0:
-                                print ("Keys instaled")
+                                print ("Keys Installed")
                     print ("Updating Mirrors...")
                     if os.system("sudo pacman-mirrors -g") == 0:
                         print ("Mirrors Updated")
