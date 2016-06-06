@@ -18,11 +18,16 @@ class Mpis():
         self.menu_Internet = []
         self.menu_Games = []
         self.menu_Sys_Tools = []
+        self.menu_DEs_WMs = []
+        self.menu_DEs = []
+        self.menu_WMs = []
         self.apps_ofimatic= []
         self.apps_multimedia = []
         self.apps_development = []
         self.apps_internet = []
         self.apps_Games = []
+        self.apps_DEs = []
+        self.apps_WMs = []
         self.__load_menus()
         self.__load_apps()
         self.msgMpis = '\033[1;36mMPIS > \033[1;m'
@@ -54,6 +59,12 @@ class Mpis():
                 self.menu_Games.append([i[1], i[2]])
             elif i[0] == "Sys_Tools":
                 self.menu_Sys_Tools.append([i[1], i[2]])
+            elif i[0] == "DEs_WMs":
+                self.menu_DEs_WMs.append([i[1], i[2]])
+            elif i[0] == "DEs":
+                self.menu_DEs.append([i[1], i[2]])
+            elif i[0] == "WMs":
+                self.menu_WMs.append([i[1], i[2]])
 
     def __load_apps(self):
         with open("apps.config") as f:
@@ -70,6 +81,10 @@ class Mpis():
                     self.apps_internet.append([i[1], i[2]])
                 elif i[0] == "Games":
                     self.apps_Games.append([i[1], i[2]])
+                elif i[0] == "DEs":
+                    self.apps_DEs.append([i[1], i[2]])
+                elif i[0] == "WMs":
+                    self.apps_WMs.append([i[1], i[2]])
 
     def reload(self):
         self.__load_apps()
@@ -164,11 +179,16 @@ def main():
         while True:
             mpisw.clear()
             mpisw.banner()
+            raw_input("Press any key to continue ....")
+            mpisw.clear()
+            mpisw.help()
+            raw_input("Press any key to continue ....")
+            mpisw.clear()
             print ('|\033[1;36mMenú Principal\033[1;m|')
             for i in mpisw.main_menu:
                 print ('\033[1;36m' + i[1] + '.- ' + i[0] + '\033[1;m')
             main_input = raw_input(mpisw.msgMpis)
-            # update sytem menu :completo: testiar.
+            # update system menu :completo: testiar.
             while main_input == "1":
                 mpisw.clear()
                 print ('|\033[1;36mUpdate System\033[1;m|')
@@ -373,30 +393,80 @@ def main():
                 while install_input == "8":
                     sys.exit(0)
 
+            # no implementado todavia
             while main_input == "3":
                 mpisw.clear()
                 print (mpisw.msgNf)
                 raw_input('Press ENTER to continue...!')
                 main_input = 0
 
+            # no implementado todavia
             while main_input == "4":
                 mpisw.clear()
                 print (mpisw.msgNf)
                 raw_input('Press ENTER to continue...!')
                 main_input = 0
 
+            # menu Install DEs & WMs :completo: testiar
             while main_input == "5":
                 mpisw.clear()
-                print (mpisw.msgNf)
-                raw_input('Press ENTER to continue...!')
-                main_input = 0
+                print ('|\033[1;36mDEs & WMs Instalations\033[1;m|')
+                for i in mpisw.menu_DEs_WMs:
+                    print ('\033[1;36m' + i[1] + '.- ' + i[0] + '\033[1;m')
+                DEs_WMs_input = raw_input("\033[1;36mMPIS > \033[1;m")
+                # menu Desktop Environments :completo: testiar
+                while DEs_WMs_input == "1":
+                    print ('|\033[1;36mDesktop Environments\033[1;m|')
+                    for i in mpisw.menu_DEs:
+                        print ('\033[1;36m' + i[1] + '.- ' + i[0] + '\033[1;m')
+                    DEs_input = raw_input("\033[1;36mMPIS > \033[1;m")
+                    a = int(DEs_input)
+                    if a < 6:
+                        mpisw.execute_command(mpisw.apps_DEs[a - 1][1])
+                    # back menu
+                    elif DEs_input == "6":
+                        DEs_WMs_input = 0
+                    # exit menu
+                    elif DEs_input == "7":
+                        mpisw.clear()
+                        mpisw.end_message()
+                        sys.exit(0)
+                # menu Window Managers :completo: testiar
+                while DEs_WMs_input == "2":
+                    print ('|\033[1;36mWindow Managers\033[1;m|')
+                    for i in mpisw.menu_WMs:
+                        print ('\033[1;36m' + i[1] + '.- ' + i[0] + '\033[1;m')
+                    WMs_input = raw_input("\033[1;36mMPIS > \033[1;m")
+                    a = int(WMs_input)
+                    if a < 4:
+                        mpisw.execute_command(mpisw.apps_WMs[a - 1][1])
+                    # back menu
+                    elif WMs_input == "5":
+                        DEs_WMs_input = 0
+                    # exit menu
+                    elif WMs_input == "6":
+                        mpisw.clear()
+                        mpisw.end_message()
+                        sys.exit(0)
+                # back menu
+                while DEs_WMs_input == "3":
+                    mpisw.clear()
+                    DEs_WMs_input = 0
+                    main_input = 0
+                # exit menu
+                while DEs_WMs_input == "4":
+                    mpisw.clear()
+                    mpisw.end_message()
+                    sys.exit(0)
 
+            #no implementado todavia
             while main_input == "6":
                 mpisw.clear()
                 print (mpisw.msgNf)
                 raw_input('Press ENTER to continue...!')
                 main_input = 0
 
+            # menu update script sin testiar
             while main_input == "7":
                 mpisw.execute_command("wget -c "
                                       "https://www.dropbox.com/s/"
@@ -405,12 +475,14 @@ def main():
                                       "dvh13gpldqhfifv/menus.config?dl=0")
                 mpisw.reload()
 
+            #menu help
             while main_input == "8":
                 mpisw.help()
                 raw_input('Press ENTER to continue...!')
                 mpisw.clear()
                 main_input = 0
 
+            #exit
             while main_input == "9":
                 mpisw.clear()
                 mpisw.end_message()
