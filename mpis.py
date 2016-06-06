@@ -1,5 +1,7 @@
 #!/usr/bin/env python2
 # -*- coding: UTF-8 -*-
+# Manjaro script post-instalation that allow to the users to choose different
+# options such as install an application or config some tools and environments.
 
 import os
 import sys
@@ -477,6 +479,8 @@ def main():
                                       "https://www.dropbox.com/s/"
                                       "dvh13gpldqhfifv/menus.config?dl=0")
                 mpisw.reload()
+                raw_input(mpisw.msgTF)
+                main_input = 0
 
             #menu help
             while main_input == "8":
