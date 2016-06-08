@@ -39,3 +39,5 @@ target/
 .ipynb_checkpoints
 .idea/
 *.pyc
+menus.config?dl=0
+apps.config?dl=0

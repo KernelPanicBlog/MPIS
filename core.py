@@ -120,6 +120,12 @@ class Mpis:
                 self.pause(self.msgTFWE)
         return a
 
+    def user_input(self):
+        try:
+            return int(input(self.msgMpis))
+        except ValueError:
+            return 0
+
     @staticmethod
     def pause(msg="Press any key to continue ...."):
         try:

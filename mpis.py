@@ -24,14 +24,14 @@ def main():
             print('|\033[1;36m--Main Menu-- \033[1;m|')
             for i in mpisw.main_menu:
                 print('\033[1;36m' + i[1] + '.- ' + i[0] + '\033[1;m')
-            main_input = int(input(mpisw.msgMpis))
+            main_input = mpisw.user_input()
             # update system menu :completo: testiar.
             while main_input == 1:
                 mpisw.clear()
                 print('|\033[1;36mUpdate System\033[1;m|')
                 for i in mpisw.menu_update_system:
                     print('\033[1;36m' + i[1] + '.- ' + i[0] + '\033[1;m')
-                update_input = int(input(mpisw.msgMpis))
+                update_input = mpisw.user_input()
                 if update_input == 1:
                     print("Installing keys...")
                     if os.system("sudo pacman -S archlinux-keyring "
@@ -100,7 +100,7 @@ def main():
                     print('|\033[1;36mOfimatic033[1;m|')
                     for i in mpisw.menu_Ofimatic:
                         print('\033[1;36m' + i[1] + '.- ' + i[0] + '\033[1;m')
-                    ofimatic_input = int(input(mpisw.msgMpis))
+                    ofimatic_input = mpisw.user_input()
                     if ofimatic_input < 5:
                         mpisw.execute_command(mpisw.apps_ofimatic[
                                                   ofimatic_input-1][1])
@@ -117,7 +117,7 @@ def main():
                     print('|\033[1;36mMultimedia033[1;m|')
                     for i in mpisw.menu_multimedia:
                         print('\033[1;36m' + i[1] + '.- ' + i[0] + '\033[1;m')
-                    multimedia_input = int(input(mpisw.msgMpis))
+                    multimedia_input = mpisw.user_input()
                     if multimedia_input <= 19 and multimedia_input != 0:
                         mpisw.execute_command(mpisw.apps_multimedia[
                             multimedia_input - 1][1])
@@ -134,7 +134,7 @@ def main():
                     print('|\033[1;Development[1;m|')
                     for i in mpisw.menu_development:
                         print('\033[1;36m' + i[1] + '.- ' + i[0] + '\033[1;m')
-                    development_input = int(input(mpisw.msgMpis))
+                    development_input = mpisw.user_input()
                     if development_input <= 8 and development_input != 0:
                         mpisw.execute_command(mpisw.apps_development[
                                     development_input - 1][1])
@@ -151,7 +151,7 @@ def main():
                     print('|\033[1;Internet[1;m|')
                     for i in mpisw.menu_Internet:
                         print('\033[1;36m' + i[1] + '.- ' + i[0] + '\033[1;m')
-                    internet_input = int(input(mpisw.msgMpis))
+                    internet_input = mpisw.user_input()
                     if internet_input <= 8 and internet_input != 0:
                         mpisw.execute_command(mpisw.apps_internet[
                                 internet_input - 1][1])
@@ -168,7 +168,7 @@ def main():
                     print('|\033[1;Games[1;m|')
                     for i in mpisw.menu_Games:
                         print('\033[1;36m' + i[1] + '.- ' + i[0] + '\033[1;m')
-                    games_input = int(input(mpisw.msgMpis))
+                    games_input = mpisw.user_input()
                     if games_input <= 8 and games_input != 0:
                         mpisw.execute_command(mpisw.apps_Games[
                                                 games_input - 1][1])
@@ -185,7 +185,7 @@ def main():
                     print('|\033[1;System Tools[1;m|')
                     for i in mpisw.menu_Sys_Tools:
                         print('\033[1;36m' + i[1] + '.- ' + i[0] + '\033[1;m')
-                    systools_input = int(input(mpisw.msgMpis))
+                    systools_input = mpisw.user_input()
                     if systools_input == 1:
                         mpisw.execute_command("sudo pacman -S terminator")
                     elif systools_input == 2:
@@ -255,7 +255,7 @@ def main():
                     print('|\033[1;36mDesktop Environments\033[1;m|')
                     for i in mpisw.menu_DEs:
                         print('\033[1;36m' + i[1] + '.- ' + i[0] + '\033[1;m')
-                    des_input = int(input(mpisw.msgMpis))
+                    des_input = mpisw.user_input()
                     if des_input < 6:
                         mpisw.execute_command(mpisw.apps_DEs[des_input - 1][1])
                     # back menu
@@ -272,7 +272,7 @@ def main():
                     print('|\033[1;36mWindow Managers\033[1;m|')
                     for i in mpisw.menu_WMs:
                         print('\033[1;36m' + i[1] + '.- ' + i[0] + '\033[1;m')
-                    wms_input = int(input(mpisw.msgMpis))
+                    wms_input = mpisw.user_input()
                     if wms_input < 4:
                         mpisw.execute_command(mpisw.apps_WMs[wms_input - 1][1])
                     # back menu
