@@ -6,7 +6,7 @@
 import sys
 import traceback
 import core
-import os
+
 
 def main():
     try:
@@ -32,55 +32,21 @@ def main():
                     print('\033[1;36m' + i[1] + '.- ' + i[0] + '\033[1;m')
                 update_input = mpisw.user_input()
                 if update_input == 1:
-                    print("Installing keys...")
-                    if os.system("sudo pacman -S archlinux-keyring "
-                                 "manjaro-keyring") == 0:
-                        if os.system("sudo pacman-keys --init") == 0:
-                            if os.system("sudo pacman-keys --populate "
-                                         "archlinux manjaro") == 0:
-                                print("Keys Installed")
-                    print("Updating Mirrors...")
-                    if os.system("sudo pacman-mirrors -g") == 0:
-                        print("Mirrors Updated")
-                    mpisw.pause(mpisw.msgTF)
-                elif update_input == 2:
-                    mpisw.execute_command("sudo pacman -Syy")
-                elif update_input == 3:
-                    mpisw.execute_command("yaourt -Syy")
-                elif update_input == 4:
-                    print("Do you want refresh mirrors in the "
-                          "full system update?")
-                    opupdate = int(input("1) Yes 2) No > "))
-                    if opupdate == 1:
-                        mpisw.execute_command("sudo rm -f "
-                                              "/var/lib/pacman/db.lck && "
-                                              "sudo pacman-mirrors -g && "
-                                              "sudo pacman -Syyuu  && "
-                                              "sudo pacman -Suu")
-                    elif opupdate == 2:
-                        mpisw.execute_command("sudo rm -f "
-                                              "/var/lib/pacman/db.lck && "
-                                              "sudo pacman -Syyuu  && "
-                                              "sudo pacman -Suu")
-                    else:
-                        print("\033[1;31mSorry, invalid command!\033[1;m")
-                elif update_input == 5:
-                    print("Cleaning cache...")
-                    mpisw.execute_command("sudo pacman -Sc && "
-                                          "sudo pacman -Scc", "Cache cleared")
-
-                    print("Cleaning orphan packages...")
-                    mpisw.execute_command("sudo pacman -Rsn && yaourt -Rsn ",
-                                          "Orphan packages cleared")
-                elif update_input == 6:
+                    mpisw.execute_command(mpisw.apps_update_system[
+                                              update_input-1][1], True)
+                elif update_input < 7 and update_input != 1 and update_input\
+                        != 0:
+                    mpisw.execute_command(mpisw.apps_update_system[
+                                              update_input - 1][1])
+                elif update_input == 7:
                     with open('/etc/pacman.d/mirrorlist', 'r') as f:
                         print(f.read())
                     mpisw.pause()
                     mpisw.clear()
-                elif update_input == 7:
+                elif update_input == 8:
                     main_input = 0
                     break
-                elif update_input == 8:
+                elif update_input == 9:
                     mpisw.clear()
                     mpisw.end_message()
                     sys.exit(0)
@@ -151,12 +117,12 @@ def main():
                     for i in mpisw.menu_Internet:
                         print('\033[1;36m' + i[1] + '.- ' + i[0] + '\033[1;m')
                     internet_input = mpisw.user_input()
-                    if internet_input <= 8 and internet_input != 0:
+                    if internet_input <= 9 and internet_input != 0:
                         mpisw.execute_command(mpisw.apps_internet[
                                 internet_input - 1][1])
-                    elif internet_input == 9:
-                        install_input = 0
                     elif internet_input == 10:
+                        install_input = 0
+                    elif internet_input == 11:
                         mpisw.clear()
                         mpisw.end_message()
                         sys.exit(0)
@@ -185,32 +151,13 @@ def main():
                     for i in mpisw.menu_Sys_Tools:
                         print('\033[1;36m' + i[1] + '.- ' + i[0] + '\033[1;m')
                     systools_input = mpisw.user_input()
-                    if systools_input == 1:
-                        mpisw.execute_command("sudo pacman -S terminator")
-                    elif systools_input == 2:
-                        mpisw.execute_command("sudo pacman -S "
-                                              "manjaro-settings-manager")
-                    elif systools_input == 3:
-                        if mpisw.execute_command("sudo pacman -S "
-                                                 "manjaro-settings-"
-                                                 "manager") == 0:
-                            if mpisw.execute_command("sudo pacman -S "
-                                                     "manjaro-settings-"
-                                                     "manager-kcm") == 0:
-                                mpisw.execute_command("sudo pacman -S manjaro-"
-                                                      "settings-manager-"
-                                                      "knotifier")
-                    elif systools_input == 4:
-                        if mpisw.execute_command("sudo pacman -S "
-                                                 "virtualbox") == 0:
-                            print("Don't forget install virtualbox's "
-                                  "kernel modules")
-                    elif systools_input == 5:
-                        if mpisw.execute_command("sudo pacman -S octopi") == 0:
-                            mpisw.execute_command("sudo pacman -S "
-                                                  "octopi-notifier")
-                    elif systools_input == 6:
-                        mpisw.execute_command("sudo pacman -S pamac")
+                    if systools_input == 1 and systools_input == 2 \
+                            and systools_input == 4 and systools_input == 6:
+                        mpisw.execute_command(mpisw.apps_System_Tools[
+                                                  systools_input - 1][1])
+                    elif systools_input == 3 and systools_input == 5:
+                        mpisw.execute_command(mpisw.apps_System_Tools[
+                                                  systools_input - 1][1], True)
                     elif systools_input == 7:
                         install_input = 0
                     elif systools_input == 8:
@@ -300,15 +247,13 @@ def main():
                 mpisw.pause()
                 main_input = 0
 
-            # menu update script sin testiar
+            # no implementado todavia
             while main_input == 7:
-                mpisw.execute_command("wget -c "
-                                      "https://www.dropbox.com/s/"
-                                      "ky7yb2pfnt2tnlv/apps.config?dl=0 "
-                                      "https://www.dropbox.com/s/"
-                                      "dvh13gpldqhfifv/menus.config?dl=0")
-                mpisw.reload()
-                mpisw.pause(mpisw.msgTF)
+                # mpisw.execute_command("git clone "
+                #                       "https://github.com/KernelPanicBlog/"
+                #                       "Script-Post-instalacion.git")
+                # mpisw.reload()
+                # mpisw.pause(mpisw.msgTF)
                 main_input = 0
 
             # menu help
