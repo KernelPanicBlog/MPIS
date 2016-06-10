@@ -5,12 +5,12 @@
 # section: Title
 #   option: Title
 #     exec: sys_upgrade
-#       install:
+#     kde: true # (if package is for KDE, if current DE/WM is not KDE print a warning, BTW I need to implement it :P)
+#     aur: true # (if package comes from AUR, I will probably use this later)
+#       install: # Executes `yaourt -S package1 package2`
 #         - "package1"
 #         - "package2"
 #       command: ["command1", "command2"]
-#     kde: true # (if package is for KDE, if current DE/WM is not KDE print a warning, BTW I need to implement it :P)
-#     aur: true # (if package comes from AUR, I will probably use this later)
 #
 
 # NOTES:
@@ -112,6 +112,7 @@ multimedia_recorders: Multimedia (Recorders)
         - simplescreenrecorder
 
   vokoscreen: VokoScreen
+    aur: true
     exec:
       install:
         - vokoscreen
@@ -325,3 +326,85 @@ games:
     exec:
       install:
         - snes9x-gtk
+
+  pcsxr: PCSXR (Play Station)
+    exec:
+      install:
+        - pcsxr
+
+  pcsxr2: PCSXR2 (Play Station 2)
+    exec:
+      install:
+        - pcsxr2
+
+  ppsspp: PPSSPP (Play Station Portable)
+    exec:
+      install:
+        - ppsspp
+
+  desmume: Desmume (Nintendo DS)
+    exec:
+      install:
+        - desmume
+
+  stella: Stella (Atari)
+    exec:
+      install:
+        - stella
+
+  fceux: FCEUX
+    exec:
+      install:
+        - fceux
+
+  yabause_gtk: Yabause (GTK)
+    exec:
+      install:
+        - yabause-gtk
+
+  yabause_qt: Yabause (Qt)
+    exec:
+      install:
+        - yabause-qt
+
+
+utils_terminals: Utils (Terminal Emulators)
+
+  terminator:
+    exec:
+      install:
+        - terminator
+
+
+utils_virtualization: Utils (Virtualization)
+
+  virtualbox:
+    exec:
+      install:
+        - virtualbox
+
+
+system_tools: System Tools
+
+  pamac: Pamac (Package Manager UI)
+    exec:
+      install:
+        - pamac
+
+  octopi: Octopi (Package Manager UI)
+    exec:
+      install:
+        - octopi
+        - octopi-notifier
+
+  msm: Manjaro Settings Manager (standalone)
+    exec:
+      install:
+        - manjaro-settings-manager
+
+  msm_kcm: Manjaro Settings Manager (KCM)
+    kde: true
+    exec:
+      install:
+        - manjaro-settings-manager-kcm
+        - manjaro-settings-manager-knotifier
