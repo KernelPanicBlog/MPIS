@@ -53,7 +53,7 @@ def main():
                     mpisw.end_message()
                     sys.exit(0)
 
-            # menu install app :completo: testiar
+            # menu install app
             while main_input == 2:
                 mpisw.clear()
                 print('|\033[1;36mInstall Applications\033[1;m|')
@@ -61,7 +61,7 @@ def main():
                     print('\033[1;36m' + i[1] + '.- ' + i[0] + '\033[1;m')
                 install_input = int(input("\033[1;36mMPIS > \033[1;m"))
 
-                # menu ofimatic :completo: testiar
+                # menu office
                 while install_input == 1:
                     mpisw.clear()
                     print('|\033[1;36mOfimatic033[1;m|')
@@ -78,7 +78,7 @@ def main():
                         mpisw.end_message()
                         sys.exit(0)
 
-                # menu multimedia :completo: testiar
+                # menu multimedia
                 while install_input == 2:
                     mpisw.clear()
                     print('|\033[1;36mMultimedia033[1;m|')
@@ -95,7 +95,7 @@ def main():
                         mpisw.end_message()
                         sys.exit(0)
 
-                # menu development :completo: testiar
+                # menu development
                 while install_input == 3:
                     mpisw.clear()
                     print('|\033[1;Development[1;m|')
@@ -112,7 +112,7 @@ def main():
                         mpisw.end_message()
                         sys.exit(0)
 
-                # menu Internet :completo: testiar
+                # menu Internet
                 while install_input == 4:
                     mpisw.clear()
                     print('|\033[1;Internet[1;m|')
@@ -129,7 +129,7 @@ def main():
                         mpisw.end_message()
                         sys.exit(0)
 
-                # menu games  :completo: testiar
+                # menu games
                 while install_input == 5:
                     mpisw.clear()
                     print('|\033[1;Games[1;m|')
@@ -146,7 +146,7 @@ def main():
                         mpisw.end_message()
                         sys.exit(0)
 
-                # menu system tools :completo: testiar
+                # menu system tools
                 while install_input == 6:
                     mpisw.clear()
                     print('|\033[1;System Tools[1;m|')
@@ -176,28 +176,28 @@ def main():
                 while install_input == 8:
                     sys.exit(0)
 
-            # no implementado todavia
+            # not implemented yet
             while main_input == 3:
                 mpisw.clear()
                 print(mpisw.msgNf)
                 mpisw.pause()
                 main_input = 0
 
-            # no implementado todavia
+            # not implemented yet
             while main_input == 4:
                 mpisw.clear()
                 print(mpisw.msgNf)
                 mpisw.pause()
                 main_input = 0
 
-            # menu Install DEs & WMs :completo: testiar
+            # menu Install DEs & WMs
             while main_input == 5:
                 mpisw.clear()
                 print('|\033[1;36mDEs & WMs Installations\033[1;m|')
                 for i in mpisw.menu_DEs_WMs:
                     print('\033[1;36m' + i[1] + '.- ' + i[0] + '\033[1;m')
                 des_wms_input = int(input("\033[1;36mMPIS > \033[1;m"))
-                # menu Desktop Environments :completo: testiar
+                # menu Desktop Environments
                 while des_wms_input == 1:
                     mpisw.clear()
                     print('|\033[1;36mDesktop Environments\033[1;m|')
@@ -214,7 +214,7 @@ def main():
                         mpisw.clear()
                         mpisw.end_message()
                         sys.exit(0)
-                # menu Window Managers :completo: testiar
+                # menu Window Managers
                 while des_wms_input == 2:
                     mpisw.clear()
                     print('|\033[1;36mWindow Managers\033[1;m|')
@@ -242,14 +242,14 @@ def main():
                     mpisw.end_message()
                     sys.exit(0)
 
-            # no implementado todavia
+            # not implemented yet
             while main_input == 6:
                 mpisw.clear()
                 print(mpisw.msgNf)
                 mpisw.pause()
                 main_input = 0
 
-            # no implementado todavia
+            # not implemented yet
             while main_input == 7:
                 # mpisw.execute_command("git clone "
                 #                       "https://github.com/KernelPanicBlog/"
