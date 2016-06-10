@@ -1,11 +1,13 @@
-#!/usr/bin/env python
-# -*- coding: UTF-8 -*-
-# Manjaro script post-instalation that allow to the users to choose different
-# options such as install an application or config some tools and environments.
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+# Manjaro Post Installation Script:
+# It allows  users to choose different options such as
+# install an application or config some tools and environments.
 
 import sys
 import traceback
-import core
+from pympis import core
 
 
 def main():
