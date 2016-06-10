@@ -5,7 +5,7 @@
 # It allows  users to choose different options such as
 # install an application or config some tools and environments.
 
-from core_yaml import MPIS
+from pympis.core import MPIS
 
 config = MPIS.ReadConfig("config.yml")
 MPIS.GetConfig(config)
