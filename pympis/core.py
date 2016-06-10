@@ -38,7 +38,10 @@ class Mpis:
         self.msgNf = "(not functional, yet)"
 
     def __load_menus(self):
-        with open("menus.config") as f:
+        file_name = "apps.config"
+        file_path = "/usr/lib/mpis/" + file_name
+        menu_file = file_path if os.path.exists(file_path) else file_name
+        with open(menu_file) as f:
             uncode = csv.reader(f)
             data = list(uncode)
         for i in data:
@@ -68,7 +71,10 @@ class Mpis:
                 self.menu_WMs.append([i[1], i[2]])
 
     def __load_apps(self):
-        with open("apps.config") as f:
+        file_name = "apps.config"
+        file_path = "/usr/lib/mpis/" + file_name
+        apps_file = file_path if os.path.exists(file_path) else file_name
+        with open(apps_file) as f:
             uncode = csv.reader(f)
             data = list(uncode)
             for i in data:

@@ -40,3 +40,8 @@ target/
 .idea/
 *.pyc
 *.config?dl=0
+MANIFEST
+src/
+pkg/
+Script-Post-instalacion
+*.pkg.tar.xz
