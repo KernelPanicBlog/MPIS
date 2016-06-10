@@ -40,6 +40,9 @@ system_update: System update
     exec:
       command: ["yaourt -Rsn"]
 
+#
+# PUT DESKTOP ENVIRONMENTS AND WINDOW MANAGERS HERE!
+#
 
 # Office section (OpenOffice is depreciated)
 office_suites: Office
