@@ -225,18 +225,18 @@ class Mpis:
     888        "Y888888 888  888 888  "Y8888P     8888888P"  888  "Y88P"   "Y88888
                           Version 0.1a                                         888
      \033[1;36mManjaro GNU/Linux Post Installation Script\033[1;m \033[1;m                         Y8b d88P
-     \033[1;32m  Author: SniferL4bs | www.sniferl4bs.com \033[1;m                         "Y88P"
-     \033[1;32m  Author: NeoRanger  | www.neositelinux.com.ar \033[1;m
+     \033[1;32m  Author: SniferL4bs | https://www.sniferl4bs.com \033[1;m                         "Y88P"
+     \033[1;32m  Author: NeoRanger  | https://www.neositelinux.com.ar \033[1;m
      \033[1;32m  Author: Harrinsoft |                         \033[1;m
-     \033[1;32m  Colaborative Blog: | http://kernelpanicblog.wordpress.com \033[1;m
+     \033[1;32m  Author: @feskyde   | https://feskyde.github.io \033[1;m
+     \033[1;32m  Colaborative Blog: | https://kernelpanicblog.wordpress.com \033[1;m
 
-     Application in Testing Fase, please report your bugs!""")
+     Script in testing phase, please report bugs :)""")
 
     @staticmethod
     def help():
         print('''				|\033[1;36mHelp\033[1;m|
                 You can write 2 commands and do a shortcut:
-                back -> command for return to the previous option
-                exit -> program exit
-                Ctrl+C -> shortcut to finish the script execution
+                back -> return to the previous option
+                exit or Ctrl+C -> finish the script execution
                ''')
