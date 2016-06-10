@@ -30,19 +30,19 @@ class Mpis:
         self.apps_System_Tools = []
         self.__load_menus()
         self.__load_apps()
-        self.msgMpis = "\033[1;36mMPIS > \033[1;m"
-        self.msgTFWE = "Task Finished with errors. press enter to continue"
-        self.msgTF = "Task Finished. Press Enter to continue"
-        self.msgAur = "This application is on the AUR repository " \
-                      "(community). It will be install at your own risk."
-        self.msgNf = "(not functional yet)"
+        self.msgMpis = "\n\033[1;36mOption > \033[1;m"
+        self.msgTFWE = "Task finished with errors. Press Enter to continue..."
+        self.msgTF = "Task finished. Press Enter to continue..."
+        self.msgAur = "This application will be installed from the AUR repository " \
+                      "(community). It will be installed at your own risk."
+        self.msgNf = "(not functional, yet)"
 
     def __load_menus(self):
         with open("menus.config") as f:
             uncode = csv.reader(f)
             data = list(uncode)
         for i in data:
-            if i[0] == "Ofimatic":
+            if i[0] == "Office":
                 self.menu_Ofimatic.append([i[1], i[2]])
             elif i[0] == "Multimedia":
                 self.menu_multimedia.append([i[1], i[2]])
@@ -221,7 +221,6 @@ class Mpis:
 \t\t\033[1;32mSniferL4bs  | https://www.sniferl4bs.com \033[1;m
 \t\t\033[1;32mNeoRanger   | https://www.neositelinux.com.ar \033[1;m
 \t\t\033[1;32mHarrinsoft  |                         \033[1;m
-\t\t\033[1;32m@feskyde    | https://feskyde.github.io \033[1;m
 \t\033[1;32mCollaborative Blog: | https://kernelpanicblog.wordpress.com \033[1;m
 
 \tScript in testing phase, please report bugs :)
@@ -229,8 +228,9 @@ class Mpis:
 
     @staticmethod
     def help():
-        print("""\n\t\033[1;36mHelp:\033[1;m\n
-\tYou can write 2 commands and do a shortcut:
-\tback -> return to the previous option
-\texit or Ctrl+C -> finish the script execution
+        print("""\n\033[1;36mHelp:\033[1;m\n
+\tYou can select an option with the given
+\tnumber or write 2 shortcuts:
+\t- back -> return to the previous option
+\t- exit or Ctrl+C -> finish the script execution
 """)
