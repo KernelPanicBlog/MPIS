@@ -199,47 +199,38 @@ class Mpis:
     @staticmethod
     def end_message():
         print("""\033[1;36m
-                Thanks for choosing us, we hope this script helped you.
-                The KernelPanicBlog Team.
-                Our web: https://kernelpanicblog.wordpress.com\033[1;m """)
+\tThanks for choosing us, we hope this script helped you.
+\t\t- The KernelPanicBlog Team.
+\tOur web: https://kernelpanicblog.wordpress.com\033[1;m
+""")
 
     @staticmethod
     def banner():
 
         print("""
-    888    d8P                                     888
-    888   d8P                                      888
-    888  d8P                                       888
-    888d88K      .d88b.  888d888 88888b.   .d88b.  888
-    8888888b    d8P  Y8b 888P"   888 "88b d8P  Y8b 888
-    888  Y88b   88888888 888     888  888 88888888 888
-    888   Y88b  Y8b.     888     888  888 Y8b.     888
-    888    Y88b  "Y8888  888     888  888  "Y8888  888
+   _  __                    _  _____            _        ____  _             
+  | |/ /                   | ||  __ \          (_)     |  _ \| |            
+  | ' / ___ _ __ _ __   ___| || |__) |_ _ _ __  _  ___ | |_) | | ___   __ _ 
+  |  < / _ \ '__| '_ \ / _ \ ||  ___/ _` | '_ \| |/ __||  _ <| |/ _ \ / _` |
+  | . \  __/ |  | | | |  __/ || |  | (_| | | | | | (__ | |_) | | (_) | (_| |
+  |_|\_\___|_|  |_| |_|\___|_||_|   \__,_|_| |_|_|\___||____/|_|\___/ \__, |
+                                                                       __/ |
+                                                                      |___/ 
+\t\033[1;36mManjaro Post Installation Script version 0.1a\033[1;m \033[1;m
+\t\033[1;32mAuthors:\033[1;m
+\t\t\033[1;32mSniferL4bs  | https://www.sniferl4bs.com \033[1;m
+\t\t\033[1;32mNeoRanger   | https://www.neositelinux.com.ar \033[1;m
+\t\t\033[1;32mHarrinsoft  |                         \033[1;m
+\t\t\033[1;32m@feskyde    | https://feskyde.github.io \033[1;m
+\t\033[1;32mCollaborative Blog: | https://kernelpanicblog.wordpress.com \033[1;m
 
-
-
-    8888888b.                    d8b              888888b.   888
-    888   Y88b                   Y8P              888  "88b  888
-    888    888                                    888  .88P  888
-    888   d88P  8888b.  88888b.  888  .d8888b     8888888K.  888  .d88b.   .d88b.
-    8888888P"      "88b 888 "88b 888 d88P"        888  "Y88b 888 d88""88b d88P"88b
-    888        .d888888 888  888 888 888          888    888 888 888  888 888  888
-    888        888  888 888  888 888 Y88b.        888   d88P 888 Y88..88P Y88b 888
-    888        "Y888888 888  888 888  "Y8888P     8888888P"  888  "Y88P"   "Y88888
-                          Version 0.1a                                         888
-     \033[1;36mManjaro Post Installation Script\033[1;m \033[1;m                         Y8b d88P
-     \033[1;32m  Author: SniferL4bs  | https://www.sniferl4bs.com \033[1;m                         "Y88P"
-     \033[1;32m  Author: NeoRanger   | https://www.neositelinux.com.ar \033[1;m
-     \033[1;32m  Author: Harrinsoft  |                         \033[1;m
-     \033[1;32m  Author: @feskyde    | https://feskyde.github.io \033[1;m
-     \033[1;32m  Collaborative Blog: | https://kernelpanicblog.wordpress.com \033[1;m
-
-     Script in testing phase, please report bugs :)""")
+\tScript in testing phase, please report bugs :)
+""")
 
     @staticmethod
     def help():
-        print('''				|\033[1;36mHelp\033[1;m|
-                You can write 2 commands and do a shortcut:
-                back -> return to the previous option
-                exit or Ctrl+C -> finish the script execution
-               ''')
+        print("""\n\t\033[1;36mHelp:\033[1;m\n
+\tYou can write 2 commands and do a shortcut:
+\tback -> return to the previous option
+\texit or Ctrl+C -> finish the script execution
+""")
