@@ -39,3 +39,7 @@ target/
 .ipynb_checkpoints
 .idea/
 *.pyc
+
+# WIP folder
+
+wip/build/
