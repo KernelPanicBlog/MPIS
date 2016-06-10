@@ -1,7 +1,9 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2
 # -*- coding: UTF-8 -*-
-# Manjaro script post-instalation that allow to the users to choose different
-# options such as install an application or config some tools and environments.
+
+# Manjaro Post Installation Script:
+# It allows  users to choose different options such as
+# install an application or config some tools and environments.
 
 import sys
 import traceback

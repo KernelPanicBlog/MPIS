@@ -183,7 +183,7 @@ class Mpis:
             return 0
 
     @staticmethod
-    def pause(msg="Press any key to continue ...."):
+    def pause(msg="Press any key to continue..."):
         try:
             a = str(input(msg))
         except SyntaxError:
@@ -196,9 +196,9 @@ class Mpis:
     @staticmethod
     def end_message():
         print("""\033[1;36m
-                Thanks for choosing us, we hope you have been helpful.
+                Thanks for choosing us, we hope this script helped you.
                 The KernelPanicBlog Team.
-                Our web: http://kernelpanicblog.wordpress.com\033[1;m """)
+                Our web: https://kernelpanicblog.wordpress.com\033[1;m """)
 
     @staticmethod
     def banner():
@@ -224,12 +224,12 @@ class Mpis:
     888        888  888 888  888 888 Y88b.        888   d88P 888 Y88..88P Y88b 888
     888        "Y888888 888  888 888  "Y8888P     8888888P"  888  "Y88P"   "Y88888
                           Version 0.1a                                         888
-     \033[1;36mManjaro GNU/Linux Post Installation Script\033[1;m \033[1;m                         Y8b d88P
-     \033[1;32m  Author: SniferL4bs | https://www.sniferl4bs.com \033[1;m                         "Y88P"
-     \033[1;32m  Author: NeoRanger  | https://www.neositelinux.com.ar \033[1;m
-     \033[1;32m  Author: Harrinsoft |                         \033[1;m
-     \033[1;32m  Author: @feskyde   | https://feskyde.github.io \033[1;m
-     \033[1;32m  Colaborative Blog: | https://kernelpanicblog.wordpress.com \033[1;m
+     \033[1;36mManjaro Post Installation Script\033[1;m \033[1;m                         Y8b d88P
+     \033[1;32m  Author: SniferL4bs  | https://www.sniferl4bs.com \033[1;m                         "Y88P"
+     \033[1;32m  Author: NeoRanger   | https://www.neositelinux.com.ar \033[1;m
+     \033[1;32m  Author: Harrinsoft  |                         \033[1;m
+     \033[1;32m  Author: @feskyde    | https://feskyde.github.io \033[1;m
+     \033[1;32m  Collaborative Blog: | https://kernelpanicblog.wordpress.com \033[1;m
 
      Script in testing phase, please report bugs :)""")
 
