@@ -30,7 +30,7 @@ class Mpis:
         self.apps_System_Tools = []
         self.__load_menus()
         self.__load_apps()
-        self.msgMpis = "\n\033[1;36mOption > \033[1;m"
+        self.msgMpis = "\n\033[1;36mMPIS> \033[1;m"
         self.msgTFWE = "Task finished with errors. Press Enter to continue..."
         self.msgTF = "Task finished. Press Enter to continue..."
         self.msgAur = "This application will be installed from the AUR repository " \
