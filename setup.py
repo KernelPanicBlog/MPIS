@@ -14,7 +14,7 @@ setup(name="mpis", version="unstable",
       description="This script allows to configure the system, install some applications" \
                   "for a regular work day thinked in developers, gamers, musicians and more...",
       long_description=get_readme(),
-      keywords="manjaro post install script",
+      keywords="manjaro linux post install script",
       author="KernelPanicBlog Team",
       url="https://kernelpanicblog.wordpress.com",
       license="gplv3",
