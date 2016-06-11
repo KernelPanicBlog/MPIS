@@ -14,8 +14,3 @@ If you find a bug or an error please report it as an [issue](https://github.com/
 - Twitter: @[KernelPanicBlog](https://twitter.com/KernelPanicBlog)
 - Facebook: @[KernelPanicBlog](https://www.facebook.com/pages/Kernel-Panic-Blog/)
 - Telegram Group (Spanish):  @[ManjaroLinuxEs](https://telegram.me/manjarolinuxes)
-
-### How to install
-- 1) Clone the git repository: `git clone https://github.com/KernelPanicBlog/Script-Post-instalacion.git`
-- 2) Access to the cloned directory:   `cd Script-Post-Instalacion`
-- 3) Execute the script: `./mpis`

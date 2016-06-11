@@ -18,5 +18,5 @@ setup(name="mpis", version="unstable",
       author="KernelPanicBlog Team",
       url="https://kernelpanicblog.wordpress.com",
       license="gplv3",
-      py_modules=["pympis.core"],
+      py_modules=["core.core"],
       scripts=["mpis"])
