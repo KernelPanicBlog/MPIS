@@ -14,3 +14,14 @@ If you find a bug or an error please report it as an [issue](https://github.com/
 - Twitter: @[KernelPanicBlog](https://twitter.com/KernelPanicBlog)
 - Facebook: @[KernelPanicBlog](https://www.facebook.com/pages/Kernel-Panic-Blog/)
 - Telegram Group (Spanish):  @[ManjaroLinuxEs](https://telegram.me/manjarolinuxes)
+<<<<<<< HEAD
+=======
+
+### How to install
+
+- 1) Clone the git repository: `git clone https://github.com/KernelPanicBlog/Script-Post-instalacion.git`
+- 2) Access to the cloned directory:   `cd Script-Post-Instalacion`
+- 3) Execute the script: `./mpis`
+
+Optionally you can install the script in your system running `makepkg -sic` in the cloned repository folder.
+>>>>>>> c836f85e6b39fbef57708155a9c6d9ed8ef58b02
