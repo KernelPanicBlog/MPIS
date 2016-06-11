@@ -225,9 +225,9 @@ class Mpis:
                                                                       |___/\033[1;m
 \t\033[1;36mManjaro Post Installation Script version 0.1a\033[1;m
 \t\033[1;32mAuthors:\033[1;m
-\t\t\033[1;32mSniferL4bs      | https://www.sniferl4bs.com\033[1;m
-\t\t\033[1;32mNeoRanger       | https://www.neositelinux.com.ar\033[1;m
-\t\t\033[1;32mHarrinsoft      |                         \033[1;m
+\t\t\033[1;32mSniferL4bs  | https://www.sniferl4bs.com\033[1;m
+\t\t\033[1;32mNeoRanger   | https://www.neositelinux.com.ar\033[1;m
+\t\t\033[1;32mHarrinsoft  |                         \033[1;m
 \t\033[1;32mCollaborative Blog: | https://kernelpanicblog.wordpress.com\033[1;m
 
 \tScript in testing phase, please report bugs :)
