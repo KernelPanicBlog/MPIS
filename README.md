@@ -14,8 +14,6 @@ If you find a bug or an error please report it as an [issue](https://github.com/
 - Twitter: @[KernelPanicBlog](https://twitter.com/KernelPanicBlog)
 - Facebook: @[KernelPanicBlog](https://www.facebook.com/pages/Kernel-Panic-Blog/)
 - Telegram Group (Spanish):  @[ManjaroLinuxEs](https://telegram.me/manjarolinuxes)
-<<<<<<< HEAD
-=======
 
 ### How to install
 
@@ -24,4 +22,4 @@ If you find a bug or an error please report it as an [issue](https://github.com/
 - 3) Execute the script: `./mpis`
 
 Optionally you can install the script in your system running `makepkg -sic` in the cloned repository folder.
->>>>>>> c836f85e6b39fbef57708155a9c6d9ed8ef58b02
+
