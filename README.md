@@ -2,9 +2,10 @@
 
 This script allows to configure the system, install some applications for a regular work day thinked in developers, gamers, musicians and more...
 
-# ATENTTION
-This script is in Testing Fase and we don't responsable for the use.
-=======
+### Attention
+
+This script is in testing phase and we don't are responsable for the usage.
+
 If you find a bug or an error please report it as an [issue](https://github.com/KernelPanicBlog/Script-Post-instalacion/issues/).
 
 ### Contact
@@ -21,4 +22,3 @@ If you find a bug or an error please report it as an [issue](https://github.com/
 - 3) Execute the script: `./mpis`
 
 Optionally you can install the script in your system running `makepkg -sic` in the cloned repository folder.
-
