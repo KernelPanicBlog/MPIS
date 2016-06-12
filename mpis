@@ -7,7 +7,7 @@
 
 import sys
 import traceback
-from pympis import core
+from core import core
 
 
 def main():
@@ -22,22 +22,21 @@ def main():
         # main menu
         while True:
             mpisw.clear()
-            print('|\033[1;36m--Main Menu-- \033[1;m|')
+            print('|\033[1;36m __ Main Menu __ \033[1;m|')
             for i in mpisw.main_menu:
                 print('\033[1;36m' + i[1] + '.- ' + i[0] + '\033[1;m')
             main_input = mpisw.user_input()
-            # update system menu :completo: testiar.
+            # update system menu
             while main_input == 1:
                 mpisw.clear()
-                print('|\033[1;36mUpdate System\033[1;m|')
+                print('|\033[1;36m __ Update System __ \033[1;m|')
                 for i in mpisw.menu_update_system:
                     print('\033[1;36m' + i[1] + '.- ' + i[0] + '\033[1;m')
                 update_input = mpisw.user_input()
                 if update_input == 1:
                     mpisw.execute_command(mpisw.apps_update_system[
                                               update_input-1][1], True)
-                elif update_input < 7 and update_input != 1 and update_input\
-                        != 0:
+                elif update_input < 7 != 0 != 1:
                     mpisw.execute_command(mpisw.apps_update_system[
                                               update_input - 1][1])
                 elif update_input == 7:
@@ -53,18 +52,18 @@ def main():
                     mpisw.end_message()
                     sys.exit(0)
 
-            # menu install app :completo: testiar
+            # menu install app
             while main_input == 2:
                 mpisw.clear()
-                print('|\033[1;36mInstall Applications\033[1;m|')
+                print('|\033[1;36m __ Install Applications __ \033[1;m|')
                 for i in mpisw.menu_install_app:
                     print('\033[1;36m' + i[1] + '.- ' + i[0] + '\033[1;m')
-                install_input = int(input("\033[1;36mMPIS > \033[1;m"))
+                install_input = mpisw.user_input()
 
-                # menu ofimatic :completo: testiar
+                # menu ofimatic
                 while install_input == 1:
                     mpisw.clear()
-                    print('|\033[1;36mOfimatic033[1;m|')
+                    print('|\033[1;36m __ Ofimatic __ \033[1;m|')
                     for i in mpisw.menu_Ofimatic:
                         print('\033[1;36m' + i[1] + '.- ' + i[0] + '\033[1;m')
                     ofimatic_input = mpisw.user_input()
@@ -78,10 +77,10 @@ def main():
                         mpisw.end_message()
                         sys.exit(0)
 
-                # menu multimedia :completo: testiar
+                # menu multimedia
                 while install_input == 2:
                     mpisw.clear()
-                    print('|\033[1;36mMultimedia033[1;m|')
+                    print('|\033[1;36m __ Multimedia __ \033[1;m|')
                     for i in mpisw.menu_multimedia:
                         print('\033[1;36m' + i[1] + '.- ' + i[0] + '\033[1;m')
                     multimedia_input = mpisw.user_input()
@@ -95,14 +94,14 @@ def main():
                         mpisw.end_message()
                         sys.exit(0)
 
-                # menu development :completo: testiar
+                # menu development
                 while install_input == 3:
                     mpisw.clear()
-                    print('|\033[1;Development[1;m|')
+                    print('|\033[1;36m __ Development __ \033[1;m|')
                     for i in mpisw.menu_development:
                         print('\033[1;36m' + i[1] + '.- ' + i[0] + '\033[1;m')
                     development_input = mpisw.user_input()
-                    if development_input <= 8 and development_input != 0:
+                    if development_input <= 8 != 0:
                         mpisw.execute_command(mpisw.apps_development[
                                     development_input - 1][1])
                     elif development_input == 9:
@@ -112,14 +111,14 @@ def main():
                         mpisw.end_message()
                         sys.exit(0)
 
-                # menu Internet :completo: testiar
+                # menu Internet
                 while install_input == 4:
                     mpisw.clear()
-                    print('|\033[1;Internet[1;m|')
+                    print('|\033[1;36m __ Internet__ \033[1;m|')
                     for i in mpisw.menu_Internet:
                         print('\033[1;36m' + i[1] + '.- ' + i[0] + '\033[1;m')
                     internet_input = mpisw.user_input()
-                    if internet_input <= 9 and internet_input != 0:
+                    if internet_input <= 9 != 0:
                         mpisw.execute_command(mpisw.apps_internet[
                                 internet_input - 1][1])
                     elif internet_input == 10:
@@ -129,14 +128,14 @@ def main():
                         mpisw.end_message()
                         sys.exit(0)
 
-                # menu games  :completo: testiar
+                # menu games
                 while install_input == 5:
                     mpisw.clear()
-                    print('|\033[1;Games[1;m|')
+                    print('|\033[1;36m __ Games __ \033[1;m|')
                     for i in mpisw.menu_Games:
                         print('\033[1;36m' + i[1] + '.- ' + i[0] + '\033[1;m')
                     games_input = mpisw.user_input()
-                    if games_input <= 8 and games_input != 0:
+                    if games_input <= 8 != 0:
                         mpisw.execute_command(mpisw.apps_Games[
                                                 games_input - 1][1])
                     elif games_input == 12:
@@ -146,18 +145,17 @@ def main():
                         mpisw.end_message()
                         sys.exit(0)
 
-                # menu system tools :completo: testiar
+                # menu system tools
                 while install_input == 6:
                     mpisw.clear()
-                    print('|\033[1;System Tools[1;m|')
+                    print('|\033[1;36m __ System Tools __ \033[1;m|')
                     for i in mpisw.menu_Sys_Tools:
                         print('\033[1;36m' + i[1] + '.- ' + i[0] + '\033[1;m')
                     systools_input = mpisw.user_input()
-                    if systools_input == 1 and systools_input == 2 \
-                            and systools_input == 4 and systools_input == 6:
+                    if systools_input == 1 == 2 == 4 == 6:
                         mpisw.execute_command(mpisw.apps_System_Tools[
                                                   systools_input - 1][1])
-                    elif systools_input == 3 and systools_input == 5:
+                    elif systools_input == 3 == 5:
                         mpisw.execute_command(mpisw.apps_System_Tools[
                                                   systools_input - 1][1], True)
                     elif systools_input == 7:
@@ -190,17 +188,17 @@ def main():
                 mpisw.pause()
                 main_input = 0
 
-            # menu Install DEs & WMs :completo: testiar
+            # menu Install DEs & WMs
             while main_input == 5:
                 mpisw.clear()
-                print('|\033[1;36mDEs & WMs Installations\033[1;m|')
+                print('|\033[1;36m __ DEs & WMs Installations __\033[1;m|')
                 for i in mpisw.menu_DEs_WMs:
                     print('\033[1;36m' + i[1] + '.- ' + i[0] + '\033[1;m')
-                des_wms_input = int(input("\033[1;36mMPIS > \033[1;m"))
-                # menu Desktop Environments :completo: testiar
+                des_wms_input = mpisw.user_input()
+                # menu Desktop Environments
                 while des_wms_input == 1:
                     mpisw.clear()
-                    print('|\033[1;36mDesktop Environments\033[1;m|')
+                    print('|\033[1;36m __ Desktop Environments __\033[1;m|')
                     for i in mpisw.menu_DEs:
                         print('\033[1;36m' + i[1] + '.- ' + i[0] + '\033[1;m')
                     des_input = mpisw.user_input()
@@ -214,10 +212,10 @@ def main():
                         mpisw.clear()
                         mpisw.end_message()
                         sys.exit(0)
-                # menu Window Managers :completo: testiar
+                # menu Window Managers
                 while des_wms_input == 2:
                     mpisw.clear()
-                    print('|\033[1;36mWindow Managers\033[1;m|')
+                    print('|\033[1;36m __ Window Managers __\033[1;m|')
                     for i in mpisw.menu_WMs:
                         print('\033[1;36m' + i[1] + '.- ' + i[0] + '\033[1;m')
                     wms_input = mpisw.user_input()

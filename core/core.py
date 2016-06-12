@@ -30,15 +30,19 @@ class Mpis:
         self.apps_System_Tools = []
         self.__load_menus()
         self.__load_apps()
-        self.msgMpis = "\n\033[1;36mMPIS> \033[1;m"
+        self.msgMpis = "\t\033[1;32mOption > \033[1;m"
         self.msgTFWE = "Task finished with errors. Press Enter to continue..."
         self.msgTF = "Task finished. Press Enter to continue..."
-        self.msgAur = "This application will be installed from the AUR repository " \
-                      "(community). It will be installed at your own risk."
+        self.msgAur = "This application will be installed from the AUR " \
+                      "repository (community). It will be installed at " \
+                      "your own risk."
         self.msgNf = "(not functional, yet)"
 
     def __load_menus(self):
-        with open("menus.config") as f:
+        file_name = "menus.config"
+        file_path = "/usr/lib/mpis/" + file_name
+        menu_file = file_name if os.path.isfile(file_name) else file_path
+        with open(menu_file) as f:
             uncode = csv.reader(f)
             data = list(uncode)
         for i in data:
@@ -68,7 +72,10 @@ class Mpis:
                 self.menu_WMs.append([i[1], i[2]])
 
     def __load_apps(self):
-        with open("apps.config") as f:
+        file_name = "apps.config"
+        file_path = "/usr/lib/mpis/" + file_name
+        apps_file = file_name if os.path.isfile(file_name) else file_path
+        with open(apps_file) as f:
             uncode = csv.reader(f)
             data = list(uncode)
             for i in data:
@@ -207,21 +214,21 @@ class Mpis:
     @staticmethod
     def banner():
 
-        print("""
-   _  __                    _  _____            _        ____  _             
-  | |/ /                   | ||  __ \          (_)     |  _ \| |            
-  | ' / ___ _ __ _ __   ___| || |__) |_ _ _ __  _  ___ | |_) | | ___   __ _ 
+        print("""\033[1;36m
+   _  __                    _  _____                    ____  _
+  | |/ /                   | ||  __ \          (¨)     |  _ \| |
+  | ' / ___ _ __ _ __   ___| || |__) |_ _ _ __  _  ___ | |_) | | ___   __ _
   |  < / _ \ '__| '_ \ / _ \ ||  ___/ _` | '_ \| |/ __||  _ <| |/ _ \ / _` |
   | . \  __/ |  | | | |  __/ || |  | (_| | | | | | (__ | |_) | | (_) | (_| |
   |_|\_\___|_|  |_| |_|\___|_||_|   \__,_|_| |_|_|\___||____/|_|\___/ \__, |
                                                                        __/ |
-                                                                      |___/ 
-\t\033[1;36mManjaro Post Installation Script version 0.1a\033[1;m \033[1;m
+                                                                      |___/\033[1;m
+\t\033[1;36mManjaro Post Installation Script version 0.1a\033[1;m
 \t\033[1;32mAuthors:\033[1;m
-\t\t\033[1;32mSniferL4bs  | https://www.sniferl4bs.com \033[1;m
-\t\t\033[1;32mNeoRanger   | https://www.neositelinux.com.ar \033[1;m
+\t\t\033[1;32mSniferL4bs  | https://www.sniferl4bs.com\033[1;m
+\t\t\033[1;32mNeoRanger   | https://www.neositelinux.com.ar\033[1;m
 \t\t\033[1;32mHarrinsoft  |                         \033[1;m
-\t\033[1;32mCollaborative Blog: | https://kernelpanicblog.wordpress.com \033[1;m
+\t\033[1;32mCollaborative Blog: | https://kernelpanicblog.wordpress.com\033[1;m
 
 \tScript in testing phase, please report bugs :)
 """)
