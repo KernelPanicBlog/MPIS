@@ -13,264 +13,50 @@ from core import core
 def main():
     try:
         mpisw = core.Mpis()
-        mpisw.clear()
-        mpisw.banner()
-        mpisw.pause()
-        mpisw.clear()
-        mpisw.help()
-        mpisw.pause()
-        # main menu
+        core.clear()
+        core.banner()
+        core.pause()
+        core.clear()
+        core.help()
+        core.pause()
+        core.clear()
+        option, m_actual, m_back = 0, 0, 0
+        print('\033[1;36m' + mpisw.menus[m_actual].title + '\033[1;m')
+        for item in mpisw.menus[m_actual].items:
+            print('\033[1;36m' + item.option + '.- ' + item.title + '\033[1;m')
         while True:
-            mpisw.clear()
-            print('|\033[1;36m __ Main Menu __ \033[1;m|')
-            for i in mpisw.main_menu:
-                print('\033[1;36m' + i[1] + '.- ' + i[0] + '\033[1;m')
-            main_input = mpisw.user_input()
-            # update system menu
-            while main_input == 1:
-                mpisw.clear()
-                print('|\033[1;36m __ Update System __ \033[1;m|')
-                for i in mpisw.menu_update_system:
-                    print('\033[1;36m' + i[1] + '.- ' + i[0] + '\033[1;m')
-                update_input = mpisw.user_input()
-                if update_input == 1:
-                    mpisw.execute_command(mpisw.apps_update_system[
-                                              update_input-1][1], True)
-                elif update_input < 7 != 0 != 1:
-                    mpisw.execute_command(mpisw.apps_update_system[
-                                              update_input - 1][1])
-                elif update_input == 7:
-                    with open('/etc/pacman.d/mirrorlist', 'r') as f:
-                        print(f.read())
-                    mpisw.pause()
-                    mpisw.clear()
-                elif update_input == 8:
-                    main_input = 0
-                    break
-                elif update_input == 9:
-                    mpisw.clear()
-                    mpisw.end_message()
-                    sys.exit(0)
-
-            # menu install app
-            while main_input == 2:
-                mpisw.clear()
-                print('|\033[1;36m __ Install Applications __ \033[1;m|')
-                for i in mpisw.menu_install_app:
-                    print('\033[1;36m' + i[1] + '.- ' + i[0] + '\033[1;m')
-                install_input = mpisw.user_input()
-
-                # menu ofimatic
-                while install_input == 1:
-                    mpisw.clear()
-                    print('|\033[1;36m __ Ofimatic __ \033[1;m|')
-                    for i in mpisw.menu_Ofimatic:
-                        print('\033[1;36m' + i[1] + '.- ' + i[0] + '\033[1;m')
-                    ofimatic_input = mpisw.user_input()
-                    if ofimatic_input < 5:
-                        mpisw.execute_command(mpisw.apps_ofimatic[
-                                                  ofimatic_input-1][1])
-                    elif ofimatic_input == 5:
-                        install_input = 0
-                    elif ofimatic_input == 6:
-                        mpisw.clear()
-                        mpisw.end_message()
-                        sys.exit(0)
-
-                # menu multimedia
-                while install_input == 2:
-                    mpisw.clear()
-                    print('|\033[1;36m __ Multimedia __ \033[1;m|')
-                    for i in mpisw.menu_multimedia:
-                        print('\033[1;36m' + i[1] + '.- ' + i[0] + '\033[1;m')
-                    multimedia_input = mpisw.user_input()
-                    if multimedia_input <= 19 and multimedia_input != 0:
-                        mpisw.execute_command(mpisw.apps_multimedia[
-                            multimedia_input - 1][1])
-                    elif multimedia_input == 20:
-                        install_input = 0
-                    elif multimedia_input == 21:
-                        mpisw.clear()
-                        mpisw.end_message()
-                        sys.exit(0)
-
-                # menu development
-                while install_input == 3:
-                    mpisw.clear()
-                    print('|\033[1;36m __ Development __ \033[1;m|')
-                    for i in mpisw.menu_development:
-                        print('\033[1;36m' + i[1] + '.- ' + i[0] + '\033[1;m')
-                    development_input = mpisw.user_input()
-                    if development_input <= 8 != 0:
-                        mpisw.execute_command(mpisw.apps_development[
-                                    development_input - 1][1])
-                    elif development_input == 9:
-                        install_input = 0
-                    elif development_input == 10:
-                        mpisw.clear()
-                        mpisw.end_message()
-                        sys.exit(0)
-
-                # menu Internet
-                while install_input == 4:
-                    mpisw.clear()
-                    print('|\033[1;36m __ Internet__ \033[1;m|')
-                    for i in mpisw.menu_Internet:
-                        print('\033[1;36m' + i[1] + '.- ' + i[0] + '\033[1;m')
-                    internet_input = mpisw.user_input()
-                    if internet_input <= 9 != 0:
-                        mpisw.execute_command(mpisw.apps_internet[
-                                internet_input - 1][1])
-                    elif internet_input == 10:
-                        install_input = 0
-                    elif internet_input == 11:
-                        mpisw.clear()
-                        mpisw.end_message()
-                        sys.exit(0)
-
-                # menu games
-                while install_input == 5:
-                    mpisw.clear()
-                    print('|\033[1;36m __ Games __ \033[1;m|')
-                    for i in mpisw.menu_Games:
-                        print('\033[1;36m' + i[1] + '.- ' + i[0] + '\033[1;m')
-                    games_input = mpisw.user_input()
-                    if games_input <= 8 != 0:
-                        mpisw.execute_command(mpisw.apps_Games[
-                                                games_input - 1][1])
-                    elif games_input == 12:
-                        install_input = 0
-                    elif games_input == 13:
-                        mpisw.clear()
-                        mpisw.end_message()
-                        sys.exit(0)
-
-                # menu system tools
-                while install_input == 6:
-                    mpisw.clear()
-                    print('|\033[1;36m __ System Tools __ \033[1;m|')
-                    for i in mpisw.menu_Sys_Tools:
-                        print('\033[1;36m' + i[1] + '.- ' + i[0] + '\033[1;m')
-                    systools_input = mpisw.user_input()
-                    if systools_input == 1 == 2 == 4 == 6:
-                        mpisw.execute_command(mpisw.apps_System_Tools[
-                                                  systools_input - 1][1])
-                    elif systools_input == 3 == 5:
-                        mpisw.execute_command(mpisw.apps_System_Tools[
-                                                  systools_input - 1][1], True)
-                    elif systools_input == 7:
-                        install_input = 0
-                    elif systools_input == 8:
-                        mpisw.clear()
-                        mpisw.end_message()
-                        sys.exit(0)
-
-                # menu back
-                while install_input == 7:
-                    main_input = 0
-                    install_input = 0
-
-                # menu exit
-                while install_input == 8:
-                    sys.exit(0)
-
-            # no implementado todavia
-            while main_input == 3:
-                mpisw.clear()
-                print(mpisw.msgNf)
-                mpisw.pause()
-                main_input = 0
-
-            # no implementado todavia
-            while main_input == 4:
-                mpisw.clear()
-                print(mpisw.msgNf)
-                mpisw.pause()
-                main_input = 0
-
-            # menu Install DEs & WMs
-            while main_input == 5:
-                mpisw.clear()
-                print('|\033[1;36m __ DEs & WMs Installations __\033[1;m|')
-                for i in mpisw.menu_DEs_WMs:
-                    print('\033[1;36m' + i[1] + '.- ' + i[0] + '\033[1;m')
-                des_wms_input = mpisw.user_input()
-                # menu Desktop Environments
-                while des_wms_input == 1:
-                    mpisw.clear()
-                    print('|\033[1;36m __ Desktop Environments __\033[1;m|')
-                    for i in mpisw.menu_DEs:
-                        print('\033[1;36m' + i[1] + '.- ' + i[0] + '\033[1;m')
-                    des_input = mpisw.user_input()
-                    if des_input < 6:
-                        mpisw.execute_command(mpisw.apps_DEs[des_input - 1][1])
-                    # back menu
-                    elif des_input == 6:
-                        des_wms_input = 0
-                    # exit menu
-                    elif des_input == 7:
-                        mpisw.clear()
-                        mpisw.end_message()
-                        sys.exit(0)
-                # menu Window Managers
-                while des_wms_input == 2:
-                    mpisw.clear()
-                    print('|\033[1;36m __ Window Managers __\033[1;m|')
-                    for i in mpisw.menu_WMs:
-                        print('\033[1;36m' + i[1] + '.- ' + i[0] + '\033[1;m')
-                    wms_input = mpisw.user_input()
-                    if wms_input < 4:
-                        mpisw.execute_command(mpisw.apps_WMs[wms_input - 1][1])
-                    # back menu
-                    elif wms_input == 4:
-                        des_wms_input = 0
-                    # exit menu
-                    elif wms_input == 5:
-                        mpisw.clear()
-                        mpisw.end_message()
-                        sys.exit(0)
-                # back menu
-                while des_wms_input == 3:
-                    mpisw.clear()
-                    des_wms_input = 0
-                    main_input = 0
-                # exit menu
-                while des_wms_input == 4:
-                    mpisw.clear()
-                    mpisw.end_message()
-                    sys.exit(0)
-
-            # no implementado todavia
-            while main_input == 6:
-                mpisw.clear()
-                print(mpisw.msgNf)
-                mpisw.pause()
-                main_input = 0
-
-            # no implementado todavia
-            while main_input == 7:
-                # mpisw.execute_command("git clone "
-                #                       "https://github.com/KernelPanicBlog/"
-                #                       "Script-Post-instalacion.git")
-                # mpisw.reload()
-                # mpisw.pause(mpisw.msgTF)
-                main_input = 0
-
-            # menu help
-            while main_input == 8:
-                mpisw.help()
-                mpisw.pause()
-                mpisw.clear()
-                main_input = 0
-
-            # exit
-            while main_input == 9:
-                mpisw.clear()
-                mpisw.end_message()
-                sys.exit(0)
+            option = core.user_input()
+            if option <= len(mpisw.menus[m_actual].items) > 0:
+                if mpisw.menus[m_actual].items[option - 1].ismenu == 'True':
+                    m_back = m_actual
+                    nm = core.search_menu(
+                         mpisw.menus[m_actual].items[option - 1].name,
+                         mpisw.menus)
+                    if nm != 0:
+                        m_actual = nm
+                else:
+                    tr = core.search_commands(
+                         mpisw.menus[m_actual].items[option - 1].name,
+                         mpisw.apps)
+                    if tr is None:
+                        print(core.errors['0x001'])
+                    elif tr.commands[0] == 'back':
+                        m_actual = m_back
+                    elif tr.commands[0] == 'exit':
+                        exit(0)
+                    elif tr.commands[0] == 'SeeMirrorList':
+                        with open('/etc/pacman.d/mirrorlist', 'r') as f:
+                            print(f.read())
+                    else:
+                        core.execute_command(tr.commands, tr.sequentially)
+            else:
+                core.pause(core.messages['msgNOp'])
+            core.clear()
+            print('\033[1;36m'+mpisw.menus[m_actual].title+'\033[1;m')
+            for item in mpisw.menus[m_actual].items:
+                print('\033[1;36m'+item.option + '.- ' + item.title+'\033[1;m')
     except KeyboardInterrupt:
-        print("\nYou had press the Ctrl+C keys combination. Accepted exit "
-              "request. Bye!")
+        print(core.messages['msgCtrl+C'])
     except Exception:
         traceback.print_exc(file=sys.stdout)
     sys.exit(0)

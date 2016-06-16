@@ -6,13 +6,14 @@
 
 from distutils.core import setup
 
+
 def get_readme(file):
     with open(file) as readme:
         return readme.read()
 
 setup(
       name="mpis",
-      version="0.1a",
+      version="0.2a",
       description="This script allows to configure the system, install some applications" \
                   "for a regular work day thinked in developers, gamers, musicians and more...",
       long_description=get_readme("README.md"),
@@ -22,7 +23,7 @@ setup(
       url="https://kernelpanicblog.wordpress.com",
       license="gplv3",
       py_modules=["core.core"],
-      data_files=["apps.config", "menus.config", "LICENSE", "README.md"],
+      data_files=["menus.xml", "LICENSE", "README.md"],
       scripts=["mpis"],
 )
 
