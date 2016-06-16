@@ -81,7 +81,7 @@ _  __                    _  _____                    ____  _
 |_|\_\___|_|  |_| |_|\___|_||_|   \__,_|_| |_|_|\___||____/|_|\___/ \__, |
                                                                    __/ |
                                                                   |___/\033[1;m
-\t\033[1;36mManjaro Post Installation Script version 0.1a\033[1;m
+\t\033[1;36mManjaro Post Installation Script version 0.2a\033[1;m
 \t\033[1;32mAuthors:\033[1;m
 \t\t\033[1;32mSniferL4bs  | https://www.sniferl4bs.com\033[1;m
 \t\t\033[1;32mNeoRanger   | https://www.neositelinux.com.ar\033[1;m
