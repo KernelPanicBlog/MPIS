@@ -26,7 +26,7 @@ def main():
             print('\033[1;36m' + item.option + '.- ' + item.title + '\033[1;m')
         while True:
             option = core.user_input()
-            if option <= len(mpisw.menus[m_actual].items) > 0:
+            if option > 0 <= len(mpisw.menus[m_actual].items) != 0:
                 if mpisw.menus[m_actual].items[option - 1].ismenu == 'True':
                     m_back = m_actual
                     nm = core.search_menu(
@@ -40,9 +40,15 @@ def main():
                          mpisw.apps)
                     if tr is None:
                         print(core.errors['0x001'])
+                    elif tr.commands[0] == 'help':
+                        core.help()
+                        core.pause()
+                        core.clear()
                     elif tr.commands[0] == 'back':
                         m_actual = m_back
                     elif tr.commands[0] == 'exit':
+                        core.clear()
+                        core.end_message()
                         exit(0)
                     elif tr.commands[0] == 'SeeMirrorList':
                         with open('/etc/pacman.d/mirrorlist', 'r') as f:
@@ -51,12 +57,14 @@ def main():
                         core.execute_command(tr.commands, tr.sequentially)
             else:
                 core.pause(core.messages['msgNOp'])
+                core.clear()
             core.clear()
             print('\033[1;36m'+mpisw.menus[m_actual].title+'\033[1;m')
             for item in mpisw.menus[m_actual].items:
                 print('\033[1;36m'+item.option + '.- ' + item.title+'\033[1;m')
     except KeyboardInterrupt:
         print(core.messages['msgCtrl+C'])
+        core.clear()
     except Exception:
         traceback.print_exc(file=sys.stdout)
     sys.exit(0)
