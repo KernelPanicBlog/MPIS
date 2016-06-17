@@ -42,7 +42,7 @@
                 <title>Update script (not functional yet)</title>
                 <option>7</option>
                 <commands sequentially="False">
-                    <cmd>...</cmd>
+                    <cmd> </cmd>
                 </commands>
             </item>
             <item ismenu="False">

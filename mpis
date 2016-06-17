@@ -53,11 +53,11 @@ def main():
                     elif tr.commands[0] == 'SeeMirrorList':
                         with open('/etc/pacman.d/mirrorlist', 'r') as f:
                             print(f.read())
+                        core.pause()
                     else:
                         core.execute_command(tr.commands, tr.sequentially)
             else:
                 core.pause(core.messages['msgNOp'])
-                core.clear()
             core.clear()
             print('\033[1;36m'+mpisw.menus[m_actual].title+'\033[1;m')
             for item in mpisw.menus[m_actual].items:
