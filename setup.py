@@ -14,7 +14,7 @@ def get_readme():
 setup(
       name="mpis",
       version="0.2a",
-      description="This script allows to configure the system and install some applications" \
+      description="This script allows to configure the system, install some applications" \
                   "for a regular work day designed for developers, gamers, musicians and more...",
       long_description=get_readme(),
       keywords="manjaro linux post install script",
