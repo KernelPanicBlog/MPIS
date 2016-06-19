@@ -1,6 +1,6 @@
 pkgname="mpis-unstable-git"
 _pyname="mpis"
-_gitname="Script-Post-instalacion"
+_gitrepo="Script-Post-instalacion"
 pkgver="0.2a"
 pkgrel="1"
 pkgdesc="This script allows to configure the system, install some applications for a regular work day thinked in developers, gamers, musicians and more... Unstable branch from Git."
@@ -12,9 +12,6 @@ source=("git+https://github.com/KernelPanicBlog/Script-Post-instalacion.git#bran
 md5sums=('SKIP')
 
 package() {
-  cd "${srcdir}/${_gitname}"
+  cd "${srcdir}/${_gitrepo}"
   python3 setup.py install --prefix=/usr --root="${pkgdir}"
-  install -d -m755 "${pkgdir}/usr/lib/${_pyname}" "${pkgdir}/usr/share/licenses/${_pyname}"
-  install -m644 LICENSE "${pkgdir}/usr/share/licenses/${_pyname}/LICENSE"
-  install -m644 menus.config "${pkgdir}/usr/lib/${_pyname}/menus.xml"
 }
