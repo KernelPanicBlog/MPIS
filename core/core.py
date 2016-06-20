@@ -155,7 +155,11 @@ class Mpis:
         self.__load_config()
 
     def __load_config(self):
-        with open("menu.xml") as f:
+        root_dir = "/usr/lib/mpis/"
+        file_name = "menu.xml"
+        root_file = root_dir + file_name
+        menu_config = file_name if not os.path.exists(root_file) else root_file
+        with open(menu_config) as f:
             uncode = f.read()
             data = fromstring(uncode)
             lst_menus = data.findall('menu')
