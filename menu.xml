@@ -503,7 +503,7 @@
             <item ismenu="False">
                 <name>ninja-ide</name>
                 <title>Install NinjaIDE</title>
-                <option>7</option>
+                <option>8</option>
                 <commands sequentially="False">
                     <cmd>sudo pacman -S ninja-ide</cmd>
                 </commands>
@@ -511,7 +511,7 @@
             <item ismenu="False">
                 <name>back</name>
                 <title>Back</title>
-                <option>8</option>
+                <option>9</option>
                 <commands sequentially="False">
                     <cmd>back</cmd>
                 </commands>
@@ -519,7 +519,7 @@
 			<item ismenu="False">
                 <name>exit</name>
                 <title>Exit</title>
-                <option>9</option>
+                <option>10</option>
                 <commands sequentially="False">
                     <cmd>exit</cmd>
                 </commands>
