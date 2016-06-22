@@ -20,7 +20,8 @@ def main():
         core.help()
         core.pause()
         core.clear()
-        option, m_actual, m_back = 0, 0, 0
+        option, m_actual = 0, 0
+        m_back = []
         print('\033[1;36m' + mpisw.menus[m_actual].title + '\033[1;m')
         for item in mpisw.menus[m_actual].items:
             print('\033[1;36m' + item.option + '.- ' + item.title + '\033[1;m')
@@ -28,7 +29,7 @@ def main():
             option = core.user_input()
             if option > 0 <= len(mpisw.menus[m_actual].items) != 0:
                 if mpisw.menus[m_actual].items[option - 1].ismenu == 'True':
-                    m_back = m_actual
+                    m_back.append(m_actual)
                     nm = core.search_menu(
                          mpisw.menus[m_actual].items[option - 1].name,
                          mpisw.menus)
@@ -45,7 +46,7 @@ def main():
                         core.pause()
                         core.clear()
                     elif tr.commands[0] == 'back':
-                        m_actual = m_back
+                        m_actual = m_back.pop()
                     elif tr.commands[0] == 'exit':
                         core.clear()
                         core.end_message()
