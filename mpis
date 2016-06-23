@@ -29,7 +29,8 @@ def main():
             try:
                 option = core.user_input()
                 if option in ['b', 'B', 'back', 'Back', 'BACK']:
-                    m_actual = m_back.pop()
+                    if len(m_back):
+                        m_actual = m_back.pop()
                 elif option in ['h', 'H', 'help', 'Help', 'HELP']:
                     core.help()
                     core.pause()
@@ -58,7 +59,8 @@ def main():
                             core.pause()
                             core.clear()
                         elif tr.commands[0] == 'back':
-                            m_actual = m_back.pop()
+                            if len(m_back):
+                                m_actual = m_back.pop()
                         elif tr.commands[0] == 'exit':
                             core.clear()
                             core.end_message()
