@@ -46,7 +46,7 @@ def execute_command(command, option="False"):
 
 def user_input():
         try:
-            return int(input(messages['msgMpis']))
+            return input(messages['msgMpis'])
         except ValueError:
             return 0
 
@@ -95,9 +95,10 @@ _  __                    _  _____                    ____  _
 def help():
     print("""\n\033[1;36mHelp:\033[1;m\n
 \tYou can select an option with the given
-\tnumber or write 2 shortcuts:
-\t- back -> return to the previous option
-\t- exit or Ctrl+C -> finish the script execution
+\tnumber or write 3 shortcuts:
+\t- back or b-> return to the previous option
+\t- help or h->
+\t- exit or Ctrl+C or x-> finish the script execution
 """)
 
 

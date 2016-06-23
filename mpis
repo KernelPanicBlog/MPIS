@@ -27,17 +27,28 @@ def main():
             print('\033[1;36m' + item.option + '.- ' + item.title + '\033[1;m')
         while True:
             option = core.user_input()
-            if option > 0 <= len(mpisw.menus[m_actual].items) != 0:
-                if mpisw.menus[m_actual].items[option - 1].ismenu == 'True':
+            if option in ['b', 'B', 'back', 'Back', 'BACK']:
+                m_actual = m_back.pop()
+            elif option in ['h', 'H', 'help', 'Help', 'HELP']:
+                core.help()
+                core.pause()
+                core.clear()
+            elif option in ['x', 'X', 'exit', 'Exit', 'EXIT']:
+                core.clear()
+                core.end_message()
+                sys.exit(0)
+            elif int(option) > 0 <= len(mpisw.menus[m_actual].items) != 0:
+                if mpisw.menus[m_actual].items[int(option) - 1].ismenu == \
+                        'True':
                     m_back.append(m_actual)
                     nm = core.search_menu(
-                         mpisw.menus[m_actual].items[option - 1].name,
+                         mpisw.menus[m_actual].items[int(option) - 1].name,
                          mpisw.menus)
                     if nm != 0:
                         m_actual = nm
                 else:
                     tr = core.search_commands(
-                         mpisw.menus[m_actual].items[option - 1].name,
+                         mpisw.menus[m_actual].items[int(option) - 1].name,
                          mpisw.apps)
                     if tr is None:
                         print(core.errors['0x001'])
@@ -50,11 +61,13 @@ def main():
                     elif tr.commands[0] == 'exit':
                         core.clear()
                         core.end_message()
-                        exit(0)
+                        sys.exit(0)
                     elif tr.commands[0] == 'SeeMirrorList':
                         with open('/etc/pacman.d/mirrorlist', 'r') as f:
                             print(f.read())
                         core.pause()
+                    elif tr.commands[0] == "unistallPackages":
+                        pass
                     else:
                         core.execute_command(tr.commands, tr.sequentially)
             else:

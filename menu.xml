@@ -15,17 +15,20 @@
                 <option>2</option>
             </item >
             <item ismenu="False">
-                <name>apps_installed</name>
-                <title>List applications installed (not functional yet)</title>
+                <name>packages_installed</name>
+                <title>List packages installed</title>
                 <option>3</option>
                 <commands sequentially="False">
-                    <cmd>...</cmd>
+                    <cmd>pacman -Qe |less</cmd>
                 </commands>
             </item>
-            <item ismenu="True">
-                <name>uninstall_apps</name>
-                <title>Uninstall applications (not functional yet)</title>
+            <item ismenu="False">
+                <name>uninstall_packages</name>
+                <title>Uninstall packages (not functional yet)</title>
                 <option>4</option>
+                <commands sequentially="False">
+                    <cmd>unistallPackages</cmd>
+                </commands>
             </item>
             <item ismenu="True">
                 <name>des_wms</name>
@@ -547,7 +550,7 @@
                 </commands>
             </item>
             <item ismenu="False">
-                <name></name>
+                <name>vivaldi</name>
                 <title>Install Vivaldi</title>
                 <option>3</option>
                 <commands sequentially="False">
