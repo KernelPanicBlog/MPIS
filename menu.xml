@@ -219,7 +219,7 @@
             <item ismenu="False">
                 <name>libreOffice_fresh</name>
                 <title>Install LibreOffice fresh (more updated)</title>
-                <option>1</option>
+                <option>2</option>
                 <commands sequentially="False">
                     <cmd>sudo pacman -S libreoffice-fresh</cmd>
                 </commands>
