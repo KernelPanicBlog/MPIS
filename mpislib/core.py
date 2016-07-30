@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 #
 
+import sys
 import os
 import subprocess
 from xml.etree.ElementTree import *
