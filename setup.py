@@ -11,8 +11,7 @@ def get_readme():
     with open("README.md") as readme:
         return readme.read()
 
-setup(
-      name="mpis",
+setup(name="mpis",
       version="0.2a",
       description="This script allows to configure the system, install some applications" \
                   "for a regular work day designed for developers, gamers, musicians and more...",
@@ -22,9 +21,8 @@ setup(
       author_email="kernelpanicblog1@gmail.com",
       url="https://kernelpanicblog.wordpress.com",
       license="gplv3",
-      py_modules=["core.core"],
+      py_modules=["mpislib"],
       data_files = [("/usr/lib/mpis", ["menu.xml"]),
                     ("/usr/share/licenses/mpis", ["LICENSE"])],
       scripts=["mpis"],
-)
-
+     )
