@@ -128,7 +128,7 @@ You can select an option with the given
 number or write 3 shortcuts:
 - back or b -> return to the previous option
 - help or h -> show help
-- exit or x or Ctrl+C -> finish the script execution
+- exit or e or Ctrl+C -> finish the script execution
 """)
     pause()
     clear()
