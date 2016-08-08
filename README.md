@@ -6,7 +6,7 @@ This script allows to configure the system, install some applications for a regu
 
 This script is in testing phase and we are not responsable for the usage.
 
-If you find a bug or an error please report it as an [issue](https://github.com/KernelPanicBlog/Script-Post-instalacion/issues/).
+If you find a bug or an error please report it as an [issue](https://github.com/KernelPanicBlog/MPIS/issues/).
 
 ### Contact
 
@@ -17,9 +17,8 @@ If you find a bug or an error please report it as an [issue](https://github.com/
 
 ### How to install
 
-- Clone the git repository: `git clone https://github.com/KernelPanicBlog/Script-Post-instalacion.git`
-- Access to the cloned directory: `cd Script-Post-Instalacion`
+- Clone the git repository: `git clone https://github.com/KernelPanicBlog/MPIS.git`
+- Access to the cloned directory: `cd MPIS`
 - Execute the script: `./mpis`
 
 Optionally you can install the script in your system by running `makepkg -sic` in the cloned repository folder.
-
