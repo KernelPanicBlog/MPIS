@@ -232,7 +232,6 @@ class Mpis:
                     if not not_repeated(item.find("name").text, self.apps):
                         new_app = App()
                         new_app.name = item.find("name").text
-                        print(commands[0].get("sequentially"))
                         if commands[0].get("sequentially") == "True":
                             new_app.sequentially = True
                         else:
