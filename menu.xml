@@ -872,16 +872,18 @@ along with MPIS; If not, see <http://www.gnu.org/licenses/>. -->
                 <name>xfce</name>
                 <title>Install XFCE</title>
                 <option>1</option>
-                <commands sequentially="False">
+                <commands sequentially="True">
                     <cmd>sudo pacman -S xfce4</cmd>
+                    <cmd>sudo pacman -S xfce4-goodies</cmd>
                 </commands>
             </item>
             <item ismenu="False">
                 <name>gnome-shell</name>
                 <title>Install Gnome-Shell</title>
                 <option>2</option>
-                <commands sequentially="False">
+                <commands sequentially="True">
                     <cmd>sudo pacman -S gnome-shell</cmd>
+                    <cmd>sudo pacman -S gnome-shell-extensions</cmd>
                 </commands>
             </item>
             <item ismenu="False">
@@ -926,8 +928,9 @@ along with MPIS; If not, see <http://www.gnu.org/licenses/>. -->
                 <name>i3-wm</name>
                 <title>Install i3-wm</title>
                 <option>1</option>
-                <commands sequentially="False">
+                <commands sequentially="True">
                     <cmd>sudo pacman -S i3-wm</cmd>
+                    <cmd>sudo pacman -S i3lock i3status</cmd>
                 </commands>
             </item>
         </items>
@@ -936,8 +939,10 @@ along with MPIS; If not, see <http://www.gnu.org/licenses/>. -->
                 <name>openbox</name>
                 <title>Install Openbox</title>
                 <option>2</option>
-                <commands sequentially="False">
+                <commands sequentially="True">
                     <cmd>sudo pacman -S openbox</cmd>
+                    <cmd>sudo pacman -S oblogout obconf obmenu</cmd>
+                    <cmd>sudo pacman -S openbox-themes</cmd>
                 </commands>
             </item>
         </items>
@@ -946,8 +951,9 @@ along with MPIS; If not, see <http://www.gnu.org/licenses/>. -->
                 <name>fluxbox</name>
                 <title>Install Fluxbox</title>
                 <option>3</option>
-                <commands sequentially="False">
+                <commands sequentially="True">
                     <cmd>sudo pacman -S fluxbox</cmd>
+                    <cmd>sudo pacman -S fbnews fluxter</cmd>
                 </commands>
             </item>
             <item ismenu="False">

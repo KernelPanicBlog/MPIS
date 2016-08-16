@@ -3,10 +3,10 @@
 #
 # This file is part of MPIS (https://github.com/KernelPanicBlog/MPIS).
 #
-# MPIS (Manjaro Post Installation Script) is free software; you can redistribute
+# MPIS(Manjaro Post Installation Script) is free software; you can redistribute
 # it and/or modify it under the terms of the GNU General Public License as
-# published by the Free Software Foundation; either version 3 of the License, or
-# any later version.
+# published by the Free Software Foundation; either version 3 of the License,
+# or any later version.
 #
 # MPIS (Manjaro Post Installation Script):
 # It allows  users to choose different options such as
@@ -44,27 +44,28 @@ errors = {
     }
 
 
-def execute_command(command, option="False"):
-    flat = True
+def execute_command(command, option=False):
+    error_flag = False
     for cmd in command:
         try:
             cmd = cmd.split()
             if cmd[0] in ["yaourt"]:
                 print(messages["msgAur"])
-            if flat and option == "True":
+            if not error_flag and option:
                 if subprocess.check_call(cmd) == 0:
-                    flat = True
+                    error_flag = False
                 else:
-                    flat = False
+                    error_flag = True
                     break
-            elif flat or option != "True":
+            elif not error_flag or not option:
                 if subprocess.check_call(cmd) == 0:
-                    flat = True
+                    error_flag = False
                 else:
-                    flat = False
+                    error_flag = True
         except subprocess.CalledProcessError:
+            error_flag = True
             print(errors["0x002"])
-    if flat:
+    if not error_flag:
         pause(messages["msgTF"])
     else:
         pause(messages["msgTFWE"])
@@ -194,7 +195,7 @@ class Menu:
 class App:
     def __init__(self):
         self.name = ""
-        self.sequentially = "False"
+        self.sequentially = False
         self.commands = []
         self.messages = []
 
@@ -231,7 +232,11 @@ class Mpis:
                     if not not_repeated(item.find("name").text, self.apps):
                         new_app = App()
                         new_app.name = item.find("name").text
-                        new_app.sequentially = item.get("sequentially")
+                        print(commands[0].get("sequentially"))
+                        if commands[0].get("sequentially") == "True":
+                            new_app.sequentially = True
+                        else:
+                            new_app.sequentially = False
                         lst_cmd = []
                         for cmd in commands:
                             all_cmd = cmd.findall("cmd")
