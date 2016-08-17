@@ -1,7 +1,6 @@
 # Manjaro Post Installation Script (MPIS)
 
-[![Build status](https://ci.appveyor.com/api/projects/status/32or2uaywy3uh2qt/branch/master?svg=true)](https://ci.appveyor.com/project/harrinsoft/mpis/branch/master) [![Coverage Status](https://coveralls.io/repos/github/harrinsoft/MPIS/badge.svg?branch=master)](https://coveralls.io/github/harrinsoft/MPIS?branch=master) [![Build Status](https://travis-ci.org/harrinsoft/MPIS.svg?branch=master)](https://travis-ci.org/harrinsoft/MPIS)
-
+[![Build status](https://ci.appveyor.com/api/projects/status/32or2uaywy3uh2qt/branch/master?svg=true)](https://ci.appveyor.com/project/harrinsoft/mpis/branch/master)
 This script allows to configure the system, install some applications for a regular work day designed for developers, gamers, musicians and more...
 
 ### Attention
