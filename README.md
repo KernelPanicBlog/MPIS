@@ -1,6 +1,6 @@
 # Manjaro Post Installation Script (MPIS)
 
-[![Build status](https://ci.appveyor.com/api/projects/status/32or2uaywy3uh2qt/branch/master?svg=true)](https://ci.appveyor.com/project/harrinsoft/mpis/branch/master)
+[![Build status](https://ci.appveyor.com/api/projects/status/32or2uaywy3uh2qt/branch/master?svg=true)](https://ci.appveyor.com/project/harrinsoft/mpis/branch/master) [![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/KernelPanicBlog/MPIS.svg)](http://isitmaintained.com/project/KernelPanicBlog/MPIS "Average time to resolve an issue") [![Percentage of issues still open](http://isitmaintained.com/badge/open/KernelPanicBlog/MPIS.svg)](http://isitmaintained.com/project/KernelPanicBlog/MPIS "Percentage of issues still open")
 
 This script allows to configure the system, install some applications for a regular work day designed for developers, gamers, musicians and more...
 
