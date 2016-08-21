@@ -341,7 +341,7 @@ along with MPIS; If not, see <http://www.gnu.org/licenses/>. -->
             </item>
             <item ismenu="False">
                 <name>moc</name>
-                <title>Install moc (Music Player form Terminal)</title>
+                <title>Install moc (Music Player from Terminal)</title>
                 <option>7</option>
                 <commands sequentially="False">
                     <cmd>sudo pacman -S moc</cmd>
