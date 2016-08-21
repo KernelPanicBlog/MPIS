@@ -27,7 +27,7 @@ from distutils.core import setup
 
 
 def get_readme():
-    with open("README.md") as readme:
+    with open("README.rst") as readme:
         return readme.read()
 
 setup(name="mpis",
