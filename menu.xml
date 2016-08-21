@@ -397,7 +397,7 @@ along with MPIS; If not, see <http://www.gnu.org/licenses/>. -->
             </item>
             <item ismenu="False">
                 <name>soundkonverter</name>
-                <title>SoundKonverter (QT)</title>
+                <title>Install SoundKonverter (QT)</title>
                 <option>14</option>
                 <commands sequentially="False">
                     <cmd>sudo pacman -S soundkonverter</cmd>
