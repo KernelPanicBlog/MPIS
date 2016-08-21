@@ -52,4 +52,3 @@ How to install
 You can install the script in your system by running ::
 
   $ yaourt -S mpis
-

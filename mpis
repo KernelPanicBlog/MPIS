@@ -71,7 +71,7 @@ def main():
                         elif tr.commands[0] == "SeeMirrorList":
                             with open("/etc/pacman.d/mirrorlist", "r") as f:
                                 print(f.read())
-                            core.pause()
+                            core.pause("")
                         elif tr.commands[0] == "unistallPackages":
                             pass
                         else:
