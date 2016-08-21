@@ -30,12 +30,17 @@ messages = {
     "msgTFWE": "Task finished with errors. Press Enter to continue...",
     "msgTF": "Task finished. Press Enter to continue...",
     "msgAur": "This application will be installed from the AUR "
-              "repository (community). It will be installed at "
-              "your own risk.",
+              "repository (community).\nIt will be installed at "
+              "your own risk.\n",
+    "msgAurC": "You want to continue the Installation from yaourt? \n"
+               "yes or not.",
+    "msgSudo": "It is asked superuser permission to perform this action",
+    "msgSudoC": "You want to continue? \nyes or not",
     "msgNf": "(not functional, yet)",
     "msgCtrl+C": "\nYou had press the Ctrl+C keys combination. Accepted exit "
                  "request. Bye!",
-    "msgNOp": "Sorry not valid option, Press any key to continue..."
+    "msgNOp": "Sorry not valid option, Press any key to continue...",
+    "msgUserCancel": "The command was canceled by the user"
     }
 
 errors = {
@@ -44,20 +49,39 @@ errors = {
     }
 
 
-def execute_command(command, option=False):
+def execute_command(command, sequentially=False):
     error_flag = False
+    cancel_by_user_flag = False
+    memory_option = False
     for cmd in command:
         try:
             cmd = cmd.split()
-            if cmd[0] in ["yaourt"]:
-                print(messages["msgAur"])
-            if not error_flag and option:
+            if cmd[0] in ["yaourt", "sudo"]:
+                if not memory_option:
+                    if cmd[0] == "yaourt":
+                        print(messages["msgAur"])
+                        print(messages["msgAurC"])
+                    elif cmd[0] == "sudo":
+                        print(messages["msgSudo"])
+                        print(messages["msgSudoC"])
+                    option = user_input()
+                    if option in mkopts("yes"):
+                        memory_option = True
+                    elif option in mkopts("not"):
+                        cancel_by_user_flag = True
+                        break
+                    else:
+                        print("\nInvalid option canceling the command")
+                        cancel_by_user_flag = True
+                        sequentially = True
+                        error_flag = True
+            if not error_flag and sequentially:
                 if subprocess.check_call(cmd) == 0:
                     error_flag = False
                 else:
                     error_flag = True
                     break
-            elif not error_flag or not option:
+            elif not error_flag or not sequentially:
                 if subprocess.check_call(cmd) == 0:
                     error_flag = False
                 else:
@@ -65,8 +89,10 @@ def execute_command(command, option=False):
         except subprocess.CalledProcessError:
             error_flag = True
             print(errors["0x002"])
-    if not error_flag:
+    if not error_flag and not cancel_by_user_flag:
         pause(messages["msgTF"])
+    elif cancel_by_user_flag:
+        pause(messages["msgUserCancel"])
     else:
         pause(messages["msgTFWE"])
 
@@ -78,9 +104,10 @@ def user_input():
         return 0
 
 
-def pause(msg="Press any key to continue..."):
+def pause(msg):
     try:
-        a = str(input(msg))
+        _base_msg = "Press any key to continue..."
+        a = str(input(msg + '\n' + _base_msg))
     except SyntaxError:
         pass
 
@@ -103,17 +130,20 @@ def sleep():
 
 
 def end_message(do_clear=True, shutdown=True, value=0):
-    if do_clear: clear()
+    if do_clear:
+        clear()
     print("""\033[1;36m
 Thanks for choosing us, we hope this script helped you.
     - The KernelPanicBlog Team.
 Our web: https://kernelpanicblog.wordpress.com
 \033[1;m""")
-    if shutdown: sys.exit(value)
+    if shutdown:
+        sys.exit(value)
 
 
 def show_banner(do_clear=True):
-    if do_clear: clear()
+    if do_clear:
+        clear()
     print("""\033[1;36m
  __  __ _____ _____  _____
 |  \/  |  __ \_   _|/ ____|
@@ -134,12 +164,13 @@ Collaborative Blog: | https://kernelpanicblog.wordpress.com
 Script in testing phase, please report bugs :)
 https://github.com/KernelPanicBlog/MPIS/issues
 """)
-    pause()
+    pause("")
     clear()
 
 
 def show_help(do_clear=True):
-    if do_clear: clear()
+    if do_clear:
+        clear()
     print("""\033[1;36m
 Help:
 \033[1;m
@@ -149,7 +180,7 @@ number or write 3 shortcuts:
 - help or h -> show help
 - exit or e or Ctrl+C -> finish the script execution
 """)
-    pause()
+    pause("")
     clear()
 
 

@@ -27,13 +27,14 @@ from distutils.core import setup
 
 
 def get_readme():
-    with open("README.md") as readme:
+    with open("README.rst") as readme:
         return readme.read()
 
 setup(name="mpis",
-      version="0.2a",
-      description="This script allows to configure the system, install some applications" \
-                  "for a regular work day designed for developers, gamers, musicians and more...",
+      version="0.3.0-alpha1",
+      description="This script allows to configure the system,"
+                  "install some applications for a regular work day designed"
+                  "for developers, gamers, musicians and more...",
       long_description=get_readme(),
       keywords="manjaro linux post install script",
       author="KernelPanicBlog Team",
@@ -43,5 +44,4 @@ setup(name="mpis",
       packages=["mpislib"],
       data_files=[("/usr/lib/mpis", ["menu.xml"]),
                   ("/usr/share/licenses/mpis", ["LICENSE"])],
-      scripts=["mpis"],
-     )
+      scripts=["mpis"],)
