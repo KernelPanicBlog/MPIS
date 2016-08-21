@@ -14,9 +14,11 @@ ________
 Changed:
 _________
 * pacman-keys command to pacman-key in xml file [issue #28]
+* pacman -Qe |less to pacman -Qe in xml file [issue #30]
 
 Fixed:
 ________
+* issue #30 (pacman -Qe |less)
 * issue #28 (pacman-keys command error)
 * PKGBUILD AUR (MD5 and tag)
 * issue #27 (uninformed use of root privileges).
