@@ -67,9 +67,17 @@ along with MPIS; If not, see <http://www.gnu.org/licenses/>. -->
                 </commands>
             </item>
             <item ismenu="False">
+                <name>see_changelog</name>
+                <title>See CHANGELOG File</title>
+                <option>8</option>
+                <commands sequentially="False">
+                    <cmd>more /usr/share/mpis/CHANGELOG.rst</cmd>
+                </commands>
+            </item>
+            <item ismenu="False">
                 <name>help</name>
                 <title>Help</title>
-                <option>8</option>
+                <option>9</option>
                 <commands sequentially="False">
                     <cmd>help</cmd>
                 </commands>
@@ -77,7 +85,7 @@ along with MPIS; If not, see <http://www.gnu.org/licenses/>. -->
             <item ismenu="False">
                 <name>exit</name>
                 <title>Exit</title>
-                <option>9</option>
+                <option>10</option>
                 <commands sequentially="False">
                     <cmd>exit</cmd>
                 </commands>

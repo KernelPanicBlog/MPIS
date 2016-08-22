@@ -78,12 +78,16 @@ def main():
                             core.execute_command(tr.commands, tr.sequentially)
                 else:
                     core.pause(core.messages["msgNOp"])
-            except ValueError:
-                pass
+            except (ValueError, IndexError):
+                core.clear()
+                print(core.errors["0x003"])
             core.clear()
-            print("\033[1;36m"+mpisw.menus[m_actual].title+"\033[1;m")
+            print("\033[1;36m" + mpisw.menus[m_actual].title + "\033[1;m")
             for item in mpisw.menus[m_actual].items:
-                print("\033[1;36m"+item.option + ".- " + item.title+"\033[1;m")
+                str_item = "\033[1;36]" + item.option + ".- "
+                str_item += item.title + "\033[1;m"
+                print(str_item)
+                str_item = ""
     except KeyboardInterrupt:
         print(core.messages["msgCtrl+C"])
         core.sleep()

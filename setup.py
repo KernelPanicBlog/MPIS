@@ -43,5 +43,6 @@ setup(name="mpis",
       license="gplv3",
       packages=["mpislib"],
       data_files=[("/usr/lib/mpis", ["menu.xml"]),
-                  ("/usr/share/licenses/mpis", ["LICENSE"])],
+                  ("/usr/share/licenses/mpis", ["LICENSE"]),
+                  ("/usr/share/mpis", ["CHANGELOG.rst"])],
       scripts=["mpis"],)

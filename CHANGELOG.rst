@@ -4,17 +4,21 @@ Change Log
 All notable changes to this project will be documented in this file.
 This project adheres to `Semantic Versioning <http://semver.org/>`_.
 
-Unreleased
-==============
+[0.3.0-alpha1] - 2016-08-22
+==============================
 added:
 ________
+* instructions to install and unistall the beta and alpha version (in README file)
+* Option to see the CHANGELOG file
 * Support to  cancel commands that require root permissions [issue #27].
 * added CHANGELOG file
 
 Changed:
 _________
-* pacman-keys command to pacman-key in xml file [issue #28]
+* the setup.py now installs the CHANGELOG file
+* exception handling: IndexError
 * pacman -Qe |less to pacman -Qe in xml file [issue #30]
+* pacman-keys command to pacman-key in xml file [issue #28]
 
 Fixed:
 ________

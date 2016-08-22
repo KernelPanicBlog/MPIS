@@ -45,7 +45,8 @@ messages = {
 
 errors = {
     "0x001": "command not found",
-    "0x002": "command exited with errors"
+    "0x002": "command exited with errors",
+    "0x003": "Error in option, this value is outside the range of the list"
     }
 
 
