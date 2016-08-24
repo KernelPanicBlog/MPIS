@@ -248,6 +248,13 @@ class Mpis:
         self.categorys = []
         self.__load_config()
 
+    def get_app_by_category(self, _category):
+        _list_apps = []
+        for app in self.apps:
+            if app.category == _category:
+                _list_apps.append(app)
+        return _list_apps
+
     def __load_config(self):
         root_dir = "/usr/lib/mpis/"
         file_name = "menu.xml"
