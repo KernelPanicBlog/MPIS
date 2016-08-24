@@ -8,7 +8,8 @@ This project adheres to `Semantic Versioning <http://semver.org/>`_.
 ===========
 added:
 ______
-*
+* new funtions in API
+* suport for GUI QT
 
 Changed:
 ________

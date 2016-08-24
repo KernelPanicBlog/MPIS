@@ -31,7 +31,7 @@ def get_readme():
         return readme.read()
 
 setup(name="mpis",
-      version="0.3.0-alpha1",
+      version="0.3.0-alpha2",
       description="This script allows to configure the system,"
                   "install some applications for a regular work day designed"
                   "for developers, gamers, musicians and more...",
@@ -44,5 +44,6 @@ setup(name="mpis",
       packages=["mpislib"],
       data_files=[("/usr/lib/mpis", ["menu.xml"]),
                   ("/usr/share/licenses/mpis", ["LICENSE"]),
-                  ("/usr/share/mpis", ["CHANGELOG.rst"])],
+                  ("/usr/share/mpis", ["CHANGELOG.rst"]),
+                  ("/usr/share/mpis", ["README.rst"])],
       scripts=["mpis"],)

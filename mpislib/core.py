@@ -153,7 +153,7 @@ def show_banner(do_clear=True):
 | |  | | |    _| |_ ____) |
 |_|  |_|_|   |_____|_____/
 
-Manjaro Post Installation Script version 1.0-alpha1
+Manjaro Post Installation Script version 0.3.0-alpha2
 \033[1;m
 \033[1;32m
 Authors:
