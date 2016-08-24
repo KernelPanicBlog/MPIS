@@ -982,4 +982,7 @@ along with MPIS; If not, see <http://www.gnu.org/licenses/>. -->
             </item>
         </items>
     </menu>
+    <menu>
+        <name></name>
+    </menu>
 </menus>

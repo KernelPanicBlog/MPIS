@@ -153,7 +153,7 @@ def show_banner(do_clear=True):
 | |  | | |    _| |_ ____) |
 |_|  |_|_|   |_____|_____/
 
-Manjaro Post Installation Script version 0.3.1-alpha1
+Manjaro Post Installation Script version 1.0-alpha1
 \033[1;m
 \033[1;32m
 Authors:
@@ -201,9 +201,17 @@ def search_menu(name_menu, l_menus):
     return 0
 
 
-def not_repeated(name_cmd, l_apps):
+def not_repeated_app(name_cmd, l_apps):
     for c in range(len(l_apps)):
         if l_apps[c].name == name_cmd:
+            return True
+            break
+    return False
+
+
+def not_repeated_str(_str, _lst_str):
+    for c in range(len(_lst_str)):
+        if _lst_str[c] == _str:
             return True
             break
     return False
@@ -237,6 +245,7 @@ class Mpis:
     def __init__(self):
         self.menus = []
         self.apps = []
+        self.categorys = []
         self.__load_config()
 
     def __load_config(self):
@@ -262,9 +271,12 @@ class Mpis:
                 new_item.ismenu = item.get("ismenu")
                 commands = item.findall("commands")
                 if len(commands) != 0:
-                    if not not_repeated(item.find("name").text, self.apps):
+                    if not not_repeated_app(item.find("name").text, self.apps):
                         new_app = App()
                         new_app.name = item.find("name").text
+                        new_app.category = new_menu.title
+                        if not not_repeated_str(new_menu.title, self.categorys):
+                            self.categorys.append(new_menu.title)
                         if commands[0].get("sequentially") == "True":
                             new_app.sequentially = True
                         else:
@@ -282,3 +294,18 @@ class Mpis:
 
     def reload(self):
         self.__load_config()
+
+
+def main():
+    test_mpis_cli = Mpis()
+    for app in test_mpis_cli.apps:
+        print(app.name + "\n")
+        print("\t" + app.category + "\n")
+        print("\t" + str(app.sequentially) + "\n")
+        for cmd in app.commands:
+            print("\t" + cmd + "\n")
+
+    print(test_mpis_cli.categorys)
+
+if __name__ == "__main__":
+    main()
