@@ -1,68 +1,82 @@
-============
+==========
 Change Log
-============
+==========
 All notable changes to this project will be documented in this file.
 This project adheres to `Semantic Versioning <http://semver.org/>`_.
 
-[0.3.0-alpha1] - 2016-08-22
-==============================
+[Unrelease]
+===========
 added:
+______
+*
+
+Changed:
 ________
-* instructions to install and unistall the beta and alpha version (in README file)
+*
+
+Fixed:
+______
+*
+
+[0.3.0-alpha1] - 2016-08-22
+===========================
+added:
+______
+* instructions to install and uninstall the beta and alpha version (in README file)
 * Option to see the CHANGELOG file
 * Support to  cancel commands that require root permissions [issue #27].
 * added CHANGELOG file
 
 Changed:
-_________
+________
 * the setup.py now installs the CHANGELOG file
 * exception handling: IndexError
 * pacman -Qe |less to pacman -Qe in xml file [issue #30]
 * pacman-keys command to pacman-key in xml file [issue #28]
 
 Fixed:
-________
+______
 * issue #30 (pacman -Qe |less)
 * issue #28 (pacman-keys command error)
 * PKGBUILD AUR (MD5 and tag)
 * issue #27 (uninformed use of root privileges).
 
 [0.2.1] - 2016-08-21
-======================
+====================
 Added:
-_______
+______
 * MPIS logo.
 * badges in README file.
 
 Changed:
-_________
+________
 * reStructuredText adoption of the format for the readme file
 
 Fixed:
-_______
+______
 * errors in the XML file
 
 [0.2a] - 2016-08-17
-======================
+===================
 added:
-_______
+______
 * XML file for the menu options
 * PKGBUILD
 * Installation from the setup.py file
 * Support for python 2.7 y python 3.x
 
 Changed:
-_________
+________
 * Automation menus though a xml file
 * Restructuring and optimization of code
 * Name of project to MPIS
 
 Security:
-__________
+_________
 * Implementation of the subprocess library
 
 Fixed:
-_______
+______
 * issue #25 (xml file error)
 * issue #23 (nemu back)
 * issue #22 (setup file)
@@ -78,8 +92,8 @@ _______
 * issue #3 (WPS not installed)
 
 [0.1] - 2016-05-18
-======================
+==================
 
 Added:
-_________
+______
 * project start

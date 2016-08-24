@@ -227,6 +227,7 @@ class Menu:
 class App:
     def __init__(self):
         self.name = ""
+        self.category = ""
         self.sequentially = False
         self.commands = []
         self.messages = []
