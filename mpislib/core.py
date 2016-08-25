@@ -253,7 +253,8 @@ class Mpis:
         _list_apps = []
         for app in self.apps:
             if app.category == _category:
-                _list_apps.append(app)
+                if app.name not in ["exit", "back", "help"]:
+                    _list_apps.append(app)
         return _list_apps
 
     def __load_config(self):
