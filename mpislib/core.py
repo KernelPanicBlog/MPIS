@@ -258,7 +258,7 @@ class Mpis:
     def get_app_by_category(self, _category):
         _list_apps = []
         for app in self.apps:
-            if app.category.name == _category:
+            if app.category.title == _category:
                 if app.name not in ["exit", "back", "help"]:
                     _list_apps.append(app)
         return _list_apps
