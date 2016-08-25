@@ -317,7 +317,7 @@ def main():
     test_mpis_cli = Mpis()
     for app in test_mpis_cli.apps:
         print(app.name + "\n")
-        print("\t" + app.category + "\n")
+        print("\t" + app.category.name + "\t" + app.category.title + "\n")
         print("\t" + str(app.sequentially) + "\n")
         for cmd in app.commands:
             print("\t" + cmd + "\n")
