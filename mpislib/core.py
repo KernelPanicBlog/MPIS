@@ -235,6 +235,7 @@ class Menu:
 class App:
     def __init__(self):
         self.name = ""
+        self.title = ""
         self.category = ""
         self.sequentially = False
         self.commands = []
@@ -281,6 +282,7 @@ class Mpis:
                     if not not_repeated_app(item.find("name").text, self.apps):
                         new_app = App()
                         new_app.name = item.find("name").text
+                        new_app.title = new_item.title
                         new_app.category = new_menu.title
                         if not not_repeated_str(new_menu.title, self.categorys):
                             self.categorys.append(new_menu.title)
