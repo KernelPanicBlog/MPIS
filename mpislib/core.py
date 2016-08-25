@@ -232,11 +232,17 @@ class Menu:
         self.items = []
 
 
+class Category:
+    def __init__(self):
+        self.name = ""
+        self.title = ""
+
+
 class App:
     def __init__(self):
         self.name = ""
         self.title = ""
-        self.category = ""
+        self.category = Category()
         self.sequentially = False
         self.commands = []
         self.messages = []
@@ -252,7 +258,7 @@ class Mpis:
     def get_app_by_category(self, _category):
         _list_apps = []
         for app in self.apps:
-            if app.category == _category:
+            if app.category.name == _category:
                 if app.name not in ["exit", "back", "help"]:
                     _list_apps.append(app)
         return _list_apps
@@ -284,7 +290,8 @@ class Mpis:
                         new_app = App()
                         new_app.name = item.find("name").text
                         new_app.title = new_item.title
-                        new_app.category = new_menu.title
+                        new_app.category.title = new_menu.title
+                        new_app.category.name = new_menu.name
                         if not not_repeated_str(new_menu.title, self.categorys):
                             self.categorys.append(new_menu.title)
                         if commands[0].get("sequentially") == "True":
