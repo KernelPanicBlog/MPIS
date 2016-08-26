@@ -259,7 +259,7 @@ class Mpis:
         _list_apps = []
         for app in self.apps:
             if app.category.title == _category:
-                if app.name not in ["exit", "back", "help"]:
+                if app.name not in ["exit", "back", "help", "SeeMirrorList"]:
                     _list_apps.append(app)
         return _list_apps
 
