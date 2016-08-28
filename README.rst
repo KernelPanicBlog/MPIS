@@ -58,14 +58,14 @@ How to install
     $ git clone https://github.com/KernelPanicBlog/MPIS.git
     $ cd MPIS
     $ git checkout testing
-    $ sudo python setup.py install --record /user/share/mpis/.filetouninstall.log
+    $ sudo python setup.py install --record ~/.filetouninstall.log
 
 * alpha version ::
 
     $ git clone https://github.com/KernelPanicBlog/MPIS.git
     $ cd MPIS
     $ git checkout unstable
-    $ sudo python setup.py install --record /user/share/mpis/.filetouninstall.log
+    $ sudo python setup.py install --record ~/.filetouninstall.log
 
 
 How to uninstall
@@ -77,4 +77,4 @@ How to uninstall
 * Beta and Alpha version ::
 
     $ su
-    $ cat /usr/share/mpis/.filetouninstall.log | xargs rm -rf
+    $ cat /home/"YOUR_USER"/.filetouninstall.log | xargs rm -rf
