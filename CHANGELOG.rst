@@ -4,20 +4,16 @@ Change Log
 All notable changes to this project will be documented in this file.
 This project adheres to `Semantic Versioning <http://semver.org/>`_.
 
-[Unrelease]
+[0.3.0-alpha2 - 2016-08-29]
 ===========
 added:
 ______
-* new funtions in API
+* new funtions in Core
 * suport for GUI QT
 
 Changed:
 ________
-*
-
-Fixed:
-______
-*
+* Delete option -> (update script).
 
 [0.3.0-alpha1] - 2016-08-22
 ===========================
