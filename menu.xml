@@ -37,7 +37,7 @@ along with MPIS; If not, see <http://www.gnu.org/licenses/>. -->
                 <title>List packages installed</title>
                 <option>3</option>
                 <commands sequentially="False">
-                    <cmd>pacman -Qe |less</cmd>
+                    <cmd>pacman -Qe</cmd>
                 </commands>
             </item>
             <item ismenu="False">
@@ -59,11 +59,11 @@ along with MPIS; If not, see <http://www.gnu.org/licenses/>. -->
                 <option>6</option>
             </item>
             <item ismenu="False">
-                <name>mpis_update</name>
-                <title>Update script (not functional yet)</title>
+                <name>see_changelog</name>
+                <title>See CHANGELOG File</title>
                 <option>7</option>
                 <commands sequentially="False">
-                    <cmd> </cmd>
+                    <cmd>more /usr/share/mpis/CHANGELOG.rst</cmd>
                 </commands>
             </item>
             <item ismenu="False">
@@ -94,8 +94,8 @@ along with MPIS; If not, see <http://www.gnu.org/licenses/>. -->
                 <option>1</option>
                 <commands sequentially="True">
                     <cmd>sudo pacman -S archlinux-keyring manjaro-keyring</cmd>
-                    <cmd>sudo pacman-keys --init</cmd>
-                    <cmd>sudo pacman-keys --populate archlinux manjaro</cmd>
+                    <cmd>sudo pacman-key --init</cmd>
+                    <cmd>sudo pacman-key --populate archlinux manjaro</cmd>
                     <cmd>sudo pacman-mirrors -g</cmd>
                 </commands>
             </item>
@@ -341,7 +341,7 @@ along with MPIS; If not, see <http://www.gnu.org/licenses/>. -->
             </item>
             <item ismenu="False">
                 <name>moc</name>
-                <title>Install moc (Music Player form Terminal)</title>
+                <title>Install moc (Music Player from Terminal)</title>
                 <option>7</option>
                 <commands sequentially="False">
                     <cmd>sudo pacman -S moc</cmd>
@@ -397,7 +397,7 @@ along with MPIS; If not, see <http://www.gnu.org/licenses/>. -->
             </item>
             <item ismenu="False">
                 <name>soundkonverter</name>
-                <title>SoundKonverter (QT)</title>
+                <title>Install SoundKonverter (QT)</title>
                 <option>14</option>
                 <commands sequentially="False">
                     <cmd>sudo pacman -S soundkonverter</cmd>
@@ -421,7 +421,7 @@ along with MPIS; If not, see <http://www.gnu.org/licenses/>. -->
             </item>
             <item ismenu="False">
                 <name>simplescreenrecorder</name>
-                <title>Install simplescreenrecorder</title>
+                <title>Install Simple Screen Recorder</title>
                 <option>17</option>
                 <commands sequentially="False">
                     <cmd>yaourt -S simplescreenrecorder</cmd>
