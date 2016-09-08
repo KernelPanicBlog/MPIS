@@ -8,7 +8,9 @@ This project adheres to `Semantic Versioning <http://semver.org/>`_.
 ===========
 added:
 ______
-*
+* Option "about" in the main menu
+* Options bar
+* parameter "--noconfirm" Default active
 
 
 
