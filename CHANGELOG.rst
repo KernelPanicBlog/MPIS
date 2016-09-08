@@ -8,16 +8,16 @@ This project adheres to `Semantic Versioning <http://semver.org/>`_.
 ===========
 added:
 ______
+*
+
+
+
+[0.3.0-alpha2] - 2016-08-29
+===========
+added:
+______
 * new funtions in API
 * suport for GUI QT
-
-Changed:
-________
-*
-
-Fixed:
-______
-*
 
 [0.3.0-alpha1] - 2016-08-22
 ===========================
