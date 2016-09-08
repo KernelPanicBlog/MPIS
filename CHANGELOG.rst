@@ -17,7 +17,12 @@ ______
 added:
 ______
 * new funtions in API
+* new funtions in Core
 * suport for GUI QT
+
+Changed:
+________
+* Delete option -> (update script).
 
 [0.3.0-alpha1] - 2016-08-22
 ===========================
