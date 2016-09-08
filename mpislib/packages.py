@@ -124,9 +124,6 @@ ALIAS = {
     "List packages installed": [
         "pacman -Qe"
     ],
-    "See the content of mirrorlist file": [
-        "more /etc/pacman.d/mirrorlist"
-    ],
     "See README File": [
         "more /usr/share/mpis/README.rst"
     ],

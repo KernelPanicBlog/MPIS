@@ -189,20 +189,20 @@ def user_input(color):
         return 0
 
 
-def addhijos(_node):
-    hijos = find_menu(_node.name)
-    if hijos is not None:
-        for hijo in hijos:
-            if hijo[1]:
-                new_node = Node(hijo[0], _node.name)
+def add_childern(_node):
+    childern = find_menu(_node.name)
+    if childern is not None:
+        for child in childern:
+            if child[1]:
+                new_node = Node(child[0], _node.name)
                 _node.add_childern(new_node)
-                addhijos(new_node)
-            elif hijo[0] == "incategory":
-               hijos_para_agregar = get_category(_node.name, _node.parent)
-               for h in hijos_para_agregar:
+                add_childern(new_node)
+            elif child[0] == "incategory":
+               childern_to_add = get_category(_node.name, _node.parent)
+               for h in childern_to_add:
                    _node.add_childern(h[0])
             else:
-                _node.add_childern(hijo[0])
+                _node.add_childern(child[0])
 
 
 def make_menus():
@@ -210,7 +210,7 @@ def make_menus():
 
     menumake = Node("root")
     menumake.add_childern(Node("Main Menu", menumake.name))
-    addhijos(menumake.childern[0])
+    add_childern(menumake.childern[0])
 
     return menumake
 

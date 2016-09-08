@@ -50,14 +50,14 @@ def main():
                     else:
                         if menu.name == "Settings ...":
                             pass
-                        elif menu.name == "About":
-                            if menu.childern[option].name == "About Mpis":
+                        elif menu.childern[option].name == "About Mpis":
                                 show_banner()
-                            elif menu.childern[option].name == "Report bug!":
-                                pause(get_message("Report Bugs!"))
-                            else:
-                                cmd_ = get_command(menu, option, "list")
-                                execute_command(cmd_)
+                        elif menu.childern[option].name == "Report bug!":
+                            pause(get_message("Report Bugs!"))
+                        elif menu.childern[option].name == "See the content " \
+                                                           "of mirrorlist file":
+                            with open("/etc/pacman.d/mirrorlist", "r") as f:
+                                pause(f.read())
                         else:
                             cmd_ = get_command(menu, option, "list")
                             execute_command(cmd_)
