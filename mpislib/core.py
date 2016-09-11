@@ -10,7 +10,7 @@
 #
 # MPIS (Manjaro Post Installation Script):
 # It allows  users to choose different options such as
-# install an application or config some tools and environments.
+# install an application or CONFIG some tools and environments.
 #
 # MPIS is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -23,6 +23,7 @@
 import sys
 import platform
 import subprocess
+from configparser import ConfigParser
 from mpislib.menus import find_menu
 from mpislib.packages import get_action
 from mpislib.packages import get_packages
@@ -31,6 +32,13 @@ from mpislib.packages import get_category
 from mpislib.resource import get_message
 from mpislib.resource import get_color
 from mpislib.resource import get_error
+from mpislib.resource import get_path_config
+from mpislib.resource import get_all_colors
+
+###############################################################################
+# GOBAL CONF
+###############################################################################
+CONFIG = ConfigParser()
 
 ###############################################################################
 # Clases
@@ -75,7 +83,122 @@ class Node:
 ###############################################################################
 
 
+def read_config():
+    global CONFIG
+    try:
+        CONFIG.read(get_path_config())
+    except:
+        set_default_config()
+
+
+def set_default_config():
+    global CONFIG
+
+    CONFIG['General'] = {
+        'noconfirm': "True",
+        'language': "en"
+        }
+    CONFIG['Appearance'] = {
+        'menu-title': "highlighted",
+        'option-menu': "Green",
+        'user-input': "Green-2",
+        'notifications': "Red"
+        }
+    with open(get_path_config(), "w") as config_file:
+        CONFIG.write(config_file)
+
+
+def save_config():
+    global CONFIG
+
+    with open(get_path_config(), "w") as config_file:
+        CONFIG.write(config_file)
+
+
+def toggle_noconfirm():
+    global CONFIG
+
+    _noconfirm = CONFIG['General'].getboolean('noconfirm')
+    CONFIG['General']['noconfirm'] = "False" if _noconfirm else "True"
+    pause(get_message("set-noconfirm"))
+    save_config()
+
+
+def wizard_config():
+    global CONFIG
+
+    pause("Setup Wizard appearance..\n")
+    clear()
+    ok = False
+    while not ok:
+        print("select a color for the title menus")
+        print("\t Available colours:")
+        for color in get_all_colors().keys():
+            prefix_color, suffix_color = get_color(color)
+            print('\t{0}{2}{1}'.format(prefix_color, suffix_color, color))
+        _option = user_input()
+        if _option.capitalize() in get_all_colors().keys():
+            CONFIG['Appearance']['menu-title'] = _option.capitalize()
+            ok = True
+            clear()
+        else:
+            ok = False
+            clear()
+    ok = False
+    while not ok:
+        print("select a color for the menus options")
+        print("\t Available colours:")
+        for color in get_all_colors().keys():
+            prefix_color, suffix_color = get_color(color)
+            print('\t{0}{2}{1}'.format(prefix_color, suffix_color, color))
+        _option = user_input()
+        if _option.capitalize() in get_all_colors().keys():
+            CONFIG['Appearance']['option-Menu'] = _option.capitalize()
+            ok = True
+            clear()
+        else:
+            ok = False
+            clear()
+    ok = False
+    while not ok:
+        print("Select a secondary color")
+        print("\t Available colours:")
+        for color in get_all_colors().keys():
+            prefix_color, suffix_color = get_color(color)
+            print('\t{0}{2}{1}'.format(prefix_color, suffix_color,
+                                       color))
+        _option = user_input()
+        if _option.capitalize() in get_all_colors().keys():
+            CONFIG['Appearance']['user-input'] = _option.capitalize()
+            ok = True
+            clear()
+        else:
+            ok = False
+            clear()
+    ok = False
+    while not ok:
+        print("Select a color notifications")
+        print("\t Available colours:")
+        for color in get_all_colors().keys():
+            prefix_color, suffix_color = get_color(color)
+            print('\t{0}{2}{1}'.format(prefix_color, suffix_color,
+                                       color))
+        _option = user_input()
+
+        if _option.capitalize() in get_all_colors().keys():
+            CONFIG['Appearance']['notifications'] = _option.capitalize()
+            ok = True
+            clear()
+        else:
+            ok = False
+            clear()
+
+    save_config()
+
+
 def execute_command(command, sequentially=True):
+    global CONFIG
+    appearance = CONFIG['Appearance']
     error_flag = False
     cancel_by_user_flag = False
     memory_option = False
@@ -89,14 +212,16 @@ def execute_command(command, sequentially=True):
                     elif cmd[0] == "sudo":
                         print(get_message("msgSudo"))
                         print(get_message("msgSudoC"))
-                    option = user_input("Green-2")
+                    option = user_input()
                     if option in mkopts("yes"):
                         memory_option = True
                     elif option in mkopts("not"):
                         cancel_by_user_flag = True
                         break
                     else:
-                        prefix_color, suffix_color = get_color("Red")
+                        prefix_color, suffix_color = get_color(
+                            appearance.get('notifications')
+                        )
                         print(get_message("msgInvalidCmd").format(
                             prefix_color,
                             suffix_color)
@@ -117,8 +242,7 @@ def execute_command(command, sequentially=True):
                     error_flag = True
         except subprocess.CalledProcessError:
             error_flag = True
-            prefix_color, suffix_color = get_color("Red")
-            print(get_error("0x002").format(prefix_color, suffix_color))
+            show_error("0x002")
     if not error_flag and not cancel_by_user_flag:
         pause(get_message("msgTF"))
     elif cancel_by_user_flag:
@@ -128,9 +252,11 @@ def execute_command(command, sequentially=True):
 
 
 def end_message(do_clear=True, shutdown=True, value=0):
+    global CONFIG
+    appearance = CONFIG['Appearance']
     if do_clear:
         clear()
-    prefix_color, suffix_color = get_color("Green")
+    prefix_color, suffix_color = get_color(appearance.get('option-menu'))
     print(get_message("msgEnd").format(prefix_color, suffix_color))
     if shutdown:
         sys.exit(value)
@@ -164,10 +290,19 @@ def sleep():
     subprocess.run(["sleep", "2s"])
 
 
+def show_error(error_name):
+    global CONFIG
+    appearance = CONFIG['Appearance']
+    prefix_color, suffix_color = get_color(appearance.get('notifications'))
+    print(get_error(error_name).format(prefix_color, suffix_color))
+
+
 def show_help(do_clear=True):
+    global CONFIG
+    appearance = CONFIG['Appearance']
     if do_clear:
         clear()
-    prefix_color, suffix_color = get_color("highlighted")
+    prefix_color, suffix_color = get_color(appearance.get('menu-title'))
     pause(get_message("msgHelp").format(prefix_color, suffix_color))
     clear()
 
@@ -181,9 +316,11 @@ def mkopts(_option):
     return [upper, lower, lfirst, ufirst, tfirst]
 
 
-def user_input(color):
+def user_input():
+    global CONFIG
+    appearance = CONFIG['Appearance']
     try:
-        prefix, suffix = get_color(color)
+        prefix, suffix = get_color(appearance.get('user-input'))
         return input(get_message("msgMpis").format(prefix, suffix))
     except ValueError:
         return 0
@@ -223,9 +360,18 @@ def get_arch():
     return int(arch[:2])
 
 
+def get_noconfirm():
+    global CONFIG
+
+    return CONFIG['General'].getboolean('noconfirm')
+
+
 def get_command(_menu, _option, _format="str"):
     """
     """
+    global CONFIG
+    general = CONFIG['General']
+    suffix = "" if general.get('noconfirm') != "on" else " --noconfirm"
     commands = []
     name_app = _menu.childern[_option].name
     list_name = name_app.split()
@@ -237,7 +383,6 @@ def get_command(_menu, _option, _format="str"):
             name_app = "{}" + name_app[len("Uninstall"):]
         _app = get_packages(name_app)
         prefix = ""
-        suffix = " --noconfirm"
         if _app[0] == "pacman":
             prefix = "sudo"
             suffix = ""
@@ -258,14 +403,16 @@ def get_command(_menu, _option, _format="str"):
 
 
 def show_menu(_menu):
+    global CONFIG
+    appearance = CONFIG['Appearance']
     under_line = "----"
     # Menu Title highlighted
-    prefix_color, suffix_color = get_color("highlighted")
+    prefix_color, suffix_color = get_color(appearance.get('menu-title'))
     print("{0}# {1} #{2}".format(prefix_color,
                                  _menu.name,
                                  suffix_color)
           )
-    prefix_color, suffix_color = get_color("Green")
+    prefix_color, suffix_color = get_color(appearance.get('option-menu'))
     print("{0}{1}{2}".format(prefix_color,
                              under_line + len(_menu.name) * "-",
                              suffix_color))
@@ -278,5 +425,6 @@ def show_menu(_menu):
                                       suffix_color)
               )
     # Option Bar highlighted
-    prefix_color, suffix_color = get_color("highlighted")
+    prefix_color, suffix_color = get_color(appearance.get('menu-title'))
     print(get_message("Option-Bar").format(prefix_color, suffix_color))
+

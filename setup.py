@@ -10,7 +10,7 @@
 #
 # MPIS (Manjaro Post Installation Script):
 # It allows  users to choose different options such as
-# install an application or config some tools and environments.
+# install an application or CONFIG some tools and environments.
 #
 # MPIS is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of

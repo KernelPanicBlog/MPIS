@@ -10,7 +10,7 @@
 #
 # MPIS (Manjaro Post Installation Script):
 # It allows  users to choose different options such as
-# install an application or config some tools and environments.
+# install an application or CONFIG some tools and environments.
 #
 # MPIS is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -24,9 +24,11 @@ from mpislib.core import *
 
 
 def main():
+    read_config()
     try:
         show_banner()
-        pause(get_message("msgNoConfirm"))
+        if get_noconfirm():
+            pause(get_message("msgNoConfirm"))
         menus = make_menus()
         option = 0
         menu_back = []
@@ -34,7 +36,7 @@ def main():
         show_menu(menu)
         while True:
             try:
-                option = user_input("Green-2")
+                option = user_input()
                 if option in mkopts("back"):
                     if len(menu_back):
                         menu = menu_back.pop()
@@ -48,10 +50,14 @@ def main():
                         menu_back.append(menu)
                         menu = menu.childern[option]
                     else:
-                        if menu.name == "Settings ...":
+                        if menu.childern[option].name == "Appearance":
+                            wizard_config()
+                        elif menu.childern[option].name == "Set language":
                             pass
+                        elif menu.childern[option].name == "Toggle --noconfirm":
+                            toggle_noconfirm()
                         elif menu.childern[option].name == "About Mpis":
-                                show_banner()
+                            show_banner()
                         elif menu.childern[option].name == "Report bug!":
                             pause(get_message("Report Bugs!"))
                         elif menu.childern[option].name == "See the content " \
@@ -65,8 +71,7 @@ def main():
                     pause(get_message("msgNOp"))
             except (ValueError, IndexError):
                 clear()
-                prefix_color, suffix_color = get_color("Red")
-                print(get_error("0x003").format(prefix_color, suffix_color))
+                show_error("0x003")
             clear()
             show_menu(menu)
     except KeyboardInterrupt:
@@ -79,3 +84,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

@@ -11,8 +11,13 @@ ______
 * Option "about" in the main menu
 * Options bar
 * parameter "--noconfirm" Default active
+* option to configure the appearance
+* Settings menu
 
-
+Changed:
+________
+* Delete xml file --> now the menus are in a dictionary in the resource file.
+* Restructuring and optimization of code
 
 [0.3.0-alpha2] - 2016-08-29
 ===========

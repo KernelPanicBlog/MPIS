@@ -10,7 +10,7 @@
 #
 # MPIS (Manjaro Post Installation Script):
 # It allows  users to choose different options such as
-# install an application or config some tools and environments.
+# install an application or CONFIG some tools and environments.
 #
 # MPIS is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -19,11 +19,12 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with MPIS; If not, see <http://www.gnu.org/licenses/>.
-
+import os
 ###############################################################################
 # MESSAGES
 ###############################################################################
 MESSAGES = {
+    "set-noconfirm": "\n the parameter setting is changed correctly",
     "Option-Bar": "\n{0}back (b), exit (e), help (h){1}",
     "msgMpis": "\n{0}Option > {1}",
     "msgTFWE": "Task finished with errors.",
@@ -40,7 +41,8 @@ MESSAGES = {
                  "request. Bye!",
     "msgNOp": "Sorry not valid option.",
     "msgUserCancel": "The command was canceled by the user",
-    "msgNoConfirm": "--noconfirm de yaourt esta activo por defecto",
+    "msgNoConfirm": "the '--noconfirm' parameter is enabled by default,"
+                    "you can change this option in the Settings menu",
     "msgInvalidCmd": "\n{0}Invalid option canceling the command{1}",
     "msgEnd": """
             {0}Thanks for choosing us, we hope this script helped you.
@@ -88,11 +90,27 @@ COLORS = {
     "Purple": ("\033[1;35m", "\033[1;m"),
     "Gray": ("\033[1;37m", "\033[1;m"),
     "Green-2": ("\033[1;32m", "\033[1;m"),
-    "highlighted": ("\033[1;46m\033[1;30m", "\033[1;m\033[1;m")
+    "Highlighted": ("\033[1;46m\033[1;30m", "\033[1;m\033[1;m")
 }
+###############################################################################
+# PATH
+###############################################################################
+HOME_PATH = os.getenv("HOME")
 ###############################################################################
 # Funciones
 ###############################################################################
+
+
+def get_path_config():
+    global HOME_PATH
+
+    return HOME_PATH + "/.mpisconfig"
+
+
+def get_all_colors():
+    global COLORS
+
+    return COLORS
 
 
 def get_color(name_color):
@@ -112,3 +130,4 @@ def get_message(name_msg):
     global MESSAGES
 
     return MESSAGES.get(name_msg)
+
