@@ -144,14 +144,14 @@ ALIAS = {
     ],
     "Update all system": [
         "sudo rm -f /var/lib/pacman/db.lck",
-        "sudo pacman - Syyuu",
-        "sudo pacman - Suu"
+        "sudo pacman -Syyuu",
+        "sudo pacman -Suu"
     ],
     "Update all system and refresh mirrors": [
         "sudo rm -f /var/lib/pacman/db.lck",
-        "sudo pacman - mirrors - g",
-        "sudo pacman - Syyuu",
-        "sudo pacman - Suu"
+        "sudo pacman-mirrors -g",
+        "sudo pacman -Syyuu",
+        "sudo pacman -Suu"
     ]
 }
 ###############################################################################
