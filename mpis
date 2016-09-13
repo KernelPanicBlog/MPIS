@@ -53,7 +53,7 @@ def main():
                         if menu.childern[option].name in ["Appearance", "Apariencia"]:
                             wizard_config()
                         elif menu.childern[option].name in ["Set language", "Establecer idioma"]:
-                            pass
+                            set_language()
                         elif menu.childern[option].name in ["Toggle --noconfirm", "Conmutar --noconfirm"]:
                             toggle_noconfirm()
                         elif menu.childern[option].name in ["About Mpis", "Acerca de Mpis"]:

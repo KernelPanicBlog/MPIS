@@ -124,15 +124,36 @@ def toggle_noconfirm():
     save_config()
 
 
+def set_language():
+    global CONFIG
+    language = CONFIG['General'].get('language')
+    appearance = CONFIG['Appearance']
+    ok = False
+    while not ok:
+        print(get_message("msgID", language))
+        print(get_message("msgLID", language))
+        _option = user_input()
+        if _option in ["es", "en", "Español", "English"]:
+            if _option in ["es", "Español"]:
+                CONFIG['General']['language'] = "es"
+                ok = True
+            else:
+                CONFIG['General']['language'] = "en"
+                ok = True
+    save_config()
+    prefix_color, suffix_color = get_color(appearance.get('notifications'))
+    pause(get_message("msgIA", language).format(prefix_color, suffix_color))
+
+
 def wizard_config():
     global CONFIG
-
-    pause("Setup Wizard appearance..\n")
+    language = CONFIG['General'].get('language')
+    pause(get_message("msgSW", language))
     clear()
     ok = False
     while not ok:
-        print("select a color for the title menus")
-        print("\t Available colours:")
+        print(get_message("msgSCTM", language))
+        print(get_message("msgAC", language))
         for color in get_all_colors().keys():
             prefix_color, suffix_color = get_color(color)
             print('\t{0}{2}{1}'.format(prefix_color, suffix_color, color))
@@ -146,8 +167,8 @@ def wizard_config():
             clear()
     ok = False
     while not ok:
-        print("select a color for the menus options")
-        print("\t Available colours:")
+        print(get_message("msgSCMO", language))
+        print(get_message("msgAC", language))
         for color in get_all_colors().keys():
             prefix_color, suffix_color = get_color(color)
             print('\t{0}{2}{1}'.format(prefix_color, suffix_color, color))
@@ -161,8 +182,8 @@ def wizard_config():
             clear()
     ok = False
     while not ok:
-        print("Select a secondary color")
-        print("\t Available colours:")
+        print(get_message("msgCS", language))
+        print(get_message("msgAC", language))
         for color in get_all_colors().keys():
             prefix_color, suffix_color = get_color(color)
             print('\t{0}{2}{1}'.format(prefix_color, suffix_color,
@@ -177,8 +198,8 @@ def wizard_config():
             clear()
     ok = False
     while not ok:
-        print("Select a color notifications")
-        print("\t Available colours:")
+        print(get_message("msgCN", language))
+        print(get_message("msgAC", language))
         for color in get_all_colors().keys():
             prefix_color, suffix_color = get_color(color)
             print('\t{0}{2}{1}'.format(prefix_color, suffix_color,
@@ -199,6 +220,7 @@ def wizard_config():
 def execute_command(command, sequentially=True):
     global CONFIG
     appearance = CONFIG['Appearance']
+    language = CONFIG['General'].get('language')
     error_flag = False
     cancel_by_user_flag = False
     memory_option = False
@@ -207,11 +229,11 @@ def execute_command(command, sequentially=True):
             if cmd[0] in ["yaourt", "sudo"]:
                 if not memory_option:
                     if cmd[0] == "yaourt":
-                        print(get_message("msgAur"))
-                        print(get_message("msgAurC"))
+                        print(get_message("msgAur", language))
+                        print(get_message("msgAurC", language))
                     elif cmd[0] == "sudo":
-                        print(get_message("msgSudo"))
-                        print(get_message("msgSudoC"))
+                        print(get_message("msgSudo", language))
+                        print(get_message("msgSudoC", language))
                     option = user_input()
                     if option in mkopts("yes"):
                         memory_option = True
@@ -222,7 +244,7 @@ def execute_command(command, sequentially=True):
                         prefix_color, suffix_color = get_color(
                             appearance.get('notifications')
                         )
-                        print(get_message("msgInvalidCmd").format(
+                        print(get_message("msgInvalidCmd", language).format(
                             prefix_color,
                             suffix_color)
                         )
@@ -244,39 +266,42 @@ def execute_command(command, sequentially=True):
             error_flag = True
             show_error("0x002")
     if not error_flag and not cancel_by_user_flag:
-        pause(get_message("msgTF"))
+        pause(get_message("msgTF", language))
     elif cancel_by_user_flag:
-        pause(get_message("msgUserCancel"))
+        pause(get_message("msgUserCancel", language))
     else:
-        pause(get_message("msgTFWE"))
+        pause(get_message("msgTFWE", language))
 
 
 def end_message(do_clear=True, shutdown=True, value=0):
     global CONFIG
     appearance = CONFIG['Appearance']
+    language = CONFIG['General'].get('language')
     if do_clear:
         clear()
     prefix_color, suffix_color = get_color(appearance.get('option-menu'))
-    print(get_message("msgEnd").format(prefix_color, suffix_color))
+    print(get_message("msgEnd", language).format(prefix_color, suffix_color))
     if shutdown:
         sys.exit(value)
 
 
 def show_banner(do_clear=True):
+    language = CONFIG['General'].get('language')
     if do_clear:
         clear()
     prefix_color, suffix_color = get_color("Green")
-    print(get_message("banner").format(prefix_color, suffix_color))
+    print(get_message("banner", language).format(prefix_color, suffix_color))
     prefix_color, suffix_color = get_color("Green")
-    print(get_message("MPIS").format(prefix_color, suffix_color))
+    print(get_message("MPIS", language).format(prefix_color, suffix_color))
     prefix_color, suffix_color = get_color("Green-2")
-    pause(get_message("Authors").format(prefix_color, suffix_color))
+    pause(get_message("Authors", language).format(prefix_color, suffix_color))
     clear()
 
 
 def pause(msg):
+    language = CONFIG['General'].get('language')
     try:
-        _base_msg = "Press any key to continue..."
+        _base_msg = get_message("msgbase", language)
         a = str(input(msg + '\n' + _base_msg))
     except SyntaxError:
         pass
@@ -292,18 +317,25 @@ def sleep():
 
 def show_error(error_name):
     global CONFIG
+    language = CONFIG['General'].get('language')
     appearance = CONFIG['Appearance']
     prefix_color, suffix_color = get_color(appearance.get('notifications'))
-    print(get_error(error_name).format(prefix_color, suffix_color))
+    print(get_error(error_name, language).format(prefix_color, suffix_color))
 
 
 def show_help(do_clear=True):
     global CONFIG
     appearance = CONFIG['Appearance']
+    language = CONFIG['General'].get('language')
     if do_clear:
         clear()
     prefix_color, suffix_color = get_color(appearance.get('menu-title'))
-    pause(get_message("msgHelp").format(prefix_color, suffix_color))
+    prefix_color2, suffix_color2 = get_color(appearance.get('option-menu'))
+    pause(get_message("msgHelp", language).format(prefix_color,
+                                                  suffix_color,
+                                                  prefix_color2,
+                                                  suffix_color2)
+          )
     clear()
 
 
@@ -319,9 +351,10 @@ def mkopts(_option):
 def user_input():
     global CONFIG
     appearance = CONFIG['Appearance']
+    language = CONFIG['General'].get('language')
     try:
         prefix, suffix = get_color(appearance.get('user-input'))
-        return input(get_message("msgMpis").format(prefix, suffix))
+        return input(get_message("msgMpis", language).format(prefix, suffix))
     except ValueError:
         return 0
 
@@ -353,10 +386,14 @@ def make_menus():
     menumake = Node("root")
 
     menumake.add_childern(
-        Node("Main Menu",
-             menumake.name) if language == "en" else Node("Menu principal",
-                                                          menumake.name)
+        Node("Main Menu" if language == "en" else "Menu principal",
+             menumake.name)
     )
+    # menumake.add_childern(
+    #   Node("Main Menu",
+    #      menumake.name) if language == "en" else Node("Menu principal",
+    #                                                   menumake.name))
+
     add_childern(menumake.childern[0])
 
     return menumake
@@ -419,6 +456,7 @@ def get_command(_menu, _option, _format="str"):
 def show_menu(_menu):
     global CONFIG
     appearance = CONFIG['Appearance']
+    language = CONFIG['General'].get('language')
     under_line = "----"
     # Menu Title highlighted
     prefix_color, suffix_color = get_color(appearance.get('menu-title'))
@@ -440,5 +478,7 @@ def show_menu(_menu):
               )
     # Option Bar highlighted
     prefix_color, suffix_color = get_color(appearance.get('menu-title'))
-    print(get_message("Option-Bar").format(prefix_color, suffix_color))
+    print(get_message("Option-Bar", language).format(prefix_color,
+                                                     suffix_color)
+          )
 

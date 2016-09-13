@@ -23,7 +23,17 @@ import os
 ###############################################################################
 # MESSAGES
 ###############################################################################
-MESSAGES = {
+MESSAGES_EN = {
+    "msgLID": "Español (es)\nEnglish (en)",
+    "msgIA": "{0}Restart to apply changes{1}",
+    "msgID": "Languages available",
+    "msgCN": "Select a color notifications",
+    "msgCS": "Select a secondary color",
+    "msgSCMO": "select a color for the menus options",
+    "msgbase": "Press any key to continue...",
+    "msgSW": "Setup Wizard appearance..\n",
+    "msgSCTM": "Select a color for the title menus",
+    "msgAC": "\t Available colours:",
     "set-noconfirm": "\n the parameter setting is changed correctly",
     "Option-Bar": "\n{0}back (b), exit (e), help (h){1}",
     "msgMpis": "\n{0}Option > {1}",
@@ -50,11 +60,11 @@ MESSAGES = {
             Our web: https://kernelpanicblog.wordpress.com{1}""",
     "msgHelp": """
 {0}Help:{1}
-\nYou can select an option with the given
+\n{2}You can select an option with the given
 number or write 3 shortcuts:
 - back or b -> return to the previous option
 - help or h -> show help
-- exit or e or Ctrl+C -> finish the script execution""",
+- exit or e or Ctrl+C -> finish the script execution{3}""",
     "banner": """
             {0} __  __ _____ _____  _____
             |  \/  |  __ \_   _|/ ____|
@@ -73,10 +83,75 @@ Collaborative Blog: | https://kernelpanicblog.wordpress.com{1}""",
                     "https://github.com/KernelPanicBlog/MPIS/issues",
 }
 
-ERRORS = {
+MESSAGES_ES = {
+    "msgIA": "{0}Es necesario reiniciar para aplicar los cambios{1}",
+    "msgLID": "Español (es)\nEnglish (en)",
+    "msgID": "Idiomas Disponibles:",
+    "msgCN": "Seleccione el color de las notificaciones",
+    "msgCS": "Seleccione un color segundario",
+    "msgSCMO": "Seleccione un color para las opciones del menu",
+    "msgbase": "Pulse cualquier tecla para continuar ...",
+    "msgSW": "Ayudante para la configuracion de la apariencia..\n",
+    "msgSCTM": "Seleccione un color para los titulos de los menus",
+    "msgAC": "\t Colores Disponibles:",
+    "set-noconfirm": "\n El ajuste del parametro se cambio correctamente",
+    "Option-Bar": "\n{0}back (b), exit (e), help (h){1}",
+    "msgMpis": "\n{0}Opcion > {1}",
+    "msgTFWE": "Tarea terminada con errores.",
+    "msgTF": "Tarea terminada.",
+    "msgAur": "Esta aplicacion sera instalada desde los repertorios"
+              "(comunitarios) de AUR.\n instalela bajo sus propios riesgos \n",
+    "msgAurC": "Usted desea continuar con la instalacion desde yaourt? \n"
+               "Si ó no.",
+    "msgSudo": "Se le pedira permisos de superusuario para realizar esta accion",
+    "msgSudoC": "Usted desea continuar? \nSi ó no",
+    "msgNf": "(No funcional, tadavia)",
+    "msgCtrl+C": "\nUsted a presionado la combinacion de teclas Ctrl+C,"
+                 "la solicitud de salida se ha aceptado. Adios!",
+    "msgNOp": "Lo sentimos esta opcion no es validad",
+    "msgUserCancel": "El Comando ha sido cancelado por el Usuario",
+    "msgNoConfirm": "El parametro '--noconfirm' esta activo por defecto,"
+                    "Usted puede cambiar esta opcion en el menu de "
+                    "configuracion",
+    "msgInvalidCmd": "\n{0}Opcion invalidad, cancelando el comando{1}",
+    "msgEnd": """
+            {0}Gracias por elegirnos, Esperamos haber sido de ayuda.
+            \t- El equipo KernelPanicBlog.
+            Nuestra web: https://kernelpanicblog.wordpress.com{1}""",
+    "msgHelp": """
+{0}Help:{1}
+\n{2}Usted pede selecionar una opcion con
+los numeros dados ó escribir 3 atajos:
+- back or b -> Regresa a la opcion anterior
+- help or h -> Muestra la ayuda
+- exit or e or Ctrl+C -> Termina la ejecucion del script{3}""",
+    "banner": """
+            {0} __  __ _____ _____  _____
+            |  \/  |  __ \_   _|/ ____|
+            | \  / | |__) || | | (___
+            | |\/| |  ___/ | |  \___ \\
+            | |  | | |    _| |_ ____) |
+            |_|  |_|_|   |_____|_____/{1}""",
+    "MPIS": "{0}\nManjaro Post Installation Script version 1.0.0-dev{1}",
+    "Authors": """
+{0}Autores:
+SniferL4bs  | https://www.sniferl4bs.com
+NeoRanger   | https://www.neositelinux.com.ar
+Harrinsoft  | harrinsoft@gmail.com
+Blog Colaborativo: | https://kernelpanicblog.wordpress.com{1}""",
+    "Report Bugs!": "\nPor Favor reporte los fallos! :) \t"
+                    "https://github.com/KernelPanicBlog/MPIS/issues",
+}
+
+ERRORS_EN = {
     "0x001": "{0}command not found{1}",
     "0x002": "{0}command exited with errors{1}",
     "0x003": "{0}Error in option, this value is outside the range of the list{1}"
+    }
+ERRORS_ES = {
+    "0x001": "{0}No se encontro el comando{1}",
+    "0x002": "{0}error al ejecutar el comando{1}",
+    "0x003": "{0}Error en opcion, este valor esta fuera del rango de la lista{1}"
     }
 ###############################################################################
 # COLORS
@@ -121,14 +196,16 @@ def get_color(name_color):
     return COLORS.get(name_color)
 
 
-def get_error(name_error):
-    global ERRORS
+def get_error(name_error, lan):
+    global ERRORS_ES
+    global ERRORS_EN
 
-    return ERRORS.get(name_error)
+    return ERRORS_EN.get(name_error) if lan == "en" else ERRORS_ES.get(name_error)
 
 
-def get_message(name_msg):
-    global MESSAGES
+def get_message(name_msg, lan):
+    global MESSAGES_EN
+    global MESSAGES_ES
 
-    return MESSAGES.get(name_msg)
+    return MESSAGES_EN.get(name_msg) if lan == "en" else MESSAGES_ES.get(name_msg)
 
