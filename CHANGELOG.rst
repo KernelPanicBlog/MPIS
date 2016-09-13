@@ -13,6 +13,7 @@ ______
 * parameter "--noconfirm" Default active
 * option to configure the appearance
 * Settings menu
+* language Español (es)
 
 Changed:
 ________
