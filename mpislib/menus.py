@@ -23,7 +23,9 @@
 ###############################################################################
 # Menus
 ###############################################################################
-MENUS = {
+# EN -> ingles
+
+MENUS_EN = {
     "Main Menu": [
         ("Update System", True),
         ("Install applications", True),
@@ -109,12 +111,101 @@ MENUS = {
     ],
 }
 ###############################################################################
+# ES - español
+
+MENUS_ES = {
+    "Menu principal": [
+        ("Actualizar sistema", True),
+        ("Instalar aplicaciones", True),
+        ("Desinstalar aplicaciones", True),
+        ("Instalar DEs and WMs", True),
+        ("Desinstalar DEs and WMs", True),
+        ("Personalizacion", True),
+        ("Listar los paquetes instalados", False),
+        ("Configuracion ...", True),
+        ("Acerca", True)
+    ],
+    "Actualizar sistema": [
+        ("Refrescar los espejos y las llaves", False),
+        ("Actualizar los repertorios de pacman", False),
+        ("Actualizar los repertorios de AUR", False),
+        ("Actualizar todo el sistema", False),
+        ("Actualizar todo el sistema y refrescar los espejos", False),
+        ("Limpiar la cache y los paquetes huerfanos", False),
+        ("Ver el contenido del archivo mirrorlist", False)
+    ],
+    "Instalar aplicaciones": [
+        ("Oficina", True),
+        ("Multimedia", True),
+        ("Desarrollo", True),
+        ("Internet", True),
+        ("Juegos", True),
+        ("Herramientas del sistema", True)
+    ],
+    "Desinstalar aplicaciones": [
+        ("Oficina", True),
+        ("Multimedia", True),
+        ("Desarrollo", True),
+        ("Internet", True),
+        ("Juegos", True),
+        ("Herramientas del sistema", True)
+    ],
+    "Personalizacion": [
+        ("temas", True),
+        ("iconos", True)
+    ],
+    "Instalar DEs and WMs": [
+        ("DEs", True),
+        ("WMs", True)
+    ],
+    "Desinstalar DEs and WMs": [
+        ("DEs", True),
+        ("WMs", True)
+    ],
+    "Acerca": [
+        ("Ver el archivo README", False),
+        ("Ver el archivo CHANGELOG", False),
+        ("Reportar falla!", False),
+        ("Acerca de Mpis", False),
+    ],
+    "Configuracion ...": [
+        ("Conmutar --noconfirm", False),
+        ("Apariencia", False),
+        ("Establecer idioma", False)
+    ],
+    "DEs": [
+        ("incategory", False)
+    ],
+    "WMs": [
+        ("incategory", False)
+    ],
+    "Oficina": [
+        ("incategory", False)
+    ],
+    "Multimedia": [
+        ("incategory", False)
+    ],
+    "Desarrollo": [
+        ("incategory", False)
+    ],
+    "Internet": [
+        ("incategory", False)
+    ],
+    "Juegos": [
+        ("incategory", False)
+    ],
+    "Herramientas del sistema": [
+        ("incategory", False)
+    ],
+}
+###############################################################################
 # Funciones
 ###############################################################################
 
 
-def find_menu(name_menu):
+def find_menu(name_menu, lan):
 
-    global MENUS
+    global MENUS_ES
+    global MENUS_EN
 
-    return MENUS.get(name_menu)
+    return MENUS_ES.get(name_menu) if lan == "es" else MENUS_EN.get(name_menu)

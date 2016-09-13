@@ -50,18 +50,18 @@ def main():
                         menu_back.append(menu)
                         menu = menu.childern[option]
                     else:
-                        if menu.childern[option].name == "Appearance":
+                        if menu.childern[option].name in ["Appearance", "Apariencia"]:
                             wizard_config()
-                        elif menu.childern[option].name == "Set language":
+                        elif menu.childern[option].name in ["Set language", "Establecer idioma"]:
                             pass
-                        elif menu.childern[option].name == "Toggle --noconfirm":
+                        elif menu.childern[option].name in ["Toggle --noconfirm", "Conmutar --noconfirm"]:
                             toggle_noconfirm()
-                        elif menu.childern[option].name == "About Mpis":
+                        elif menu.childern[option].name in ["About Mpis", "Acerca de Mpis"]:
                             show_banner()
-                        elif menu.childern[option].name == "Report bug!":
+                        elif menu.childern[option].name in ["Report bug!", "Reportar falla!"]:
                             pause(get_message("Report Bugs!"))
-                        elif menu.childern[option].name == "See the content " \
-                                                           "of mirrorlist file":
+                        elif menu.childern[option].name in ["See the content of mirrorlist file",
+                                                            "Ver el contenido del archivo mirrorlist"]:
                             with open("/etc/pacman.d/mirrorlist", "r") as f:
                                 pause(f.read())
                         else:
@@ -82,6 +82,6 @@ def main():
         traceback.print_exc(file=sys.stdout)
     sys.exit(0)
 
+
 if __name__ == "__main__":
     main()
-

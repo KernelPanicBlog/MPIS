@@ -327,7 +327,9 @@ def user_input():
 
 
 def add_childern(_node):
-    childern = find_menu(_node.name)
+    global CONFIG
+    language = CONFIG['General'].get('language')
+    childern = find_menu(_node.name, language)
     if childern is not None:
         for child in childern:
             if child[1]:
@@ -335,18 +337,26 @@ def add_childern(_node):
                 _node.add_childern(new_node)
                 add_childern(new_node)
             elif child[0] == "incategory":
-               childern_to_add = get_category(_node.name, _node.parent)
-               for h in childern_to_add:
-                   _node.add_childern(h[0])
+                childern_to_add = get_category(_node.name,
+                                               _node.parent,
+                                               language)
+                for h in childern_to_add:
+                    _node.add_childern(h[0])
             else:
                 _node.add_childern(child[0])
 
 
 def make_menus():
     """ Crea el arlbol de los menus """
-
+    global CONFIG
+    language = CONFIG['General'].get('language')
     menumake = Node("root")
-    menumake.add_childern(Node("Main Menu", menumake.name))
+
+    menumake.add_childern(
+        Node("Main Menu",
+             menumake.name) if language == "en" else Node("Menu principal",
+                                                          menumake.name)
+    )
     add_childern(menumake.childern[0])
 
     return menumake
@@ -376,11 +386,15 @@ def get_command(_menu, _option, _format="str"):
     name_app = _menu.childern[_option].name
     list_name = name_app.split()
     action = list_name[0]
-    if action in ["Install", "Uninstall"]:
+    if action in ["Install", "Uninstall", "Instalar", "Desinstalar"]:
         if action == "Install":
             name_app = "{}" + name_app[len("Install"):]
+        elif action == "Instalar":
+            name_app = "{}" + name_app[len("Instalar"):]
         elif action == "Uninstall":
             name_app = "{}" + name_app[len("Uninstall"):]
+        elif action == "Desinstalar":
+            name_app = "{}" + name_app[len("Desinstalar"):]
         _app = get_packages(name_app)
         prefix = ""
         if _app[0] == "pacman":
