@@ -36,7 +36,7 @@ from mpislib.resource import get_path_config
 from mpislib.resource import get_all_colors
 
 ###############################################################################
-# GOBAL CONF
+# GLOBAL CONF
 ###############################################################################
 CONFIG = ConfigParser()
 
