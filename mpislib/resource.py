@@ -106,8 +106,8 @@ MESSAGES_ES = {
     "msgSudo": "Se le pedira permisos de superusuario para realizar esta accion",
     "msgSudoC": "Usted desea continuar? \nSi ó no",
     "msgNf": "(No funcional, tadavia)",
-    "msgCtrl+C": "\nUsted a presionado la combinacion de teclas Ctrl+C,"
-                 "la solicitud de salida se ha aceptado. Adios!",
+    "msgCtrl+C": "\nUsted a presionado la combinacion de teclas Ctrl+C.\n"
+                 "La solicitud de salida se ha aceptado. Adios!",
     "msgNOp": "Lo sentimos esta opcion no es validad",
     "msgUserCancel": "El Comando ha sido cancelado por el Usuario",
     "msgNoConfirm": "El parametro '--noconfirm' esta activo por defecto,"

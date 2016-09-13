@@ -24,7 +24,8 @@ from mpislib.core import *
 
 
 def main():
-    read_config()
+    CONFIG = read_config()
+    language = CONFIG['General'].get('language')
     try:
         show_banner()
         if get_noconfirm():
@@ -68,14 +69,14 @@ def main():
                             cmd_ = get_command(menu, option, "list")
                             execute_command(cmd_)
                 else:
-                    pause(get_message("msgNOp"))
+                    pause(get_message("msgNOp", language))
             except (ValueError, IndexError):
                 clear()
                 show_error("0x003")
             clear()
             show_menu(menu)
     except KeyboardInterrupt:
-        print(get_message("msgCtrl+C"))
+        print(get_message("msgCtrl+C", language))
         sleep()
         clear()
     except Exception:

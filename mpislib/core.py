@@ -89,6 +89,7 @@ def read_config():
         CONFIG.read(get_path_config())
     except:
         set_default_config()
+    return CONFIG
 
 
 def set_default_config():
