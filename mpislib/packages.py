@@ -125,12 +125,6 @@ ALIAS_ES = {
     "Listar los paquetes instalados": [
         "pacman -Qe"
     ],
-    "Ver el archivo README": [
-        "more /usr/share/mpis/README.rst"
-    ],
-    "Ver el archivo CHANGELOG": [
-        "more /usr/share/mpis/CHANGELOG.rst"
-    ],
     "Refrescar los espejos y las llaves": [
         "sudo pacman -S archlinux-keyring manjaro-keyring",
         "sudo pacman-key --init",
@@ -165,12 +159,6 @@ ALIAS_EN = {
     ],
     "List packages installed": [
         "pacman -Qe"
-    ],
-    "See README File": [
-        "more /usr/share/mpis/README.rst"
-    ],
-    "See CHANGELOG File": [
-        "more /usr/share/mpis/CHANGELOG.rst"
     ],
     "Refresh Mirrors and Keys": [
         "sudo pacman -S archlinux-keyring manjaro-keyring",

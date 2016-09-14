@@ -21,14 +21,16 @@
 # along with MPIS; If not, see <http://www.gnu.org/licenses/>.
 import traceback
 from mpislib.core import *
+from mpislib.config import read_config
+from mpislib.config import get_config
 
 
 def main():
     read_config()
-    language = get_language()
+    language = get_config('General', 'language')
     try:
         show_banner()
-        if get_noconfirm():
+        if bool(get_config('General', 'noconfirm')):
             pause(get_message("msgNoConfirm", language))
         menus = make_menus()
         option = 0
@@ -51,6 +53,8 @@ def main():
                         menu_back.append(menu)
                         menu = menu.childern[option]
                     else:
+                        if menu.name in ["Personalization", "Personalizacion"]:
+                            pause(get_message('msgNf', language))
                         if menu.childern[option].name in ["Appearance", "Apariencia"]:
                             wizard_config()
                         elif menu.childern[option].name in ["Set language", "Establecer idioma"]:
@@ -60,7 +64,15 @@ def main():
                         elif menu.childern[option].name in ["About Mpis", "Acerca de Mpis"]:
                             show_banner()
                         elif menu.childern[option].name in ["Report bug!", "Reportar falla!"]:
-                            pause(get_message("Report Bugs!"))
+                            pause(get_message("Report Bugs!", language))
+                        elif menu.childern[option].name in ["See README File",
+                                                            "Ver el archivo README"]:
+                            with open("/usr/share/mpis/README.rst", "r") as f:
+                                pause(f.read())
+                        elif menu.childern[option].name in ["See CHANGELOG File",
+                                                            "Ver el archivo CHANGELOG"]:
+                            with open("/usr/share/mpis/CHANGELOG.rst", "r") as f:
+                                pause(f.read())
                         elif menu.childern[option].name in ["See the content of mirrorlist file",
                                                             "Ver el contenido del archivo mirrorlist"]:
                             with open("/etc/pacman.d/mirrorlist", "r") as f:

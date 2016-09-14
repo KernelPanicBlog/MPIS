@@ -23,7 +23,7 @@
 import sys
 import platform
 import subprocess
-from configparser import ConfigParser
+
 from mpislib.menus import find_menu
 from mpislib.packages import get_action
 from mpislib.packages import get_packages
@@ -32,13 +32,11 @@ from mpislib.packages import get_category
 from mpislib.resource import get_message
 from mpislib.resource import get_color
 from mpislib.resource import get_error
-from mpislib.resource import get_path_config
 from mpislib.resource import get_all_colors
+from mpislib.config import get_config
+from mpislib.config import get_section
+from mpislib.config import update_config
 
-###############################################################################
-# GLOBAL CONF
-###############################################################################
-CONFIG = ConfigParser()
 
 ###############################################################################
 # Clases
@@ -83,55 +81,16 @@ class Node:
 ###############################################################################
 
 
-def read_config():
-    global CONFIG
-    if not CONFIG.read(get_path_config()):
-        set_default_config()
-
-
-def set_default_config():
-    global CONFIG
-
-    CONFIG['General'] = {
-        'noconfirm': "True",
-        'language': "en"
-        }
-    CONFIG['Appearance'] = {
-        'menu-title': "Highlighted",
-        'option-menu': "Green",
-        'user-input': "Green-2",
-        'notifications': "Red"
-        }
-    with open(get_path_config(), "w") as config_file:
-        CONFIG.write(config_file)
-
-
-def save_config():
-    global CONFIG
-
-    with open(get_path_config(), "w") as config_file:
-        CONFIG.write(config_file)
-
-
-def get_language():
-    global CONFIG
-
-    return CONFIG['General'].get('language')
-
-
 def toggle_noconfirm():
-    global CONFIG
-
-    _noconfirm = CONFIG['General'].getboolean('noconfirm')
-    CONFIG['General']['noconfirm'] = "False" if _noconfirm else "True"
-    pause(get_message("set-noconfirm"))
-    save_config()
+    language = get_config('General', 'language')
+    _noconfirm = bool(get_config('General', 'noconfirm'))
+    update_config('General', 'noconfirm', "False" if _noconfirm else "True")
+    pause(get_message("set-noconfirm", language))
 
 
 def set_language():
-    global CONFIG
-    language = CONFIG['General'].get('language')
-    appearance = CONFIG['Appearance']
+    language = get_config('General', 'language')
+    appearance = get_section('Appearance')
     ok = False
     while not ok:
         print(get_message("msgID", language))
@@ -139,19 +98,17 @@ def set_language():
         _option = user_input()
         if _option in ["es", "en", "Español", "English"]:
             if _option in ["es", "Español"]:
-                CONFIG['General']['language'] = "es"
+                update_config('General', 'language', "es")
                 ok = True
             else:
-                CONFIG['General']['language'] = "en"
+                update_config('General', 'language', "en")
                 ok = True
-    save_config()
     prefix_color, suffix_color = get_color(appearance.get('notifications'))
     pause(get_message("msgIA", language).format(prefix_color, suffix_color))
 
 
 def wizard_config():
-    global CONFIG
-    language = CONFIG['General'].get('language')
+    language = get_config('General', 'language')
     pause(get_message("msgSW", language))
     clear()
     ok = False
@@ -163,7 +120,7 @@ def wizard_config():
             print('\t{0}{2}{1}'.format(prefix_color, suffix_color, color))
         _option = user_input()
         if _option.capitalize() in get_all_colors().keys():
-            CONFIG['Appearance']['menu-title'] = _option.capitalize()
+            update_config('Appearance', 'menu-title', _option.capitalize())
             ok = True
             clear()
         else:
@@ -178,7 +135,7 @@ def wizard_config():
             print('\t{0}{2}{1}'.format(prefix_color, suffix_color, color))
         _option = user_input()
         if _option.capitalize() in get_all_colors().keys():
-            CONFIG['Appearance']['option-Menu'] = _option.capitalize()
+            update_config('Appearance', 'option-Menu', _option.capitalize())
             ok = True
             clear()
         else:
@@ -194,7 +151,7 @@ def wizard_config():
                                        color))
         _option = user_input()
         if _option.capitalize() in get_all_colors().keys():
-            CONFIG['Appearance']['user-input'] = _option.capitalize()
+            update_config('Appearance', 'user-input', _option.capitalize())
             ok = True
             clear()
         else:
@@ -211,20 +168,17 @@ def wizard_config():
         _option = user_input()
 
         if _option.capitalize() in get_all_colors().keys():
-            CONFIG['Appearance']['notifications'] = _option.capitalize()
+            update_config('Appearance', 'notifications', _option.capitalize())
             ok = True
             clear()
         else:
             ok = False
             clear()
 
-    save_config()
-
 
 def execute_command(command, sequentially=True):
-    global CONFIG
-    appearance = CONFIG['Appearance']
-    language = CONFIG['General'].get('language')
+    appearance = get_section('Appearance')
+    language = get_config('General', 'language')
     error_flag = False
     cancel_by_user_flag = False
     memory_option = False
@@ -278,9 +232,8 @@ def execute_command(command, sequentially=True):
 
 
 def end_message(do_clear=True, shutdown=True, value=0):
-    global CONFIG
-    appearance = CONFIG['Appearance']
-    language = CONFIG['General'].get('language')
+    appearance = get_section('Appearance')
+    language = get_config('General', 'language')
     if do_clear:
         clear()
     prefix_color, suffix_color = get_color(appearance.get('option-menu'))
@@ -290,7 +243,7 @@ def end_message(do_clear=True, shutdown=True, value=0):
 
 
 def show_banner(do_clear=True):
-    language = CONFIG['General'].get('language')
+    language = get_config('General', 'language')
     if do_clear:
         clear()
     prefix_color, suffix_color = get_color("Green")
@@ -303,7 +256,7 @@ def show_banner(do_clear=True):
 
 
 def pause(msg):
-    language = CONFIG['General'].get('language')
+    language = get_config('General', 'language')
     try:
         _base_msg = get_message("msgbase", language)
         a = str(input(msg + '\n' + _base_msg))
@@ -320,17 +273,15 @@ def sleep():
 
 
 def show_error(error_name):
-    global CONFIG
-    language = CONFIG['General'].get('language')
-    appearance = CONFIG['Appearance']
+    language = get_config('General', 'language')
+    appearance = get_section('Appearance')
     prefix_color, suffix_color = get_color(appearance.get('notifications'))
     print(get_error(error_name, language).format(prefix_color, suffix_color))
 
 
 def show_help(do_clear=True):
-    global CONFIG
-    appearance = CONFIG['Appearance']
-    language = CONFIG['General'].get('language')
+    appearance = get_section('Appearance')
+    language = get_config('General', 'language')
     if do_clear:
         clear()
     prefix_color, suffix_color = get_color(appearance.get('menu-title'))
@@ -353,9 +304,8 @@ def mkopts(_option):
 
 
 def user_input():
-    global CONFIG
-    appearance = CONFIG['Appearance']
-    language = CONFIG['General'].get('language')
+    appearance = get_section('Appearance')
+    language = get_config('General', 'language')
     try:
         prefix, suffix = get_color(appearance.get('user-input'))
         return input(get_message("msgMpis", language).format(prefix, suffix))
@@ -364,8 +314,7 @@ def user_input():
 
 
 def add_childern(_node):
-    global CONFIG
-    language = CONFIG['General'].get('language')
+    language = get_config('General', 'language')
     childern = find_menu(_node.name, language)
     if childern is not None:
         for child in childern:
@@ -385,8 +334,7 @@ def add_childern(_node):
 
 def make_menus():
     """ Crea el arlbol de los menus """
-    global CONFIG
-    language = CONFIG['General'].get('language')
+    language = get_config('General', 'language')
     menumake = Node("root")
 
     menumake.add_childern(
@@ -411,18 +359,12 @@ def get_arch():
     return int(arch[:2])
 
 
-def get_noconfirm():
-    global CONFIG
-
-    return CONFIG['General'].getboolean('noconfirm')
-
-
 def get_command(_menu, _option, _format="str"):
     """
     """
-    global CONFIG
-    general = CONFIG['General']
-    suffix = "" if general.get('noconfirm') != "on" else " --noconfirm"
+    general = get_section('General')
+    language = get_config('General', 'language')
+    suffix = "" if not bool(general.get('noconfirm')) else " --noconfirm"
     commands = []
     name_app = _menu.childern[_option].name
     list_name = name_app.split()
@@ -451,16 +393,15 @@ def get_command(_menu, _option, _format="str"):
                   + " " + pack + suffix
             commands.append(cmd.split() if _format == "list" else cmd)
     else:
-        _app = get_alias(name_app)
+        _app = get_alias(name_app, language)
         for pack in _app:
             commands.append(pack.split() if _format == "list" else pack)
     return commands
 
 
 def show_menu(_menu):
-    global CONFIG
-    appearance = CONFIG['Appearance']
-    language = CONFIG['General'].get('language')
+    appearance = get_section('Appearance')
+    language = get_config('General', 'language')
     under_line = "----"
     # Menu Title highlighted
     prefix_color, suffix_color = get_color(appearance.get('menu-title'))
