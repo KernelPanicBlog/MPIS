@@ -341,10 +341,6 @@ def make_menus():
         Node("Main Menu" if language == "en" else "Menu principal",
              menumake.name)
     )
-    # menumake.add_childern(
-    #   Node("Main Menu",
-    #      menumake.name) if language == "en" else Node("Menu principal",
-    #                                                   menumake.name))
 
     add_childern(menumake.childern[0])
 
