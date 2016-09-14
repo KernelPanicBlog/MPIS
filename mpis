@@ -23,6 +23,7 @@ import traceback
 from mpislib.core import *
 from mpislib.config import read_config
 from mpislib.config import get_config
+from mpislib.resource import get_path_file
 
 
 def main():
@@ -55,26 +56,40 @@ def main():
                     else:
                         if menu.name in ["Personalization", "Personalizacion"]:
                             pause(get_message('msgNf', language))
-                        if menu.childern[option].name in ["Appearance", "Apariencia"]:
+                        if menu.childern[option].name in [
+                                "Appearance",
+                                "Apariencia"]:
                             wizard_config()
-                        elif menu.childern[option].name in ["Set language", "Establecer idioma"]:
+                        elif menu.childern[option].name in [
+                                "Set language",
+                                "Establecer idioma"]:
                             set_language()
-                        elif menu.childern[option].name in ["Toggle --noconfirm", "Conmutar --noconfirm"]:
+                        elif menu.childern[option].name in [
+                                "Toggle --noconfirm",
+                                "Conmutar --noconfirm"]:
                             toggle_noconfirm()
-                        elif menu.childern[option].name in ["About Mpis", "Acerca de Mpis"]:
+                        elif menu.childern[option].name in [
+                                "About Mpis",
+                                "Acerca de Mpis"]:
                             show_banner()
-                        elif menu.childern[option].name in ["Report bug!", "Reportar falla!"]:
+                        elif menu.childern[option].name in [
+                                "Report bug!",
+                                "Reportar falla!"]:
                             pause(get_message("Report Bugs!", language))
-                        elif menu.childern[option].name in ["See README File",
-                                                            "Ver el archivo README"]:
-                            with open("/usr/share/mpis/README.rst", "r") as f:
+                        elif menu.childern[option].name in [
+                                "See README File",
+                                "Ver el archivo README"]:
+                            with open(get_path_file("README.rst"), "r") as f:
                                 pause(f.read())
-                        elif menu.childern[option].name in ["See CHANGELOG File",
-                                                            "Ver el archivo CHANGELOG"]:
-                            with open("/usr/share/mpis/CHANGELOG.rst", "r") as f:
+                        elif menu.childern[option].name in [
+                                "See CHANGELOG File",
+                                "Ver el archivo CHANGELOG"]:
+                            with open(get_path_file("CHANGELOG.rst"),
+                                      "r") as f:
                                 pause(f.read())
-                        elif menu.childern[option].name in ["See the content of mirrorlist file",
-                                                            "Ver el contenido del archivo mirrorlist"]:
+                        elif menu.childern[option].name in [
+                                "See the content of mirrorlist file",
+                                "Ver el contenido del archivo mirrorlist"]:
                             with open("/etc/pacman.d/mirrorlist", "r") as f:
                                 pause(f.read())
                         else:
