@@ -24,12 +24,12 @@ from mpislib.core import *
 
 
 def main():
-    CONFIG = read_config()
-    language = CONFIG['General'].get('language')
+    read_config()
+    language = get_language()
     try:
         show_banner()
         if get_noconfirm():
-            pause(get_message("msgNoConfirm"))
+            pause(get_message("msgNoConfirm", language))
         menus = make_menus()
         option = 0
         menu_back = []

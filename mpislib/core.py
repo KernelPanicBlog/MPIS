@@ -85,11 +85,8 @@ class Node:
 
 def read_config():
     global CONFIG
-    try:
-        CONFIG.read(get_path_config())
-    except:
+    if not CONFIG.read(get_path_config()):
         set_default_config()
-    return CONFIG
 
 
 def set_default_config():
@@ -100,7 +97,7 @@ def set_default_config():
         'language': "en"
         }
     CONFIG['Appearance'] = {
-        'menu-title': "highlighted",
+        'menu-title': "Highlighted",
         'option-menu': "Green",
         'user-input': "Green-2",
         'notifications': "Red"
@@ -114,6 +111,12 @@ def save_config():
 
     with open(get_path_config(), "w") as config_file:
         CONFIG.write(config_file)
+
+
+def get_language():
+    global CONFIG
+
+    return CONFIG['General'].get('language')
 
 
 def toggle_noconfirm():
