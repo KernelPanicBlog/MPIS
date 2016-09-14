@@ -193,9 +193,9 @@ def execute_command(command, sequentially=True):
                         print(get_message("msgSudo", language))
                         print(get_message("msgSudoC", language))
                     option = user_input()
-                    if option in mkopts("yes"):
+                    if option in mkopts("yes" if language == "en" else "si"):
                         memory_option = True
-                    elif option in mkopts("not"):
+                    elif option in mkopts("not" if language == "en" else "no"):
                         cancel_by_user_flag = True
                         break
                     else:

@@ -33,6 +33,7 @@ def main():
         show_banner()
         if bool(get_config('General', 'noconfirm')):
             pause(get_message("msgNoConfirm", language))
+        clear()
         menus = make_menus()
         option = 0
         menu_back = []
@@ -56,7 +57,7 @@ def main():
                     else:
                         if menu.name in ["Personalization", "Personalizacion"]:
                             pause(get_message('msgNf', language))
-                        if menu.childern[option].name in [
+                        elif menu.childern[option].name in [
                                 "Appearance",
                                 "Apariencia"]:
                             wizard_config()
