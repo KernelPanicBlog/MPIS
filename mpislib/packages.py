@@ -139,14 +139,14 @@ ALIAS_ES = {
     ],
     "Actualizar todo el sistema": [
         "sudo rm -f /var/lib/pacman/db.lck",
-        "sudo pacman - Syyuu",
-        "sudo pacman - Suu"
+        "sudo pacman -Syyuu",
+        "sudo pacman -Suu"
     ],
     "Actualizar todo el sistema y refrescar los espejos": [
         "sudo rm -f /var/lib/pacman/db.lck",
-        "sudo pacman - mirrors - g",
-        "sudo pacman - Syyuu",
-        "sudo pacman - Suu"
+        "sudo pacman -mirrors -g",
+        "sudo pacman -Syyuu",
+        "sudo pacman -Suu"
     ]
 }
 
