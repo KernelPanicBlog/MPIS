@@ -29,12 +29,12 @@ MESSAGES_EN = {
     "msgID": "Languages available",
     "msgCN": "Select a color notifications",
     "msgCS": "Select a secondary color",
-    "msgSCMO": "select a color for the menus options",
+    "msgSCMO": "Select a color for the menus options",
     "msgbase": "Press any key to continue...",
     "msgSW": "Setup Wizard appearance..\n",
     "msgSCTM": "Select a color for the title menus",
     "msgAC": "\t Available colours:",
-    "set-noconfirm": "\n the parameter setting is changed correctly",
+    "set-noconfirm": "\n The parameter setting is changed correctly",
     "Option-Bar": "\n{0}back (b), exit (e), help (h){1}",
     "msgMpis": "\n{0}Option > {1}",
     "msgTFWE": "Task finished with errors.",
@@ -99,28 +99,28 @@ MESSAGES_ES = {
     "msgMpis": "\n{0}Opcion > {1}",
     "msgTFWE": "Tarea terminada con errores.",
     "msgTF": "Tarea terminada.",
-    "msgAur": "Esta aplicacion sera instalada desde los repertorios"
-              "(comunitarios) de AUR.\n instalela bajo sus propios riesgos \n",
+    "msgAur": "Esta aplicacion sera instalada desde los repositorios"
+              "(comunitarios) de AUR.\n Instalela bajo sus propio riesgo \n",
     "msgAurC": "Usted desea continuar con la instalacion desde yaourt? \n"
-               "Si ó no.",
+               "Si o no.",
     "msgSudo": "Se le pedira permisos de superusuario para realizar esta accion",
     "msgSudoC": "Usted desea continuar? \nSi ó no",
-    "msgNf": "(No funcional, tadavia)",
-    "msgCtrl+C": "\nUsted a presionado la combinacion de teclas Ctrl+C.\n"
+    "msgNf": "(No funcional, todavia)",
+    "msgCtrl+C": "\nUsted ha presionado la combinacion de teclas Ctrl+C.\n"
                  "La solicitud de salida se ha aceptado. Adios!",
-    "msgNOp": "Lo sentimos esta opcion no es validad",
+    "msgNOp": "Lo sentimos esta opcion no es valida",
     "msgUserCancel": "El Comando ha sido cancelado por el Usuario",
     "msgNoConfirm": "El parametro '--noconfirm' esta activo por defecto,"
                     "Usted puede cambiar esta opcion en el menu de "
                     "configuracion",
-    "msgInvalidCmd": "\n{0}Opcion invalidad, cancelando el comando{1}",
+    "msgInvalidCmd": "\n{0}Opcion invalida, cancelando el comando{1}",
     "msgEnd": """
             {0}Gracias por elegirnos, Esperamos haber sido de ayuda.
             \t- El equipo KernelPanicBlog.
             Nuestra web: https://kernelpanicblog.wordpress.com{1}""",
     "msgHelp": """
 {0}Help:{1}
-\n{2}Usted pede selecionar una opcion con
+\n{2}Usted puede selecionar una opcion con
 los numeros dados ó escribir 3 atajos:
 - back or b -> Regresa a la opcion anterior
 - help or h -> Muestra la ayuda
@@ -144,13 +144,13 @@ Blog Colaborativo: | https://kernelpanicblog.wordpress.com{1}""",
 }
 
 ERRORS_EN = {
-    "0x001": "{0}command not found{1}",
-    "0x002": "{0}command exited with errors{1}",
+    "0x001": "{0}Command not found{1}",
+    "0x002": "{0}Command exited with errors{1}",
     "0x003": "{0}Error in option, this value is outside the range of the list{1}"
     }
 ERRORS_ES = {
     "0x001": "{0}No se encontro el comando{1}",
-    "0x002": "{0}error al ejecutar el comando{1}",
+    "0x002": "{0}Error al ejecutar el comando{1}",
     "0x003": "{0}Error en opcion, este valor esta fuera del rango de la lista{1}"
     }
 ###############################################################################
