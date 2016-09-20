@@ -16,3 +16,13 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with MPIS; If not, see <http://www.gnu.org/licenses/>.
+
+#####################################################
+## METADATA
+#####################################################
+__author__ = "The KernelPanicBlog Team"
+__mail__ = "kernelpanicblog1@gmail.com"
+__url__ = "https://kernelpanicblog.wordpress.com"
+__source__ = "https://github.com/KernelPanicBlog/MPIS"
+__version__ = "1.0.0-dev"
+__license__ = "GPL3"

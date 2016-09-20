@@ -23,7 +23,7 @@ Manjaro Post Installation Script (MPIS)
     :target: https://raw.githubusercontent.com/KernelPanicBlog/MPIS/master/LICENSE
     :alt: license
 
-.. image:: https://img.shields.io/badge/AUR-0.2a--1.1-blue.svg
+.. image:: https://img.shields.io/badge/AUR-0.2a--1-blue.svg
     :target: https://aur.archlinux.org/packages/mpis/
     :alt: AUR package
 
@@ -38,17 +38,46 @@ Attention
 =========
 This script is in testing phase and we are not responsable for the usage.
 
-If you find a bug or an error please report it as an `[issue] <https://github.com/KernelPanicBlog/MPIS/issues/>`_.
+If you find a bug or an error please report it as an `[issue] <https://github.com/KernelPanicBlog/MPIS/issues//>`_.
 
 Contact
 =======
 - Web Site: `kernelpanicblog.wordpress.com <https://kernelpanicblog.wordpress.com/>`_.
 - Twitter: `@KernelPanicBlog <https://twitter.com/KernelPanicBlog/>`_.
-- Facebook: `KernelPanicBlog <https://www.facebook.com/pages/Kernel-Panic-Blog/>`_.
+- Facebook: `KernelPanicBlog <https://www.facebook.com/pages/Kernel-Panic-Blog//>`_.
 - Telegram Group (Spanish): `@ManjaroLinuxEs <https://telegram.me/manjarolinuxes/>`_.
 
 How to install
 ==============
 You can install the script in your system by running ::
+=======
+* Stable version ::
 
-  $ yaourt -S mpis
+    $ yaourt -S mpis
+
+* Beta version ::
+
+    $ git clone https://github.com/KernelPanicBlog/MPIS.git
+    $ cd MPIS
+    $ git checkout testing
+    $ sudo python setup.py install --record .filetouninstall.log
+
+* alpha version ::
+
+    $ git clone https://github.com/KernelPanicBlog/MPIS.git
+    $ cd MPIS
+    $ git checkout unstable
+    $ sudo python setup.py install --record .filetouninstall.log
+
+
+How to uninstall
+================
+* stable version ::
+
+    $ yaourt -R mpis
+
+* Beta and Alpha version ::
+
+    $ su
+    $ cd MPIS
+    $ cat .filetouninstall.log | xargs rm -rf
