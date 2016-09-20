@@ -10,7 +10,7 @@
 #
 # MPIS (Manjaro Post Installation Script):
 # It allows  users to choose different options such as
-# install an application or config some tools and environments.
+# install an application or CONFIG some tools and environments.
 #
 # MPIS is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -31,7 +31,7 @@ def get_readme():
         return readme.read()
 
 setup(name="mpis",
-      version="0.3.0-alpha2",
+      version="1.0.0-alpha",
       description="This script allows to configure the system,"
                   "install some applications for a regular work day designed"
                   "for developers, gamers, musicians and more...",
@@ -42,8 +42,7 @@ setup(name="mpis",
       url="https://kernelpanicblog.wordpress.com",
       license="gplv3",
       packages=["mpislib"],
-      data_files=[("/usr/lib/mpis", ["menu.xml"]),
-                  ("/usr/share/licenses/mpis", ["LICENSE"]),
+      data_files=[("/usr/share/licenses/mpis", ["LICENSE"]),
                   ("/usr/share/mpis", ["CHANGELOG.rst"]),
                   ("/usr/share/mpis", ["README.rst"])],
       scripts=["mpis"],)

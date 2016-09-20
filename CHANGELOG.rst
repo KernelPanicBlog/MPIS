@@ -4,10 +4,27 @@ Change Log
 All notable changes to this project will be documented in this file.
 This project adheres to `Semantic Versioning <http://semver.org/>`_.
 
-[0.3.0-alpha2 - 2016-08-29]
+[Unrelease]
 ===========
 added:
 ______
+* Option "about" in the main menu
+* Options bar
+* parameter "--noconfirm" Default active
+* option to configure the appearance
+* Settings menu
+* language Español (es)
+
+Changed:
+________
+* Delete xml file --> now the menus are in a dictionary in the resource file.
+* Restructuring and optimization of code
+
+[0.3.0-alpha2] - 2016-08-29
+===========
+added:
+______
+* new funtions in API
 * new funtions in Core
 * suport for GUI QT
 
