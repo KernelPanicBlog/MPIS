@@ -72,7 +72,7 @@ number or write 3 shortcuts:
             | |\/| |  ___/ | |  \___ \\
             | |  | | |    _| |_ ____) |
             |_|  |_|_|   |_____|_____/{1}""",
-    "MPIS": "{0}\nManjaro Post Installation Script version 1.0.0-dev{1}",
+    "MPIS": "{0}\nManjaro Post Installation Script version 1.0{1}",
     "Authors": """
 {0}Authors:
 SniferL4bs  | https://www.sniferl4bs.com
