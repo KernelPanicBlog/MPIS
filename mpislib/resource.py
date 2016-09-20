@@ -72,7 +72,7 @@ number or write 3 shortcuts:
             | |\/| |  ___/ | |  \___ \\
             | |  | | |    _| |_ ____) |
             |_|  |_|_|   |_____|_____/{1}""",
-    "MPIS": "{0}\nManjaro Post Installation Script version 1.0.0-dev{1}",
+    "MPIS": "{0}\nManjaro Post Installation Script version 1.0{1}",
     "Authors": """
 {0}Authors:
 SniferL4bs  | https://www.sniferl4bs.com
@@ -171,7 +171,7 @@ COLORS = {
 # PATH
 ###############################################################################
 HOME_PATH = os.getenv("HOME")
-
+PATH_FILE = "/usr/share/mpis"
 ###############################################################################
 # Funciones
 ###############################################################################
@@ -181,6 +181,12 @@ def get_path_config():
     global HOME_PATH
 
     return HOME_PATH + "/.mpisconfig"
+
+
+def get_path_file(_name):
+    global PATH_FILE
+
+    return os.path.join(PATH_FILE, _name)
 
 
 def get_all_colors():
