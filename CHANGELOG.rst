@@ -4,7 +4,7 @@ Change Log
 All notable changes to this project will be documented in this file.
 This project adheres to `Semantic Versioning <http://semver.org/>`_.
 
-[Unrelease]
+[1.0] - 2016-09-20
 ===========
 added:
 ______
@@ -19,6 +19,10 @@ Changed:
 ________
 * Delete xml file --> now the menus are in a dictionary in the resource file.
 * Restructuring and optimization of code
+
+Fixed:
+______
+* issue #38
 
 [0.3.0-alpha2] - 2016-08-29
 ===========
