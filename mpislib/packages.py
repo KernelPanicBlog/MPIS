@@ -81,7 +81,7 @@ PACKAGES = {
     "{} Pamac":                 ["pacman", ["System Tools", "Herramientas del sistema"], ["pamac"]],
     "{} LXDE":                  ["pacman", "DEs", ["lxde"]],
     "{} Plasma":                ["pacman", "DEs", ["plasma5"]],
-    "{} Telegram Desktop": ["web", "Internet", ["wget -c https://telegram.org/dl/desktop/linux",
+    "{} Telegram Desktop": ["web", "Internet", ["wget -c https://telegram.org/dl/desktop/linux{}",
                                         "tar xvf linux{}",
                                         "sudo mv Telegram /opt/telegram",
                                         "rm -r linux{}"]],
