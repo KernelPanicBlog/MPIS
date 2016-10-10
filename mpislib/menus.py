@@ -126,11 +126,11 @@ MENUS_ES = {
         ("Acerca", True)
     ],
     "Actualizar sistema": [
-        ("Refrescar los espejos y las llaves", False),
-        ("Actualizar los repertorios de pacman", False),
-        ("Actualizar los repertorios de AUR", False),
+        ("Refrescar los mirrors y las keys", False),
+        ("Actualizar los repositorios de pacman", False),
+        ("Actualizar los repositorios de AUR", False),
         ("Actualizar todo el sistema", False),
-        ("Actualizar todo el sistema y refrescar los espejos", False),
+        ("Actualizar todo el sistema y refrescar los mirrors", False),
         ("Limpiar la cache y los paquetes huerfanos", False),
         ("Ver el contenido del archivo mirrorlist", False)
     ],
