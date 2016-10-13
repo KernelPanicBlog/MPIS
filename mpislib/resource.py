@@ -72,11 +72,11 @@ number or write 3 shortcuts:
             | |\/| |  ___/ | |  \___ \\
             | |  | | |    _| |_ ____) |
             |_|  |_|_|   |_____|_____/{1}""",
-    "MPIS": "{0}\nManjaro Post Installation Script version 1.0{1}",
+    "MPIS": "{0}\nManjaro Post Installation Script version 1.1{1}",
     "Authors": """
 {0}Authors:
 SniferL4bs  | https://www.sniferl4bs.com
-NeoRanger   | https://www.neositelinux.com.ar
+NeoRanger   | https://www.neositelinux.com
 Harrinsoft  | harrinsoft@gmail.com
 Collaborative Blog: | https://kernelpanicblog.wordpress.com{1}""",
     "Report Bugs!": "\nPlease report bugs :) \t"
@@ -132,11 +132,11 @@ los numeros dados ó escribir 3 atajos:
             | |\/| |  ___/ | |  \___ \\
             | |  | | |    _| |_ ____) |
             |_|  |_|_|   |_____|_____/{1}""",
-    "MPIS": "{0}\nManjaro Post Installation Script version 1.0.0-dev{1}",
+    "MPIS": "{0}\nManjaro Post Installation Script version 1.1{1}",
     "Authors": """
 {0}Autores:
 SniferL4bs  | https://www.sniferl4bs.com
-NeoRanger   | https://www.neositelinux.com.ar
+NeoRanger   | https://www.neositelinux.com
 Harrinsoft  | harrinsoft@gmail.com
 Blog Colaborativo: | https://kernelpanicblog.wordpress.com{1}""",
     "Report Bugs!": "\nPor Favor reporte los fallos! :) \t"
