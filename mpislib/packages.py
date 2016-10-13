@@ -82,7 +82,7 @@ PACKAGES = {
     "{} LXDE":                  ["pacman", "DEs", ["lxde"]],
     "{} Plasma":                ["pacman", "DEs", ["plasma5"]],
     "{} Telegram Desktop": ["web", "Internet", ["wget -c https://telegram.org/dl/desktop/linux{}",
-                                        "tar xvf linux{}",
+                                        "tar -xvf linux{}",
                                         "sudo mv Telegram /opt/telegram",
                                         "rm -r linux{}"]],
     "{} Manjaro Settings Manager Plasma":
