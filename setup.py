@@ -31,7 +31,7 @@ def get_readme():
         return readme.read()
 
 setup(name="mpis",
-      version="1.0",
+      version="1.1",
       description="This script allows to configure the system,"
                   "install some applications for a regular work day designed"
                   "for developers, gamers, musicians and more...",
