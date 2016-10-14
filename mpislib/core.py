@@ -352,7 +352,7 @@ def get_arch():
 
     arch, _ = platform.architecture()
 
-    return int(arch[:2])
+    return 32 if int(arch[:2]) == 32 else ""
 
 
 def get_command(_menu, _option, _format="str"):
