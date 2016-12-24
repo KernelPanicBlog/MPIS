@@ -348,7 +348,7 @@ def make_menus():
 
 
 def get_arch():
-    """Devuelve int(32) si el sistema es 32-bits o int(64) si es 64-bits"""
+    """Devuelve int(32) si el sistema es 32-bits o "" si es 64-bits"""
 
     arch, _ = platform.architecture()
 
