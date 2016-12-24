@@ -142,7 +142,7 @@ ALIAS_ES = {
         "sudo pacman -Syyuu",
         "sudo pacman -Suu"
     ],
-    "Actualizar todo el sistema y refrescar los espejos": [
+    "Actualizar todo el sistema y refrescar los mirrors": [
         "sudo rm -f /var/lib/pacman/db.lck",
         "sudo pacman -mirrors -g",
         "sudo pacman -Syyuu",
