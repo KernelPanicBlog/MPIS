@@ -83,15 +83,17 @@ class Node:
 
 def toggle_noconfirm():
     language = get_config('General', 'language')
-    _noconfirm = bool(get_config('General', 'noconfirm'))
-    update_config('General', 'noconfirm', "False" if _noconfirm else "True")
+    _noconfirm = get_config('General', 'noconfirm')
+    update_config('General', 'noconfirm',
+                  "False" if _noconfirm == "True" else "True")
     pause(get_message("set-noconfirm", language))
 
 
 def toggle_multi_install():
     language = get_config('General', 'language')
-    _multi_install = bool(get_config('General', 'multi-install'))
-    update_config('General', 'multi-install', "False" if _multi_install else "True")
+    _multi_install = get_config('General', 'multi-install')
+    update_config('General', 'multi-install',
+                  "False" if _multi_install == "True" else "True")
     pause(get_message("set-multi-install", language))
 
 
@@ -207,12 +209,10 @@ def execute_command(command, sequentially=True):
                         break
                     else:
                         prefix_color, suffix_color = get_color(
-                            appearance.get('notifications')
-                        )
+                            appearance.get('notifications'))
                         print(get_message("msgInvalidCmd", language).format(
                             prefix_color,
-                            suffix_color)
-                        )
+                            suffix_color))
                         cancel_by_user_flag = True
                         sequentially = True
                         error_flag = True
@@ -236,13 +236,14 @@ def execute_command(command, sequentially=True):
         pause(get_message("msgUserCancel", language))
     else:
         pause(get_message("msgTFWE", language))
-
+    
 
 def show_menssage(_menssage):
     appearance = get_section('Appearance')
     language = get_config('General', 'language')
     prefix_color, suffix_color = get_color(appearance.get('option-menu'))
     print(get_message(_menssage, language).format(prefix_color, suffix_color))
+    sleep(1)
 
 
 def end_message(do_clear=True, shutdown=True, value=0):

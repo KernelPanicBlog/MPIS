@@ -35,6 +35,8 @@ MESSAGES_EN = {
     "msgSCTM": "Select a color for the title menus",
     "msg-add_to_list": "The application was added to the installation list",
     "msg-install-all": "We will proceed to install the selected applications",
+    "msg-select-app": "select apps frist",
+    "msg-enable-multi-install": "Enable multi-install option in the mpis settings",
     "msgAC": "\t Available colours:",
     "set-noconfirm": "\n The parameter setting is changed correctly",
     "set-multi-install": "\n The parameter setting is changed correctly",
@@ -98,6 +100,9 @@ MESSAGES_ES = {
     "msgSCTM": "Seleccione un color para los titulos de los menus",
     "msg-add_to_list": "Se agrego la aplicacion a la lista de instalacion",
     "msg-install-all": "Se procederá a instalar las aplicaciones seleccionadas",
+    "msg-select-app": "Seleccione aplicaciones primero",
+    "msg-enable-multi-install": "habilite la opción multi-install "
+                                "en las configuraciones de mpis",
     "msgAC": "\t Colores Disponibles:",
     "set-noconfirm": "\n El ajuste del parametro se cambio correctamente",
     "set-multi-install": "\n El ajuste del parametro se cambio correctamente",

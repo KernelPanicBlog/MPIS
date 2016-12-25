@@ -83,7 +83,7 @@ MENUS_EN = {
     ],
     "Settings ...": [
         ("Toggle --noconfirm", False),
-        ("Toggle multi-install"),
+        ("Toggle multi-install", False),
         ("Appearance", False),
         ("Set language", False)
     ],

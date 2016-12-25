@@ -101,16 +101,21 @@ def main():
                         elif menu.childern[option].name in [
                                 "Install selected applications", 
                                 "Instalar aplicaciones seleccionadas"]:
-                            show_menssage("msg-install-all")
-                            for _cmd_ in list_cmd_to_install:
-                                execute_command(_cmd_)
-                            list_cmd_to_install.clear()
+                            if get_config('General', 'multi-install') == "True":
+                                if list_cmd_to_install:
+                                    show_menssage("msg-install-all")
+                                    for _cmd_ in list_cmd_to_install:
+                                        execute_command(_cmd_)
+                                    list_cmd_to_install.clear()
+                                else:
+                                    show_menssage("msg-select-app")
+                            else:
+                                show_menssage("msg-enable-multi-install")
                         else:
                             cmd_ = get_command(menu, option, "list")
                             if get_config('General', 'multi-install') == "True":
                                 list_cmd_to_install.append(cmd_)
                                 show_menssage("msg-add_to_list")
-                                sleep(1)
                             else:
                                 execute_command(cmd_)
                 else:
