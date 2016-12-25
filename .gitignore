@@ -94,6 +94,7 @@ ENV/
 
 # Repository-related
 .idea/
+.vscode/
 src/
 pkg/
 MPIS/

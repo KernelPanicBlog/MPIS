@@ -88,6 +88,13 @@ def toggle_noconfirm():
     pause(get_message("set-noconfirm", language))
 
 
+def toggle_multi_install():
+    language = get_config('General', 'language')
+    _multi_install = bool(get_config('General', 'multi-install'))
+    update_config('General', 'multi-install', "False" if _multi_install else "True")
+    pause(get_message("set-multi-install", language))
+
+
 def set_language():
     language = get_config('General', 'language')
     appearance = get_section('Appearance')
@@ -231,6 +238,13 @@ def execute_command(command, sequentially=True):
         pause(get_message("msgTFWE", language))
 
 
+def show_menssage(_menssage):
+    appearance = get_section('Appearance')
+    language = get_config('General', 'language')
+    prefix_color, suffix_color = get_color(appearance.get('option-menu'))
+    print(get_message(_menssage, language).format(prefix_color, suffix_color))
+
+
 def end_message(do_clear=True, shutdown=True, value=0):
     appearance = get_section('Appearance')
     language = get_config('General', 'language')
@@ -268,8 +282,8 @@ def clear():
     subprocess.run(["clear"])
 
 
-def sleep():
-    subprocess.run(["sleep", "2s"])
+def sleep(_time):
+    subprocess.run(["sleep", str(_time)+"s"])
 
 
 def show_error(error_name):

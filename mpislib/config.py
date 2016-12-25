@@ -46,7 +46,8 @@ def __set_default_config():
 
     CONFIG['General'] = {
         'noconfirm': "True",
-        'language': "en"
+        'language': "en",
+        'multi-install': "False"
         }
     CONFIG['Appearance'] = {
         'menu-title': "Highlighted",

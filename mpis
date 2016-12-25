@@ -29,6 +29,7 @@ from mpislib.resource import get_path_file
 def main():
     read_config()
     language = get_config('General', 'language')
+    list_cmd_to_install = []
     try:
         show_banner()
         if bool(get_config('General', 'noconfirm')):
@@ -70,6 +71,10 @@ def main():
                                 "Conmutar --noconfirm"]:
                             toggle_noconfirm()
                         elif menu.childern[option].name in [
+                                "Toggle multi-install",
+                                "conmutar instalacion-multiple"]:
+                            toggle_multi_install()
+                        elif menu.childern[option].name in [
                                 "About Mpis",
                                 "Acerca de Mpis"]:
                             show_banner()
@@ -93,9 +98,21 @@ def main():
                                 "Ver el contenido del archivo mirrorlist"]:
                             with open("/etc/pacman.d/mirrorlist", "r") as f:
                                 pause(f.read())
+                        elif menu.childern[option].name in [
+                                "Install selected applications", 
+                                "Instalar aplicaciones seleccionadas"]:
+                            show_menssage("msg-install-all")
+                            for _cmd_ in list_cmd_to_install:
+                                execute_command(_cmd_)
+                            list_cmd_to_install.clear()
                         else:
                             cmd_ = get_command(menu, option, "list")
-                            execute_command(cmd_)
+                            if get_config('General', 'multi-install') == "True":
+                                list_cmd_to_install.append(cmd_)
+                                show_menssage("msg-add_to_list")
+                                sleep(1)
+                            else:
+                                execute_command(cmd_)
                 else:
                     pause(get_message("msgNOp", language))
             except (ValueError, IndexError):
@@ -105,7 +122,7 @@ def main():
             show_menu(menu)
     except KeyboardInterrupt:
         print(get_message("msgCtrl+C", language))
-        sleep()
+        sleep(2)
         clear()
     except Exception:
         traceback.print_exc(file=sys.stdout)

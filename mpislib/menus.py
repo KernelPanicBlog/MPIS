@@ -52,7 +52,8 @@ MENUS_EN = {
         ("Development", True),
         ("Internet", True),
         ("Games", True),
-        ("System Tools", True)
+        ("System Tools", True),
+        ("Install selected applications", False)
     ],
     "Uninstall applications": [
         ("Office", True),
@@ -82,6 +83,7 @@ MENUS_EN = {
     ],
     "Settings ...": [
         ("Toggle --noconfirm", False),
+        ("Toggle multi-install"),
         ("Appearance", False),
         ("Set language", False)
     ],
@@ -140,7 +142,8 @@ MENUS_ES = {
         ("Desarrollo", True),
         ("Internet", True),
         ("Juegos", True),
-        ("Herramientas del sistema", True)
+        ("Herramientas del sistema", True),
+        ("Instalar aplicaciones seleccionadas", False)
     ],
     "Desinstalar aplicaciones": [
         ("Oficina", True),
@@ -170,6 +173,7 @@ MENUS_ES = {
     ],
     "Configuracion ...": [
         ("Conmutar --noconfirm", False),
+        ("conmutar instalacion-multiple", False),
         ("Apariencia", False),
         ("Establecer idioma", False)
     ],
