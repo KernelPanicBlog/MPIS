@@ -125,7 +125,7 @@ ALIAS_ES = {
     "Listar los paquetes instalados": [
         "pacman -Qe"
     ],
-    "Refrescar los espejos y las llaves": [
+    "Refrescar los mirrors y las keys": [
         "sudo pacman -S archlinux-keyring manjaro-keyring",
         "sudo pacman-key --init",
         "sudo pacman-key --populate archlinux manjaro",
