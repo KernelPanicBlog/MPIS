@@ -26,7 +26,6 @@ import os
 class Resource:
     """Clase que proporciona la direccion de los achivos de recursos"""
     def __init__(self):
-        """constructor de clase"""
         self.__path_home = os.getenv("HOME")
         self.__path_config = self.__path_home + "/.config/mpis"
         self.__path_file = "/usr/share/mpis"
@@ -34,31 +33,27 @@ class Resource:
         self.__path_db = os.path.join(self.__path_config, "db")
 
     def path_tr_file(self):
-        """ >>> """
+        """ Devuelve el directorio de los archivos de traduccion """
         return self.__path_tr
 
-    def path_config(self):
-        """Devuelve la direccion del archivo de configuracion"""
-        return os.path.join(self.__path_config, "mpis.conf")
-
     def path_file(self, _name):
-        """ >>> """
+        """ Devuelve la direccion del los archivos """
         return os.path.join(self.__path_file, _name)
 
     def path_db(self):
-        """ >>> """
+        """ Devuelve la direccion de la base de datos """
         return os.path.join(self.__path_db, 'mpis.db')
 
     def path_home(self):
-
+        """ Devuelve el directorio home """
         return self.__path_home
 
     def path_db_restore(self):
-
+        """ Devuelve la direccion de la base de datos para la restauracion """
         return os.path.join(self.__path_file, 'db/mpis.db')
 
     def path_tr_restore(self, _file):
-
+        """ Devuelve la direccion de los archivos de traduccion para la restauracion """
         return os.path.join(self.__path_file, "locale{}".format(_file))
 
 GlobalResource = Resource()

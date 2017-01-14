@@ -136,7 +136,7 @@ try:
             else:
                 pause(tr("Sorry not valid Option."))
         except (ValueError, IndexError):
-            pass
+            pause(tr("Error in option, this value is outside the range of the list"))
         clear()
         GlobalMenu.show_menu(menu, True if list_cmd_to_install else False)
 except KeyboardInterrupt:
@@ -144,8 +144,6 @@ except KeyboardInterrupt:
           + tr("You had press the Ctrl+C keys combination. Accepted exit request. Bye!"))
     sleep(2)
     clear()
-    pass
 except Exception:
     traceback.print_exc(file=sys.stdout)
 sys.exit(0)
-

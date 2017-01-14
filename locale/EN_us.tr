@@ -89,3 +89,4 @@ msg_87,Install
 msg_88,Uninstall
 msg_89,Tasks (t)
 msg_90,Tasks or t -> Execute the tasks added to the list.
+msg_91,Error in option, this value is outside the range of the list

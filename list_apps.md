@@ -18,6 +18,8 @@
    * Sublime Text 3
    * Sublime Text
    * gedit
+   * git
+   * Visual Studio Code (open source)
 
 * Office
     * LibreOffice fresh
@@ -45,6 +47,7 @@
     * moc
     * Openshot
     * Audacity
+    * Kdenlive
 
 * Internet
    * Vivaldi
