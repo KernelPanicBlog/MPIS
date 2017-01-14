@@ -4,6 +4,41 @@ Change Log
 All notable changes to this project will be documented in this file.
 This project adheres to `Semantic Versioning <http://semver.org/>`_.
 
+[2.0-alpha] - 2017-1-13
+===========
+added:
+______
+* modulo Colorize (color para la consola)
+* modulo Traslate (soporte para multi-idiomas)
+* modulo para el manejo de la base de datos (Sqlite3)
+* nueva forma para el manejo de los menus.
+* se agrego la opcion dinamica tareas a la barra de opciones
+* se extendio la funcionalidad de multi-install
+ahora permite instalar, desinstalar y agregar comandos para ser ejecutados en lotes)
+* and ... more
+
+Changed:
+______
+* Se elimino el archivo de configuracion (.conf) las configuraciones estan ahora
+en la base de datos
+* los paquetes a instalar estan en una base de datos ahora.
+
+Fixed:
+______
+*
+
+
+[1.1.1] - 2016-10-13
+===========
+Changed:
+______
+* Fixing some sintactic words
+* Fixing Telegram installation commands
+
+Fixed:
+______
+
+
 [1.1] - 2016-10-13
 ===========
 Changed:

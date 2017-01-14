@@ -99,3 +99,4 @@ src/
 pkg/
 MPIS/
 *.pkg.tar.xz
+*.nja

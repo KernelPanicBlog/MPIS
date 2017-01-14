@@ -1,0 +1,91 @@
+msg_0,Restart to apply changes.
+msg_1,Spanish (es).
+msg_2,English (en).
+msg_3,Languages available.
+msg_4,Select a colour notifications.
+msg_5,Select a secondary colour.
+msg_6,Select a colour for the menus options.
+msg_7,Press any key to continue...
+msg_8,Setup Wizard appearance.
+msg_9,Select a colour for the title menu.
+msg_10,The tasks was added to the list.
+msg_11,We will proceed to install the selected applications.
+msg_12,Select apps first.
+msg_13,Enable multi-install option on MPIS settings.
+msg_14,Available colours:
+msg_15,The parameter was changed correctly.
+msg_16,back (b)
+msg_17,exit (e)
+msg_18,help (h)
+msg_19,Option >
+msg_20,Task finished with errors.
+msg_21,Task finished.
+msg_22,This application will be installed from the AUR repository (community).
+msg_23,It will be installed at your own risk.
+msg_24,You want to continue the installation from AUR?.
+msg_25,yes or not.
+msg_26,It is asked superuser permission to perform this action.
+msg_27,You want to continue?
+msg_28,(not functional, yet)
+msg_29,You had press the Ctrl+C keys combination. Accepted exit request. Bye!
+msg_30,Sorry not valid Option.
+msg_31,The command was canceled by the user.
+msg_32,The '--noconfirm' parameter is enabled by default.
+msg_33,You can change this option in the Settings menu.
+msg_34,Invalid option, canceled command.
+msg_35,Thanks for choosing us, we hope this script helped you.
+msg_36,The KernelPanicBlog Team.
+msg_37,Our web: https://kernelpanicblog.wordpress.com
+msg_38,Help
+msg_39,You can select an option with the given number or write 4 shortcuts:
+msg_40,back or b -> Return to the previous option.
+msg_41,help or h -> Show help.
+msg_42,exit or e or Ctrl+C -> Finish execution script.
+msg_43,Main Menu
+msg_44,Update System
+msg_45,Install applications
+msg_46,Uninstall applications
+msg_47,Install DEs and WMs
+msg_48,Uninstall DEs and WMs
+msg_49,Personalization
+msg_50,List packages installed
+msg_51,Settings ...
+msg_52,About
+msg_53,Refresh Mirrors and Keys
+msg_54,Pacman repositories update
+msg_55,AUR repositories update
+msg_56,Update all system
+msg_57,Update all system and refresh mirrors
+msg_58,Clear cache and orphan packages
+msg_59,See the content of mirrorlist file
+msg_60,Office
+msg_61,Multimedia
+msg_62,Development
+msg_63,Internet
+msg_64,Games
+msg_65,System Tools
+msg_66,Install selected applications
+msg_67,Uninstall selected applications
+msg_68,Themes
+msg_69,Icons
+msg_70,DEs
+msg_71,WMs
+msg_72,See README File
+msg_73,See CHANGELOG File
+msg_74,Report bug!
+msg_75,About Mpis
+msg_76,Toggle --noconfirm
+msg_77,Toggle multi-install
+msg_78,Appearance
+msg_79,Set Language
+msg_80,Error connecting to database!.
+msg_81,yes
+msg_82,not
+msg_83,Command exited with errors.
+msg_84,Select a colour for the back title menu.
+msg_85,Please report bugs :)
+msg_86,Link is opening in your web browser.
+msg_87,Install
+msg_88,Uninstall
+msg_89,Tasks (t)
+msg_90,Tasks or t -> Execute the tasks added to the list.

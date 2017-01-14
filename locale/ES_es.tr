@@ -1,0 +1,91 @@
+msg_0,Reiniciar para aplicar los cambios.
+msg_1,Español (es).
+msg_2,Ingles (en).
+msg_3,Idiomas disponibles.
+msg_4,Selecciona un color para las notificaciones.
+msg_5,Selecciona un color secundario.
+msg_6,Selecciona un color para las opciones del menu.
+msg_7,Presiona cualquier tecla para continuar...
+msg_8,Ayudante para la configuracion de la apariencia.
+msg_9,Selecciona un color para el titulo de los menus.
+msg_10,La tarea ha sido agregada a la lista.
+msg_11,Procederemos a instalar las aplicaciones seleccionadas.
+msg_12,Seleccione aplicaciones primero.
+msg_13,Habilite la opcion instalacion-multiple en la configuracion de MPIS.
+msg_14,Colores Disponibles:
+msg_15,El parametro de configuracion se cambio correctamente.
+msg_16,Atras (b)
+msg_17,Salir (e)
+msg_18,Ayuda (h)
+msg_19,Opcion >
+msg_20,Tarea Finalizada con errores.
+msg_21,Tarea Finalizada.
+msg_22,Esta aplicacion se instalara desde el repositorio AUR (comunitario).
+msg_23,Se instalara bajo su propio riesgo.
+msg_24,Desea continuar la instalacion desde AUR?.
+msg_25,Si o No.
+msg_26,Se le pedira permiso de super usuario para realizar esta accion.
+msg_27,¿Desea Continuar?
+msg_28,(No Funcional, aun)
+msg_29,Has presionado la combinacion de teclas Ctrl+C. Solicitud de salida aceptada. Adios!
+msg_30,Lo sentimos Opcion no valida.
+msg_31,El comando ha sido cancelado por el usuario.
+msg_32,El parametro '--noconfirm' esta habilitado por defecto.
+msg_33,Usted puede cambiar esta opcion en el menu de configuracion.
+msg_34,Opcion invalida, se cancela el comando.
+msg_35,Gracias por elegirnos, Esperamos haberle ayudado.
+msg_36,El equipo de KernelPanicBlog.
+msg_37,Nuestra web: https://kernelpanicblog.wordpress.com
+msg_38,Ayuda.
+msg_39,Usted puede selecionar la opcion presionando los numeros o escribiendo los atajos:
+msg_40,back or b -> Retorna a la opcion anterior.
+msg_41,help or h -> Muestra la ayuda.
+msg_42,exit o e o Ctrl+C -> Finaliza la ejecucion del script.
+msg_43,Menu Principal
+msg_44,Actualizar Sistema
+msg_45,Instalar aplicaciones
+msg_46,Desinstalar aplicaciones
+msg_47,Instalar DEs y WMs
+msg_48,Desinstalar DEs y WMs
+msg_49,Personalizacion
+msg_50,Listar paquetes instalados
+msg_51,Configuracion ...
+msg_52,Acerca
+msg_53,Refrescar servidores de réplica y claves de depósito
+msg_54,Actualizar repositorios Pacman
+msg_55,Actualizar repositorios AUR
+msg_56,Actualizar todo el sistema
+msg_57,Actualizar todo el sistema refrescando mirrors
+msg_58,Limpiar cache y paquetes huerfanos
+msg_59,Ver el contenido del archivo mirrorlist 
+msg_60,Oficina
+msg_61,Multimedia
+msg_62,Desarrollo
+msg_63,Internet
+msg_64,Juegos
+msg_65,Herramientas del sistema
+msg_66,Instalar aplicaciones seleccionadas 
+msg_67,Desinstalar aplicaciones seleccionadas 
+msg_68,Temas
+msg_69,Iconos
+msg_70,DEs
+msg_71,WMs
+msg_72,Ver el archivo README
+msg_73,Ver el archivo CHANGELOG
+msg_74,Reportar un bug!
+msg_75,Acerca de MPIS
+msg_76,Opcion --noconfirm
+msg_77,Opcion Multi-Instalar
+msg_78,Apariencia
+msg_79,Seleccionar idioma
+msg_80,Error conectando a la base de datos!.
+msg_81,si
+msg_82,no
+msg_83,Error al ejecutar el comando.
+msg_84,Selecione un color para el fondo de los titulos del menu.
+msg_85,Por favor, reporte los bugs :)
+msg_86,El enlace se esta abriendo en su navegador web.
+msg_87,Instalar
+msg_88,Desinstalar
+msg_89,Tareas (t)
+msg_90,Tasks or t -> Ejecutar las tareas agregadas a la lista.
