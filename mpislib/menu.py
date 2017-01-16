@@ -191,7 +191,7 @@ MENU = {
         ("See README File", False),
         ("See CHANGELOG File", False),
         ("Report bug!", False),
-        ("About Mpis", False),
+        ("About MPIS", False),
     ],
     "Settings ...": [
         ("Toggle --noconfirm", False),

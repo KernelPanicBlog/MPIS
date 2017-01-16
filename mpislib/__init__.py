@@ -18,16 +18,20 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with MPIS; If not, see <http://www.gnu.org/licenses/>.
-# ______________________________________________________________________________
+# ------------------------------------------------------------------------------
+#   META DATA
+# ------------------------------------------------------------------------------
 __version__ = 2.0
 __autores__ = """KernelPanicBlog team:
 SniferL4bs  | https://www.sniferl4bs.com
 NeoRanger   | https://www.neositelinux.com
 Harrinsoft  | harrinsoft@gmail.com"""
+# ------------------------------------------------------------------------------
 
 from mpislib.resource import GlobalResource
 import os.path as path
 
+#
 if not path.isfile(GlobalResource.path_db()):
     try:
         import subprocess

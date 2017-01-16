@@ -50,7 +50,7 @@ def user_input():
         return 0
 
 
-def pause(_msg):
+def pause(_msg=""):
     try:
         _base_msg = tr("Press any key to continue...")
         _colour = db.get_config("notifications_colour")
