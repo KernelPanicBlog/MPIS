@@ -193,7 +193,7 @@ MENU = {
         ("Report bug!", False),
         ("About MPIS", False),
     ],
-    "Settings ...": [
+    "Settings": [
         ("Toggle --noconfirm", False),
         ("Toggle multi-install", False),
         ("Appearance", False),

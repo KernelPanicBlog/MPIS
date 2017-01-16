@@ -49,7 +49,7 @@ msg_47,Install DEs and WMs
 msg_48,Uninstall DEs and WMs
 msg_49,Personalization
 msg_50,List packages installed
-msg_51,Settings ...
+msg_51,Settings
 msg_52,About
 msg_53,Refresh Mirrors and Keys
 msg_54,Pacman repositories update

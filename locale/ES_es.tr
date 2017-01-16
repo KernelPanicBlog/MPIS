@@ -49,7 +49,7 @@ msg_47,Instalar DEs y WMs
 msg_48,Desinstalar DEs y WMs
 msg_49,Personalizacion
 msg_50,Listar paquetes instalados
-msg_51,Configuracion ...
+msg_51,Configuracion
 msg_52,Acerca
 msg_53,Refrescar servidores de réplica y claves de depósito
 msg_54,Actualizar repositorios Pacman
