@@ -32,6 +32,8 @@ if not path.isfile(GlobalResource.path_db()):
     try:
         import subprocess
         dir = GlobalResource.path_home() + "/.config/mpis/db"
+        cmd = "mkdir -p {0}".format(dir)
+        subprocess.call(cmd.split())
         file = GlobalResource.path_db_restore()
         cmd = "cp {0} {1}".format(file, dir)
         subprocess.call(cmd.split())
@@ -44,6 +46,8 @@ if not path.isfile(GlobalResource.path_tr_file() + "/EN_us.tr"):
     try:
         import subprocess
         dir = GlobalResource.path_tr_file()
+        cmd = "mkdir -p {0}".format(dir)
+        subprocess.call(cmd.split())
         file = GlobalResource.path_tr_restore("/EN_us.tr")
         cmd = "cp {0} {1}".format(file, dir)
         subprocess.call(cmd.split())
@@ -56,6 +60,8 @@ if not path.isfile(GlobalResource.path_tr_file() + "/ES_es.tr"):
     try:
         import subprocess
         dir = GlobalResource.path_tr_file()
+        cmd = "mkdir -p {0}".format(dir)
+        subprocess.call(cmd.split())
         file = GlobalResource.path_tr_restore("/ES_es.tr")
         cmd = "cp {0} {1}".format(file, dir)
         subprocess.call(cmd.split())
