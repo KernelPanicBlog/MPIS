@@ -48,4 +48,4 @@ setup(name="mpis",
                   ("/usr/share/mpis/db", ["db/mpis.db"]),
                   ("/usr/share/mpis/locale", ["locale/EN_us.tr"]),
                   ("/usr/share/mpis/locale", ["locale/ES_es.tr"])],
-      scripts=["mpis.py"],)
+      scripts=["mpis"],)
