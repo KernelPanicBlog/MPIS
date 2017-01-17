@@ -147,7 +147,7 @@ MENU = {
         ("Uninstall DEs and WMs", True),
         ("Personalization", True),
         ("List packages installed", False),
-        ("Settings ...", True),
+        ("Settings", True),
         ("About", True)
     ],
     "Update System": [

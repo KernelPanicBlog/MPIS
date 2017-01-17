@@ -97,32 +97,32 @@ try:
                 else:
                     if menu.name == tr("Personalization"):
                         pause(tr("(not functional, yet)"))
-                    elif tr(menu.childern[option].name) == tr("Appearance"):
+                    elif menu.childern[option].name == tr("Appearance"):
                         wizard_config()
                         GlobalMenu.load_appearance()
-                    elif tr(menu.childern[option].name) == tr("Set language"):
+                    elif menu.childern[option].name == tr("Set language"):
                         set_language()
-                    elif tr(menu.childern[option].name) == tr("Toggle --noconfirm"):
+                    elif menu.childern[option].name == tr("Toggle --noconfirm"):
                         toggle_config("noconfirm")
-                    elif tr(menu.childern[option].name) == tr("Toggle multi-install"):
+                    elif menu.childern[option].name == tr("Toggle multi-install"):
                         toggle_config("multi_install")
-                    elif tr(menu.childern[option].name) == tr("About MPIS"):
+                    elif menu.childern[option].name == tr("About MPIS"):
                         show_banner()
                         pause()
-                    elif tr(menu.childern[option].name) == tr("Report bug!"):
+                    elif menu.childern[option].name == tr("Report bug!"):
                         web_bug = "https://github.com/KernelPanicBlog/MPIS/issues"
                         webbrowser.open(web_bug)
                         clear()
                         pause(tr("Link is opening in your web browser."))
-                    elif tr(menu.childern[option].name) == tr("See README File"):
+                    elif menu.childern[option].name == tr("See README File"):
                         with open(resource.path_file("README.rst"),
                                   "r") as _file:
                             pause(_file.read())
-                    elif tr(menu.childern[option].name) == tr("See CHANGELOG File"):
+                    elif menu.childern[option].name == tr("See CHANGELOG File"):
                         with open(resource.path_file("CHANGELOG.rst"),
                                   "r") as _file:
                             pause(_file.read())
-                    elif tr(menu.childern[option].name) == tr("See the content of mirrorlist file"):
+                    elif menu.childern[option].name == tr("See the content of mirrorlist file"):
                         with open("/etc/pacman.d/mirrorlist",
                                   "r") as _file:
                             pause(_file.read())
