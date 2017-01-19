@@ -90,7 +90,7 @@ def show_banner(do_clear=True):
         | |\/| |  ___/ | |  \___ \\
         | |  | | |    _| |_ ____) |
         |_|  |_|_|   |_____|_____/"""
-    MPIS = "\tManjaro Post Install Script V" + str(mpislib.__version__)
+    MPIS = "Manjaro Post Install Script V" + str(mpislib.__version__)
     autor = mpislib.__autores__
     print(colorize.aplicar(Estilo.negrita.value, Texto.cian.value) + banner)
     print(MPIS + "\n")

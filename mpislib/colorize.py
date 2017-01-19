@@ -95,17 +95,3 @@ class Formato:
         return self.CS + self.CF
 
 colorize = Formato()
-
-
-def main():
-    string = ""
-    for txt in Texto:
-        for fon in Fondo:
-            string += colorize.aplicar(2, txt.value, fon.value) + "{0},{1} ".format(txt, fon)
-        print(string)
-        string = ""
-
-
-if __name__ == "__main__":
-
-    main()

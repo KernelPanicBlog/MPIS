@@ -95,39 +95,39 @@ try:
                     menu_back.append(menu)
                     menu = menu.childern[option]
                 else:
-                    if menu.name == tr("Personalization"):
+                    if menu.name == "Personalization":
                         pause(tr("(not functional, yet)"))
-                    elif menu.childern[option].name == tr("Appearance"):
+                    elif menu.childern[option].name == "Appearance":
                         wizard_config()
                         GlobalMenu.load_appearance()
-                    elif menu.childern[option].name == tr("Set language"):
+                    elif menu.childern[option].name == "Set language":
                         set_language()
-                    elif menu.childern[option].name == tr("Toggle --noconfirm"):
+                    elif menu.childern[option].name == "Toggle --noconfirm":
                         toggle_config("noconfirm")
-                    elif menu.childern[option].name == tr("Toggle multi-install"):
+                    elif menu.childern[option].name == "Toggle multi-install":
                         toggle_config("multi_install")
-                    elif menu.childern[option].name == tr("About MPIS"):
+                    elif menu.childern[option].name == "About MPIS":
                         show_banner()
                         pause()
-                    elif menu.childern[option].name == tr("Report bug!"):
+                    elif menu.childern[option].name == "Report bug!":
                         web_bug = "https://github.com/KernelPanicBlog/MPIS/issues"
                         webbrowser.open(web_bug)
                         clear()
                         pause(tr("Link is opening in your web browser."))
-                    elif menu.childern[option].name == tr("See README File"):
+                    elif menu.childern[option].name == "See README File":
                         with open(resource.path_file("README.rst"),
                                   "r") as _file:
                             pause(_file.read())
-                    elif menu.childern[option].name == tr("See CHANGELOG File"):
+                    elif menu.childern[option].name == "See CHANGELOG File":
                         with open(resource.path_file("CHANGELOG.rst"),
                                   "r") as _file:
                             pause(_file.read())
-                    elif menu.childern[option].name == tr("See the content of mirrorlist file"):
+                    elif menu.childern[option].name == "See the content of mirrorlist file":
                         with open("/etc/pacman.d/mirrorlist",
                                   "r") as _file:
                             pause(_file.read())
                     else:
-                        arg = True if menu.parent.split()[0] == tr("Install") else False
+                        arg = True if menu.parent.split()[0] == "Install" else False
                         cmd_ = db.get_command(menu.childern[option].name, arg)
                         if db.get_config('multi_install') == 'True':
                             list_cmd_to_install.append(cmd_)

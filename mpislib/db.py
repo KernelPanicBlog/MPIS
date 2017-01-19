@@ -77,26 +77,39 @@ class Database:
 
             # fetch data
             data = self.cursor.fetchall()
-            for item in data:
-                if item[0] == "pacman":
-                    arg = "-S " if _install else "-R "
-                    rows.append("sudo pacman " + arg + item[1])
-                elif item[0] == "yaourt":
-                    noconfirm = " --noconfirm" if self.get_config("noconfirm") == "True" else ""
-                    arg = "-S " if _install else "-R "
-                    rows.append("yaourt " + arg + item[1] + noconfirm)
+            if data:
+                for item in data:
+                    if item[0] == "pacman":
+                        arg = "-S " if _install else "-R "
+                        rows.append("sudo pacman " + arg + item[1])
+                    elif item[0] == "yaourt":
+                        noconfirm = " --noconfirm" if self.get_config("noconfirm") == "True" else ""
+                        arg = "-S " if _install else "-R "
+                        rows.append("yaourt " + arg + item[1] + noconfirm)
+            else:
+                table = 'alias'
+                columns = 'command'
+                query = 'SELECT {0} from {1} WHERE name = \"{2}\"'
+                query_sql = query.format(columns, table, app)
+                self.cursor.execute(query_sql)
+
+                # fetch data
+                data = self.cursor.fetchall()
+                for item in data:
+                    rows.append(item[0])
 
         except sqlite3.OperationalError:
-            table = 'alias'
-            columns = 'command'
-            query = 'SELECT {0} from {1} WHERE name = \"{2}\"'
-            query_sql = query.format(columns, table, app)
-            self.cursor.execute(query_sql)
-
-            # fetch data
-            data = self.cursor.fetchall()
-            for item in data:
-                rows.append(item[0])
+            print("Error connecting to database!.")
+            # table = 'alias'
+            # columns = 'command'
+            # query = 'SELECT {0} from {1} WHERE name = \"{2}\"'
+            # query_sql = query.format(columns, table, app)
+            # self.cursor.execute(query_sql)
+            #
+            # # fetch data
+            # data = self.cursor.fetchall()
+            # for item in data:
+            #     rows.append(item[0])
 
         return rows
 

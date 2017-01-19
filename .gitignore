@@ -100,3 +100,5 @@ pkg/
 MPIS/
 *.pkg.tar.xz
 *.nja
+*.log
+.directory
