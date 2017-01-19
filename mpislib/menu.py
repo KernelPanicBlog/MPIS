@@ -106,11 +106,13 @@ class Menu:
                 else:
                     _node.add_childern(child[0])
 
-    def show_menu(self, _menu, _tasks):
+    def show_menu(self, _menu, n_tasks):
 
-        option_bar = tr("back (b)") + "\t" + tr("help (h)")\
+        option_bar = tr("back (b)")\
+                     + "\t" + tr("help (h)")\
+                     + "\t" + tr("search (s)")\
                      + "\t" + tr("exit (e)") + "\t"\
-                     + (tr("Tasks (t)") if _tasks else "")
+                     + (tr("Tasks (t) [{}]".format(n_tasks)) if n_tasks else "")
 
         # Title
         print(colorize.aplicar(Estilo.negrita.value,

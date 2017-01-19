@@ -36,6 +36,8 @@ from mpislib.core import execute_command
 from mpislib.core import wizard_config
 from mpislib.core import set_language
 from mpislib.core import toggle_config
+from mpislib.core import show_help
+from mpislib.core import search
 from mpislib.menu import GlobalMenu
 from mpislib.traslate import tr
 from mpislib.colorize import colorize
@@ -64,24 +66,9 @@ try:
                 if len(menu_back):
                     menu = menu_back.pop()
             elif option in mkopts("help"):
-                clear()
-                title_text_colour = db.get_config("title_text_colour")
-                title_back_colour = db.get_config("title_back_colour")
-                option_menu_colour = db.get_config("option_menu_colour")
-
-                print(colorize.aplicar(1, title_text_colour, title_back_colour)
-                      + tr("Help") + colorize.reset())
-
-                string = colorize.aplicar(1, option_menu_colour)
-                string += "\n" + tr("You can select an option with the given number or write 4 shortcuts:")
-                string += "\n" + tr("back or b -> Return to the previous option.")
-                string += "\n" + tr("help or h -> Show help.")
-                string += "\n" + tr("exit or e or Ctrl+C -> Finish execution script.")
-                string += "\n" + tr("Tasks or t -> Execute the tasks added to the list.")
-                print(string + colorize.reset())
-
-                pause("\n")
-
+                show_help()
+            elif option in mkopts("search"):
+                search()
             elif option in mkopts("tasks"):
                 print(tr("We will proceed to install the selected applications."))
                 for _cmd_ in list_cmd_to_install:
@@ -139,7 +126,7 @@ try:
         except (ValueError, IndexError):
             pause(tr("Error in option, this value is outside the range of the list"))
         clear()
-        GlobalMenu.show_menu(menu, True if list_cmd_to_install else False)
+        GlobalMenu.show_menu(menu, len(list_cmd_to_install))
 except KeyboardInterrupt:
     print(colorize.aplicar(1, 31)
           + tr("You had press the Ctrl+C keys combination. Accepted exit request. Bye!"))

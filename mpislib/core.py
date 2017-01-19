@@ -97,6 +97,26 @@ def show_banner(do_clear=True):
     print(autor + colorize.reset())
 
 
+def show_help():
+    clear()
+    title_text_colour = db.get_config("title_text_colour")
+    title_back_colour = db.get_config("title_back_colour")
+    option_menu_colour = db.get_config("option_menu_colour")
+
+    print(colorize.aplicar(1, title_text_colour, title_back_colour)
+          + tr("Help") + colorize.reset())
+
+    string = colorize.aplicar(1, option_menu_colour)
+    string += "\n" + tr("You can select an option with the given number or write 4 shortcuts:")
+    string += "\n" + tr("back or b -> Return to the previous option.")
+    string += "\n" + tr("help or h -> Show help.")
+    string += "\n" + tr("exit or e or Ctrl+C -> Finish execution script.")
+    string += "\n" + tr("Tasks or t -> Execute the tasks added to the list.")
+    print(string + colorize.reset())
+
+    pause("\n")
+
+
 def execute_command(command, sequentially=True):
     error_flag = False
     cancel_by_user_flag = False
@@ -159,7 +179,7 @@ def menu_config(_conf, _title, _text_option, fondo=False):
     title = colorize.aplicar(Estilo.negrita.value, title_text_colur,
                              title_back_colur)
     title += tr(_title) + colorize.reset()
-    barra = "████████" if not fondo else "________"
+    barra = "████████" if not fondo else "        "
     clear()
     ok = False
     while not ok:
@@ -243,3 +263,7 @@ def toggle_config(_config):
     db.update_config(_config, "\"False\"" if value == "True" else "\"True\"")
     print(string)
     sleep(1)
+
+
+def search():
+    pause(tr("(not functional, yet)"))
