@@ -102,3 +102,6 @@ MPIS/
 *.nja
 *.log
 .directory
+.project
+.pydevproject
+/nb-configuration.xml

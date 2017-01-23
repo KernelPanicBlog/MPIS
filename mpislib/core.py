@@ -20,6 +20,7 @@
 # You should have received a copy of the GNU General Public License
 # along with MPIS; If not, see <http://www.gnu.org/licenses/>.
 # ______________________________________________________________________________
+import sys
 import subprocess
 import mpislib
 from mpislib.colorize import colorize
@@ -27,25 +28,26 @@ from mpislib.colorize import (Estilo, Texto, Fondo)
 from mpislib.traslate import tr
 from mpislib.db import Database
 from mpislib.resource import Resource
-# -----------------------------------------------------------------------------
+from mpislib.menu import OptionMenu
+# ------------------------------------------------------------------------------
 # Variables Globales
-# -----------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 resource = Resource()
 db = Database(resource.path_db())
-# -----------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # Clases
-# -----------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 
 
-# -----------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # Funciones
-# -----------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 
 
-def user_input():
+def user_input(msg="Option >"):
     try:
         return input(colorize.aplicar(1, db.get_config("user_input"))
-                     + tr("Option >") + colorize.reset())
+                     + tr(msg) + colorize.reset())
     except ValueError:
         return 0
 
@@ -266,4 +268,53 @@ def toggle_config(_config):
 
 
 def search():
-    pause(tr("(not functional, yet)"))
+    all_package = db.search_packages()
+    found = []
+    select_app = ""
+    cmd = []
+    ttc = db.get_config("title_text_colour")
+    tbc = db.get_config("title_back_colour")
+    ok = False
+    while not ok:
+        clear()
+        print(colorize.aplicar(2,ttc,tbc) + tr("Search")
+              + colorize.reset() + "\n")
+        print("Enter name of the application to search")
+        _search = user_input("name:_")
+        for item in all_package:
+            if _search.lower() in item.lower():
+                found.append(item)
+        if not found:
+            print("no se encontraron resultados")
+            print("desea buscar otro termino")
+            option = user_input()
+            if option in mkopts(tr("yes")):
+                ok = False
+            elif option in mkopts(tr("not")):
+                ok = True
+        else:
+            menus_search = OptionMenu(tr("Search"), found, db)
+            menus_search.show_menu()
+            option = user_input()
+            if option in mkopts("back"):
+                ok = True
+            elif option in mkopts("exit"):
+                sys.exit(0)
+            elif int(option) <= len(found):
+                option = int(option)
+                select_app = found[option]
+                loop = False
+                while not loop:
+                    clear()
+                    print(colorize.aplicar(1, 31) 
+                          + tr("Select the action to execute")
+                          + colorize.reset())
+                    print("\n \t{0} (i) \t{1} (u)".format(tr("Install"), tr("Uninstall")))
+                    action = user_input()
+                    if action in mkopts("Install"):
+                        cmd = db.get_command(select_app)
+                        ok = loop = True
+                    elif action in mkopts("Uninstall"):
+                        cmd = db.get_command(select_app, False)
+                        ok  = loop = True
+    return cmd

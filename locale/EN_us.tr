@@ -91,3 +91,7 @@ msg_89,Tasks (t)
 msg_90,Tasks or t -> Execute the tasks added to the list.
 msg_91,Error in option, this value is outside the range of the list
 msg_92,search (s)
+msg_93,Search
+msg_94,Select the action to execute
+msg_95,Enter name of the application to search
+msg_96,name:_

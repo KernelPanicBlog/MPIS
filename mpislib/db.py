@@ -100,17 +100,6 @@ class Database:
 
         except sqlite3.OperationalError:
             print("Error connecting to database!.")
-            # table = 'alias'
-            # columns = 'command'
-            # query = 'SELECT {0} from {1} WHERE name = \"{2}\"'
-            # query_sql = query.format(columns, table, app)
-            # self.cursor.execute(query_sql)
-            #
-            # # fetch data
-            # data = self.cursor.fetchall()
-            # for item in data:
-            #     rows.append(item[0])
-
         return rows
 
     def get_config(self, _conf):
@@ -135,5 +124,21 @@ class Database:
 
         # fetch data
         rows = self.cursor.fetchall()
+
+        return rows
+
+    def search_packages(self):
+        rows = []
+        query = 'SELECT name from packages'
+        try:
+            self.cursor.execute(query)
+
+            # fetch data
+            data = self.cursor.fetchall()
+            for item in data:
+                rows.append(item[0])
+            rows = list(set(rows))
+        except sqlite3.OperationalError:
+            print("Error connecting to database!.")
 
         return rows

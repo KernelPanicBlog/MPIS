@@ -68,7 +68,12 @@ try:
             elif option in mkopts("help"):
                 show_help()
             elif option in mkopts("search"):
-                search()
+                cmd_ = search()
+                if db.get_config('multi_install') == 'True':
+                    list_cmd_to_install.append(cmd_)
+                    pause(tr("The tasks was added to the installation list."))
+                else:
+                    execute_command(cmd_)
             elif option in mkopts("tasks"):
                 print(tr("We will proceed to install the selected applications."))
                 for _cmd_ in list_cmd_to_install:

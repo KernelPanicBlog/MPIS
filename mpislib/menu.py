@@ -135,6 +135,27 @@ class Menu:
 
 
 
+class OptionMenu:
+    def __init__(self, title, _options, db):
+        self.title = title
+        self.op = _options
+        self.ttc = db.get_config("title_text_colour")
+        self.tbc = db.get_config("title_back_colour")
+        self.omc = db.get_config("option_menu_colour")
+        
+    def show_menu(self):
+        option_bar = tr("back (b)") + "\t" + tr("exit (e)") 
+        
+        print(colorize.aplicar(Estilo.negrita.value,
+                               self.ttc, self.ttc)
+              + self.title + colorize.reset() + "\n")
+        for option, index in zip(self.op, range(len(self.op))):
+            print(colorize.aplicar(Estilo.normal.value, self.omc)
+                  + "{0}) {1}".format(index, option) + colorize.reset())
+
+        print(colorize.aplicar(Estilo.negrita.value,
+                               self.ttc, self.ttc)
+              + option_bar + colorize.reset())
 
 # ----------------------------------------------------------------------
 # Menu
