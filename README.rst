@@ -1,4 +1,4 @@
-.. image:: https://github.com/KernelPanicBlog/MPIS/blob/debelop/MPIS_logo.jpg?raw=true
+.. image:: https://github.com/KernelPanicBlog/MPIS/blob/develop/MPIS_logo.jpg?raw=true
    :align: center
    :target: https://kernelpanicblog.wordpress.com
    :alt: MPIS Logo
