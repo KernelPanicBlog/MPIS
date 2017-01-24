@@ -53,18 +53,11 @@ How to install
 
     $ yaourt -S mpis
 
-* Beta version ::
+* develop version::
 
     $ git clone https://github.com/KernelPanicBlog/MPIS.git
     $ cd MPIS
-    $ git checkout testing
-    $ sudo python setup.py install --record .filetouninstall.log
-
-* alpha version ::
-
-    $ git clone https://github.com/KernelPanicBlog/MPIS.git
-    $ cd MPIS
-    $ git checkout unstable
+    $ git checkout develop
     $ sudo python setup.py install --record .filetouninstall.log
 
 

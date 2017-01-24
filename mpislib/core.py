@@ -125,7 +125,7 @@ def execute_command(command, sequentially=True):
     memory_option = False
     for cmd in command:
         try:
-            if cmd[0] in ["yaourt", "sudo"]:
+            if cmd.split()[0] in ["yaourt", "sudo"]:
                 if not memory_option:
                     if cmd[0] == "yaourt":
                         print(tr("This application will be installed from the AUR repository (community)."))
