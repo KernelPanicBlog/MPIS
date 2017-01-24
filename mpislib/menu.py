@@ -134,7 +134,6 @@ class Menu:
               + option_bar + colorize.reset())
 
 
-
 class OptionMenu:
     def __init__(self, title, _options, db):
         self.title = title

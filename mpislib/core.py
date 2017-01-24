@@ -279,14 +279,14 @@ def search():
         clear()
         print(colorize.aplicar(2,ttc,tbc) + tr("Search")
               + colorize.reset() + "\n")
-        print("Enter name of the application to search")
+        print(tr("Enter name of the application to search"))
         _search = user_input("name:_")
         for item in all_package:
             if _search.lower() in item.lower():
                 found.append(item)
         if not found:
-            print("no se encontraron resultados")
-            print("desea buscar otro termino")
+            print("Noting found")
+            print("Want to search again?")
             option = user_input()
             if option in mkopts(tr("yes")):
                 ok = False
@@ -316,5 +316,5 @@ def search():
                         ok = loop = True
                     elif action in mkopts("Uninstall"):
                         cmd = db.get_command(select_app, False)
-                        ok  = loop = True
+                        ok = loop = True
     return cmd

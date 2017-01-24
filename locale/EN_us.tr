@@ -95,3 +95,5 @@ msg_93,Search
 msg_94,Select the action to execute
 msg_95,Enter name of the application to search
 msg_96,name:_
+msg_97,Noting found
+msg_98,Want to search again?
