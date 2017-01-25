@@ -86,12 +86,12 @@ def mkopts(_option):
 def show_banner(do_clear=True):
     if do_clear: clear()
     banner = """
-         __  __ _____ _____  _____
-        |  \/  |  __ \_   _|/ ____|
-        | \  / | |__) || | | (___
-        | |\/| |  ___/ | |  \___ \\
-        | |  | | |    _| |_ ____) |
-        |_|  |_|_|   |_____|_____/"""
+ __  __ _____ _____  _____
+|  \/  |  __ \_   _|/ ____|
+| \  / | |__) || | | (___
+| |\/| |  ___/ | |  \___ \\
+| |  | | |    _| |_ ____) |
+|_|  |_|_|   |_____|_____/"""
     MPIS = "Manjaro Post Install Script V" + str(mpislib.__version__)
     autor = mpislib.__autores__
     print(colorize.aplicar(Estilo.negrita.value, Texto.cian.value) + banner)
