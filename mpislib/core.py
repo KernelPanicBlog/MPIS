@@ -127,12 +127,12 @@ def execute_command(command, sequentially=True):
         try:
             if cmd.split()[0] in ["yaourt", "sudo"]:
                 if not memory_option:
-                    if cmd[0] == "yaourt":
+                    if cmd.split()[0] == "yaourt":
                         print(tr("This application will be installed from the AUR repository (community)."))
                         print(tr("It will be installed at your own risk."))
                         print(tr("You want to continue the installation from AUR?."))
                         print(tr("yes or not."))
-                    elif cmd[0] == "sudo":
+                    elif cmd.split()[0] == "sudo":
                         print(tr("It is asked superuser permission to perform this action."))
                         print(tr("You want to continue?"))
                         print(tr("yes or not."))

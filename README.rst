@@ -53,7 +53,7 @@ How to install
 
     $ yaourt -S mpis
 
-* develop version::
+* develop version ::
 
     $ git clone https://github.com/KernelPanicBlog/MPIS.git
     $ cd MPIS
@@ -67,7 +67,7 @@ How to uninstall
 
     $ yaourt -R mpis
 
-* Beta and Alpha version ::
+* develop version ::
 
     $ su
     $ cd MPIS
