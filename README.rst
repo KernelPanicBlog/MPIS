@@ -23,7 +23,7 @@ Manjaro Post Installation Script (MPIS)
     :target: https://raw.githubusercontent.com/KernelPanicBlog/MPIS/master/LICENSE
     :alt: license
 
-.. image:: https://img.shields.io/badge/AUR-0.2a--1-blue.svg
+.. image:: https://img.shields.io/badge/AUR-1.1.1--2.0-blue.svg
     :target: https://aur.archlinux.org/packages/mpis/
     :alt: AUR package
 
@@ -55,18 +55,11 @@ You can install the script in your system by running ::
 
     $ yaourt -S mpis
 
-* Beta version ::
+* Develop version ::
 
     $ git clone https://github.com/KernelPanicBlog/MPIS.git
     $ cd MPIS
-    $ git checkout testing
-    $ sudo python setup.py install --record .filetouninstall.log
-
-* alpha version ::
-
-    $ git clone https://github.com/KernelPanicBlog/MPIS.git
-    $ cd MPIS
-    $ git checkout unstable
+    $ git checkout develop
     $ sudo python setup.py install --record .filetouninstall.log
 
 
