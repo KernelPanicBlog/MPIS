@@ -178,7 +178,7 @@ MENU = {
         ("AUR repositories update", False),
         ("Update all system", False),
         ("Update all system and refresh mirrors", False),
-        ("Clear cache and orphan PACKAGES", False),
+        ("Clear cache and orphan packages", False),
         ("See the content of mirrorlist file", False)
     ],
     "Install applications": [
