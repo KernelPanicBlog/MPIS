@@ -21,7 +21,7 @@
 # ------------------------------------------------------------------------------
 #   META DATA
 # ------------------------------------------------------------------------------
-__version__ = 2.0
+__version__ = '2.0'
 __autores__ = """KernelPanicBlog team:
 SniferL4bs  | https://www.sniferl4bs.com
 NeoRanger   | https://www.neositelinux.com
