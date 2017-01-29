@@ -20,6 +20,9 @@
    * gedit
    * git
    * Visual Studio Code (open source)
+   * GitKraken (64 bits)
+   * Gitg
+   * Qgit
 
 * Office
     * LibreOffice fresh
@@ -77,3 +80,5 @@
     * Virtualbox
     * Manjaro Settings Manager
     * Octopi
+    * Guake
+    * Qterminal
