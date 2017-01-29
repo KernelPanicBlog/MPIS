@@ -69,7 +69,7 @@ How to uninstall
 
     $ yaourt -R mpis
 
-* Beta and Alpha version ::
+* Develop version ::
 
     $ su
     $ cd MPIS
