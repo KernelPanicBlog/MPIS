@@ -58,11 +58,10 @@ class Database:
     def update_config(self, conf, value):
         table = 'config'
 
-        query = 'UPDATE {0} SET value={2} WHERE name=\"{1}\"'.format(table,
-                                                                     conf,
-                                                                     value)
+        query = 'UPDATE {0} SET value={2} WHERE name=\"{1}\"'
+        query_sql = query.format(table, conf, value)
 
-        self.cursor.execute(query)
+        self.cursor.execute(query_sql)
         self.conn.commit()
 
     def get_command(self, app, _install=True):
@@ -83,7 +82,8 @@ class Database:
                         arg = "-S " if _install else "-R "
                         rows.append("sudo pacman " + arg + item[1])
                     elif item[0] == "yaourt":
-                        noconfirm = " --noconfirm" if self.get_config("noconfirm") == "True" else ""
+                        parm = self.get_config("noconfirm")
+                        noconfirm = " --noconfirm" if parm == "True" else ""
                         arg = "-S " if _install else "-R "
                         rows.append("yaourt " + arg + item[1] + noconfirm)
             else:

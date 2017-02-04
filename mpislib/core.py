@@ -67,7 +67,7 @@ def clear():
 
 
 def sleep(_time):
-    """hace una pausa la cantidad de segundos indicados por _time
+    """genera una pausa la cantidad de segundos indicados por _time
     Args:
         _time (int): tiempo de la pausa en segundos
     """
@@ -84,7 +84,8 @@ def mkopts(_option):
 
 
 def show_banner(do_clear=True):
-    if do_clear: clear()
+    if do_clear:
+        clear()
     banner = """
  __  __ _____ _____  _____
 |  \/  |  __ \_   _|/ ____|
@@ -109,7 +110,8 @@ def show_help():
           + tr("Help") + colorize.reset())
 
     string = colorize.aplicar(1, option_menu_colour)
-    string += "\n" + tr("You can select an option with the given number or write 4 shortcuts:")
+    string += "\n" + tr("You can select an option with "
+                        "the given number or write 4 shortcuts:")
     string += "\n" + tr("back or b -> Return to the previous option.")
     string += "\n" + tr("help or h -> Show help.")
     string += "\n" + tr("exit or e or Ctrl+C -> Finish execution script.")
@@ -128,12 +130,15 @@ def execute_command(command, sequentially=True):
             if cmd.split()[0] in ["yaourt", "sudo"]:
                 if not memory_option:
                     if cmd.split()[0] == "yaourt":
-                        print(tr("This application will be installed from the AUR repository (community)."))
+                        print(tr("This application will be installed "
+                                 "from the AUR repository (community)."))
                         print(tr("It will be installed at your own risk."))
-                        print(tr("You want to continue the installation from AUR?."))
+                        print(tr("You want to continue the "
+                                 "installation from AUR?."))
                         print(tr("yes or not."))
                     elif cmd.split()[0] == "sudo":
-                        print(tr("It is asked superuser permission to perform this action."))
+                        print(tr("It is asked superuser permission"
+                                 "to perform this action."))
                         print(tr("You want to continue?"))
                         print(tr("yes or not."))
                     option = user_input()
@@ -189,13 +194,16 @@ def menu_config(_conf, _title, _text_option, fondo=False):
         print(tr(_text_option))
         print(tr("Available colours:"))
         for color in (Texto if not fondo else Fondo):
+            text_color = color.value if not fondo else Texto.reset.value
+            back_color = Fondo.reset.value if not fondo else color.value
             string = colorize.aplicar(Estilo.negrita.value,
-                                      color.value if not fondo else Texto.reset.value,
-                                      Fondo.reset.value if not fondo else color.value)
+                                      text_color,
+                                      back_color)
             string += "{0}) {1}".format(color.value, barra) + colorize.reset()
             print(string)
         _option = user_input()
-        if int(_option) in [val.value for val in (Texto if not fondo else Fondo)]:
+        list_values = [val.value for val in (Texto if not fondo else Fondo)]
+        if int(_option) in list_values:
             db.update_config(_conf, _option)
             ok = True
             clear()
@@ -277,7 +285,7 @@ def search():
     ok = False
     while not ok:
         clear()
-        print(colorize.aplicar(2,ttc,tbc) + tr("Search")
+        print(colorize.aplicar(2, ttc, tbc) + tr("Search")
               + colorize.reset() + "\n")
         print(tr("Enter name of the application to search"))
         _search = user_input("name:_")
@@ -306,10 +314,11 @@ def search():
                 loop = False
                 while not loop:
                     clear()
-                    print(colorize.aplicar(1, 31) 
+                    print(colorize.aplicar(1, 31)
                           + tr("Select the action to execute")
                           + colorize.reset())
-                    print("\n \t{0} (i) \t{1} (u)".format(tr("Install"), tr("Uninstall")))
+                    print("\n \t{0} (i) \t{1} (u)".format(tr("Install"),
+                                                          tr("Uninstall")))
                     action = user_input()
                     if action in mkopts("Install"):
                         cmd = db.get_command(select_app)

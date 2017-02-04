@@ -94,4 +94,5 @@ class Formato:
     def reset(self):
         return self.CS + self.CF
 
+
 colorize = Formato()

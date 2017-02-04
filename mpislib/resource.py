@@ -53,7 +53,9 @@ class Resource:
         return os.path.join(self.__path_file, 'db/mpis.db')
 
     def path_tr_restore(self, _file):
-        """ Devuelve la direccion de los archivos de traduccion para la restauracion """
+        """ Devuelve la direccion de los archivos de traduccion
+        para la restauracion """
         return os.path.join(self.__path_file, "locale{}".format(_file))
+
 
 GlobalResource = Resource()

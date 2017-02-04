@@ -100,8 +100,8 @@ class Menu:
                 elif child[0] == "incategory":
                     data = self._db.get_category(_node.name)
                     d = {}
-                    childern_to_add = [d.setdefault(x, x) for x in data if x not in d]
-                    for h in childern_to_add:
+                    c_to_add = [d.setdefault(x, x) for x in data if x not in d]
+                    for h in c_to_add:
                         _node.add_childern(h[0])
                 else:
                     _node.add_childern(child[0])
@@ -112,7 +112,7 @@ class Menu:
                      + "\t" + tr("help (h)")\
                      + "\t" + tr("search (s)")\
                      + "\t" + tr("exit (e)") + "\t"\
-                     + (tr("Tasks (t) [{}]".format(n_tasks)) if n_tasks else "")
+                     + (tr("Tasks (t)[{}]".format(n_tasks)) if n_tasks else "")
 
         # Title
         print(colorize.aplicar(Estilo.negrita.value,
@@ -129,8 +129,8 @@ class Menu:
 
         # Option bar
         print("\n" + colorize.aplicar(Estilo.negrita.value,
-                               self._title_text_colour,
-                               self._title_back_colour)
+                                      self._title_text_colour,
+                                      self._title_back_colour)
               + option_bar + colorize.reset())
 
 
@@ -141,10 +141,10 @@ class OptionMenu:
         self.ttc = db.get_config("title_text_colour")
         self.tbc = db.get_config("title_back_colour")
         self.omc = db.get_config("option_menu_colour")
-        
+
     def show_menu(self):
-        option_bar = tr("back (b)") + "\t" + tr("exit (e)") 
-        
+        option_bar = tr("back (b)") + "\t" + tr("exit (e)")
+
         print(colorize.aplicar(Estilo.negrita.value,
                                self.ttc, self.ttc)
               + self.title + colorize.reset() + "\n")
@@ -159,6 +159,7 @@ class OptionMenu:
 # ----------------------------------------------------------------------
 # Menu
 # ----------------------------------------------------------------------
+
 
 MENU = {
     "Main Menu": [
@@ -256,5 +257,6 @@ def find_menu(name_menu):
     global MENU
 
     return MENU.get(name_menu)
+
 
 GlobalMenu = Menu()
