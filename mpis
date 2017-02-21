@@ -89,7 +89,7 @@ try:
                     menu = menu.childern[option]
                 else:
                     arg_eval = menu.childern[option].name
-                    if menu.name == "Personalization":
+                    if menu.name == "Look & Feel":
                         pause(tr("(not functional, yet)"))
                     elif arg_eval == "Appearance":
                         wizard_config()

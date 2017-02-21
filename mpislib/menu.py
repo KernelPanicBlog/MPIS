@@ -181,7 +181,7 @@ MENU = {
         ("Uninstall applications", True),
         ("Install DEs and WMs", True),
         ("Uninstall DEs and WMs", True),
-        ("Personalization", True),
+        ("Look & Feel", True),
         ("List packages installed", False),
         ("Settings", True),
         ("About", True)
@@ -211,9 +211,9 @@ MENU = {
         ("Games", True),
         ("System Tools", True)
     ],
-    "Personalization": [
+    "Look & Feel": [
         ("Themes", True),
-        ("iconos", True)
+        ("Icons", True)
     ],
     "Install DEs and WMs": [
         ("DEs", True),
