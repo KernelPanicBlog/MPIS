@@ -314,13 +314,16 @@ def search():
                 loop = False
                 while not loop:
                     clear()
-                    print(colorize.aplicar(1, 31)
-                          + tr("Select the action to execute")
-                          + colorize.reset())
-                    print("\n \t{0} (i) \t{1} (u)".format(tr("Install"),
-                                                          tr("Uninstall")))
+                    lst_option = ["Install", "Unistall"]
+                    menus_search = OptionMenu(tr("Select the action to execute"),
+                                              lst_option, db, 2)
+                    menus_search.show_menu()
                     action = user_input()
-                    if action in mkopts("Install"):
+                    if action in mkopts("back"):
+                        ok = loop = True
+                    elif action in mkopts("exit"):
+                        sys.exit(0)
+                    elif action in mkopts("Install"):
                         cmd = db.get_command(select_app)
                         ok = loop = True
                     elif action in mkopts("Uninstall"):
