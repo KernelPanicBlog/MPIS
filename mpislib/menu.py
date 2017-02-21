@@ -30,7 +30,13 @@ from mpislib.colorize import Estilo
 
 
 class Node:
-    """ >>> """
+    """ Provides the structure of a node.
+    where:
+    :param:
+        name:
+        parent:
+        childern:
+    """
     def __init__(self, _name, _parent=None):
         self.__name = _name
         self.__parent = _parent
