@@ -141,7 +141,7 @@ try:
 except KeyboardInterrupt:
     print(colorize.aplicar(1, 31)
           + tr("You had press the Ctrl+C keys combination."
-               "Accepted exit request. Bye!"))
+               "Accepted exit request. Bye!") + colorize.reset())
     sleep(2)
     clear()
 except Exception:
