@@ -96,6 +96,7 @@ ENV/
 .idea/
 .vscode/
 .kdev4/
+MPIS.kdev4
 tags
 src/
 pkg/
