@@ -95,6 +95,7 @@ ENV/
 # Repository-related
 .idea/
 .vscode/
+.kdev4/
 tags
 src/
 pkg/
