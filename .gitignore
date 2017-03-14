@@ -95,6 +95,9 @@ ENV/
 # Repository-related
 .idea/
 .vscode/
+.kdev4/
+MPIS.kdev4
+tags
 src/
 pkg/
 MPIS/
@@ -102,3 +105,6 @@ MPIS/
 *.nja
 *.log
 .directory
+.project
+.pydevproject
+/nb-configuration.xml

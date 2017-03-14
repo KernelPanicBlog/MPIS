@@ -91,3 +91,9 @@ msg_89,Tareas (t)
 msg_90,Tasks or t -> Ejecutar las tareas agregadas a la lista.
 msg_91,Error en opcion, este valor esta fuera del rango de la lista
 msg_92,busqueda (s)
+msg_93,Busqueda
+msg_94,Seleccione la accíon a ejecutar
+msg_95,Introduzca el nombre de la aplicacion a buscar
+msg_96,nombre:_
+msg_97,No se encontro nada
+msg_98,¿Desea buscar de nuevo?

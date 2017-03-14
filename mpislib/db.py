@@ -58,11 +58,10 @@ class Database:
     def update_config(self, conf, value):
         table = 'config'
 
-        query = 'UPDATE {0} SET value={2} WHERE name=\"{1}\"'.format(table,
-                                                                     conf,
-                                                                     value)
+        query = 'UPDATE {0} SET value={2} WHERE name=\"{1}\"'
+        query_sql = query.format(table, conf, value)
 
-        self.cursor.execute(query)
+        self.cursor.execute(query_sql)
         self.conn.commit()
 
     def get_command(self, app, _install=True):
@@ -83,7 +82,8 @@ class Database:
                         arg = "-S " if _install else "-R "
                         rows.append("sudo pacman " + arg + item[1])
                     elif item[0] == "yaourt":
-                        noconfirm = " --noconfirm" if self.get_config("noconfirm") == "True" else ""
+                        parm = self.get_config("noconfirm")
+                        noconfirm = " --noconfirm" if parm == "True" else ""
                         arg = "-S " if _install else "-R "
                         rows.append("yaourt " + arg + item[1] + noconfirm)
             else:
@@ -100,17 +100,6 @@ class Database:
 
         except sqlite3.OperationalError:
             print("Error connecting to database!.")
-            # table = 'alias'
-            # columns = 'command'
-            # query = 'SELECT {0} from {1} WHERE name = \"{2}\"'
-            # query_sql = query.format(columns, table, app)
-            # self.cursor.execute(query_sql)
-            #
-            # # fetch data
-            # data = self.cursor.fetchall()
-            # for item in data:
-            #     rows.append(item[0])
-
         return rows
 
     def get_config(self, _conf):
@@ -135,5 +124,21 @@ class Database:
 
         # fetch data
         rows = self.cursor.fetchall()
+
+        return rows
+
+    def search_packages(self):
+        rows = []
+        query = 'SELECT name from packages'
+        try:
+            self.cursor.execute(query)
+
+            # fetch data
+            data = self.cursor.fetchall()
+            for item in data:
+                rows.append(item[0])
+            rows = list(set(rows))
+        except sqlite3.OperationalError:
+            print("Error connecting to database!.")
 
         return rows

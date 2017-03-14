@@ -30,7 +30,13 @@ from mpislib.colorize import Estilo
 
 
 class Node:
-    """ >>> """
+    """ Provides the structure of a node.
+    where:
+    :param:
+        name:
+        parent:
+        childern:
+    """
     def __init__(self, _name, _parent=None):
         self.__name = _name
         self.__parent = _parent
@@ -100,8 +106,8 @@ class Menu:
                 elif child[0] == "incategory":
                     data = self._db.get_category(_node.name)
                     d = {}
-                    childern_to_add = [d.setdefault(x, x) for x in data if x not in d]
-                    for h in childern_to_add:
+                    c_to_add = [d.setdefault(x, x) for x in data if x not in d]
+                    for h in c_to_add:
                         _node.add_childern(h[0])
                 else:
                     _node.add_childern(child[0])
@@ -112,7 +118,7 @@ class Menu:
                      + "\t" + tr("help (h)")\
                      + "\t" + tr("search (s)")\
                      + "\t" + tr("exit (e)") + "\t"\
-                     + (tr("Tasks (t) [{}]".format(n_tasks)) if n_tasks else "")
+                     + (tr("Tasks (t)[{}]".format(n_tasks)) if n_tasks else "")
 
         # Title
         print(colorize.aplicar(Estilo.negrita.value,
@@ -129,16 +135,44 @@ class Menu:
 
         # Option bar
         print("\n" + colorize.aplicar(Estilo.negrita.value,
-                               self._title_text_colour,
-                               self._title_back_colour)
+                                      self._title_text_colour,
+                                      self._title_back_colour)
               + option_bar + colorize.reset())
 
 
+class OptionMenu:
+    def __init__(self, title, _options, db, stile=1):
+        self.title = title
+        self.op = _options
+        self.stile = stile
+        self.ttc = db.get_config("title_text_colour")
+        self.tbc = db.get_config("title_back_colour")
+        self.omc = db.get_config("option_menu_colour")
 
+    def show_menu(self):
+        option_bar = tr("back (b)") + "\t" + tr("exit (e)")
+
+        print(colorize.aplicar(Estilo.negrita.value,
+                               self.ttc, self.ttc)
+              + self.title + colorize.reset() + "\n")
+        if self.stile == 1:
+            for option, index in zip(self.op, range(len(self.op))):
+                print(colorize.aplicar(Estilo.normal.value, self.omc)
+                      + "{0}) {1}".format(index, option) + colorize.reset())
+        else:
+            for option in self.op:
+                print(colorize.aplicar(Estilo.normal.value, self.omc)
+                      + "*.- {0} ({1})".format(option, option[0].lower())
+                      + colorize.reset() + "\n")
+
+        print(colorize.aplicar(Estilo.negrita.value,
+                               self.ttc, self.ttc)
+              + option_bar + colorize.reset())
 
 # ----------------------------------------------------------------------
 # Menu
 # ----------------------------------------------------------------------
+
 
 MENU = {
     "Main Menu": [
@@ -147,7 +181,7 @@ MENU = {
         ("Uninstall applications", True),
         ("Install DEs and WMs", True),
         ("Uninstall DEs and WMs", True),
-        ("Personalization", True),
+        ("Look & Feel", True),
         ("List packages installed", False),
         ("Settings", True),
         ("About", True)
@@ -158,7 +192,7 @@ MENU = {
         ("AUR repositories update", False),
         ("Update all system", False),
         ("Update all system and refresh mirrors", False),
-        ("Clear cache and orphan PACKAGES", False),
+        ("Clear cache and orphan packages", False),
         ("See the content of mirrorlist file", False)
     ],
     "Install applications": [
@@ -177,9 +211,9 @@ MENU = {
         ("Games", True),
         ("System Tools", True)
     ],
-    "Personalization": [
+    "Look & Feel": [
         ("Themes", True),
-        ("iconos", True)
+        ("Icons", True)
     ],
     "Install DEs and WMs": [
         ("DEs", True),
@@ -236,5 +270,6 @@ def find_menu(name_menu):
     global MENU
 
     return MENU.get(name_menu)
+
 
 GlobalMenu = Menu()

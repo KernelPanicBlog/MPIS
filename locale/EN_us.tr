@@ -47,7 +47,7 @@ msg_45,Install applications
 msg_46,Uninstall applications
 msg_47,Install DEs and WMs
 msg_48,Uninstall DEs and WMs
-msg_49,Personalization
+msg_49,Look & Feel
 msg_50,List packages installed
 msg_51,Settings
 msg_52,About
@@ -91,3 +91,9 @@ msg_89,Tasks (t)
 msg_90,Tasks or t -> Execute the tasks added to the list.
 msg_91,Error in option, this value is outside the range of the list
 msg_92,search (s)
+msg_93,Search
+msg_94,Select the action to execute
+msg_95,Enter name of the application to search
+msg_96,name:_
+msg_97,Noting found
+msg_98,Want to search again?

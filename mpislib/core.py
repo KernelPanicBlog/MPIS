@@ -20,6 +20,7 @@
 # You should have received a copy of the GNU General Public License
 # along with MPIS; If not, see <http://www.gnu.org/licenses/>.
 # ______________________________________________________________________________
+import sys
 import subprocess
 import mpislib
 from mpislib.colorize import colorize
@@ -27,25 +28,26 @@ from mpislib.colorize import (Estilo, Texto, Fondo)
 from mpislib.traslate import tr
 from mpislib.db import Database
 from mpislib.resource import Resource
-# -----------------------------------------------------------------------------
+from mpislib.menu import OptionMenu
+# ------------------------------------------------------------------------------
 # Variables Globales
-# -----------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 resource = Resource()
 db = Database(resource.path_db())
-# -----------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # Clases
-# -----------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 
 
-# -----------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # Funciones
-# -----------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 
 
-def user_input():
+def user_input(msg="Option >"):
     try:
         return input(colorize.aplicar(1, db.get_config("user_input"))
-                     + tr("Option >") + colorize.reset())
+                     + tr(msg) + colorize.reset())
     except ValueError:
         return 0
 
@@ -65,7 +67,7 @@ def clear():
 
 
 def sleep(_time):
-    """hace una pausa la cantidad de segundos indicados por _time
+    """genera una pausa la cantidad de segundos indicados por _time
     Args:
         _time (int): tiempo de la pausa en segundos
     """
@@ -82,14 +84,15 @@ def mkopts(_option):
 
 
 def show_banner(do_clear=True):
-    if do_clear: clear()
+    if do_clear:
+        clear()
     banner = """
-         __  __ _____ _____  _____
-        |  \/  |  __ \_   _|/ ____|
-        | \  / | |__) || | | (___
-        | |\/| |  ___/ | |  \___ \\
-        | |  | | |    _| |_ ____) |
-        |_|  |_|_|   |_____|_____/"""
+ __  __ _____ _____  _____
+|  \/  |  __ \_   _|/ ____|
+| \  / | |__) || | | (___
+| |\/| |  ___/ | |  \___ \\
+| |  | | |    _| |_ ____) |
+|_|  |_|_|   |_____|_____/"""
     MPIS = "Manjaro Post Install Script V" + str(mpislib.__version__)
     autor = mpislib.__autores__
     print(colorize.aplicar(Estilo.negrita.value, Texto.cian.value) + banner)
@@ -107,7 +110,8 @@ def show_help():
           + tr("Help") + colorize.reset())
 
     string = colorize.aplicar(1, option_menu_colour)
-    string += "\n" + tr("You can select an option with the given number or write 4 shortcuts:")
+    string += "\n" + tr("You can select an option with "
+                        "the given number or write 4 shortcuts:")
     string += "\n" + tr("back or b -> Return to the previous option.")
     string += "\n" + tr("help or h -> Show help.")
     string += "\n" + tr("exit or e or Ctrl+C -> Finish execution script.")
@@ -123,15 +127,18 @@ def execute_command(command, sequentially=True):
     memory_option = False
     for cmd in command:
         try:
-            if cmd[0] in ["yaourt", "sudo"]:
+            if cmd.split()[0] in ["yaourt", "sudo"]:
                 if not memory_option:
-                    if cmd[0] == "yaourt":
-                        print(tr("This application will be installed from the AUR repository (community)."))
+                    if cmd.split()[0] == "yaourt":
+                        print(tr("This application will be installed "
+                                 "from the AUR repository (community)."))
                         print(tr("It will be installed at your own risk."))
-                        print(tr("You want to continue the installation from AUR?."))
+                        print(tr("You want to continue the "
+                                 "installation from AUR?."))
                         print(tr("yes or not."))
-                    elif cmd[0] == "sudo":
-                        print(tr("It is asked superuser permission to perform this action."))
+                    elif cmd.split()[0] == "sudo":
+                        print(tr("It is asked superuser permission"
+                                 "to perform this action."))
                         print(tr("You want to continue?"))
                         print(tr("yes or not."))
                     option = user_input()
@@ -187,13 +194,16 @@ def menu_config(_conf, _title, _text_option, fondo=False):
         print(tr(_text_option))
         print(tr("Available colours:"))
         for color in (Texto if not fondo else Fondo):
+            text_color = color.value if not fondo else Texto.reset.value
+            back_color = Fondo.reset.value if not fondo else color.value
             string = colorize.aplicar(Estilo.negrita.value,
-                                      color.value if not fondo else Texto.reset.value,
-                                      Fondo.reset.value if not fondo else color.value)
+                                      text_color,
+                                      back_color)
             string += "{0}) {1}".format(color.value, barra) + colorize.reset()
             print(string)
         _option = user_input()
-        if int(_option) in [val.value for val in (Texto if not fondo else Fondo)]:
+        list_values = [val.value for val in (Texto if not fondo else Fondo)]
+        if int(_option) in list_values:
             db.update_config(_conf, _option)
             ok = True
             clear()
@@ -266,4 +276,57 @@ def toggle_config(_config):
 
 
 def search():
-    pause(tr("(not functional, yet)"))
+    all_package = db.search_packages()
+    found = []
+    select_app = ""
+    cmd = []
+    ttc = db.get_config("title_text_colour")
+    tbc = db.get_config("title_back_colour")
+    ok = False
+    while not ok:
+        clear()
+        print(colorize.aplicar(2, ttc, tbc) + tr("Search")
+              + colorize.reset() + "\n")
+        print(tr("Enter name of the application to search"))
+        _search = user_input("name:_")
+        for item in all_package:
+            if _search.lower() in item.lower():
+                found.append(item)
+        if not found:
+            print("Noting found")
+            print("Want to search again?")
+            option = user_input()
+            if option in mkopts(tr("yes")):
+                ok = False
+            elif option in mkopts(tr("not")):
+                ok = True
+        else:
+            menus_search = OptionMenu(tr("Search"), found, db)
+            menus_search.show_menu()
+            option = user_input()
+            if option in mkopts("back"):
+                ok = True
+            elif option in mkopts("exit"):
+                sys.exit(0)
+            elif int(option) <= len(found):
+                option = int(option)
+                select_app = found[option]
+                loop = False
+                while not loop:
+                    clear()
+                    lst_option = ["Install", "Unistall"]
+                    menus_search = OptionMenu(tr("Select the action to execute"),
+                                              lst_option, db, 2)
+                    menus_search.show_menu()
+                    action = user_input()
+                    if action in mkopts("back"):
+                        ok = loop = True
+                    elif action in mkopts("exit"):
+                        sys.exit(0)
+                    elif action in mkopts("Install"):
+                        cmd = db.get_command(select_app)
+                        ok = loop = True
+                    elif action in mkopts("Uninstall"):
+                        cmd = db.get_command(select_app, False)
+                        ok = loop = True
+    return cmd

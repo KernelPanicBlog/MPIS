@@ -2,10 +2,10 @@
 * Desktop
     * KDE PLASMA
     * XFCE
-    * XDE
+    * LXDE
     * Gnome-shell
 
-* Vm
+* Wm
     * i3
     * Fluxbox
     * Openbox
@@ -20,10 +20,17 @@
    * gedit
    * git
    * Visual Studio Code (open source)
+   * GitKraken (64 bits)
+   * Gitg
+   * Qgit
+   * SqliteBrowser
+   * Eclipse
+   * Eclipse (c++)
 
 * Office
     * LibreOffice fresh
     * LibreOffice still
+    * OpenOffice
     * WPS
     * Calligra
 
@@ -77,3 +84,5 @@
     * Virtualbox
     * Manjaro Settings Manager
     * Octopi
+    * Guake
+    * Qterminal

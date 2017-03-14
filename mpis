@@ -19,7 +19,7 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with MPIS; If not, see <http://www.gnu.org/licenses/>.
-# ______________________________________________________________________________
+# _____________________________________________________________________________
 import sys
 import traceback
 import webbrowser
@@ -68,9 +68,15 @@ try:
             elif option in mkopts("help"):
                 show_help()
             elif option in mkopts("search"):
-                search()
+                cmd_ = search()
+                if db.get_config('multi_install') == 'True':
+                    list_cmd_to_install.append(cmd_)
+                    pause(tr("The tasks was added to the installation list."))
+                else:
+                    execute_command(cmd_)
             elif option in mkopts("tasks"):
-                print(tr("We will proceed to install the selected applications."))
+                print(tr("We will proceed to install"
+                         "the selected applications."))
                 for _cmd_ in list_cmd_to_install:
                     execute_command(_cmd_)
                 list_cmd_to_install.clear()
@@ -82,54 +88,60 @@ try:
                     menu_back.append(menu)
                     menu = menu.childern[option]
                 else:
-                    if menu.name == "Personalization":
+                    arg_eval = menu.childern[option].name
+                    if menu.name == "Look & Feel":
                         pause(tr("(not functional, yet)"))
-                    elif menu.childern[option].name == "Appearance":
+                    elif arg_eval == "Appearance":
                         wizard_config()
                         GlobalMenu.load_appearance()
-                    elif menu.childern[option].name == "Set language":
+                    elif arg_eval == "Set language":
                         set_language()
-                    elif menu.childern[option].name == "Toggle --noconfirm":
+                    elif arg_eval == "Toggle --noconfirm":
                         toggle_config("noconfirm")
-                    elif menu.childern[option].name == "Toggle multi-install":
+                    elif arg_eval == "Toggle multi-install":
                         toggle_config("multi_install")
-                    elif menu.childern[option].name == "About MPIS":
+                    elif arg_eval == "About MPIS":
                         show_banner()
                         pause()
-                    elif menu.childern[option].name == "Report bug!":
-                        web_bug = "https://github.com/KernelPanicBlog/MPIS/issues"
+                    elif arg_eval == "Report bug!":
+                        web_bug = "https://github.com/"
+                        web_bug += "KernelPanicBlog/MPIS/issues"
                         webbrowser.open(web_bug)
                         clear()
                         pause(tr("Link is opening in your web browser."))
-                    elif menu.childern[option].name == "See README File":
+                    elif arg_eval == "See README File":
                         with open(resource.path_file("README.rst"),
                                   "r") as _file:
                             pause(_file.read())
-                    elif menu.childern[option].name == "See CHANGELOG File":
+                    elif arg_eval == "See CHANGELOG File":
                         with open(resource.path_file("CHANGELOG.rst"),
                                   "r") as _file:
                             pause(_file.read())
-                    elif menu.childern[option].name == "See the content of mirrorlist file":
+                    elif arg_eval == "See the content of mirrorlist file":
                         with open("/etc/pacman.d/mirrorlist",
                                   "r") as _file:
                             pause(_file.read())
                     else:
-                        arg = True if menu.parent.split()[0] == "Install" else False
+                        parm = menu.parent.split()[0]
+                        arg = True if parm == "Install" else False
                         cmd_ = db.get_command(menu.childern[option].name, arg)
                         if db.get_config('multi_install') == 'True':
                             list_cmd_to_install.append(cmd_)
-                            pause(tr("The tasks was added to the installation list."))
+                            pause(tr("The tasks was added to the installation"
+                                     "list."))
                         else:
                             execute_command(cmd_)
             else:
                 pause(tr("Sorry not valid Option."))
         except (ValueError, IndexError):
-            pause(tr("Error in option, this value is outside the range of the list"))
+            pause(tr("Error in option, this value is outside the range"
+                     "of the list"))
         clear()
         GlobalMenu.show_menu(menu, len(list_cmd_to_install))
 except KeyboardInterrupt:
     print(colorize.aplicar(1, 31)
-          + tr("You had press the Ctrl+C keys combination. Accepted exit request. Bye!"))
+          + tr("You had press the Ctrl+C keys combination."
+               "Accepted exit request. Bye!") + colorize.reset())
     sleep(2)
     clear()
 except Exception:

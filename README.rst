@@ -1,4 +1,4 @@
-.. image:: https://github.com/KernelPanicBlog/MPIS/blob/unstable/MPIS_logo.jpg?raw=true
+.. image:: https://github.com/KernelPanicBlog/MPIS/blob/develop/MPIS_logo.jpg?raw=true
    :align: center
    :target: https://kernelpanicblog.wordpress.com
    :alt: MPIS Logo
@@ -23,7 +23,7 @@ Manjaro Post Installation Script (MPIS)
     :target: https://raw.githubusercontent.com/KernelPanicBlog/MPIS/master/LICENSE
     :alt: license
 
-.. image:: https://img.shields.io/badge/AUR-1.0.2.0-blue.svg
+.. image:: https://img.shields.io/badge/AUR-2.0.2.0-blue.svg
     :target: https://aur.archlinux.org/packages/mpis/
     :alt: AUR package
 
@@ -53,18 +53,11 @@ How to install
 
     $ yaourt -S mpis
 
-* Beta version ::
+* develop version ::
 
     $ git clone https://github.com/KernelPanicBlog/MPIS.git
     $ cd MPIS
-    $ git checkout testing
-    $ sudo python setup.py install --record .filetouninstall.log
-
-* alpha version ::
-
-    $ git clone https://github.com/KernelPanicBlog/MPIS.git
-    $ cd MPIS
-    $ git checkout unstable
+    $ git checkout develop
     $ sudo python setup.py install --record .filetouninstall.log
 
 
@@ -74,7 +67,7 @@ How to uninstall
 
     $ yaourt -R mpis
 
-* Beta and Alpha version ::
+* develop version ::
 
     $ su
     $ cd MPIS
