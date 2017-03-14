@@ -23,7 +23,7 @@ Manjaro Post Installation Script (MPIS)
     :target: https://raw.githubusercontent.com/KernelPanicBlog/MPIS/master/LICENSE
     :alt: license
 
-.. image:: https://img.shields.io/badge/AUR-1.0.2.0-blue.svg
+.. image:: https://img.shields.io/badge/AUR-2.0.2.0-blue.svg
     :target: https://aur.archlinux.org/packages/mpis/
     :alt: AUR package
 

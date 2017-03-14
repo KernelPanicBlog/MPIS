@@ -4,7 +4,7 @@ Change Log
 All notable changes to this project will be documented in this file.
 This project adheres to `Semantic Versioning <http://semver.org/>`_.
 
-[2.0-alpha] - 2017-1-13
+[2.0] - 2017-03-14
 ===========
 added:
 ______
@@ -13,9 +13,10 @@ ______
 * modulo para el manejo de la base de datos (Sqlite3)
 * nueva forma para el manejo de los menus.
 * se agrego la opcion dinamica tareas a la barra de opciones
-* se extendio la funcionalidad de multi-install
-ahora permite instalar, desinstalar y agregar comandos para ser ejecutados en lotes)
-* and ... more
+* se extendio la funcionalidad de multi-install ahora se llama tasks y permite
+instalar, desinstalar y agregar comandos para ser ejecutados en lotes)
+* se agregaron varias aplicaciones.
+* se agrego una opcion (b en la barra de opciones) para busqueda de paquetes. 
 
 Changed:
 ______
@@ -25,7 +26,8 @@ en la base de datos
 
 Fixed:
 ______
-*
+* Se corrigio el color de la terminal al terminar el script con Crt+C
+* se corrigieron bugs menores, 
 
 
 [1.1.1] - 2016-10-13
