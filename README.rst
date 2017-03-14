@@ -1,4 +1,4 @@
-.. image:: https://github.com/KernelPanicBlog/MPIS/blob/develop/MPIS_logo.jpg?raw=true
+.. image:: https://github.com/KernelPanicBlog/MPIS/blob/master/MPIS_logo.jpg?raw=true
    :align: center
    :target: https://kernelpanicblog.wordpress.com
    :alt: MPIS Logo
@@ -49,11 +49,13 @@ Contact
 
 How to install
 ==============
+You can install the script in your system by running ::
+=======
 * Stable version ::
 
     $ yaourt -S mpis
 
-* develop version ::
+* Develop version ::
 
     $ git clone https://github.com/KernelPanicBlog/MPIS.git
     $ cd MPIS
@@ -67,7 +69,7 @@ How to uninstall
 
     $ yaourt -R mpis
 
-* develop version ::
+* Develop version ::
 
     $ su
     $ cd MPIS
