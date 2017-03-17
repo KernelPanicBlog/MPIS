@@ -127,6 +127,32 @@ class Database:
 
         return rows
 
+    def get_all_packages(self):
+
+        table = 'packages'
+        columns = 'name, command'
+        query = 'SELECT {0} from {1}'
+        query_sql = query.format(columns, table)
+        self.cursor.execute(query_sql)
+
+        # fetch data
+        rows = self.cursor.fetchall()
+
+        return rows
+
+    def get_all_alias(self):
+
+        table = 'alias'
+        columns = 'name, category'
+        query = 'SELECT {0} from {1}'
+        query_sql = query.format(columns, table)
+        self.cursor.execute(query_sql)
+
+        # fetch data
+        rows = self.cursor.fetchall()
+
+        return rows
+
     def search_packages(self):
         rows = []
         query = 'SELECT name from packages'
