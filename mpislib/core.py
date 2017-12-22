@@ -21,7 +21,9 @@
 # along with MPIS; If not, see <http://www.gnu.org/licenses/>.
 # ______________________________________________________________________________
 import sys
+import traceback
 import subprocess
+import os.path as path
 import mpislib
 from mpislib.colorize import colorize
 from mpislib.colorize import (Estilo, Texto, Fondo)
@@ -32,8 +34,8 @@ from mpislib.menu import OptionMenu
 # ------------------------------------------------------------------------------
 # Variables Globales
 # ------------------------------------------------------------------------------
-resource = Resource()
-db = Database(resource.path_db())
+GlobalResource = Resource()
+db = Database(GlobalResource.path_db())
 paramlist = [
     "-i", "--install",
     "-u", "--uninstall"
@@ -141,7 +143,7 @@ def execute_command(command, sequentially=True):
                                  "installation from AUR?."))
                         print(tr("yes or not."))
                     elif cmd.split()[0] == "sudo":
-                        print(tr("It is asked superuser permission"
+                        print(tr("It is asked superuser permission "
                                  "to perform this action."))
                         print(tr("You want to continue?"))
                         print(tr("yes or not."))
@@ -334,3 +336,21 @@ def search():
                         cmd = db.get_command(select_app, False)
                         ok = loop = True
     return cmd
+
+def check_file(_file, _db=False):
+    dirdb = GlobalResource.path_home() + _file
+    dirfile = GlobalResource.path_tr_file() 
+    _path = GlobalResource.path_db() if _db else GlobalResource.path_tr_file() + _file
+    return True if path.isfile(_path) else False, dirdb if _db else dirfile
+
+def restor_file(_dir, _file, _db=False):
+    dir_db_restor = GlobalResource.path_db_restore()
+    dir_file_restor = GlobalResource.path_tr_restore(_file)
+    _dir_restor = dir_db_restor if _db else dir_file_restor
+    try:
+        cmd = "mkdir -p {0}".format(_dir)
+        subprocess.call(cmd.split())
+        cmd = "cp {0} {1}".format(_dir_restor, _dir)
+        subprocess.call(cmd.split())
+    except Exception:
+        traceback.print_exc(file=sys.stdout)

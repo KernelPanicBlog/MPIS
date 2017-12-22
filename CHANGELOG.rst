@@ -4,6 +4,17 @@ Change Log
 All notable changes to this project will be documented in this file.
 This project adheres to `Semantic Versioning <http://semver.org/>`_.
 
+[2.0.2] - 2017-12-19
+===========
+added:
+______
+* Notificacion al restaurar archivos faltantes.
+* Mejora en la funcion de verificacion de archivos y restauracion.
+
+Fixed:
+______
+* Se corrigieron bugs menores.
+
 [2.0] - 2017-03-14
 ===========
 added:
@@ -12,7 +23,7 @@ ______
 * modulo Traslate (soporte para multi-idiomas)
 * modulo para el manejo de la base de datos (Sqlite3)
 * nueva forma para el manejo de los menus.
-* se agrego la opcion dinamica tareas a la barra de opciones
+* se agrego la opcion dinamica (tareas) a la barra de opciones
 * se extendio la funcionalidad de multi-install ahora se llama tasks y permite
 instalar, desinstalar y agregar comandos para ser ejecutados en lotes)
 * se agregaron varias aplicaciones.
@@ -27,19 +38,15 @@ en la base de datos
 Fixed:
 ______
 * Se corrigio el color de la terminal al terminar el script con Crt+C
-* se corrigieron bugs menores, 
+* se corrigieron bugs menores.
 
 
 [1.1.1] - 2016-10-13
 ===========
-Changed:
+Fixed:
 ______
 * Fixing some sintactic words
 * Fixing Telegram installation commands
-
-Fixed:
-______
-
 
 [1.1] - 2016-10-13
 ===========
@@ -153,7 +160,7 @@ ______
 * issue #11 (option menu back work in all menus)
 * issue #8 (the mirrorlist file contents will not be displayed)
 * issue #6 (change the lenguage to english)
-* issue #5 (install telegram fram the official website)
+* issue #5 (install telegram from the official website)
 * issue #4 (clean the screen to make action)
 * issue #3 (WPS not installed)
 

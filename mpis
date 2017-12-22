@@ -20,12 +20,14 @@
 # You should have received a copy of the GNU General Public License
 # along with MPIS; If not, see <http://www.gnu.org/licenses/>.
 # _____________________________________________________________________________
+
 import sys
 import traceback
 import webbrowser
-import mpislib
+from mpislib.core import check_file
+from mpislib.core import restor_file
 from mpislib.core import db
-from mpislib.core import resource
+from mpislib.core import GlobalResource
 from mpislib.core import paramlist
 from mpislib.core import user_input
 from mpislib.core import pause
@@ -65,7 +67,7 @@ def main():
             try:
                 option = user_input()
                 if option in mkopts("back"):
-                    if len(menu_back):
+                    if menu_back:
                         menu = menu_back.pop()
                 elif option in mkopts("help"):
                     show_help()
@@ -86,7 +88,7 @@ def main():
                     sys.exit(0)
                 elif int(option) <= len(menu.childern):
                     option = int(option)
-                    if len(menu[option].childern):
+                    if menu[option].childern:
                         menu_back.append(menu)
                         menu = menu.childern[option]
                     else:
@@ -112,11 +114,11 @@ def main():
                             clear()
                             pause(tr("Link is opening in your web browser."))
                         elif arg_eval == "See README File":
-                            with open(resource.path_file("README.rst"),
+                            with open(GlobalResource.path_file("README.rst"),
                                       "r") as _file:
                                 pause(_file.read())
                         elif arg_eval == "See CHANGELOG File":
-                            with open(resource.path_file("CHANGELOG.rst"),
+                            with open(GlobalResource.path_file("CHANGELOG.rst"),
                                       "r") as _file:
                                 pause(_file.read())
                         elif arg_eval == "See the content of mirrorlist file":
@@ -152,15 +154,22 @@ def main():
 
 
 if __name__ == "__main__" and len(sys.argv) == 1:
+    for file_ in ["/.config/mpis/db", "/EN_us.tr", "/ES_es.tr"]:
+        _db = True if file_.endswith("db") else False
+        _val, _dir = check_file(file_, _db)
+        if not _val:
+            print("file:{0} not found.".format(file_))
+            print("Restoring . . .")
+            restor_file(_dir, file_, _db)
+            print("Done.")
     main()
 else:
     if sys.argv[1] in paramlist:
         param = sys.argv[1]
-        arg = sys.argv[2]
+        argv = sys.argv[2]
         if param in ["-i", "--install"]:
-            cmd = db.get_command(arg)
+            cmd = db.get_command(argv)
             execute_command(cmd)
         elif param in ["-u", "--uninstall"]:
-            cmd = db.get_command(arg, False)
+            cmd = db.get_command(argv, False)
             execute_command(cmd)
-

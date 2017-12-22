@@ -21,56 +21,9 @@
 # ------------------------------------------------------------------------------
 #   META DATA
 # ------------------------------------------------------------------------------
-__version__ = '2.0'
+__version__ = '2.0.2'
 __autores__ = """KernelPanicBlog team:
 SniferL4bs  | https://www.sniferl4bs.com
 NeoRanger   | https://www.neositelinux.com
 Harrinsoft  | harrinsoft@gmail.com"""
 # ------------------------------------------------------------------------------
-
-from mpislib.resource import GlobalResource
-import os.path as path
-
-#
-if not path.isfile(GlobalResource.path_db()):
-    try:
-        import subprocess
-        dir = GlobalResource.path_home() + "/.config/mpis/db"
-        cmd = "mkdir -p {0}".format(dir)
-        subprocess.call(cmd.split())
-        file = GlobalResource.path_db_restore()
-        cmd = "cp {0} {1}".format(file, dir)
-        subprocess.call(cmd.split())
-    except Exception:
-        import sys
-        import traceback
-        traceback.print_exc(file=sys.stdout)
-
-if not path.isfile(GlobalResource.path_tr_file() + "/EN_us.tr"):
-    try:
-        import subprocess
-        dir = GlobalResource.path_tr_file()
-        cmd = "mkdir -p {0}".format(dir)
-        subprocess.call(cmd.split())
-        file = GlobalResource.path_tr_restore("/EN_us.tr")
-        cmd = "cp {0} {1}".format(file, dir)
-        subprocess.call(cmd.split())
-    except Exception:
-        import sys
-        import traceback
-        traceback.print_exc(file=sys.stdout)
-
-if not path.isfile(GlobalResource.path_tr_file() + "/ES_es.tr"):
-    try:
-        import subprocess
-        dir = GlobalResource.path_tr_file()
-        cmd = "mkdir -p {0}".format(dir)
-        subprocess.call(cmd.split())
-        file = GlobalResource.path_tr_restore("/ES_es.tr")
-        cmd = "cp {0} {1}".format(file, dir)
-        subprocess.call(cmd.split())
-    except Exception:
-        import sys
-        import traceback
-        traceback.print_exc(file=sys.stdout)
-
