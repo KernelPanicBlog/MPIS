@@ -132,7 +132,7 @@ def main():
                             if db.get_config('multi_install') == 'True':
                                 list_cmd_to_install.append(cmd_)
                                 pause(tr("The tasks was added to the installation"
-                                         "list."))
+                                         " list."))
                             else:
                                 execute_command(cmd_)
                 else:
